@@ -2,6 +2,22 @@
 
 > Newest at the top. Dated, append-only. Sessions are blocks.
 
+## v0.2.1 — 2026-06-24 — Bump Next.js to patched 15.5.19 (Vercel deploy unblocker)
+
+**Why:** Vercel deploy of v0.2.0 failed (red status) with *"Vulnerable version of Next.js detected"* citing CVE-2025-66478. Build itself was perfect (8 routes, SSG, all working) but Vercel blocks vulnerable framework versions in 2026.
+
+**Changed:**
+- `app/package.json`: `next` 15.0.3 → 15.5.19; `react` and `react-dom` RC → `^19.0.0` stable
+- Regenerated `app/package-lock.json` (28 packages, down from 36)
+- Verified `npm run build` succeeds (slightly smaller First Load JS: 106kB vs 109kB)
+- Verified all 5 routes return HTTP 200 via curl on the local prod server, 404 path returns 404
+
+**Logged:** DEV-008.
+
+**Next:** Founder pushes, the deploy goes green, we promote to production, Tendo is live.
+
+---
+
 ## v0.2.0 — 2026-06-24 — Phase 1: Next.js app live (local)
 
 **Session theme:** Founder hit a Vercel 404 (project deployed before any app code existed). Decided to build the real Phase 1 app immediately rather than ship a static-redirect workaround.

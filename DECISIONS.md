@@ -49,6 +49,18 @@
 
 ---
 
+## DEV-008 · 2026-06-24 · Pinned to a patched Next.js (15.5.19, not 15.0.3)
+
+**Previous decision (DEV-006 / Phase 1 scaffold):** I pinned `next@15.0.3` and `react@19.0.0-rc-*` because that was what I had in my head as current.
+**Problem reported:** Vercel build succeeded on 15.0.3 but the deployment failed with: *"Vulnerable version of Next.js detected, please update immediately."* — Vercel now blocks deploys of Next.js versions affected by [CVE-2025-66478](https://nextjs.org/blog/CVE-2025-66478).
+**New decision:** Bumped `next` to `15.5.19` (latest 15.x patched as of 2026-06-24) and React/React-DOM to `^19.0.0` (stable, not RC). Pinned-major, caret-minor — predictable but auto-patches security updates.
+**Reasoning:** No code changes needed; Next.js 15.0 → 15.5 is backward-compatible. Build verified locally (8 routes SSG, all curls return 200). Avoids the Vercel deploy-block.
+**Tracked across:** `app/package.json`, `app/package-lock.json`.
+
+**Lesson:** When scaffolding, check the latest *patched* version on the day of, not just "latest" in memory. Vercel actively blocks vulnerable framework versions in 2026 — a fact worth knowing.
+
+---
+
 ## DEV-007 · 2026-06-24 · No Tailwind / no UI library — plain CSS in `app/app/globals.css`
 
 **Previous decision:** Sasa uses Tailwind (and that worked).

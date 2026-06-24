@@ -43,8 +43,30 @@
 
 ---
 
-## MT-004 · Redeploy Tendo on Vercel with correct settings (fixes the 404)
-**Status:** Open · **Blocks:** Going live · **Estimated time:** 8 min · **Cost:** Free
+## MT-005 · Push the Next.js patch and let it auto-deploy
+**Status:** Open · **Blocks:** Going live · **Estimated time:** 3 min · **Cost:** Free
+
+**Why:** Vercel blocked the previous deploy because Next.js 15.0.3 is in a security CVE. I bumped to the patched 15.5.19 locally and verified the build still works (DEV-008). Pushing this commit will trigger a fresh auto-deploy that won't get blocked.
+
+**Steps:**
+1. Open GitHub Desktop.
+2. You should see 2 changed files: `app/package.json` and `app/package-lock.json` (plus `CHANGELOG.md`, `DECISIONS.md`, `MANUAL_TASKS.md`).
+3. Summary box: `Bump Next.js to patched 15.5.19 (CVE-2025-66478)`
+4. Click **Commit to main** → **Push origin**.
+5. Vercel auto-builds in ~60 seconds. Open Deployments tab and watch for the green check on the new commit.
+6. When green, it should auto-promote to Production (because it's from `main`). Open `tendo-ug.vercel.app` in a fresh incognito tab.
+
+**If the auto-promote doesn't happen:** click into the new green deployment → "Promote to Production" → confirm.
+
+---
+
+## MT-004 · ✅ DONE — Vercel project settings corrected (Framework: Next.js, Root Directory: app)
+**Status:** Done · **Outcome:** Build now succeeds on Vercel. Production alias issue + CVE block were the remaining problems, addressed in MT-005.
+
+---
+
+## MT-004 (archived) · Redeploy Tendo on Vercel with correct settings (fixes the 404)
+**Status:** Done · **Blocks:** Going live · **Estimated time:** 8 min · **Cost:** Free
 
 **Why:** You hit a 404 on the first Vercel deploy. Reason: when you first pushed, the `app/` folder was empty, so Vercel had nothing to serve. Now the Next.js app exists. But Vercel needs to be told **where it is** and **what framework it is**. This is the exact "Vercel monorepo gotcha" documented in `DEV_JOURNAL.md` Part 4.
 
