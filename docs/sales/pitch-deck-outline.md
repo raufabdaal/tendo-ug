@@ -43,25 +43,27 @@ This slide establishes credibility — you know the syllabus, not just the buzzw
 
 ## Slide 4 — What students see (Tendo in action)
 
-Three screenshots side-by-side:
-- Topic list
-- A topic page with notes
+Four screenshots in a 2×2 grid:
+- Topic list (clean, syllabus-grouped)
+- A topic page with **Watch / Listen / Read tabs** (point at "Listen" — emphasise that kids who do not love reading can hear the topic narrated)
 - A quiz screen with a correct/incorrect explanation
+- A past PLE paper attempt screen
 
-**You say:** *"They open it on any phone. Pick a topic. Read 2 minutes of notes. Take a 7-question quiz. Get immediate feedback with explanations. Their progress saves on the device."*
+**You say:** *"They open it on any phone. Pick a topic. Watch, listen, or read — their choice. Take a 7-question quiz. Get immediate feedback with explanations. When they are ready, they attempt a past PLE paper end-to-end and get an exam-style mark. Their progress saves on the device."*
 
 ---
 
 ## Slide 5 — What you get as the school
 
-Four bullets:
+Five bullets (the new one in **bold** is the closer — say it last):
 
 - 🏫 **Branded for your school.** Subdomain like `tendo-stmarys.ug`.
-- 📊 **Termly usage report.** Which students are revising, which topics, what scores.
-- 🔧 **Zero IT burden.** It's a website. No installation. No server. No support tickets.
+- 🔧 **Zero IT burden.** It is a website. No installation. No server. No support tickets.
 - 👨‍🏫 **Your teachers can assign topics in class.** "Tonight, do the Fractions topic on Tendo." Self-marking.
+- 📚 **Past PLE papers, two views.** Students attempt and get auto-marked. Teachers browse-by-topic and print a worksheet in two clicks. Saves your average P7 teacher about an hour a week.
+- 📊 **Teacher dashboard.** *(Show the screenshot here.)* You can see at a glance which topics your class has practiced and how they scored. Export it to WhatsApp and your parents see the work being done.
 
-**You say:** *"We don't add to your teachers' load. We give them a tool to make their existing revision more effective."*
+**You say:** *"We don't add to your teachers' load. We give them a tool to make their existing revision more effective, and we give you a screenshot you can put in the parents' WhatsApp group on a Friday afternoon."*
 
 ---
 

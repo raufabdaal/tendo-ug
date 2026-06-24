@@ -44,9 +44,9 @@
 ## 6. "What if my teachers feel replaced?"
 
 **Good answer:**
-> *"They won't, and we should be careful they don't feel that way. Tendo is for evenings and weekends — the time when your teachers aren't there. In school hours, your teachers still teach. Some schools we work with have teachers assigning a specific Tendo topic as homework, so the next day's lesson can build on it. Tendo gives the teacher more signal about who actually got it, not less."*
+> *"They won't, and we should be careful they don't feel that way. Tendo is for evenings and weekends — the time when your teachers aren't there. In school hours, your teachers still teach. We actually built a teacher mode specifically so the tool works FOR them: every past PLE paper has a Browse-by-topic view that lets a teacher pick the questions they want and print a worksheet in two clicks. Their class prep gets shorter, not their job."*
 
-*(We don't yet have such schools. When asked who, redirect: "Once we have a paid school, I'll put you in touch with them directly.")*
+*(We don't yet have schools using this in production. When asked who, redirect: "Once we have a paid school, I'll put you in touch with them directly.")*
 
 ---
 

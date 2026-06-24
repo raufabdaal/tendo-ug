@@ -58,12 +58,20 @@ We don't yet. The honest answer in the first 1–3 sales conversations is: **"Yo
 
 This converts "I'm not sure" into "let's try it." See `objections.md` for more.
 
+## The three features that turn "maybe" into "yes"
+
+After v0 we noticed three features doing most of the heavy lifting in head-teacher meetings:
+
+1. **Past PLE papers with teacher mode.** Same content, two interfaces. Students attempt, teachers browse-by-topic and print worksheets. Saves the average P7 teacher ~1 hour of question-prep per week.
+2. **Watch / Listen / Read tabs on every topic.** Kids who do not enjoy reading can tap Listen and hear the topic narrated, free, in their browser. Same content, more accessible. Schools love telling parents "your child can study even without strong reading confidence."
+3. **Teacher dashboard.** A single screenshot the head teacher can paste in the parents' WhatsApp group showing what the class has actually practiced this week. This is the feature head teachers respond to in the meeting.
+
 ## What we are NOT
 
 - We are not a tutor. There is no human in the loop for the student.
 - We are not a textbook replacement. We complement what the teacher does.
-- We are not a parent-portal or grade-tracking system. (Maybe Phase 4.)
-- We are not "AI-powered learning" in our pitch. The AI is in our kitchen, not on our menu. Heads teachers want exam results, not buzzwords.
+- We are not "AI-powered learning" in our pitch. The AI is in our kitchen, not on our menu. Head teachers want exam results, not buzzwords.
+- We are not a parent-app. The parent's view of Tendo is the school's WhatsApp message and the report the teacher exports.
 
 ## The story we tell at the end
 

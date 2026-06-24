@@ -51,6 +51,30 @@ export default function HomePage() {
         </div>
       </div>
 
+      <h2>Past PLE papers</h2>
+
+      <Link href="/papers" className="card">
+        <div className="card-row">
+          <div>
+            <div className="card-title">UNEB past papers</div>
+            <div className="card-sub">Attempt as a student, or browse by topic as a teacher</div>
+          </div>
+          <span className="badge badge-math">Open</span>
+        </div>
+      </Link>
+
+      <h2>For teachers</h2>
+
+      <Link href="/teacher" className="card">
+        <div className="card-row">
+          <div>
+            <div className="card-title">Teacher dashboard</div>
+            <div className="card-sub">See what your class has practiced and how they scored</div>
+          </div>
+          <span className="badge badge-math">Open</span>
+        </div>
+      </Link>
+
       <div className="foot">
         All progress saved on this device. No login required.
       </div>

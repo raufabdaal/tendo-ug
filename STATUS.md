@@ -1,63 +1,58 @@
 # STATUS — Tendo
 
-*Updated: 2026-06-24, end of Phase 1 session*
+*Updated: 2026-06-25, end of Phase 2 session*
 
-## Where we are: **Phase 1 — Next.js app shell with 3 topics live (DONE LOCALLY · needs deploy)**
+## Where we are: **Phase 2 — Past papers + audio narration + teacher dashboard (DONE LOCALLY · needs push)**
 
-Phase 0 (foundation + sales pack + preview.html) is also done. See CHANGELOG for the full session log.
+Phases 0 (foundation + sales pack) and 1 (Next.js app live) also done. Site is live on Vercel.
 
-### Verified locally (per DEV_JOURNAL.md Part 4):
+## What shipped this session
 
-- `npm install` succeeds (36 packages, ~16s)
-- `npm run build` succeeds — 8 pages prerendered, ~110kB First Load JS per route
-- `npm run start` serves all 5 real routes with HTTP 200:
-  - `/` (home) · `/math/p7` (topic list) · `/math/p7/venn-diagrams-2-events` · `/math/p7/roman-numerals-mm` · `/math/p7/fractions-core`
-- 404 path correctly returns HTTP 404
-- Content spot-checks pass (brand, worked example, quiz button, "Akello" mango problem all present in rendered HTML)
+**3 sales-leverage features**, all on free tier, all integrating with existing localStorage progress:
 
-## What's done ✅
+1. **Past PLE Papers** — student attempt mode + teacher browse-by-topic mode. Seed paper: PLE Math 2018 (20 questions across all 6 themes).
+2. **Watch · Listen · Read tabs** on every topic. Audio uses browser Web Speech API (free TTS, no API key). Watch tab is a "Coming, Phase 3" placeholder.
+3. **Teacher Dashboard** — reads localStorage activity, shows topic + paper progress, exports a parent-ready report to clipboard. Honest banner clarifies this is per-device until Phase 4 adds real auth.
 
-- [x] Project scoped: P6 & P7, PLE Math only for v0, hybrid AI+review content model
-- [x] Business model locked: B2B2C — sell to schools, schools price to parents, we charge a per-student maintenance fee
-- [x] Workspace skeleton created (mirrors Sasa's proven structure)
-- [x] **Curriculum spine extracted:** `content/curriculum/p7-math.json` — all 6 themes, 11 topics, 40 sub-topics structured
-- [x] **PRD written:** `docs/spec/PRD.md`
-- [x] **Design philosophy:** `docs/spec/design-philosophy.md`
-- [x] **Content guidelines:** `docs/spec/content-guidelines.md`
-- [x] **Sales pack:**
-  - `docs/sales/value-prop.md`
-  - `docs/sales/pitch-deck-outline.md`
-  - `docs/sales/pricing.md`
-  - `docs/sales/school-packet.md`
-  - `docs/sales/objections.md`
-- [x] **`preview.html`** — double-click sales demo with 3 mock topics
-- [x] All session-ritual files (CHANGELOG, HANDOFF, DECISIONS, CHECKLIST, MANUAL_TASKS, .env.example, .gitignore)
+### Verified locally (per `DEV_JOURNAL.md` Part 4):
 
-## What's next 🎯 (Phase 1)
+- `npm run build` succeeds — 13 routes, all SSG, ~106-113kB First Load JS per route
+- `npm run start` + curl on all 7 new/changed routes → HTTP 200
+- Content spot-checks pass (home cards, paper browse toolbar, topic tabs, fractions content intact)
 
-1. Initialize Next.js 15 app in `app/` (mirrors Sasa's setup)
-2. Wire topic list → topic detail → quiz flow with **real content for 3 topics** drawn from `p7-math.json`:
-   - Sets → Venn Diagrams (2 events)
-   - Numeracy → Whole Numbers (Roman numerals)
-   - Numeracy → Fractions (ordering & operations)
-3. localStorage-based progress (no auth in v0, per DEV-002)
-4. Set up GitHub repo + Vercel auto-deploy (Manual Tasks MT-001, MT-002)
-5. Live URL we can share in a sales conversation
+## What's next 🎯
+
+**Immediate (5 min):**
+- Push to GitHub. Vercel auto-deploys + auto-promotes to production (because pushing to `main` is the cleanest path — DEV_JOURNAL lesson 2026-06-24).
+- Verify the 4 new URLs work in incognito:
+  - `/papers`
+  - `/papers/ple-math-2018/attempt`
+  - `/papers/ple-math-2018/browse`
+  - `/teacher`
+
+**Phase 3 (the "demo polish" phase):**
+- Generate ~10 NotebookLM videos for highest-traffic topics (Fractions, Venn, Percentages, Area, Volume, Equations, Time, Probability, Pie charts, Roman numerals). Manual one-day task in NotebookLM.
+- Upload to a YouTube channel (free, hosted off our infra).
+- Wire the Watch tab to embed the video when present, fall through to Listen + Read placeholder when not.
+- Ingest 2-3 more real past PLE papers.
+- Add ~5 more topic notes (Decimals, Percentages, Area, Equations, Substitution) so topic count goes 3 → 8.
+
+**Phase 4 (school pilot infrastructure):**
+- Supabase free tier for class codes + per-student progress sync across devices
+- Subdomain per school
+- Real "Copy report" pulling actual class data, not just this-device data
 
 ## What's blocked 🚧
 
-- Nothing blocking Phase 0 close.
-- Phase 1 has 2 manual tasks waiting on you (GitHub repo + Vercel account). See `MANUAL_TASKS.md`.
+- Nothing technical. Push and you're live.
 
-## Decisions made this phase
+## Decisions made
 
-See `DECISIONS.md`:
-- DEV-001: Scope = P6 & P7 only, P7 first (typo correction from P1)
-- DEV-002: No login in v0; localStorage progress only
-- DEV-003: B2B2C with school as channel partner; not direct-to-parent
-- DEV-004: Content sourcing = AI draft from NCDC syllabus + past papers, human review gate
-- DEV-005: Math only for v0; English / Science / SST as Phase 2 visible-but-coming-soon
+See `DECISIONS.md` (DEV-001 through DEV-011). Newest:
+- DEV-011: Teacher Dashboard is the killer feature, built before video
+- DEV-010: No streaks, no gamification, no parent-portal in v0
+- DEV-009: Teacher dashboard runs on localStorage with explicit honest-UI banner
 
 ## Cost so far
 
-**UGX 0 / USD 0.** Vercel Hobby + free GitHub. No recurring spend.
+**UGX 0 / USD 0.** Vercel Hobby + free GitHub + free browser TTS. No recurring spend.

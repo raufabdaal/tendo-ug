@@ -14,9 +14,10 @@ A web platform your school offers parents. Quietly raises your division-one rate
 ## What it does
 
 - Covers the complete UNEB P7 Mathematics syllabus (and soon P6) — all 6 themes, 11 topics, 40 sub-topics.
+- **Watch · Listen · Read** on every topic. Students who do not enjoy reading can listen to the notes for free, in any browser.
 - Topic notes, worked examples, and 5–10 auto-marked quiz questions per topic.
-- Past PLE papers, attemptable and auto-marked.
-- Termly usage report for the school.
+- **Past PLE papers, two views:** students attempt and get auto-marked; teachers browse-by-topic and print worksheets in two clicks.
+- **Teacher dashboard:** see what your class practiced this week, export to WhatsApp for parents.
 - Branded with your school name and logo on its own subdomain.
 
 ## What you do

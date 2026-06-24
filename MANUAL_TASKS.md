@@ -43,7 +43,43 @@
 
 ---
 
-## MT-005 · Push the Next.js patch and let it auto-deploy
+## MT-007 · Push Phase 2 to GitHub (auto-deploys to production)
+**Status:** Open · **Blocks:** Phase 2 going live · **Estimated time:** 3 min · **Cost:** Free
+
+**Why:** Phase 2 shipped 3 new features (past papers, audio tabs, teacher dashboard) plus 4 updated sales docs. All verified locally. Push triggers Vercel auto-deploy. Per DEV_JOURNAL lesson 2026-06-24: pushes to `main` auto-promote to production. No "Redeploy" needed.
+
+**Steps:**
+1. GitHub Desktop → you should see ~18 changed/new files.
+2. Summary box: `Phase 2: past papers, watch/listen/read tabs, teacher dashboard`
+3. Commit to main → Push origin.
+4. Open Vercel Deployments → watch for green check (60-90 sec).
+5. Open incognito and test 4 new URLs:
+   - `https://tendo-ug.vercel.app/papers`
+   - `https://tendo-ug.vercel.app/papers/ple-math-2018`
+   - `https://tendo-ug.vercel.app/papers/ple-math-2018/browse`
+   - `https://tendo-ug.vercel.app/teacher`
+6. Also re-test the topic page to see the new tabs: `https://tendo-ug.vercel.app/math/p7/fractions-core`
+
+**Demo flow to walk yourself through after deploy:**
+1. Open home → click "Mathematics" → click "Fractions" → tap Listen → hit Play (audio should narrate)
+2. Back to home → click "UNEB past papers" → click the 2018 paper → click "Attempt as student" → answer 3-4 questions, then click "See result" early (won't let you, do all 20 or quit)
+3. Back to home → click "Teacher dashboard" → see the activity from the topic and paper you just did
+
+---
+
+## MT-006 · (Phase 3) Generate NotebookLM videos for top topics
+**Status:** Deferred until Phase 2 is live · **Cost:** Free (NotebookLM is free) · **Time:** ~3 hrs for 10 videos
+
+**Steps will be expanded when we reach Phase 3.** High-level: create a Tendo YouTube channel, paste each topic note into NotebookLM, generate the video, upload to YouTube unlisted, paste URL into `lib/topics.ts`.
+
+---
+
+## MT-005 · ✅ DONE — Pushed Next.js 15.5.19 patch
+**Outcome:** Deploy went green, production promoted, site live at `tendo-ug.vercel.app`.
+
+---
+
+## MT-005 (archived) · Push the Next.js patch and let it auto-deploy
 **Status:** Open · **Blocks:** Going live · **Estimated time:** 3 min · **Cost:** Free
 
 **Why:** Vercel blocked the previous deploy because Next.js 15.0.3 is in a security CVE. I bumped to the patched 15.5.19 locally and verified the build still works (DEV-008). Pushing this commit will trigger a fresh auto-deploy that won't get blocked.

@@ -49,6 +49,41 @@
 
 ---
 
+## DEV-011 · 2026-06-25 · Teacher Dashboard is the killer demo feature, built before video
+
+**Previous decision:** Phase 2 was originally framed as "more topics + content engine."
+**Problem reported:** Marketing partner correctly observed that head teachers (the buyer) don't experience student engagement directly. They experience reports. Founder proposed video first; we challenged that and reframed.
+**New decision:** Phase 2 ships three sales-leverage features in this order: (1) Past PLE papers with student + teacher modes, (2) Watch/Listen/Read tabs with free browser TTS, (3) Teacher dashboard with WhatsApp-pasteable progress report. Video deferred to Phase 3 as polish, generated externally in NotebookLM for ~10 high-stakes topics, hosted on YouTube.
+**Reasoning:**
+- Head teachers buy products that make their school look serious to parents. The dashboard screenshot does that; an auto-video pipeline does not.
+- TTS is free and zero-build vs. video which is bandwidth-expensive on Ugandan student devices.
+- All three features integrate cleanly with existing localStorage progress, no new infrastructure.
+**Tracked across:** `app/components/PaperAttempt.tsx`, `app/components/PaperBrowse.tsx`, `app/components/TopicTabs.tsx`, `app/components/TeacherDashboard.tsx`, all new routes under `/papers` and `/teacher`, sales pack updates.
+
+---
+
+## DEV-010 · 2026-06-25 · No streaks, no gamification, no parent-portal in v0
+
+**Previous decision (from founder's brainstorm):** Marketing partner pushed for streaks, leaderboards, and a parent-facing app to maximise "wow factor."
+**New decision:** Explicit no. The parent's view of Tendo is the WhatsApp message from the school plus the teacher's exported report. No streaks, no leaderboards, no badges.
+**Reasoning:**
+- Streaks/leaderboards create anxiety, encourage cheating on auto-marked quizzes, and look "consumer-tech" to head teachers (the wrong signal — they want serious).
+- A parent app is a second product. Defer to Phase 5+ when there's revenue to justify the support cost.
+- Per `AGENT_BRIEF.md`: "restraint over decoration."
+**Tracked across:** absence in all PRD/spec docs, explicit mention in objections sheet.
+
+---
+
+## DEV-009 · 2026-06-25 · Teacher dashboard runs on localStorage in v0 with explicit honest-UI banner
+
+**Previous decision:** No teacher-facing UI existed.
+**Problem anticipated:** A real teacher dashboard needs a real backend (Supabase). Building Supabase auth + DB is a multi-day Phase 4 commitment. But pitching schools needs the dashboard NOW.
+**New decision:** Build the dashboard reading from localStorage on the teacher's device. Display a prominent banner that says "Demo dashboard. This shows the activity on THIS device. In the school-pilot version, each student logs in with a class code and their progress reports here from any phone they use."
+**Reasoning:** Honest UI (per `AGENT_BRIEF.md`) preserves trust while letting us demo the feature today. The transition to real auth in Phase 4 is a backend swap; the UI doesn't change.
+**Tracked across:** `app/components/TeacherDashboard.tsx` (the banner is in the JSX), Phase 4 plan in HANDOFF.md.
+
+---
+
 ## DEV-008 · 2026-06-24 · Pinned to a patched Next.js (15.5.19, not 15.0.3)
 
 **Previous decision (DEV-006 / Phase 1 scaffold):** I pinned `next@15.0.3` and `react@19.0.0-rc-*` because that was what I had in my head as current.

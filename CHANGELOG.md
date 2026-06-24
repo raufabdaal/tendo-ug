@@ -2,6 +2,41 @@
 
 > Newest at the top. Dated, append-only. Sessions are blocks.
 
+## v0.3.0 — 2026-06-25 — Phase 2: Past papers, audio narration, teacher dashboard
+
+**Session theme:** Partner pushed for video-first UX; we reframed to the three highest-leverage sales features instead. Video deferred to Phase 3 polish (NotebookLM for ~10 topics).
+
+**Added:**
+- `app/lib/papers.ts` — past PLE paper schema; seeded with PLE Math 2018 (20 questions, all 6 themes, tagged by topic)
+- `app/components/PaperAttempt.tsx` — student attempt flow with per-question marks, banded result (D1/Credit/Pass/Needs more practice), "where you went wrong" review, localStorage persistence at `tendo:papers`
+- `app/components/PaperBrowse.tsx` — teacher browse-by-topic view; toggle answers; copy-to-clipboard worksheet; print-to-PDF via browser
+- `app/components/TopicTabs.tsx` — Watch · Listen · Read tabs on every topic; "Listen" uses Web Speech API (browser TTS, $0 per `DEV_JOURNAL.md` cost-discipline table); "Watch" placeholder for Phase 3 NotebookLM videos
+- `app/components/TeacherDashboard.tsx` — class progress dashboard reading from localStorage; stat cards; topic + paper tables; "Copy report for parents" → clipboard; "Print this page" via browser; "Clear demo data" reset
+- Routes: `/papers` (index), `/papers/[id]` (cover with student/teacher mode picker), `/papers/[id]/attempt`, `/papers/[id]/browse`, `/teacher`
+- Print stylesheet in `globals.css` for teacher worksheet output
+- 6 new "Coming, Phase 2/3" topic placeholders in `COMING_SOON` (matches the past paper question topics)
+
+**Updated:**
+- Home page (`app/page.tsx`) adds "Past PLE papers" and "For teachers" sections
+- Topic page (`math/p7/[topic]/page.tsx`) now uses `TopicTabs` instead of inline notes
+- `docs/sales/value-prop.md` — added "three features that turn maybe into yes" section
+- `docs/sales/pitch-deck-outline.md` — Slide 4 updated to mention Watch/Listen/Read and past paper screen; Slide 5 expanded with teacher dashboard as the closer
+- `docs/sales/school-packet.md` — bullet list updated
+- `docs/sales/objections.md` — objection 6 (teacher replacement) revised to lean on Teacher Browse mode
+
+**Verified locally:**
+- `npm run build` succeeds — 13 routes, all SSG, largest First Load JS 113kB (teacher dashboard, still under our 200kB ceiling)
+- All 7 newly-touched routes return HTTP 200 on local prod server
+- Content spot-checks: home shows Past PLE + Teacher cards; Browse view shows toggle + Print; topic page shows Watch + Listen tabs; existing topic content intact
+
+**Decisions logged:** DEV-009 (TLS dashboard honest-UI banner), DEV-010 (no streaks/parent-portal), DEV-011 (dashboard before video).
+
+**Cost:** UGX 0 / USD 0 unchanged.
+
+**Next:** Founder pushes. Vercel auto-deploys. Then Phase 3 = generate ~10 NotebookLM videos for highest-traffic topics and embed in the Watch tab.
+
+---
+
 ## v0.2.1 — 2026-06-24 — Bump Next.js to patched 15.5.19 (Vercel deploy unblocker)
 
 **Why:** Vercel deploy of v0.2.0 failed (red status) with *"Vulnerable version of Next.js detected"* citing CVE-2025-66478. Build itself was perfect (8 routes, SSG, all working) but Vercel blocks vulnerable framework versions in 2026.
