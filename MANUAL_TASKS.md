@@ -43,6 +43,52 @@
 
 ---
 
+## MT-004 · Redeploy Tendo on Vercel with correct settings (fixes the 404)
+**Status:** Open · **Blocks:** Going live · **Estimated time:** 8 min · **Cost:** Free
+
+**Why:** You hit a 404 on the first Vercel deploy. Reason: when you first pushed, the `app/` folder was empty, so Vercel had nothing to serve. Now the Next.js app exists. But Vercel needs to be told **where it is** and **what framework it is**. This is the exact "Vercel monorepo gotcha" documented in `DEV_JOURNAL.md` Part 4.
+
+**Do this in order:**
+
+### Step 1 — push the new code to GitHub
+1. Open GitHub Desktop.
+2. You should see ~20 new/changed files (everything in `tendo/app/`, plus updated `STATUS.md`, `HANDOFF.md`, `CHANGELOG.md`, `CHECKLIST.md`, `DECISIONS.md`, `MANUAL_TASKS.md`).
+3. In the "Summary" box bottom-left, type: `Phase 1: Next.js app with 3 topics live`
+4. Click "Commit to main".
+5. Click "Push origin" at the top.
+
+### Step 2 — fix Vercel project settings
+1. Go to https://vercel.com/dashboard
+2. Click on your `tendo` project.
+3. Click the **Settings** tab (top).
+4. Click **General** in the left sidebar.
+5. Scroll down to **Build & Development Settings**:
+   - **Framework Preset:** click the dropdown → choose **Next.js**. (Do not leave on "Other" or "Auto-detect.")
+   - **Root Directory:** click "Edit" → type exactly `app` → click "Continue" or "Save". (This tells Vercel "the Next.js project lives in the `app` subfolder.")
+   - Leave "Include source files outside of the Root Directory in the Build Step" **off** for now. Phase 2 may flip this on.
+6. Scroll down and click **Save**.
+
+### Step 3 — trigger a fresh deploy
+1. Click the **Deployments** tab (top).
+2. Find the latest deployment (it should be from the push you just did, or from earlier).
+3. Click the three-dot menu (⋯) on the right → **Redeploy**.
+4. **Uncheck "Use existing Build Cache"** (per `DEV_JOURNAL.md`: don't trust caches when debugging).
+5. Click **Redeploy**.
+6. Wait ~60 seconds. You should see "✓ Ready" with a green check.
+
+### Step 4 — verify it actually works (the part most people skip)
+Per `DEV_JOURNAL.md` Part 4: a green build log is not a working site. Test these 3 URLs in a fresh browser tab:
+
+1. `https://<your-vercel-url>/` → should show the subject picker with "Mathematics — P7 · 6 themes · 40 sub-topics"
+2. `https://<your-vercel-url>/math/p7` → should show the topic list with Venn diagrams, Roman numerals, Fractions
+3. `https://<your-vercel-url>/math/p7/venn-diagrams-2-events` → should show the full topic with "Take the quiz · 7 questions" at the bottom
+
+If all 3 work: **send me the live URL and we close Phase 1.**
+
+If any 404: don't panic, copy the URL you tried and paste it in chat. We'll fix it.
+
+---
+
 ## MT-003 · (Phase 2) Apply for a free Groq API key
 **Status:** Deferred until Phase 2 · **Blocks:** Content generation pipeline · **Estimated time:** 10 min · **Cost:** Free
 

@@ -1,47 +1,60 @@
 # HANDOFF — for the next session
 
-*Written: 2026-06-24, end of Phase 0*
+*Written: 2026-06-24, end of Phase 1*
 
 ## TL;DR for the next agent
 
 Read in this order:
 1. `AGENT_BRIEF.md` (founder's working style — non-negotiable)
-2. `STATUS.md` (you're at the end of Phase 0; Phase 1 is next)
-3. `docs/spec/PRD.md` (what we're building and why)
-4. `docs/sales/value-prop.md` (the wedge — needed if founder asks sales questions)
-5. `content/curriculum/p7-math.json` (the spine: every topic that will ever exist in v0)
+2. `STATUS.md` (Phase 0 + Phase 1 done locally; only blocker is the redeploy)
+3. `DECISIONS.md` (read DEV-001 through DEV-007 to understand all the choices already made)
+4. `docs/spec/PRD.md` and `docs/spec/content-guidelines.md`
+5. `content/curriculum/p7-math.json` (the spine for Phase 2 content work)
 
 ## Where you're picking up
 
-Phase 0 is **closed**. The workspace skeleton, all foundational docs, and the static sales demo (`preview.html`) are in place. There is no Next.js code yet.
+Phase 1 is **functionally done**:
+- Next.js 15 app in `app/` with 3 routes
+- 3 fully-built topics (Venn diagrams, Roman numerals, Fractions) — notes + 7-question quizzes each
+- localStorage progress tracking via `components/ProgressBadge.tsx` and `components/Quiz.tsx`
+- Build + start verified locally (see STATUS.md "Verified locally" section)
 
-## Next session = Phase 1
+**The only thing left for Phase 1 is the deploy.** That's a founder task. See `MANUAL_TASKS.md` MT-004.
 
-**Goal:** A live URL on Vercel with 3 fully-built topics that a head teacher can click through.
+## Next session = Phase 2
+
+**Goal:** 10+ topics live, content-generation workflow productionised.
 
 **Order of operations:**
 
-1. Show the founder `STATUS.md` and confirm Phase 1 is still the goal.
-2. Trigger **MT-001** (create GitHub repo) — give numbered steps, do not ask for a PAT.
-3. Trigger **MT-002** (connect to Vercel) — same.
-4. Scaffold Next.js 15 + Tailwind + MDX inside `app/` (mirror Sasa's setup; reference `docs/spec/design-philosophy.md`).
-5. Build the 3 routes:
-   - `/` — subject picker (Math only active; English/Science/SST shown but "Coming soon — Phase 2")
-   - `/math/p7` — theme/topic list rendered from `p7-math.json`
-   - `/math/p7/[topic]` — notes (MDX) + quiz (auto-graded MCQ) + "next topic" CTA
-6. Wire localStorage for progress.
-7. Deploy and **fetch the live URL to verify** (per `DEV_JOURNAL.md` Part 4 — don't trust the build log).
-8. Update STATUS / HANDOFF / CHANGELOG. Move on to content generation (Phase 2).
+1. Confirm live URL works (post MT-004). If 404 again, walk through Vercel settings together.
+2. Write `docs/prompts/topic-note.md` and `docs/prompts/quiz.md` — the reusable AI prompts that follow `docs/spec/content-guidelines.md` exactly.
+3. Build a small Node script `scripts/draft-topic.mjs` that:
+   - Reads `content/curriculum/p7-math.json`
+   - Finds sub-topics with `status: todo`
+   - Calls Groq with the prompt
+   - Writes draft to `content/topics/_review-queue/<id>.mdx`
+   - Marks the curriculum entry as `status: drafted`
+4. Founder reviews drafts manually (open file, edit, move to `content/topics/<id>.mdx`).
+5. Update `lib/topics.ts` to read from MDX (or migrate to MDX rendering — defer this decision based on how many topics we have).
+6. Aim for 10 topics by end of session.
 
 ## Watch-outs (from `DEV_JOURNAL.md`)
 
-- **Vercel monorepo gotcha:** if Next.js is inside `app/` not at repo root, set Framework Preset = Next.js explicitly AND enable "Include source files outside of Root Directory" so `content/` is reachable at build.
-- **No em dashes** in user-facing copy. They read as "AI-generated." Use commas, semicolons, or parens.
-- **No design polish before functionality.** Restraint over decoration. Real solid buttons.
-- **Coupled file changes must land together** — call them out at end of any multi-file edit.
+- **Vercel monorepo gotcha:** if Next.js is inside `app/` not at repo root → set Framework Preset = Next.js explicitly AND set Root Directory = `app`. This is the exact thing that caused the 404 the founder hit. MT-004 has the steps.
+- **No em dashes** in user-facing copy. Check every new topic note before merging.
+- **Coupled file changes must land together** — when adding a topic, both `lib/topics.ts` AND any MDX file (Phase 2) must commit in one PR/push.
+- **localStorage runs only in the browser** — use `"use client"` and `typeof window !== "undefined"` checks (already done in `Quiz.tsx`/`ProgressBadge.tsx`).
 
-## Open questions for the founder (ask at session start)
+## Architectural reminders
 
-1. Is the name "Tendo" final, or testing it with a few people first?
-2. Any specific school we're pitching first? That changes the URL we put in MT-001 (`tendo-<schoolname>.vercel.app` is a nice touch).
-3. Confirm: build P7 first, P6 right after? (Per DEV-001.)
+- Phase 1 chose plain CSS over Tailwind (DEV-007). Don't introduce Tailwind without flagging.
+- Phase 1 chose inline `lib/topics.ts` data over MDX (DEV-006). When you switch to MDX in Phase 2, log a DEV-008 explaining when/why.
+- No auth in v0 (DEV-002). Resist the urge to add Clerk/Supabase "while we're at it."
+- The `content/curriculum/p7-math.json` is the canonical syllabus map. If you add a topic in `lib/topics.ts`, check the `id` matches a sub-topic in the JSON.
+
+## Open questions to ask the founder at session start
+
+1. Did the redeploy work? Live URL?
+2. Are you actively pitching schools this week? If yes, which topics matter most to add next?
+3. Any teacher willing to do content review for Phase 2?

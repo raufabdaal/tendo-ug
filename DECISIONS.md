@@ -49,6 +49,26 @@
 
 ---
 
+## DEV-007 · 2026-06-24 · No Tailwind / no UI library — plain CSS in `app/app/globals.css`
+
+**Previous decision:** Sasa uses Tailwind (and that worked).
+**Problem anticipated:** Tailwind would mean ~50 more npm packages, a `tailwind.config.ts`, a `postcss.config.mjs`, more things that can version-mismatch, and a `className` soup that's harder for a vibe coder to scan. Tendo's mandate is "least complex, most effective." We don't need responsive grid magic for a single-column 760px text-first app.
+**New decision:** All styling in one file (`app/app/globals.css`), CSS custom properties for the design tokens, semantic class names that match what's in `docs/spec/design-philosophy.md`.
+**Reasoning:** Smaller install, faster builds, fewer surprises, easier for the founder to read and tweak directly. If/when we need atomic utilities at scale, we add Tailwind and log a reversal.
+**Tracked across:** `app/package.json` (no tailwind dependency), `app/app/globals.css`, all `.tsx` files (no `className="grid grid-cols..."`).
+
+---
+
+## DEV-006 · 2026-06-24 · Phase 1 content lives in `lib/topics.ts`, not MDX
+
+**Previous decision (from Sasa):** Sasa uses MDX for content; we initially planned the same for Tendo (see `content/topics/` folder).
+**Problem anticipated:** To ship Phase 1 in one session, we'd need either (a) a working MDX pipeline plus 3 hand-authored MDX files, or (b) typed TypeScript data plus 3 entries. (b) is dramatically faster and lets us validate the UX without committing to a content schema before we know what feels right.
+**New decision:** All Phase 1 topic content lives in `app/lib/topics.ts` as a `Topic[]` constant with full type safety. Phase 2 will migrate to MDX once we have 5+ topics and know what shape really fits.
+**Reasoning:** Defers a decision we don't have enough data for. Type-checking gives us compile-time errors if a topic is malformed. The schema in `lib/topics.ts` is the source of truth for what an MDX frontmatter will eventually need to express.
+**Tracked across:** `app/lib/topics.ts`, `app/app/math/p7/[topic]/page.tsx`, `content/topics/` (empty, awaiting Phase 2).
+
+---
+
 ## DEV-005 · 2026-06-24 · Math only in v0; other subjects "Coming soon — Phase 2"
 
 **Previous decision:** Founder originally implied multi-subject coverage for the secondary platform (Sasa).

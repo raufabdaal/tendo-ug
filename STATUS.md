@@ -1,8 +1,19 @@
 # STATUS — Tendo
 
-*Updated: 2026-06-24, end of Phase 0 session*
+*Updated: 2026-06-24, end of Phase 1 session*
 
-## Where we are: **Phase 0 — Foundation & sales materials (DONE)**
+## Where we are: **Phase 1 — Next.js app shell with 3 topics live (DONE LOCALLY · needs deploy)**
+
+Phase 0 (foundation + sales pack + preview.html) is also done. See CHANGELOG for the full session log.
+
+### Verified locally (per DEV_JOURNAL.md Part 4):
+
+- `npm install` succeeds (36 packages, ~16s)
+- `npm run build` succeeds — 8 pages prerendered, ~110kB First Load JS per route
+- `npm run start` serves all 5 real routes with HTTP 200:
+  - `/` (home) · `/math/p7` (topic list) · `/math/p7/venn-diagrams-2-events` · `/math/p7/roman-numerals-mm` · `/math/p7/fractions-core`
+- 404 path correctly returns HTTP 404
+- Content spot-checks pass (brand, worked example, quiz button, "Akello" mango problem all present in rendered HTML)
 
 ## What's done ✅
 
@@ -49,4 +60,4 @@ See `DECISIONS.md`:
 
 ## Cost so far
 
-**UGX 0 / USD 0.** No accounts opened, no recurring spend.
+**UGX 0 / USD 0.** Vercel Hobby + free GitHub. No recurring spend.
