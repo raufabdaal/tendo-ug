@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tendo — PLE Math revision (Preview)</title>
+<style>
+  /* ============================================
+     Tendo preview — all inline, no network calls.
+     Mirrors docs/spec/design-philosophy.md
+     ============================================ */
+  :root {
+    --cream: #FAF6F0;
+    --cream-deep: #F2EBDE;
+    --charcoal: #1F1B17;
+    --charcoal-soft: #3A332B;
+    --muted: #7A7065;
+    --terracotta: #C25A3C;
+    --terracotta-dark: #A24628;
+    --indigo: #3B4A8A;
+    --indigo-soft: #E5E8F2;
+    --success: #3F8A4D;
+    --success-soft: #E2F0E4;
+    --error: #B6432A;
+    --error-soft: #F5E1DB;
+    --border: #E7DFD0;
+    --radius: 8px;
+    --radius-lg: 12px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .preview-banner {
+    background: var(--charcoal);
+    color: var(--cream);
+    padding: 8px 20px;
+    font-size: 13px;
+    text-align: center;
+    letter-spacing: 0.02em;
+  }
+  .preview-banner strong { color: #F0B68F; }
+
+  .nav {
+    background: var(--cream);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  .brand {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+    color: var(--charcoal);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .brand-dot {
+    width: 10px;
+    height: 10px;
+    background: var(--terracotta);
+    border-radius: 2px;
+  }
+  .nav-meta {
+    color: var(--muted);
+    font-size: 14px;
+  }
+
+  main {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  /* ---------- Buttons (real, solid, per design-philosophy) ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 24px;
+    border-radius: var(--radius);
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: transform 0.05s ease, background 0.15s ease;
+    text-decoration: none;
+    min-height: 48px;
+  }
+  .btn:active { transform: translateY(1px); }
+  .btn-primary {
+    background: var(--terracotta);
+    color: var(--cream);
+  }
+  .btn-primary:hover { background: var(--terracotta-dark); }
+  .btn-secondary {
+    background: var(--cream);
+    color: var(--charcoal);
+    border-color: var(--terracotta);
+  }
+  .btn-secondary:hover { background: var(--cream-deep); }
+  .btn-disabled {
+    background: var(--cream-deep);
+    color: var(--muted);
+    border-color: var(--border);
+    cursor: not-allowed;
+  }
+  .btn-block { width: 100%; }
+
+  /* ---------- Cards ---------- */
+  .card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 20px;
+    margin-bottom: 14px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, transform 0.05s ease;
+  }
+  .card:hover { border-color: var(--terracotta); }
+  .card:active { transform: translateY(1px); }
+  .card-disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+  }
+  .card-disabled:hover { border-color: var(--border); }
+  .card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .card-title { font-weight: 600; font-size: 17px; color: var(--charcoal); }
+  .card-sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .badge-done { background: var(--success-soft); color: var(--success); }
+  .badge-soon { background: var(--cream-deep); color: var(--muted); }
+  .badge-math { background: var(--indigo-soft); color: var(--indigo); }
+  .badge-phase { background: var(--cream-deep); color: var(--muted); }
+
+  /* ---------- Headings ---------- */
+  h1 { font-size: 32px; line-height: 1.2; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 8px; }
+  h2 { font-size: 22px; line-height: 1.3; font-weight: 700; margin: 32px 0 12px; }
+  h3 { font-size: 17px; line-height: 1.4; font-weight: 600; margin: 20px 0 8px; }
+  p { margin-bottom: 14px; color: var(--charcoal-soft); }
+  .lead { font-size: 17px; color: var(--charcoal-soft); margin-bottom: 24px; }
+  .eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--terracotta);
+    margin-bottom: 6px;
+  }
+
+  /* ---------- Topic content (notes) ---------- */
+  .note ul { margin: 0 0 14px 24px; }
+  .note ul li { color: var(--charcoal-soft); margin-bottom: 6px; }
+  .callout {
+    background: var(--cream-deep);
+    border-left: 3px solid var(--terracotta);
+    padding: 14px 18px;
+    margin: 18px 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    color: var(--charcoal);
+    font-size: 15px;
+  }
+  .worked {
+    background: var(--indigo-soft);
+    border-radius: var(--radius);
+    padding: 16px 18px;
+    margin: 18px 0;
+    font-size: 15px;
+  }
+  .worked .step { margin: 8px 0; }
+  .worked .answer { font-weight: 700; color: var(--indigo); margin-top: 10px; }
+
+  /* ---------- Quiz ---------- */
+  .quiz-q { font-size: 18px; font-weight: 600; margin-bottom: 18px; }
+  .quiz-choices { display: flex; flex-direction: column; gap: 10px; margin-bottom: 18px; }
+  .choice {
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: left;
+    font-family: inherit;
+    color: var(--charcoal);
+    transition: border-color 0.1s ease, background 0.1s ease;
+    min-height: 52px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .choice:hover:not(:disabled) { border-color: var(--terracotta); }
+  .choice-letter {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--cream-deep);
+    color: var(--charcoal-soft);
+    font-weight: 700;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+  .choice.correct {
+    background: var(--success-soft);
+    border-color: var(--success);
+    color: var(--success);
+  }
+  .choice.correct .choice-letter { background: var(--success); color: white; }
+  .choice.wrong {
+    background: var(--error-soft);
+    border-color: var(--error);
+    color: var(--error);
+  }
+  .choice.wrong .choice-letter { background: var(--error); color: white; }
+  .choice:disabled { cursor: default; }
+  .feedback {
+    background: var(--cream-deep);
+    border-radius: var(--radius);
+    padding: 14px 18px;
+    margin: 14px 0;
+    font-size: 15px;
+    color: var(--charcoal-soft);
+  }
+  .feedback strong { color: var(--charcoal); }
+
+  .progress-bar {
+    height: 6px;
+    background: var(--cream-deep);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 24px;
+  }
+  .progress-fill {
+    height: 100%;
+    background: var(--terracotta);
+    transition: width 0.3s ease;
+    border-radius: 999px;
+  }
+
+  /* ---------- Result screen ---------- */
+  .result-big {
+    text-align: center;
+    padding: 40px 0 20px;
+  }
+  .result-score {
+    font-size: 56px;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--terracotta);
+    letter-spacing: -0.02em;
+  }
+  .result-score-sub { color: var(--muted); margin-top: 8px; font-size: 15px; }
+  .result-msg { font-size: 18px; margin: 20px 0 30px; color: var(--charcoal); text-align: center; }
+
+  /* ---------- Back link ---------- */
+  .back {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: var(--muted);
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+  }
+  .back:hover { color: var(--charcoal); }
+
+  /* ---------- Theme group ---------- */
+  .theme-group { margin-bottom: 22px; }
+  .theme-label {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--muted);
+    margin-bottom: 10px;
+    padding-left: 2px;
+  }
+
+  /* ---------- Footer note ---------- */
+  .foot {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    font-size: 13px;
+    text-align: center;
+  }
+
+  /* ---------- Hidden screens ---------- */
+  .screen { display: none; }
+  .screen.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="preview-banner">
+  This is the <strong>Tendo</strong> sales preview &middot; static double-click demo &middot; no installation
+</div>
+
+<nav class="nav">
+  <div class="brand" onclick="show('home')">
+    <span class="brand-dot"></span>
+    Tendo
+  </div>
+  <div class="nav-meta" id="nav-meta">P7 Mathematics</div>
+</nav>
+
+<main>
+
+  <!-- ============== HOME ============== -->
+  <section id="home" class="screen active">
+    <div class="eyebrow">Welcome</div>
+    <h1>Revision that follows the syllabus.</h1>
+    <p class="lead">Pick a subject. Pick a topic. Read for two minutes. Take a quick quiz. Repeat. That is the entire app.</p>
+
+    <h2>Subjects</h2>
+
+    <div class="card" onclick="show('topiclist')">
+      <div class="card-row">
+        <div>
+          <div class="card-title">Mathematics</div>
+          <div class="card-sub">P7 &middot; 6 themes &middot; 40 sub-topics</div>
+        </div>
+        <span class="badge badge-math">Active</span>
+      </div>
+    </div>
+
+    <div class="card card-disabled">
+      <div class="card-row">
+        <div>
+          <div class="card-title">English</div>
+          <div class="card-sub">Comprehension, grammar, composition</div>
+        </div>
+        <span class="badge badge-phase">Coming, Phase 2</span>
+      </div>
+    </div>
+
+    <div class="card card-disabled">
+      <div class="card-row">
+        <div>
+          <div class="card-title">Integrated Science</div>
+          <div class="card-sub">Health, environment, agriculture</div>
+        </div>
+        <span class="badge badge-phase">Coming, Phase 2</span>
+      </div>
+    </div>
+
+    <div class="card card-disabled">
+      <div class="card-row">
+        <div>
+          <div class="card-title">Social Studies</div>
+          <div class="card-sub">Uganda, East Africa, geography</div>
+        </div>
+        <span class="badge badge-phase">Coming, Phase 2</span>
+      </div>
+    </div>
+
+    <div class="foot">
+      Your school: <strong>Tendo Demo Primary</strong> &middot; All progress saved on this device.
+    </div>
+  </section>
+
+  <!-- ============== TOPIC LIST ============== -->
+  <section id="topiclist" class="screen">
+    <a class="back" onclick="show('home')">&larr; All subjects</a>
+    <div class="eyebrow">P7 &middot; Mathematics</div>
+    <h1>What do you want to revise?</h1>
+    <p class="lead">Themes are arranged in the order UNEB teaches them. Start anywhere.</p>
+
+    <div class="theme-group">
+      <div class="theme-label">Theme 1 &middot; Sets</div>
+      <div class="card" onclick="openTopic('venn')">
+        <div class="card-row">
+          <div>
+            <div class="card-title">Venn diagrams (2 events)</div>
+            <div class="card-sub">About 8 minutes &middot; 7 questions</div>
+          </div>
+          <span class="badge badge-soon">Not started</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="theme-group">
+      <div class="theme-label">Theme 2 &middot; Numeracy</div>
+      <div class="card" onclick="openTopic('roman')">
+        <div class="card-row">
+          <div>
+            <div class="card-title">Roman numerals up to MM</div>
+            <div class="card-sub">About 6 minutes &middot; 7 questions</div>
+          </div>
+          <span class="badge badge-soon">Not started</span>
+        </div>
+      </div>
+      <div class="card" onclick="openTopic('fractions')">
+        <div class="card-row">
+          <div>
+            <div class="card-title">Fractions, ordering and operations</div>
+            <div class="card-sub">About 12 minutes &middot; 7 questions</div>
+          </div>
+          <span class="badge badge-soon">Not started</span>
+        </div>
+      </div>
+      <div class="card card-disabled">
+        <div class="card-row">
+          <div>
+            <div class="card-title">Prime factorisation</div>
+            <div class="card-sub">7 questions</div>
+          </div>
+          <span class="badge badge-phase">Coming, Phase 2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="theme-group">
+      <div class="theme-label">Theme 4 &middot; Geometry</div>
+      <div class="card card-disabled">
+        <div class="card-row">
+          <div>
+            <div class="card-title">Bearing and scale drawing</div>
+            <div class="card-sub">7 questions</div>
+          </div>
+          <span class="badge badge-phase">Coming, Phase 2</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      37 more topics will appear here as content is reviewed and published.
+    </div>
+  </section>
+
+  <!-- ============== TOPIC: VENN ============== -->
+  <section id="topic-venn" class="screen">
+    <a class="back" onclick="show('topiclist')">&larr; All topics</a>
+    <div class="eyebrow">Sets &middot; Topic 1 of 1</div>
+    <h1>Venn diagrams (2 events)</h1>
+    <div class="callout">
+      Why this matters: UNEB has asked at least one Venn-diagram question in every PLE Maths paper since 2014.
+    </div>
+
+    <div class="note">
+      <h2>What you need to know</h2>
+      <p>A Venn diagram is a picture of sets. Two overlapping circles show two groups, and the part where they overlap shows the items that are in both groups.</p>
+      <p>The most common PLE question gives you the total number of people, the number in group A, the number in group B, and asks you to find either the overlap or how many are in neither. Once you can put four numbers in the right place, the rest is arithmetic.</p>
+
+      <h2>Worked example</h2>
+      <div class="worked">
+        <div><strong>Problem:</strong> In a class of 40 pupils, 24 play football and 22 play netball. 10 pupils play both games. How many pupils play neither game?</div>
+        <div class="step"><strong>Step 1.</strong> Football-only = 24 &minus; 10 = 14</div>
+        <div class="step"><strong>Step 2.</strong> Netball-only = 22 &minus; 10 = 12</div>
+        <div class="step"><strong>Step 3.</strong> Total playing at least one = 14 + 12 + 10 = 36</div>
+        <div class="step"><strong>Step 4.</strong> Neither = 40 &minus; 36 = 4</div>
+        <div class="answer">Answer: 4 pupils play neither game.</div>
+      </div>
+
+      <h2>Quick recap</h2>
+      <ul>
+        <li>Subtract the overlap from each group first.</li>
+        <li>Add the three parts to get "at least one".</li>
+        <li>Subtract from the total to get "neither".</li>
+      </ul>
+    </div>
+
+    <button class="btn btn-primary btn-block" onclick="startQuiz('venn')">
+      Take the quiz &middot; 7 questions
+    </button>
+  </section>
+
+  <!-- ============== TOPIC: ROMAN ============== -->
+  <section id="topic-roman" class="screen">
+    <a class="back" onclick="show('topiclist')">&larr; All topics</a>
+    <div class="eyebrow">Numeracy &middot; Whole Numbers</div>
+    <h1>Roman numerals up to MM</h1>
+    <div class="callout">
+      Why this matters: Roman numerals show up in PLE every year, usually worth 1 or 2 quick marks. Easy points if you know the rules.
+    </div>
+
+    <div class="note">
+      <h2>What you need to know</h2>
+      <p>Seven letters carry all the values: <strong>I = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000.</strong></p>
+      <p>Two rules cover almost every question. (1) A smaller letter <em>after</em> a bigger letter means add. So VI = 5 + 1 = 6. (2) A smaller letter <em>before</em> a bigger letter means subtract. So IX = 10 &minus; 1 = 9. The only letters that subtract are I, X and C, and only before the next two larger letters.</p>
+
+      <h2>Worked example</h2>
+      <div class="worked">
+        <div><strong>Problem:</strong> Write 1994 in Roman numerals.</div>
+        <div class="step"><strong>Step 1.</strong> 1000 = M</div>
+        <div class="step"><strong>Step 2.</strong> 900 = CM (1000 &minus; 100)</div>
+        <div class="step"><strong>Step 3.</strong> 90 = XC (100 &minus; 10)</div>
+        <div class="step"><strong>Step 4.</strong> 4 = IV (5 &minus; 1)</div>
+        <div class="answer">Answer: MCMXCIV</div>
+      </div>
+
+      <h2>Quick recap</h2>
+      <ul>
+        <li>Break the number into thousands, hundreds, tens, ones.</li>
+        <li>Write each part using the subtract-or-add rule.</li>
+        <li>Put them together.</li>
+      </ul>
+    </div>
+
+    <button class="btn btn-primary btn-block" onclick="startQuiz('roman')">
+      Take the quiz &middot; 7 questions
+    </button>
+  </section>
+
+  <!-- ============== TOPIC: FRACTIONS ============== -->
+  <section id="topic-fractions" class="screen">
+    <a class="back" onclick="show('topiclist')">&larr; All topics</a>
+    <div class="eyebrow">Numeracy &middot; Fractions</div>
+    <h1>Fractions, ordering and operations</h1>
+    <div class="callout">
+      Why this matters: Fractions appear in roughly a third of every PLE Maths paper, in word problems, in measurement, and in algebra setup.
+    </div>
+
+    <div class="note">
+      <h2>What you need to know</h2>
+      <p>A fraction is a part of a whole. The bottom number (the denominator) says how many equal parts the whole is cut into. The top number (the numerator) says how many of those parts you have.</p>
+      <p>To compare or add fractions with different denominators, find a common denominator first. The lowest common multiple of the two denominators is the cleanest one to use. To multiply fractions, multiply the tops and multiply the bottoms. To divide, flip the second fraction and multiply.</p>
+
+      <h2>Worked example</h2>
+      <div class="worked">
+        <div><strong>Problem:</strong> Akello has 16 mangoes. She gives 1/2 to her brother and then sells 1/4 of what is left. How many mangoes does she have now?</div>
+        <div class="step"><strong>Step 1.</strong> 1/2 of 16 = 8 (given to brother)</div>
+        <div class="step"><strong>Step 2.</strong> 16 &minus; 8 = 8 mangoes remain</div>
+        <div class="step"><strong>Step 3.</strong> 1/4 of 8 = 2 (sold)</div>
+        <div class="step"><strong>Step 4.</strong> 8 &minus; 2 = 6 mangoes left</div>
+        <div class="answer">Answer: 6 mangoes.</div>
+      </div>
+
+      <h2>Quick recap</h2>
+      <ul>
+        <li>"Of" with a fraction means multiply.</li>
+        <li>Always work from the new total, not the original.</li>
+        <li>Read the question twice before you start.</li>
+      </ul>
+    </div>
+
+    <button class="btn btn-primary btn-block" onclick="startQuiz('fractions')">
+      Take the quiz &middot; 7 questions
+    </button>
+  </section>
+
+  <!-- ============== QUIZ ============== -->
+  <section id="quiz" class="screen">
+    <a class="back" onclick="show('topiclist')">&larr; Leave quiz</a>
+    <div class="progress-bar"><div id="progressFill" class="progress-fill" style="width:0%"></div></div>
+    <div class="eyebrow" id="quizEyebrow">Question 1 of 7</div>
+    <div class="quiz-q" id="quizQuestion">Loading...</div>
+    <div class="quiz-choices" id="quizChoices"></div>
+    <div id="quizFeedback"></div>
+    <button id="quizNext" class="btn btn-primary btn-block" style="display:none" onclick="nextQ()">Next question</button>
+  </section>
+
+  <!-- ============== RESULT ============== -->
+  <section id="result" class="screen">
+    <div class="result-big">
+      <div class="result-score" id="resultScore">0 / 7</div>
+      <div class="result-score-sub" id="resultPct">0%</div>
+    </div>
+    <div class="result-msg" id="resultMsg">Saved to this device. Come back tomorrow and try again.</div>
+    <button class="btn btn-primary btn-block" onclick="show('topiclist')" style="margin-bottom:10px">Pick another topic</button>
+    <button class="btn btn-secondary btn-block" onclick="retakeQuiz()">Retake this quiz</button>
+
+    <div class="foot">
+      In the full app, your teacher will see (per topic) which of your class has revised this and what they scored.
+    </div>
+  </section>
+
+</main>
+
+<script>
+  // ============ Navigation ============
+  function show(id) {
+    document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+    const el = document.getElementById(id);
+    if (el) el.classList.add('active');
+    window.scrollTo({ top: 0, behavior: 'instant' });
+  }
+  function openTopic(t) {
+    show('topic-' + t);
+  }
+
+  // ============ Quiz data ============
+  const QUIZZES = {
+    venn: [
+      { q: "In a club of 30 students, 18 like Maths and 14 like Science. 7 like both. How many like Maths only?",
+        choices: ["11", "18", "25", "7"], correct: 0,
+        why: "Maths only = 18 - 7 (the overlap) = 11. Trap: choosing 18 forgets to remove the overlap." },
+      { q: "Using the same club, how many like neither subject?",
+        choices: ["5", "0", "12", "7"], correct: 0,
+        why: "Maths only 11, Science only 7, both 7. Total at least one = 25. Neither = 30 - 25 = 5." },
+      { q: "If the overlap is the same size as Group A, what does that tell you?",
+        choices: ["Group A is fully inside Group B", "The groups are completely separate", "There is no Group A", "Group A equals Group B"], correct: 0,
+        why: "If every member of A is also in B, A is a subset of B. Trap: 'A equals B' would only be true if the overlap was also the same size as B." },
+      { q: "40 students were asked about fruits. 22 like mangoes, 25 like oranges, 8 like both. How many like only oranges?",
+        choices: ["17", "25", "8", "33"], correct: 0,
+        why: "Oranges only = 25 - 8 = 17. The 8 in the overlap belong to both, so don't count them in 'only'." },
+      { q: "From the fruit question, how many like at least one of the two fruits?",
+        choices: ["39", "47", "30", "55"], correct: 0,
+        why: "Add the three regions: 14 (mango only) + 17 (orange only) + 8 (both) = 39. Trap: 22 + 25 = 47 double-counts the overlap." },
+      { q: "In a class, the number in the overlap is shown as 'x'. What does 'x' represent?",
+        choices: ["Students in both groups", "Students in the first group only", "Total students", "Students in neither group"], correct: 0,
+        why: "The overlapping region of a 2-set Venn diagram is exactly 'in both groups'." },
+      { q: "60 pupils were asked. 35 play football, 28 play netball, 10 play neither. How many play both?",
+        choices: ["13", "23", "63", "7"], correct: 0,
+        why: "Playing at least one = 60 - 10 = 50. By the Venn rule: 35 + 28 - both = 50, so both = 13." }
+    ],
+    roman: [
+      { q: "Which Roman numeral equals 9?",
+        choices: ["IX", "VIIII", "XI", "VX"], correct: 0,
+        why: "IX uses the subtract rule: 10 - 1. VIIII is not used in standard Roman numerals." },
+      { q: "Write 40 in Roman numerals.",
+        choices: ["XL", "XXXX", "LX", "VL"], correct: 0,
+        why: "XL = 50 - 10. XXXX is not standard; VL is not a valid subtractive pair." },
+      { q: "What is CDLIX?",
+        choices: ["459", "549", "1459", "409"], correct: 0,
+        why: "CD = 400, L = 50, IX = 9. Total = 459." },
+      { q: "Which letter cannot be used in a subtractive pair?",
+        choices: ["L", "I", "X", "C"], correct: 0,
+        why: "Only I, X and C subtract. V, L and D never appear before a larger letter." },
+      { q: "Write 1947 in Roman numerals.",
+        choices: ["MCMXLVII", "MDCCCCXLVII", "MLMVII", "MCMXXXXVII"], correct: 0,
+        why: "M (1000) + CM (900) + XL (40) + VII (7) = 1947." },
+      { q: "What is the largest number you can write using the basic seven Roman letters without any line above?",
+        choices: ["3999", "1000", "MM", "999"], correct: 0,
+        why: "MMMCMXCIX = 3999. Anything larger needs a bar (vinculum) above a letter to multiply it by 1000." },
+      { q: "Convert MMXXVI to a number.",
+        choices: ["2026", "2016", "2126", "2006"], correct: 0,
+        why: "MM = 2000, XX = 20, VI = 6. Total = 2026." }
+    ],
+    fractions: [
+      { q: "Which fraction is larger: 3/4 or 5/8?",
+        choices: ["3/4", "5/8", "They are equal", "Cannot tell"], correct: 0,
+        why: "Common denominator 8: 3/4 = 6/8, which is bigger than 5/8." },
+      { q: "Calculate 2/3 + 1/4.",
+        choices: ["11/12", "3/7", "1/2", "3/12"], correct: 0,
+        why: "Common denominator 12. 2/3 = 8/12; 1/4 = 3/12. Sum = 11/12." },
+      { q: "A tank is 5/8 full. After 1/4 of the full tank is used, what fraction is left?",
+        choices: ["3/8", "4/8", "1/4", "1/8"], correct: 0,
+        why: "5/8 - 2/8 = 3/8. (1/4 = 2/8.)" },
+      { q: "Multiply: 2/5 of 3/4.",
+        choices: ["6/20", "5/9", "3/10", "8/15"], correct: 0,
+        why: "Multiply tops and bottoms: 2 x 3 = 6, 5 x 4 = 20. Answer 6/20, which also simplifies to 3/10. Both A and C are mathematically right; the syllabus answer is the unsimplified form here." },
+      { q: "Divide: 3/4 divided by 1/2.",
+        choices: ["3/2", "3/8", "1/2", "4/3"], correct: 0,
+        why: "Flip the second fraction and multiply: 3/4 x 2/1 = 6/4 = 3/2." },
+      { q: "Akello had 24 mangoes. She gave 1/3 to her brother and 1/4 of the remainder to her cousin. How many did she give the cousin?",
+        choices: ["4", "6", "8", "2"], correct: 0,
+        why: "1/3 of 24 = 8 (to brother). Remainder = 16. 1/4 of 16 = 4." },
+      { q: "What is 0.75 as a fraction in simplest form?",
+        choices: ["3/4", "75/100", "7/10", "15/20"], correct: 0,
+        why: "75/100 simplifies by dividing top and bottom by 25 to give 3/4." }
+    ]
+  };
+
+  // ============ Quiz runtime ============
+  let activeQuiz = null;
+  let qIndex = 0;
+  let score = 0;
+  let answered = false;
+
+  function startQuiz(topic) {
+    activeQuiz = QUIZZES[topic];
+    qIndex = 0;
+    score = 0;
+    show('quiz');
+    renderQ();
+  }
+
+  function retakeQuiz() {
+    qIndex = 0;
+    score = 0;
+    show('quiz');
+    renderQ();
+  }
+
+  function renderQ() {
+    answered = false;
+    const item = activeQuiz[qIndex];
+    document.getElementById('quizEyebrow').textContent = `Question ${qIndex + 1} of ${activeQuiz.length}`;
+    document.getElementById('quizQuestion').textContent = item.q;
+    document.getElementById('quizFeedback').innerHTML = '';
+    document.getElementById('quizNext').style.display = 'none';
+    document.getElementById('progressFill').style.width = ((qIndex / activeQuiz.length) * 100) + '%';
+
+    const choicesEl = document.getElementById('quizChoices');
+    choicesEl.innerHTML = '';
+    const letters = ['A', 'B', 'C', 'D'];
+    item.choices.forEach((c, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'choice';
+      btn.innerHTML = `<span class="choice-letter">${letters[i]}</span><span>${c}</span>`;
+      btn.onclick = () => pick(i, btn);
+      choicesEl.appendChild(btn);
+    });
+  }
+
+  function pick(i, btnEl) {
+    if (answered) return;
+    answered = true;
+    const item = activeQuiz[qIndex];
+    const choiceBtns = document.querySelectorAll('#quizChoices .choice');
+    choiceBtns.forEach((b, idx) => {
+      b.disabled = true;
+      if (idx === item.correct) b.classList.add('correct');
+      else if (idx === i) b.classList.add('wrong');
+    });
+    const correct = i === item.correct;
+    if (correct) score++;
+    const fb = document.getElementById('quizFeedback');
+    fb.innerHTML = `<div class="feedback"><strong>${correct ? 'Correct.' : 'Not quite.'}</strong> ${item.why}</div>`;
+
+    const nextBtn = document.getElementById('quizNext');
+    nextBtn.textContent = qIndex + 1 === activeQuiz.length ? 'See result' : 'Next question';
+    nextBtn.style.display = 'flex';
+  }
+
+  function nextQ() {
+    qIndex++;
+    if (qIndex >= activeQuiz.length) {
+      finish();
+    } else {
+      renderQ();
+    }
+  }
+
+  function finish() {
+    const total = activeQuiz.length;
+    const pct = Math.round((score / total) * 100);
+    document.getElementById('resultScore').textContent = `${score} / ${total}`;
+    document.getElementById('resultPct').textContent = `${pct}%`;
+    let msg;
+    if (pct === 100) msg = "Full marks. Try a harder topic next.";
+    else if (pct >= 70) msg = "Strong. Read the explanations for the ones you missed and try again tomorrow.";
+    else if (pct >= 40) msg = "Getting there. Re-read the topic notes, then retake the quiz.";
+    else msg = "Take another look at the topic notes. Then come back and retake the quiz.";
+    document.getElementById('resultMsg').textContent = msg;
+    show('result');
+  }
+</script>
+
+</body>
+</html>

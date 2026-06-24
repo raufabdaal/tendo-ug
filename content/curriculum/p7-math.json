@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "country": "Uganda",
+    "level": "Primary 7 (P.7)",
+    "subject": "Mathematics",
+    "examBody": "UNEB",
+    "exam": "PLE (Primary Leaving Examination)",
+    "source": "NCDC P7 Mathematics Curriculum, structured into 6 themes / 11 topics / 40 sub-topics",
+    "lastReviewed": "2026-06-24",
+    "notes": "P6 Math is ~80% overlap with this list (no Standard Form, no Algebra inequalities, lighter Geometry construction). P6 mapping will live in p6-math.json once Phase 1 ships."
+  },
+  "themes": [
+    {
+      "id": "theme-1-sets",
+      "name": "Sets",
+      "term": "I",
+      "topics": [
+        {
+          "id": "set-concepts",
+          "name": "Set Concepts",
+          "subTopics": [
+            { "id": "finite-infinite-sets", "name": "Finite and infinite sets", "status": "todo" },
+            { "id": "subsets", "name": "Subsets", "status": "todo" },
+            { "id": "venn-diagrams-2-events", "name": "Venn diagrams (2 events)", "status": "todo" },
+            { "id": "probability-intro", "name": "Probability (introduction)", "status": "todo" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theme-2-numeracy",
+      "name": "Numeracy",
+      "term": "I",
+      "topics": [
+        {
+          "id": "whole-numbers",
+          "name": "Whole Numbers",
+          "subTopics": [
+            { "id": "numbers-up-to-99-999-999", "name": "Numbers up to 99,999,999", "status": "todo" },
+            { "id": "roman-numerals-mm", "name": "Roman numerals up to MM (2000)", "status": "todo" },
+            { "id": "bases", "name": "Bases (non-decimal number systems)", "status": "todo" }
+          ]
+        },
+        {
+          "id": "operations-on-whole-numbers",
+          "name": "Operations on Whole Numbers",
+          "subTopics": [
+            { "id": "four-basic-operations", "name": "The four basic operations (+ − × ÷)", "status": "todo" },
+            { "id": "expanded-form-indices", "name": "Expanded form using indices", "status": "todo" },
+            { "id": "standard-form", "name": "Standard form (scientific notation)", "status": "todo" },
+            { "id": "prime-factorisation", "name": "Prime factorisation", "status": "todo" }
+          ]
+        },
+        {
+          "id": "patterns-and-sequences",
+          "name": "Patterns and Sequences",
+          "subTopics": [
+            { "id": "tests-of-divisibility", "name": "Tests of divisibility", "status": "todo" },
+            { "id": "number-patterns", "name": "Number patterns and sequences", "status": "todo" }
+          ]
+        },
+        {
+          "id": "fractions",
+          "name": "Fractions",
+          "term": "II",
+          "subTopics": [
+            { "id": "fractions-core", "name": "Fractions (ops, ordering, application)", "status": "todo" },
+            { "id": "decimals", "name": "Decimals", "status": "todo" },
+            { "id": "proportion-percentages", "name": "Proportion and percentages", "status": "todo" }
+          ]
+        },
+        {
+          "id": "integers",
+          "name": "Integers",
+          "term": "II",
+          "subTopics": [
+            { "id": "integers-core", "name": "Integers (positive, negative, zero; operations)", "status": "todo" },
+            { "id": "clock-arithmetic", "name": "Clock arithmetic (modular/finite systems)", "status": "todo" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theme-3-graphs-data",
+      "name": "Interpretation of Graphs and Data",
+      "term": "II",
+      "topics": [
+        {
+          "id": "data-handling",
+          "name": "Data Handling",
+          "subTopics": [
+            { "id": "pie-charts-travel-graphs", "name": "Pie charts and travel graphs", "status": "todo" },
+            { "id": "coordinates", "name": "Graphs of ordered pairs (coordinates)", "status": "todo" },
+            { "id": "central-tendency-range", "name": "Measures of central tendency and range (mean, median, mode)", "status": "todo" },
+            { "id": "probability-of-numbers", "name": "Probability of numbers", "status": "todo" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theme-4-geometry",
+      "name": "Geometry",
+      "term": "II",
+      "topics": [
+        {
+          "id": "construction",
+          "name": "Construction",
+          "subTopics": [
+            { "id": "parallel-skew-lines", "name": "Parallel and skew lines", "status": "todo" },
+            { "id": "line-segments-angles", "name": "Line segments and angles", "status": "todo" },
+            { "id": "simple-polygons", "name": "Simple polygons", "status": "todo" },
+            { "id": "regular-polygons", "name": "Regular polygons", "status": "todo" },
+            { "id": "bearing-scale-drawing", "name": "Bearing and scale drawing", "status": "todo" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theme-5-measurement",
+      "name": "Measurement",
+      "term": "II-III",
+      "topics": [
+        {
+          "id": "time",
+          "name": "Time",
+          "subTopics": [
+            { "id": "12-24-hour-clocks", "name": "12-hour and 24-hour clocks", "status": "todo" },
+            { "id": "timetables", "name": "Timetables (travel, class, work)", "status": "todo" }
+          ]
+        },
+        {
+          "id": "length-mass-capacity",
+          "name": "Length, Mass and Capacity",
+          "term": "III",
+          "subTopics": [
+            { "id": "length", "name": "Length", "status": "todo" },
+            { "id": "perimeter", "name": "Perimeter", "status": "todo" },
+            { "id": "area", "name": "Area", "status": "todo" },
+            { "id": "volume", "name": "Volume", "status": "todo" },
+            { "id": "capacity", "name": "Capacity", "status": "todo" },
+            { "id": "mass", "name": "Mass and weight", "status": "todo" },
+            { "id": "money", "name": "Money (profit, loss, discount, interest)", "status": "todo" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "theme-6-algebra",
+      "name": "Algebra",
+      "term": "III",
+      "topics": [
+        {
+          "id": "algebra",
+          "name": "Algebra",
+          "subTopics": [
+            { "id": "algebraic-expressions", "name": "Algebraic expressions", "status": "todo" },
+            { "id": "substitution", "name": "Substitution", "status": "todo" },
+            { "id": "equations", "name": "Equations", "status": "todo" },
+            { "id": "inequalities", "name": "Inequalities and solution sets", "status": "todo" },
+            { "id": "algebra-real-life", "name": "Algebra in real-life situations", "status": "todo" }
+          ]
+        }
+      ]
+    }
+  ]
+}
