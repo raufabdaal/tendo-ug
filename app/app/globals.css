@@ -295,7 +295,10 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
   gap: 12px;
   background: var(--cream-deep);
   border-radius: var(--radius);
+  padding: 14px 18px;
   margin: 18px 0 28px;
+  font-size: 15px;
+}
 .meta-label { color: var(--muted); font-weight: 600; margin-right: 4px; }
 
 .band {
