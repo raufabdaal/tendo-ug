@@ -1,8 +1,28 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TOPICS, getTopic } from "@/lib/topics";
+import { getBank } from "@/lib/question-bank";
 import Quiz from "@/components/Quiz";
 import TopicTabs from "@/components/TopicTabs";
+
+function PracticeCTA({ topicId }: { topicId: string }) {
+  const bank = getBank(topicId);
+  if (!bank) return null;
+  return (
+    <div className="practice-cta">
+      <div className="practice-cta-text">
+        <div className="practice-cta-title">Want more practice?</div>
+        <div className="practice-cta-sub">
+          Endless practice mode draws from a bank of {bank.questions.length} questions for this topic.
+          Different questions every time.
+        </div>
+      </div>
+      <Link href={`/math/p7/${topicId}/practice`} className="btn btn-primary">
+        Start practice
+      </Link>
+    </div>
+  );
+}
 
 export function generateStaticParams() {
   return TOPICS.map((t) => ({ topic: t.id }));
@@ -27,6 +47,8 @@ export default async function TopicPage({
       <TopicTabs topic={topic} />
 
       <Quiz questions={topic.quiz} topicId={topic.id} topicTitle={topic.title} />
+
+      <PracticeCTA topicId={topic.id} />
     </>
   );
 }

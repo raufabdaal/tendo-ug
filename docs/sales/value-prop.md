@@ -58,13 +58,16 @@ We don't yet. The honest answer in the first 1–3 sales conversations is: **"Yo
 
 This converts "I'm not sure" into "let's try it." See `objections.md` for more.
 
-## The three features that turn "maybe" into "yes"
+## The features that turn "maybe" into "yes"
 
-After v0 we noticed three features doing most of the heavy lifting in head-teacher meetings:
+After Phase 4 these are doing most of the heavy lifting in head-teacher meetings:
 
-1. **Past PLE papers with teacher mode.** Same content, two interfaces. Students attempt, teachers browse-by-topic and print worksheets. Saves the average P7 teacher ~1 hour of question-prep per week.
-2. **Watch / Listen / Read tabs on every topic.** Kids who do not enjoy reading can tap Listen and hear the topic narrated, free, in their browser. Same content, more accessible. Schools love telling parents "your child can study even without strong reading confidence."
-3. **Teacher dashboard.** A single screenshot the head teacher can paste in the parents' WhatsApp group showing what the class has actually practiced this week. This is the feature head teachers respond to in the meeting.
+1. **Past PLE papers with teacher mode.** Same content, two interfaces. Students attempt, teachers browse-by-topic and print worksheets. Saves the average P7 teacher ~1 hour of question-prep per week. Three papers in v0 (2018, 2019, 2020); more in pipeline.
+2. **Worksheet generator.** Mix any topics, pick any length, pick difficulty, generate. Print for class or copy to WhatsApp. **This is the feature teachers ask to use a second time before they finish the demo.** Pool: ~200 questions across all topics, reshuffled every time so no two worksheets are the same.
+3. **Endless Practice mode for students.** Every topic has a "Start practice" button. Different questions every time, with a streak counter and instant feedback. The student never runs out of practice.
+4. **Watch · Read** tabs on every topic (Listen icon inside the Read view). Video coming for high-stakes topics in Phase 5; text + audio narration works today on any device.
+5. **Class dashboard with bar charts + student drill-down.** Class-level view shows performance by topic at a glance — red bars flag topics that need re-teaching. Click any student to see their individual progress. One-click "Copy report for parents."
+6. **Teacher Fellowship.** Every question has a "report a problem" link. Teachers who contribute 5+ accepted reviews per term become public Tendo Teacher Fellows. Converts "teachers feel replaced" into "teachers gain recognition." See `teacher-contribution-strategy.md`.
 
 ## What we are NOT
 

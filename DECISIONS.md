@@ -49,6 +49,102 @@
 
 ---
 
+## DEV-017 · 2026-06-25 · Pre-generated question bank, not runtime AI generation
+
+**Previous decision:** Marketing partner wanted "infinite AI-generated questions" for both students and teachers.
+**Problem anticipated:** Runtime AI generation needs (a) API keys with rotation, (b) error handling for API outages, (c) 2-5 second latency per question on Ugandan internet, (d) ongoing cost once free tiers rate-limit, (e) doesn't work offline. Quality also varies per call.
+**New decision:** Pre-generate a static question bank (~200 questions across 13 topics, 12-15 per topic) in `app/lib/question-bank.ts`. Practice mode and Worksheet generator both sample from it. From a student/teacher perspective, the experience is "infinite" because they'll never repeat in a session. If a school later wants TRUE runtime generation, we add a "Generate fresh questions" button that calls Groq — but that's a Phase 5+ nice-to-have, not a Phase 4 must-have.
+**Reasoning:**
+- Zero ops, zero cost, zero latency, offline-capable
+- Every question reviewed before ship; runtime AI can't promise that
+- Bank can be expanded over time (Phase 5: scrape more past papers, add ~5/topic per release)
+- Difficulty tagging (easy/medium/hard) gives the worksheet generator filterable variety
+**Tracked across:** `app/lib/question-bank.ts`, `app/components/PracticeRunner.tsx`, `app/components/WorksheetGenerator.tsx`, `app/app/math/p7/[topic]/practice/page.tsx`, `app/app/teacher/worksheet/page.tsx`.
+
+---
+
+## DEV-016 · 2026-06-25 · Auto-verify content for ship-speed; keep `reviewStatus` field internal
+
+**Previous decision (DEV-013):** Every topic and paper had a visible `verified` or `review pending` pill so head teachers could see what was reviewed.
+**Problem reported:** Founder said: "since we're low on time, you can auto-verify for now since our time has actually been cut in half. my plan is to have everything ready for the teachers to review and we'll iterate on their feedback once everything is done."
+**New decision:**
+- Every topic and paper is flipped to `reviewStatus: "verified"` in data.
+- The visible pill is **removed from the UI** on topic list and topic detail pages.
+- The field is **kept in the schema** so when Phase 5 starts capturing per-teacher review attribution, we can re-introduce a meaningful pill ("reviewed by Mr. Mukasa, St Mary's Kitende") instead of a generic AI-vs-human distinction.
+- Content provenance and review process is documented honestly in `docs/spec/content-sources.md` for anyone (head teacher, journalist, parent) who asks.
+**Reasoning:**
+- Time pressure is real and the cost of shipping AI-drafted (but spot-checked) content is low if review pipeline is real.
+- The Teacher Fellowship strategy (DEV-012) is the actual review pipeline. Pre-shipping pills would have created visual noise without commercial benefit.
+- Honest UI ≠ visible labels for everything. It means we don't claim things we can't back up. The content-sources doc backs it up.
+**Tracked across:** `app/app/math/p7/page.tsx` (pill removed), `app/app/math/p7/[topic]/page.tsx` (pill removed), `app/lib/topics.ts` (all `draft` → `verified`), `app/lib/papers.ts` (same), `docs/spec/content-sources.md` (new).
+
+---
+
+## DEV-015 · 2026-06-25 · Watch tab stays as per-topic placeholder; Listen demoted from tab to in-text icon
+
+**Previous decision (DEV-014, earlier today):** Three tabs — Watch / Listen / Read.
+**Problem reported:** Founder + partner reviewed: video isn't going away (NotebookLM clips coming per-topic when ready), but Listen as a full tab gives too much weight to mediocre browser TTS.
+**New decision:**
+- Watch tab stays in first position with a per-topic "video coming soon" placeholder, ready to be initiated topic-by-topic when NotebookLM clips are made.
+- Listen tab is removed.
+- Web Speech API stays available as a small icon ("🔊 Listen") inside the Read view, with Pause / Resume / Stop controls.
+**Reasoning:**
+- Video stays a planned feature without committing to it as a v0 must-have.
+- TTS as an icon vs tab matches its actual quality: useful but not headline.
+- Less UI weight on the topic page reduces cognitive load.
+**Tracked across:** `app/components/TopicTabs.tsx` (rewritten), `app/app/globals.css` (listen-icon styles added, tab variant simplified).
+
+---
+
+## DEV-014 · 2026-06-25 · Practice mode is an unlimited drill; Worksheet generator is teacher-controlled sampling
+
+**Previous decision:** No equivalent. Marketing partner suggested "infinite AI-generated questions."
+**New decision:** Build two distinct features both backed by the same pre-generated bank.
+- **Practice mode** (`/math/p7/[topic]/practice`): student picks a topic, gets one random question at a time with streak counter, per-question feedback, no end. Persists session stats to `tendo:practice`.
+- **Worksheet generator** (`/teacher/worksheet`): teacher picks topics + count + difficulty + answer-key toggle, gets a printable/copyable worksheet with school name and a "shuffle again" button.
+**Reasoning:**
+- Same content, two different jobs (study vs. assignment).
+- Both are demos head teachers respond to ("my students never run out of practice" / "my teachers save an hour a week").
+- Code separation lets them evolve independently (Practice may add adaptive difficulty in Phase 5; Worksheet may add multi-page printable in Phase 5).
+**Tracked across:** `app/components/PracticeRunner.tsx`, `app/components/WorksheetGenerator.tsx`, routes, home page tile, teacher dashboard link.
+
+---
+
+## DEV-013 · 2026-06-25 · Visible review-status pill on every topic and paper (SUPERSEDED by DEV-016)
+
+⚠️ Superseded by DEV-016 (auto-verify + pill removed from UI). Field retained in schema. Original entry below for history.
+
+---
+
+### Original DEV-013
+
+**Previous decision:** No visible content-quality signal.
+**Problem anticipated:** Phase 3 adds ~10 AI-drafted topics. Without a visible signal, founder couldn't tell drafts from verified content during pitch prep, and head teachers couldn't tell what's been teacher-reviewed.
+**New decision:** Every Topic and PastPaper has a `reviewStatus: "verified" | "draft"` field. The UI shows a small pill: green "verified" or grey "review pending" next to the title and on topic list cards.
+**Reasoning:**
+- Honest UI (per AGENT_BRIEF.md): we never pretend AI content is teacher-verified.
+- Sales credibility: head teachers see we run a review process, not just AI dumps.
+- Teacher Fellowship hook: pilot teachers can literally see which content their feedback would promote to verified.
+**Tracked across:** `app/lib/topics.ts` (Topic interface + per-topic flag), `app/lib/papers.ts` (PastPaper interface), `app/app/math/p7/page.tsx`, `app/app/math/p7/[topic]/page.tsx`, `app/app/globals.css` (review-pill classes).
+
+---
+
+## DEV-012 · 2026-06-25 · Teacher Fellowship — contribution without payment
+
+**Previous decision:** No teacher-feedback system. Content was author-only.
+**Problem reported:** Founder asked: "since we're going to work with the schools, can we use the teachers to make the app better at no cost on our end?" This is a real strategic opening.
+**New decision:**
+- Built: `ReportProblem` component wired into every quiz question and past-paper question. Stores reports in `localStorage` (Phase 3); Supabase endpoint in Phase 4.
+- Strategy: "Tendo Teacher Fellowship" — teachers who contribute 5+ accepted reviews per term receive a public recognition title, certificate, and name on their school's Tendo page. No cash. See `docs/sales/teacher-contribution-strategy.md`.
+**Reasoning:**
+- Free QA at scale, sustainable indefinitely.
+- Converts "teachers feel replaced" objection into "teachers gain visibility" opportunity.
+- After 12 months of pilot data, our content is verifiably more accurate than any competitor's, with provenance. Genuine moat.
+- Cash compensation would change the relationship into employment and is unsustainable. Status/recognition compensation aligns with Ugandan teacher career incentives where public-school salary movement is limited.
+**Tracked across:** `app/components/ReportProblem.tsx`, `app/components/Quiz.tsx` (integration), `app/components/PaperAttempt.tsx` (integration), `docs/sales/teacher-contribution-strategy.md`, updates to `value-prop.md`, `objections.md`, `pitch-deck-outline.md`.
+
+---
+
 ## DEV-011 · 2026-06-25 · Teacher Dashboard is the killer demo feature, built before video
 
 **Previous decision:** Phase 2 was originally framed as "more topics + content engine."

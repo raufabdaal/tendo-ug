@@ -1,57 +1,77 @@
 # HANDOFF — for the next session
 
-*Written: 2026-06-25, end of Phase 2*
+*Written: 2026-06-25, end of Phase 4*
 
 ## TL;DR for the next agent
 
 Read in this order:
-1. `AGENT_BRIEF.md` — founder's working style, non-negotiable
-2. `STATUS.md` — Phase 0, 1, 2 all done; Phase 3 (video polish) is next
-3. `DECISIONS.md` — DEV-001 through DEV-011. **Especially DEV-010 and DEV-011** explaining why no streaks/parent-app and why we built dashboard before video
-4. `docs/sales/value-prop.md` — the "three features that turn maybe into yes" section is the new pitching frame
-5. `content/curriculum/p7-math.json` — the spine for content work
+1. `AGENT_BRIEF.md` — founder's working style
+2. `STATUS.md` — Phases 0-4 done; Phase 5 has multiple paths, founder picks
+3. `DECISIONS.md` — DEV-001 through DEV-017. Newest: DEV-014/15/16/17 explain Practice + Worksheets + auto-verify
+4. `docs/spec/content-sources.md` — how content is sourced and what we tell schools
+5. `docs/sales/value-prop.md` — current "six features that turn maybe into yes"
 
 ## Where you're picking up
 
-Phase 2 is **functionally done**:
-- Past PLE papers (student + teacher modes) at `/papers`
-- Watch / Listen / Read tabs on every topic (audio via free browser Web Speech API)
-- Teacher dashboard at `/teacher` with localStorage-backed activity table + parent-ready report export
+Phase 4 is **functionally done**. Site is feature-rich enough for a serious pitch:
+- 13 topics with notes, worked examples, quizzes
+- 3 past papers (student + teacher modes)
+- Endless Practice on every topic
+- Worksheet generator for teachers
+- Class dashboard with charts, drill-down, demo-class seeding
+- Teacher Fellowship feedback loop
 
-The only step left for Phase 2 is the founder's `git push`. Site auto-deploys to production.
+The only step left for Phase 4 is the founder's push.
 
-## Next session = Phase 3 (demo polish)
+## Next session = Phase 5 (founder picks ONE)
 
-**Goal:** The Watch tab is no longer a placeholder. Past papers count goes 1 → 3. Topic count goes 3 → 8.
+Lay out the four options at session start; the founder picks one.
 
-**Order of operations:**
+### Option A — Supabase backend (the unlock for paid pilots)
+- Free Supabase account, schema for `schools`, `class_codes`, `students`, `attempts`, `reports`
+- Class-code join flow (`/join/[code]`)
+- Migrate Quiz, PaperAttempt, PracticeRunner to write to Supabase + localStorage
+- Dashboard reads real data instead of demo class
+- ~2 sessions of work
 
-1. Confirm with founder that Phase 2 deployed cleanly. Visit the 4 new routes in incognito.
-2. **MT-006:** Walk founder through generating ~10 NotebookLM videos for the highest-stakes topics. This is a founder-only manual task (NotebookLM has no API). Founder uploads to a Tendo YouTube channel; we embed by URL.
-3. Update `app/lib/topics.ts` `Topic` interface to add an optional `videoUrl?: string` field.
-4. Update `TopicTabs.tsx` Watch panel to render the YouTube embed when `videoUrl` is present; keep the "Coming soon" panel when not.
-5. Ingest 2 more real PLE Math papers (2019, 2020) into `lib/papers.ts`. Source: ecolebooks, advance-africa.
-6. Add 5 more topic notes (Decimals, Percentages, Area, Equations, Substitution) — each one becomes a real topic page AND moves out of `COMING_SOON`.
+### Option B — Content depth
+- Bank: 210 → 350 questions (push to ~25/topic)
+- 2 more past papers (PLE 2021, 2022)
+- Promote 5 "coming soon" topics (Prime factorisation, Integers, Travel graphs, Probability intro, Algebraic expressions) to full topics
+- ~1 session
 
-## Watch-outs (from `DEV_JOURNAL.md` and recent lessons)
+### Option C — NotebookLM videos for top 10 topics
+- Founder generates videos (manual, in NotebookLM)
+- We add `videoUrl?: string` to Topic, wire Watch tab to embed YouTube when present
+- ~0.5 session on our side; founder's time on NotebookLM is the bottleneck
 
-- **Vercel deploy via `git push` auto-promotes to production.** The "Redeploy" button does NOT. (Lesson 2026-06-24 in `DEV_JOURNAL.md`.)
-- **Next.js version must be patched.** Vercel actively blocks vulnerable versions. Currently pinned at 15.5.19; bump if a new CVE drops.
-- **Web Speech API quality varies by device.** Chrome on Android = decent. Safari on iOS = robotic. Document this is "good enough for v0, swap to ElevenLabs in Phase 5+ if revenue justifies."
-- **No em dashes** in user-facing copy. Check new topic notes before merging.
-- **Honest UI rule:** the teacher dashboard explicitly tells the user the data is per-device. Don't remove that banner until Phase 4 makes it cross-device.
+### Option D — P6 Math content track
+- Build `content/curriculum/p6-math.json` (80% overlap with P7)
+- Add P6 topic shells to home page
+- Start porting topics from P7 to P6 versions (lighter content)
+- ~2 sessions
+
+## Watch-outs
+
+- **Vercel deploy blocks vulnerable Next.js versions.** Currently pinned at 15.5.19. Bump if a new CVE drops.
+- **Push to `main` auto-promotes to production.** The "Redeploy" button does NOT.
+- **The question bank now drives multiple features.** When adding/removing/editing a question, both Practice mode AND worksheet output reflect the change. Bank quality matters more than ever.
+- **localStorage keys in use:** `tendo:progress` (topic quiz scores), `tendo:papers` (paper attempts), `tendo:practice` (practice sessions), `tendo:reports` (problem reports), `tendo:demo-class` (seeded demo students). When Phase 5A (Supabase) migrates, all five need a migration path.
+- **No em dashes in user-facing copy.** Still applies.
+- **Watch tab is per-topic placeholder.** When we have a video for one topic, just add `videoUrl` to that topic; the panel logic should handle "has video" vs "no video" gracefully.
 
 ## Architectural reminders
 
-- Data still lives in TypeScript (`lib/topics.ts`, `lib/papers.ts`). MDX migration deferred to Phase 3 or later, when topic count justifies it. (DEV-006.)
-- No Tailwind, no UI library. All styling in `app/app/globals.css`. (DEV-007.)
-- No auth in v0; class codes + Supabase in Phase 4. (DEV-002, DEV-009.)
-- Browser TTS over paid TTS. (DEV-011 reasoning.)
-- No streaks/leaderboards/parent-app. (DEV-010.)
+- Plain CSS, no Tailwind (DEV-007)
+- Data in TypeScript not MDX (DEV-006)
+- No auth, localStorage only — UNTIL Phase 5A flips this
+- No streaks/gamification beyond the practice streak counter (DEV-010 still applies; the practice counter is per-session, not persistent leaderboards)
+- All content auto-verified in v0; honest content-sources doc backs us up (DEV-016)
+- Pre-generated bank, not runtime AI (DEV-017) — unless we explicitly add a "Generate fresh" button in Phase 6+
 
-## Open questions to ask the founder at session start
+## Open questions to ask the founder
 
-1. Did the Phase 2 push work? Live URLs verified?
-2. Do you have a YouTube channel for Tendo, or do we set one up as MT-006?
-3. Which 10 topics should get videos first? (Recommend: the 5 we'll add as full notes + the 3 already live + 2 high-PLE-frequency topics like Percentages and Time.)
-4. Any school showing interest now that you've been demoing? That changes what we polish next.
+1. Did the Phase 4 push work? Tested the worksheet generator end-to-end (generate → print)?
+2. Which of options A/B/C/D should we do next?
+3. Has any school given a verbal "yes" yet? Their needs reshape priorities.
+4. The bank is at ~210 questions. Comfortable shipping at that scale, or push to 350 before Phase 5?

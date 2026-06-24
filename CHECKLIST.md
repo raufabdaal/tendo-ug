@@ -39,13 +39,47 @@
 - [x] Sales materials updated (value-prop, pitch deck, school packet, objections)
 - [ ] **Founder pushes** → Vercel auto-deploys → verify in incognito
 
-## Phase 3 — Demo polish (video + breadth)
-- [ ] MT-006: Tendo YouTube channel created
-- [ ] 10 NotebookLM videos generated for top topics
-- [ ] Watch tab wired to embed YouTube
-- [ ] PLE Math 2019, 2020 ingested (3 papers total)
-- [ ] 5 more topic notes (Decimals, Percentages, Area, Equations, Substitution)
-- [ ] Topic count 3 → 8
+## Phase 4 — Practice + Worksheets + UI cleanup (DONE LOCALLY)
+- [x] Question bank (~210 questions, 13 topics, difficulty-tagged)
+- [x] Endless Practice mode per topic (streaks, accuracy, session stats)
+- [x] Worksheet generator for teachers (topics, count, difficulty, answer key, print/copy)
+- [x] Listen tab removed; replaced with icon-button inside Read view
+- [x] Watch tab kept as per-topic "coming soon" placeholder
+- [x] All content auto-verified; pill removed from UI
+- [x] Content sources doc (`docs/spec/content-sources.md`)
+- [x] Home page + teacher dashboard linked to worksheet generator
+- [x] Sales pack updated (value-prop, pitch deck, school packet)
+- [ ] **Founder pushes** → Vercel auto-deploys
+
+## Phase 5 — Founder picks ONE
+- [ ] A: Supabase backend (real class codes, cross-device)
+- [ ] B: Content depth (210→350 questions, 2 more papers, 5 more topics)
+- [ ] C: NotebookLM videos for top 10 topics
+- [ ] D: P6 Math track
+
+## Phase 3 — Content depth + killer dashboard + Fellowship (DONE LOCALLY)
+- [x] Topic count 3 → 13 (added Decimals, Percentages, Perimeter, Area, Volume, Equations, Substitution, Mean/median/mode, Clocks, Money)
+- [x] Past papers 1 → 3 (added 2019, 2020)
+- [x] reviewStatus field + visible pills
+- [x] "Load demo class" with 22 seeded students
+- [x] Topic bar chart (high/mid/low bands per topic)
+- [x] Student drill-down view
+- [x] Class-level + per-student "Copy report"
+- [x] Report-a-problem on every quiz + paper question
+- [x] Teacher Fellowship strategy doc
+- [x] Sales pack updated (value-prop, pitch deck, objections)
+- [ ] **Founder spot-checks 10 new topics + 2 new papers** before push
+- [ ] **Founder pushes** → Vercel auto-deploys
+
+## Phase 4 — Real backend (Supabase, class codes, cross-device)
+- [ ] MT-008: Supabase account created
+- [ ] Schema: schools, class_codes, students, topic_attempts, paper_attempts, reports
+- [ ] Class-code join flow (`/join/[code]`)
+- [ ] Teacher login (Supabase Auth)
+- [ ] Migrate Quiz + PaperAttempt to write Supabase + localStorage
+- [ ] Migrate TeacherDashboard to read Supabase when teacher logged in
+- [ ] Verify cross-device end-to-end
+- [ ] Privacy doc (`docs/spec/privacy.md`)
 
 ## Phase 4 — School pilot
 - [ ] First school signed (paid or pilot)
@@ -59,9 +93,13 @@
 - [ ] English / Science / SST subject shells
 
 ## Totals
-- **Topics live:** 3 / 40
-- **Past papers live:** 1 / 5 (target for v0)
-- **Sales-leverage features shipped:** 3 (past papers, audio, teacher dashboard)
+- **Topics live:** 13 / 40 (all auto-verified, awaiting teacher review per Fellowship)
+- **Past papers live:** 3 / 5
+- **Question bank:** ~210 questions
+- **Routes (SSG):** 43
+- **Sales-leverage features shipped:** 7 (past papers, audio, dashboard, demo-class, Fellowship, Practice mode, Worksheet generator)
+- **Schools signed:** 0
+- **Monthly recurring cost:** UGX 0
 - **Past papers live:** 0 / 5 (target for v0)
 - **Schools signed:** 0
 - **Monthly recurring cost:** UGX 0

@@ -16,6 +16,12 @@ export default function TeacherPage() {
         At a glance: what your class has practiced, how they scored, and which topics need more attention.
       </p>
 
+      <div style={{ marginBottom: 18 }}>
+        <Link href="/teacher/worksheet" className="btn btn-secondary">
+          → Generate a worksheet for class
+        </Link>
+      </div>
+
       <TeacherDashboard />
     </>
   );

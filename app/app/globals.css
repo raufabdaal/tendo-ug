@@ -488,3 +488,479 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
 .listen-controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 12px; }
 .listen-status { font-size: 14px; color: var(--muted); margin-top: 14px; }
 .watch-soon { color: var(--muted); margin-top: 8px; }
+
+/* ============================================
+   Mode tabs (Demo class / This device)
+   ============================================ */
+.mode-tabs {
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid var(--border);
+  margin: 8px 0 24px;
+  flex-wrap: wrap;
+}
+.mode-tab {
+  background: transparent;
+  border: none;
+  padding: 12px 18px;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.mode-tab.active {
+  color: var(--charcoal);
+  border-bottom-color: var(--terracotta);
+}
+.mode-tab:hover:not(.active) { color: var(--charcoal); }
+.mode-tab-pill {
+  font-size: 11px;
+  background: var(--cream-deep);
+  color: var(--muted);
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+.mode-tab.active .mode-tab-pill { background: var(--indigo-soft); color: var(--indigo); }
+.mode-tab-link {
+  background: transparent;
+  border: none;
+  color: var(--terracotta);
+  cursor: pointer;
+  padding: 12px 12px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-left: auto;
+}
+.mode-tab-link:hover { text-decoration: underline; }
+
+/* ============================================
+   Dashboard: clickable rows + help text + action bar
+   ============================================ */
+.dash-help { color: var(--muted); font-size: 14px; margin: -4px 0 12px; }
+.dash-row-clickable { cursor: pointer; }
+.dash-row-clickable:hover td { background: var(--cream-deep); }
+.dash-arrow { color: var(--muted); font-size: 20px; }
+.dash-action-bar {
+  margin-top: 24px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.dash-action-bar .btn { padding: 12px 18px; min-height: 44px; }
+.dash-clear { margin-left: auto; border-color: var(--error) !important; color: var(--error) !important; }
+
+/* ============================================
+   Topic bar chart (inline, no library)
+   ============================================ */
+.topic-chart { margin: 12px 0 28px; }
+.topic-chart-row {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 6px 0;
+}
+.topic-chart-label {
+  font-size: 13px;
+  color: var(--charcoal-soft);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.topic-chart-bar-wrap { display: flex; align-items: center; gap: 10px; }
+.topic-chart-bar {
+  flex: 1;
+  height: 18px;
+  background: var(--cream-deep);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+}
+.bar-seg { height: 100%; transition: width 0.3s ease; }
+.bar-high { background: var(--success); }
+.bar-mid { background: var(--indigo); }
+.bar-low { background: var(--error); }
+.topic-chart-meta { font-size: 12px; color: var(--muted); min-width: 70px; }
+.topic-chart-legend {
+  display: flex;
+  gap: 18px;
+  margin-top: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+.legend-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  margin-right: 6px;
+  vertical-align: -1px;
+}
+
+@media (max-width: 600px) {
+  .topic-chart-row { grid-template-columns: 1fr; gap: 4px; }
+  .topic-chart-label { font-size: 13px; font-weight: 600; }
+}
+
+/* ============================================
+   Review status pill (verified vs draft)
+   ============================================ */
+.review-pill {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+.review-verified { background: var(--success-soft); color: var(--success); }
+.review-draft { background: var(--cream-deep); color: var(--muted); }
+
+/* ============================================
+   Report a problem (teacher feedback)
+   ============================================ */
+.report-link {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  padding: 6px 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.report-link:hover { color: var(--terracotta); }
+
+.report-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 27, 23, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 20px;
+}
+.report-modal {
+  background: var(--cream);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  max-width: 480px;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+.report-modal h3 { margin-top: 0; }
+.report-modal textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 14px;
+  margin: 10px 0;
+  resize: vertical;
+}
+.report-modal-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  margin-top: 12px;
+}
+.report-modal-cite {
+  background: var(--cream-deep);
+  padding: 10px 12px;
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--charcoal-soft);
+  margin: 8px 0 4px;
+}
+.report-modal-cite strong { color: var(--charcoal); }
+
+/* ============================================
+   Listen icon button (in Read view, replaces Listen tab)
+   ============================================ */
+.read-listen-bar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin: 0 0 18px;
+  padding: 6px 0;
+  border-bottom: 1px dashed var(--border);
+  padding-bottom: 12px;
+}
+.listen-icon-btn {
+  background: var(--cream-deep);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--charcoal);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 36px;
+  transition: border-color 0.15s, background 0.15s;
+}
+.listen-icon-btn:hover { border-color: var(--terracotta); background: var(--cream); }
+.listen-icon-label { font-size: 14px; }
+.listen-stop-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 8px;
+}
+.listen-stop-btn:hover { color: var(--error); }
+
+/* ============================================
+   Practice CTA on topic page
+   ============================================ */
+.practice-cta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--cream-deep);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin: 28px 0 12px;
+  flex-wrap: wrap;
+}
+.practice-cta-text { flex: 1; min-width: 200px; }
+.practice-cta-title { font-weight: 700; font-size: 16px; color: var(--charcoal); }
+.practice-cta-sub { color: var(--muted); font-size: 14px; margin-top: 2px; }
+
+/* ============================================
+   Practice runner
+   ============================================ */
+.practice-bar {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  background: var(--cream-deep);
+  border-radius: var(--radius);
+  padding: 14px 16px;
+  margin-bottom: 20px;
+}
+.practice-stat { text-align: center; }
+.practice-stat-num {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--terracotta);
+  line-height: 1.1;
+}
+.practice-stat-num .of { font-size: 13px; color: var(--muted); font-weight: 600; margin-left: 2px; }
+.practice-stat-label { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.practice-q-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 12px;
+}
+.practice-actions {
+  margin-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+.diff-pill {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.diff-easy { background: var(--success-soft); color: var(--success); }
+.diff-medium { background: var(--indigo-soft); color: var(--indigo); }
+.diff-hard { background: var(--error-soft); color: var(--error); }
+
+/* ============================================
+   Worksheet generator form
+   ============================================ */
+.generator-form { display: block; }
+.text-input, .num-input {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 15px;
+  background: var(--cream);
+  color: var(--charcoal);
+}
+.text-input:focus, .num-input:focus {
+  outline: none;
+  border-color: var(--terracotta);
+}
+.generator-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 8px 0;
+  flex-wrap: wrap;
+}
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--terracotta);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  padding: 4px 0;
+}
+.link-btn:hover { text-decoration: underline; }
+.generator-count {
+  font-size: 13px;
+  color: var(--muted);
+  margin-left: auto;
+}
+.topic-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 16px;
+}
+.topic-chip {
+  background: var(--cream);
+  border: 1.5px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-family: inherit;
+  color: var(--charcoal-soft);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+.topic-chip:hover { border-color: var(--terracotta); }
+.topic-chip.on {
+  background: var(--terracotta);
+  color: var(--cream);
+  border-color: var(--terracotta);
+}
+.topic-chip-count {
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1px 6px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+.topic-chip:not(.on) .topic-chip-count {
+  background: var(--cream-deep);
+  color: var(--muted);
+}
+.generator-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 8px 0;
+}
+.ctl { display: flex; flex-direction: column; gap: 4px; }
+.ctl > span { font-size: 13px; color: var(--muted); font-weight: 600; }
+
+/* ============================================
+   Worksheet output (printable)
+   ============================================ */
+.worksheet {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+  color: black;
+}
+.worksheet-school {
+  text-align: center;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 0 0 4px;
+  color: black;
+}
+.worksheet-title {
+  text-align: center;
+  font-size: 22px;
+  margin: 6px 0 18px;
+  color: black;
+}
+.worksheet-meta {
+  font-size: 13px;
+  margin-bottom: 16px;
+  color: black;
+}
+.worksheet-instructions {
+  font-size: 13px;
+  font-style: italic;
+  margin-bottom: 22px;
+  color: #444;
+}
+.worksheet-questions {
+  list-style: none;
+  padding: 0;
+  counter-reset: none;
+}
+.worksheet-q {
+  margin-bottom: 22px;
+  page-break-inside: avoid;
+}
+.worksheet-q-text {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: black;
+  line-height: 1.45;
+}
+.worksheet-q-topic {
+  font-size: 10px;
+  color: #666;
+  margin-left: 8px;
+  font-style: italic;
+}
+.worksheet-choices {
+  list-style: none;
+  padding: 0 0 0 18px;
+  margin: 0;
+}
+.worksheet-choices li {
+  font-size: 13px;
+  padding: 2px 0;
+  color: black;
+}
+.ws-letter { font-weight: 600; margin-right: 4px; }
+.ws-correct { font-weight: 600; }
+.ws-tick { color: #2a7a36; margin-left: 6px; }
+.worksheet-why {
+  font-size: 12px;
+  background: #f5efe0;
+  padding: 6px 10px;
+  border-radius: 4px;
+  margin-top: 6px;
+  color: #444;
+}
+.worksheet-footer {
+  margin-top: 28px;
+  padding-top: 14px;
+  border-top: 1px solid #ddd;
+  font-size: 11px;
+  color: #777;
+  text-align: center;
+}
+
+@media print {
+  .worksheet { border: none; padding: 0; }
+  .worksheet-school, .worksheet-title, .worksheet-meta { text-align: center; }
+}

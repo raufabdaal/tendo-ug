@@ -1,58 +1,68 @@
 # STATUS — Tendo
 
-*Updated: 2026-06-25, end of Phase 2 session*
+*Updated: 2026-06-25, end of Phase 4 session*
 
-## Where we are: **Phase 2 — Past papers + audio narration + teacher dashboard (DONE LOCALLY · needs push)**
+## Where we are: **Phase 4 — Practice + Worksheets + UI cleanup (DONE LOCALLY)**
 
-Phases 0 (foundation + sales pack) and 1 (Next.js app live) also done. Site is live on Vercel.
+Phases 0-3 also done. Site live on Vercel at `tendo-ug.vercel.app`.
 
 ## What shipped this session
 
-**3 sales-leverage features**, all on free tier, all integrating with existing localStorage progress:
+### 1. ~210-question bank (`app/lib/question-bank.ts`)
+- 13 topics × 12–15 questions each, difficulty-tagged (easy/medium/hard)
+- Drives both Practice mode and Worksheet generator
+- Pre-generated, zero-ops, offline-capable (DEV-017)
 
-1. **Past PLE Papers** — student attempt mode + teacher browse-by-topic mode. Seed paper: PLE Math 2018 (20 questions across all 6 themes).
-2. **Watch · Listen · Read tabs** on every topic. Audio uses browser Web Speech API (free TTS, no API key). Watch tab is a "Coming, Phase 3" placeholder.
-3. **Teacher Dashboard** — reads localStorage activity, shows topic + paper progress, exports a parent-ready report to clipboard. Honest banner clarifies this is per-device until Phase 4 adds real auth.
+### 2. Endless Practice mode
+- Route: `/math/p7/[topic]/practice` (one per topic, 13 routes)
+- Streak counter, accuracy %, session stats
+- Different questions every round
+- "Start practice" CTA added to every topic page
 
-### Verified locally (per `DEV_JOURNAL.md` Part 4):
+### 3. Worksheet generator (the killer teacher feature)
+- Route: `/teacher/worksheet`
+- Topic chips (pick any combination), count (1-50), difficulty filter, answer-key on/off
+- School name + title fields for branding
+- Generate → Shuffle → Print or Copy as text
+- Output is print-ready (special @media print styles)
 
-- `npm run build` succeeds — 13 routes, all SSG, ~106-113kB First Load JS per route
-- `npm run start` + curl on all 7 new/changed routes → HTTP 200
-- Content spot-checks pass (home cards, paper browse toolbar, topic tabs, fractions content intact)
+### 4. UI cleanup
+- Listen tab removed; Web Speech TTS now lives as a "🔊 Listen" icon-button inside the Read view (cleaner)
+- Watch tab stays as per-topic "coming soon" — ready to be initiated topic-by-topic with NotebookLM clips later
+- Visible review-pending pill removed; content auto-verified (DEV-016)
+
+### 5. Content sourcing transparency
+- New doc `docs/spec/content-sources.md` — honest record of NCDC + UNEB sources, our review process, what to say to a head teacher who asks
+
+## Verified locally
+
+- `npm run build` → **43 routes**, all SSG, no errors
+- All 7 spot-tested routes return HTTP 200
+- Bank: ~210 questions verified by grep on the source
 
 ## What's next 🎯
 
-**Immediate (5 min):**
-- Push to GitHub. Vercel auto-deploys + auto-promotes to production (because pushing to `main` is the cleanest path — DEV_JOURNAL lesson 2026-06-24).
-- Verify the 4 new URLs work in incognito:
-  - `/papers`
-  - `/papers/ple-math-2018/attempt`
-  - `/papers/ple-math-2018/browse`
-  - `/teacher`
+### Immediate (founder)
+**Push to GitHub.** Vercel auto-deploys, auto-promotes to production (push-to-main rule, DEV_JOURNAL 2026-06-24).
 
-**Phase 3 (the "demo polish" phase):**
-- Generate ~10 NotebookLM videos for highest-traffic topics (Fractions, Venn, Percentages, Area, Volume, Equations, Time, Probability, Pie charts, Roman numerals). Manual one-day task in NotebookLM.
-- Upload to a YouTube channel (free, hosted off our infra).
-- Wire the Watch tab to embed the video when present, fall through to Listen + Read placeholder when not.
-- Ingest 2-3 more real past PLE papers.
-- Add ~5 more topic notes (Decimals, Percentages, Area, Equations, Substitution) so topic count goes 3 → 8.
+Then in incognito, test these new URLs:
+- `https://tendo-ug.vercel.app/math/p7/fractions-core/practice`
+- `https://tendo-ug.vercel.app/teacher/worksheet` (generate one, print it, that's the killer demo)
 
-**Phase 4 (school pilot infrastructure):**
-- Supabase free tier for class codes + per-student progress sync across devices
-- Subdomain per school
-- Real "Copy report" pulling actual class data, not just this-device data
+### Phase 5 options (founder picks)
+- **Supabase backend** — real class codes, cross-device progress, real dashboard not demo. Unlocks paid pilots.
+- **More content depth** — push bank to 300+ questions; add 2 more PLE papers (2021, 2022); add 5 more "coming soon" topics as full topics. Stays free-tier.
+- **NotebookLM video pipeline** — manual generation, YouTube embed wiring, ~10 high-stakes topics first.
+- **P6 Math** — start parallel content track for the second class.
 
-## What's blocked 🚧
+## Decisions made this session
 
-- Nothing technical. Push and you're live.
-
-## Decisions made
-
-See `DECISIONS.md` (DEV-001 through DEV-011). Newest:
-- DEV-011: Teacher Dashboard is the killer feature, built before video
-- DEV-010: No streaks, no gamification, no parent-portal in v0
-- DEV-009: Teacher dashboard runs on localStorage with explicit honest-UI banner
+See `DECISIONS.md`:
+- DEV-017: Pre-generated bank, not runtime AI generation
+- DEV-016: Auto-verify content, hide pill, keep field (supersedes DEV-013)
+- DEV-015: Watch tab placeholder kept, Listen demoted to icon
+- DEV-014: Practice (unlimited) vs Worksheet (controlled sampling) split
 
 ## Cost so far
 
-**UGX 0 / USD 0.** Vercel Hobby + free GitHub + free browser TTS. No recurring spend.
+**UGX 0 / USD 0.** No change.

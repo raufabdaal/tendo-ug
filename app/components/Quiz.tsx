@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { QuizQuestion } from "@/lib/topics";
+import ReportProblem from "./ReportProblem";
 
 const LETTERS = ["A", "B", "C", "D"] as const;
 
@@ -122,6 +123,13 @@ export default function Quiz({
           <div className="feedback">
             <strong>{picked === item.correct ? "Correct." : "Not quite."}</strong>{" "}
             {item.why}
+          </div>
+          <div style={{ textAlign: "right", marginBottom: 8 }}>
+            <ReportProblem
+              context={`topic:${topicId}/q${index + 1}`}
+              contextLabel={`${topicTitle} · Q${index + 1}: ${item.q.slice(0, 60)}${item.q.length > 60 ? "…" : ""}`}
+              small
+            />
           </div>
           <button className="btn btn-primary btn-block" onClick={next}>
             {index + 1 === questions.length ? "See result" : "Next question"}

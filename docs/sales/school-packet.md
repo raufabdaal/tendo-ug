@@ -13,12 +13,15 @@ A web platform your school offers parents. Quietly raises your division-one rate
 
 ## What it does
 
-- Covers the complete UNEB P7 Mathematics syllabus (and soon P6) — all 6 themes, 11 topics, 40 sub-topics.
-- **Watch · Listen · Read** on every topic. Students who do not enjoy reading can listen to the notes for free, in any browser.
-- Topic notes, worked examples, and 5–10 auto-marked quiz questions per topic.
-- **Past PLE papers, two views:** students attempt and get auto-marked; teachers browse-by-topic and print worksheets in two clicks.
-- **Teacher dashboard:** see what your class practiced this week, export to WhatsApp for parents.
-- Branded with your school name and logo on its own subdomain.
+- Covers the NCDC P7 Mathematics syllabus — all 6 themes, 11 topics, 40 sub-topics. P6 coming next.
+- **Watch · Read** on every topic with a free in-browser Listen button for kids who'd rather hear than read.
+- Topic notes, worked examples, and quizzes for every topic.
+- **Endless Practice mode** — students get a different question every time from a 200+ question bank.
+- **Past PLE papers** with student attempt mode AND teacher browse-by-topic mode.
+- **Worksheet generator** — teachers mix any topics, any length, print a class worksheet in two clicks.
+- **Class dashboard** with charts and per-student drill-down, exportable to WhatsApp for parents.
+- **Teacher Fellowship** — your senior teachers can become publicly recognised Tendo Fellows.
+- Branded with your school name on its own subdomain.
 
 ## What you do
 

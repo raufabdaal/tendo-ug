@@ -45,8 +45,10 @@
 
 **Good answer:**
 > *"They won't, and we should be careful they don't feel that way. Tendo is for evenings and weekends — the time when your teachers aren't there. In school hours, your teachers still teach. We actually built a teacher mode specifically so the tool works FOR them: every past PLE paper has a Browse-by-topic view that lets a teacher pick the questions they want and print a worksheet in two clicks. Their class prep gets shorter, not their job."*
+>
+> *"And one more thing — our content evolves with feedback from your teachers. Every question has a 'report a problem' link. If a teacher at your school contributes five or more accepted reviews in a term, they become a Tendo Teacher Fellow with a certificate. Your teachers gain visibility, not lose it."*
 
-*(We don't yet have schools using this in production. When asked who, redirect: "Once we have a paid school, I'll put you in touch with them directly.")*
+*(See `teacher-contribution-strategy.md` for the full Fellowship framing. We don't yet have schools using this in production. When asked who, redirect: "Once we have a paid school, I'll put you in touch with them directly.")*
 
 ---
 

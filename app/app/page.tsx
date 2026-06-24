@@ -75,6 +75,16 @@ export default function HomePage() {
         </div>
       </Link>
 
+      <Link href="/teacher/worksheet" className="card">
+        <div className="card-row">
+          <div>
+            <div className="card-title">Worksheet generator</div>
+            <div className="card-sub">Mix topics, pick a length, print a class worksheet in two clicks</div>
+          </div>
+          <span className="badge badge-math">New</span>
+        </div>
+      </Link>
+
       <div className="foot">
         All progress saved on this device. No login required.
       </div>

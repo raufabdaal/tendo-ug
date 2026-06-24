@@ -2,6 +2,96 @@
 
 > Newest at the top. Dated, append-only. Sessions are blocks.
 
+## v0.5.0 — 2026-06-25 — Phase 4: Endless practice + worksheet generator + UI cleanup
+
+**Session theme:** Founder said keep video as per-topic placeholder, drop Listen tab, auto-verify content for speed, and build "infinite questions for students + infinite questions for teachers." Rebuilt the AI-generated angle as a pre-generated bank for zero-ops reliability.
+
+**Added:**
+- `app/lib/question-bank.ts` — **~210 questions** across all 13 topics (12-15 per topic), each tagged with difficulty (easy/medium/hard). Helpers: `getBank`, `sampleFromTopic`, `sampleAcrossTopics`, `shuffle`, `totalBankQuestions`.
+- `app/components/PracticeRunner.tsx` — endless practice runner with streak counter, accuracy %, session stats, persists to `tendo:practice` in localStorage.
+- `app/app/math/p7/[topic]/practice/page.tsx` — per-topic practice route (13 SSG routes).
+- `app/components/WorksheetGenerator.tsx` — teacher worksheet builder: pick topics (chips), count, difficulty, answer-key on/off, school name, title. Generate → Shuffle → Print or Copy as text.
+- `app/app/teacher/worksheet/page.tsx` — worksheet generator route.
+- `docs/spec/content-sources.md` — transparent doc on NCDC + UNEB sources, our review process, what we say to schools when asked the hard question.
+
+**Changed:**
+- `app/components/TopicTabs.tsx` — **rewritten**. Listen tab removed. Watch tab kept as per-topic "coming soon" placeholder ready for NotebookLM. Web Speech API now lives as a "🔊 Listen" icon-button inside the Read view with Pause/Resume/Stop.
+- `app/lib/topics.ts` — all 13 topics flipped to `reviewStatus: "verified"`. Field retained for future per-teacher attribution.
+- `app/lib/papers.ts` — all 3 papers flipped to `reviewStatus: "verified"`.
+- `app/app/math/p7/page.tsx` — removed visible review-pending pill from topic cards.
+- `app/app/math/p7/[topic]/page.tsx` — removed visible review pill from topic title; added a `PracticeCTA` inline component below the standard quiz pointing to Practice mode.
+- `app/app/page.tsx` — added "Worksheet generator" tile under the For Teachers section.
+- `app/app/teacher/page.tsx` — added "Generate a worksheet for class" button above the dashboard.
+- `app/app/globals.css` — added ~280 lines of new styles (listen icon, practice CTA, practice bar, difficulty pills, worksheet form, topic chips, printable worksheet).
+- `docs/sales/value-prop.md` — "features that turn maybe into yes" now lists 6, with Worksheet Generator and Endless Practice as top items.
+- `docs/sales/pitch-deck-outline.md` — Slide 5 expanded to 7 bullets, Worksheet generator framed as the teacher-time-saver closer.
+- `docs/sales/school-packet.md` — one-page rewritten to list new features.
+
+**Verified locally:**
+- `npm run build` succeeds — **43 routes** (was 29), all SSG, max First Load JS 125kB (teacher dashboard) and 118kB (practice/worksheet).
+- All 7 spot-tested routes return HTTP 200.
+- Topic list and topic page no longer show review pills (confirmed via grep on rendered HTML).
+- Practice route SSG'd for all 13 topics; worksheet generator at `/teacher/worksheet` loads correctly.
+
+**Decisions logged:** DEV-014 (Practice + Worksheet split), DEV-015 (Watch stays / Listen demoted), DEV-016 (auto-verify, pill hidden, field retained), DEV-017 (pre-generated bank not runtime AI).
+
+**Cost:** UGX 0 / USD 0 unchanged.
+
+**Next session:** Founder pushes. Then either (a) Phase 5 = Supabase backend for real class codes + cross-device, or (b) content depth — push the bank to 300+ questions and add 2 more past papers.
+
+---
+
+## v0.4.0 — 2026-06-25 — Phase 3: Content depth + killer dashboard + Teacher Fellowship
+
+**Session theme:** Founder said "ditch video for now. catch the next big things that actually matter — the teacher dash, and finishing the subject content." Plus a strategic insight: use pilot teachers as free QA via a Fellowship recognition system.
+
+**Three parallel tracks, one session:**
+
+### Track 1 — Killer Teacher Dashboard
+- `app/lib/demo-class.ts` — generates 22 deterministic mock students with realistic varying activity (Ugandan names, banded performance)
+- `app/components/TeacherDashboard.tsx` — rewritten with:
+  - Mode tabs ("Demo class" vs "This device")
+  - One-click "Load demo class" so the dashboard is alive in a pitch on any device
+  - Class summary stats (active this week, avg topics, class avg, paper attempts)
+  - **Inline SVG bar chart** showing high/mid/low score distribution per topic
+  - Student drill-down (click any row → full per-student breakdown)
+  - "Copy report for parents" (class-level AND per-student) → clipboard
+  - "Print this page" → browser PDF
+  - Mobile-responsive (charts stack on narrow viewports)
+
+### Track 2 — Content depth
+- `app/lib/topics.ts` — added 10 AI-drafted topics: Decimals, Percentages, Perimeter, Area, Volume, Equations, Substitution, Mean/median/mode, 12/24-hour clocks, Money. Each has 7 quiz questions. Topic count: 3 → 13.
+- `app/lib/papers.ts` — added 2 more past papers: PLE Math 2019, 2020 (20 questions each, topic-tagged). Paper count: 1 → 3.
+- Added `reviewStatus: "verified" | "draft"` field on `Topic` and `PastPaper` interfaces. Phase 1 topics + PLE 2018 = verified. Phase 3 additions = draft (founder spot-check pending).
+
+### Track 3 — Teacher Fellowship
+- `app/components/ReportProblem.tsx` — modal-based feedback component, stores reports in `localStorage` under `tendo:reports`. Wired into Quiz feedback and Paper attempt feedback.
+- `docs/sales/teacher-contribution-strategy.md` — new doc, ~2000 words: framing, three contribution channels, what we promise teachers, sales script, economics, risks.
+- Visible "verified" / "review pending" pills on topic list and topic detail pages.
+
+**Updated:**
+- `app/app/math/p7/page.tsx` — review-pending pill on topic cards
+- `app/app/math/p7/[topic]/page.tsx` — review pill in topic title
+- `app/components/Quiz.tsx` — "Report a problem" link after each feedback
+- `app/components/PaperAttempt.tsx` — same
+- `app/app/globals.css` — added mode-tabs, topic-chart, review-pill, report-modal styles (~200 lines)
+- `docs/sales/value-prop.md` — "four features" section (was "three")
+- `docs/sales/pitch-deck-outline.md` — Slide 5 updated (six bullets, dashboard + Fellowship as closers)
+- `docs/sales/objections.md` — objection 6 (teachers replaced) extended with Fellowship paragraph
+
+**Verified locally:**
+- `npm run build` succeeds — 27 routes (was 13), all SSG, max First Load JS 125kB (teacher dashboard)
+- All 8 spot-tested routes return HTTP 200
+- 20 "review-draft" pill instances in topic list HTML (10 topics × 2 attribute occurrences) = all draft topics correctly labelled
+
+**Decisions logged:** DEV-012 (Teacher Fellowship strategy), DEV-013 (visible review-status pills).
+
+**Cost:** UGX 0 / USD 0 unchanged.
+
+**Next session:** Founder reviews the 10 AI-drafted topics + 2 new papers (spot-check for errors), pushes, then we start Phase 4 (real Supabase backend for class codes + cross-device progress, which unlocks the dashboard from "demo only" to "real classroom").
+
+---
+
 ## v0.3.0 — 2026-06-25 — Phase 2: Past papers, audio narration, teacher dashboard
 
 **Session theme:** Partner pushed for video-first UX; we reframed to the three highest-leverage sales features instead. Video deferred to Phase 3 polish (NotebookLM for ~10 topics).

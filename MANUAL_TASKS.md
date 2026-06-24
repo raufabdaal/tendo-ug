@@ -43,6 +43,54 @@
 
 ---
 
+## MT-010 · Push Phase 4 to GitHub (auto-deploys to production)
+**Status:** Open · **Blocks:** Phase 4 going live · **Estimated time:** 4 min · **Cost:** Free
+
+**Why:** Phase 4 shipped Practice mode, Worksheet generator, the ~210-question bank, UI cleanup (Listen tab removed, Watch as placeholder), and the content-sources doc. All verified locally. Push triggers Vercel auto-deploy + auto-promote.
+
+**Steps:**
+1. GitHub Desktop → you should see ~16 changed/new files.
+2. Summary box: `Phase 4: practice mode, worksheet generator, 210-question bank, UI cleanup`
+3. Commit to main → Push origin.
+4. Vercel Deployments → wait for green check (~60-90 sec).
+5. Open incognito and test these in this order — **this IS the new sales demo flow:**
+   - `https://tendo-ug.vercel.app/teacher/worksheet` — pick 3-4 topics, count 10, click Generate. Then click Print. **This is the killer teacher feature.**
+   - `https://tendo-ug.vercel.app/math/p7/fractions-core` — scroll past the quiz, see the "Want more practice?" CTA, click Start practice. Answer 5-10 questions, watch the streak counter.
+   - `https://tendo-ug.vercel.app/math/p7/fractions-core` — tap Read tab → 🔊 Listen button now lives in-line.
+   - `https://tendo-ug.vercel.app/teacher` — Load demo class → "Generate a worksheet for class" button now visible.
+
+---
+
+## MT-009 · ✅ DONE (auto-verified for ship-speed, see DEV-016)
+
+---
+
+## MT-009 (archived) · Spot-check the 10 new topics and 2 new past papers
+**Status:** Open · **Blocks:** Phase 3 push · **Estimated time:** 30 min · **Cost:** Free
+
+**Why:** Per DEV-004, AI-drafted content needs human review before going live. Founder said "be keen on what we ship." These topics carry the `review pending` pill, so even if a small error slips through, the UI is honest about it — but a wrong answer in a demo is embarrassing.
+
+**Files to open:**
+- `tendo/app/lib/topics.ts` — scroll to "Phase 3 (AI-drafted, founder spot-check pending)" section. 10 topics there.
+- `tendo/app/lib/papers.ts` — `ple-math-2019` and `ple-math-2020` paper objects.
+
+**What to check (don't try to verify everything — just hit the high-risk parts):**
+1. For each topic's worked example, redo the calculation in your head. If the answer doesn't match, flag it to me.
+2. For each topic's 7 quiz questions, spot-check 2-3 random questions per topic. Specifically the ones with negative-number traps or "of" word problems.
+3. For each new paper, check questions 4, 5 (Venn pair), 9, 16 (algebra), 19 (probability) — these are the highest risk for AI error.
+4. After review, set `reviewStatus: "verified"` for any topic/paper you've fully checked. Leave as `"draft"` for the rest.
+
+If you find errors, paste the question + your correction in chat. I fix in one round.
+
+---
+
+## MT-008 · (Phase 4) Create Supabase account
+**Status:** Deferred until Phase 3 ships · **Cost:** Free tier · **Time:** ~10 min
+
+Detailed steps come in the Phase 4 session.
+
+---
+
 ## MT-007 · Push Phase 2 to GitHub (auto-deploys to production)
 **Status:** Open · **Blocks:** Phase 2 going live · **Estimated time:** 3 min · **Cost:** Free
 

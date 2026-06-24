@@ -55,15 +55,18 @@ Four screenshots in a 2×2 grid:
 
 ## Slide 5 — What you get as the school
 
-Five bullets (the new one in **bold** is the closer — say it last):
+Seven bullets, but the last three are the closers. Save them.
 
 - 🏫 **Branded for your school.** Subdomain like `tendo-stmarys.ug`.
 - 🔧 **Zero IT burden.** It is a website. No installation. No server. No support tickets.
 - 👨‍🏫 **Your teachers can assign topics in class.** "Tonight, do the Fractions topic on Tendo." Self-marking.
-- 📚 **Past PLE papers, two views.** Students attempt and get auto-marked. Teachers browse-by-topic and print a worksheet in two clicks. Saves your average P7 teacher about an hour a week.
-- 📊 **Teacher dashboard.** *(Show the screenshot here.)* You can see at a glance which topics your class has practiced and how they scored. Export it to WhatsApp and your parents see the work being done.
+- 📚 **Past PLE papers, two views.** Students attempt and get auto-marked. Teachers browse-by-topic and print a worksheet in two clicks.
+- 📝 **Worksheet generator** — *(open it live and click Generate).* Mix any topics, pick a length, get a printable worksheet from a bank of ~200 questions. Re-shuffle for a fresh one every time. **Saves the average P7 teacher about an hour a week of question prep.**
+- 🔁 **Endless practice for students.** Every topic has a "Start practice" button. Different questions every time, with a streak counter. Your students never run out of material.
+- 📊 **Class dashboard with charts + student drill-down.** *(Open it live, load demo class, click around.)* You see at a glance which topics need re-teaching (red bars) and click into any student. Export to WhatsApp; your parents see the work being done.
+- 🏅 **Teacher Fellowship.** Your senior teachers can review questions and earn public recognition as Tendo Teacher Fellows — a certificate, their name on the school's Tendo page.
 
-**You say:** *"We don't add to your teachers' load. We give them a tool to make their existing revision more effective, and we give you a screenshot you can put in the parents' WhatsApp group on a Friday afternoon."*
+**You say:** *"We don't add to your teachers' load. We hand them a worksheet generator that gives back an hour a week. We hand your students unlimited practice. We hand you a screenshot you can put in the parents' WhatsApp group on a Friday afternoon. And we hand your senior teachers a visible recognition path."*
 
 ---
 

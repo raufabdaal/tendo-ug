@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { PaperQuestion } from "@/lib/papers";
+import ReportProblem from "./ReportProblem";
 
 const LETTERS = ["A", "B", "C", "D"] as const;
 type Phase = "answering" | "feedback" | "done";
@@ -171,6 +172,13 @@ export default function PaperAttempt({
         <>
           <div className="feedback">
             <strong>{myPick === item.correct ? "Correct." : "Not quite."}</strong> {item.why}
+          </div>
+          <div style={{ textAlign: "right", marginBottom: 8 }}>
+            <ReportProblem
+              context={`paper:${paperId}/q${item.num}`}
+              contextLabel={`${paperName} · Q${item.num}: ${item.q.slice(0, 60)}${item.q.length > 60 ? "…" : ""}`}
+              small
+            />
           </div>
           <button className="btn btn-primary btn-block" onClick={advance}>
             {index + 1 === questions.length ? "See result" : "Next question"}
