@@ -1,6 +1,6 @@
 # CHECKLIST — Tendo at a glance
 
-*Updated: 2026-06-24*
+*Updated: 2026-06-25*
 
 ## Phase 0 — Foundation
 - [x] Workspace skeleton
@@ -54,7 +54,7 @@
 ## Phase 5 — Founder picks ONE
 - [ ] A: Supabase backend (real class codes, cross-device)
 - [ ] B: Content depth (210→350 questions, 2 more papers, 5 more topics)
-- [ ] C: NotebookLM videos for top 10 topics
+- [ ] C: NotebookLM videos for top 10 topics — **wiring done; 3 Math videos in progress (Fractions, Percentages, Equations)**
 - [ ] D: P6 Math track
 
 ## Phase 3 — Content depth + killer dashboard + Fellowship (DONE LOCALLY)

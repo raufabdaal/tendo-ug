@@ -2,6 +2,36 @@
 
 > Newest at the top. Dated, append-only. Sessions are blocks.
 
+## v0.5.1 — 2026-06-25 — Video wiring for Watch tab
+
+**Session theme:** Founder wanted to pick up after a chat crash and focus on the Watch tab first. Wired per-topic video URLs and wrote a NotebookLM → YouTube → embed pipeline so the founder can generate the first 3 Math videos without needing more code changes.
+
+> **Note on the previous session:** The multi-subject Phase 5 work (English / Science / SST) was not pushed to GitHub before the previous chat crashed. Those files existed only as uploaded docs, not in the `tendo-ug` GitHub repo. This session resumed from the repo state, which is Phase 4 (Math only).
+
+**Added:**
+- `videoUrl?: string` field on the `Topic` interface in `app/lib/topics.ts`.
+- `docs/ops/notebooklm-video-guide.md` — full prompt-and-workflow guide for generating 3 Math videos (Fractions, Percentages, Equations) with NotebookLM, Canva/PowerPoint, Loom/OBS, and YouTube.
+- `toEmbedUrl()` helper in `app/components/TopicTabs.tsx` — converts YouTube watch/short links into iframe-ready embed URLs.
+- Responsive `.video-wrapper` CSS in `app/app/globals.css` for 16:9 embeds.
+- Placeholder `// videoUrl: ...` comments on `fractions-core`, `proportion-percentages`, and `equations` topics so the founder knows exactly where to paste URLs.
+
+**Changed:**
+- `app/components/TopicTabs.tsx` — the Watch tab now shows the embedded video if `videoUrl` is set, otherwise keeps the "Video coming soon" placeholder. The "soon" pill is hidden when a video is present.
+- `app/lib/topics.ts` — `Topic` interface now carries optional `videoUrl` with a JSDoc comment explaining the placeholder behavior.
+- `app/app/globals.css` — added responsive video wrapper styles under the Topic tabs section.
+
+**Verified locally:**
+- `npm run build` succeeds — 43 routes, all SSG, no type errors.
+- `npm run dev` spot-check on `/math/p7/fractions-core` shows Watch tab placeholder and Read tab unchanged.
+
+**Decisions logged:** DEV-018 (optional per-topic videoUrl, YouTube embeds, placeholder-first).
+
+**Cost:** UGX 0 / USD 0 unchanged.
+
+**Next session:** Founder generates the 3 Math videos using the NotebookLM guide, uploads to YouTube, pastes the URLs into `app/lib/topics.ts`, then pushes. After that, we either deepen Math with more videos or return to subject deepening / Supabase backend.
+
+---
+
 ## v0.5.0 — 2026-06-25 — Phase 4: Endless practice + worksheet generator + UI cleanup
 
 **Session theme:** Founder said keep video as per-topic placeholder, drop Listen tab, auto-verify content for speed, and build "infinite questions for students + infinite questions for teachers." Rebuilt the AI-generated angle as a pre-generated bank for zero-ops reliability.
