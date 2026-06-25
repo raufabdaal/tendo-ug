@@ -58,7 +58,7 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
           className={"tab" + (tab === "watch" ? " active" : "")}
           onClick={() => { setTab("watch"); stopSpeech(); }}
         >
-          ▶ Watch <span className="tab-pill">soon</span>
+          ▶ Watch {topic.videoUrl ? null : <span className="tab-pill">soon</span>}
         </button>
         <button
           role="tab"
@@ -72,11 +72,24 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
 
       {tab === "watch" && (
         <div className="watch-panel">
-          <div style={{ fontSize: 32 }}>🎬</div>
-          <strong>Video coming soon</strong>
-          <p className="watch-soon">
-            A short explainer video for this topic is being prepared. Tap Read to study now.
-          </p>
+          {topic.videoUrl ? (
+            <div className="video-wrapper">
+              <iframe
+                src={toEmbedUrl(topic.videoUrl)}
+                title={`Video: ${topic.title}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+              />
+            </div>
+          ) : (
+            <div className="watch-empty">
+              <div style={{ fontSize: 32 }}>🎬</div>
+              <strong>Video coming soon</strong>
+              <p className="watch-soon">
+                A short explainer video for this topic is being prepared. Tap Read to study now.
+              </p>
+            </div>
+          )}
         </div>
       )}
 
@@ -146,4 +159,11 @@ function buildScript(topic: Topic): string {
   parts.push("Quick recap.");
   parts.push(topic.note.recap.join(" "));
   return parts.join(" ");
+}
+
+function toEmbedUrl(url: string): string {
+  // Convert a YouTube watch or short link into the embed form so the iframe works.
+  const yt = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([a-zA-Z0-9_-]+)/);
+  if (yt && yt[1]) return `https://www.youtube.com/embed/${yt[1]}`;
+  return url;
 }

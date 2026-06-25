@@ -1,77 +1,71 @@
 # HANDOFF — for the next session
 
-*Written: 2026-06-25, end of Phase 4*
+*Written: 2026-06-25, end of video-wiring session*
 
 ## TL;DR for the next agent
 
 Read in this order:
 1. `AGENT_BRIEF.md` — founder's working style
-2. `STATUS.md` — Phases 0-4 done; Phase 5 has multiple paths, founder picks
-3. `DECISIONS.md` — DEV-001 through DEV-017. Newest: DEV-014/15/16/17 explain Practice + Worksheets + auto-verify
-4. `docs/spec/content-sources.md` — how content is sourced and what we tell schools
-5. `docs/sales/value-prop.md` — current "six features that turn maybe into yes"
+2. `STATUS.md` — Phase 4 done; video wiring just landed; founder is generating the first 3 Math videos
+3. `DECISIONS.md` — DEV-001 through DEV-018. Newest: DEV-018 (per-topic videoUrl + YouTube embed + placeholder-first)
+4. `docs/ops/notebooklm-video-guide.md` — the prompts and workflow the founder is following
+5. `docs/spec/content-sources.md` — how content is sourced and what we tell schools
 
 ## Where you're picking up
 
-Phase 4 is **functionally done**. Site is feature-rich enough for a serious pitch:
-- 13 topics with notes, worked examples, quizzes
-- 3 past papers (student + teacher modes)
-- Endless Practice on every topic
-- Worksheet generator for teachers
-- Class dashboard with charts, drill-down, demo-class seeding
-- Teacher Fellowship feedback loop
+Phase 4 is **functionally done**. The Watch tab is now **video-ready**:
+- `Topic` type has an optional `videoUrl` field.
+- `TopicTabs` embeds a YouTube video when `videoUrl` is set, and keeps the placeholder when it is not.
+- **Fractions video is locked in:** `videoUrl: "https://youtu.be/HuitLoh1Q9g"`.
+- Percentages and Equations still have placeholder comments ready for URLs.
+- The NotebookLM video guide is in `docs/ops/notebooklm-video-guide.md`.
 
-The only step left for Phase 4 is the founder's push.
+**Important:** The previous session's multi-subject Phase 5 work (English / Science / SST) was **not pushed to GitHub** before the chat crashed. Those files existed only as uploaded docs. The current repo is still Phase 4 (Math only). If you want to recover that work, we need a dedicated session to rebuild it from the docs.
 
-## Next session = Phase 5 (founder picks ONE)
+The founder's next action is to generate the remaining 2 videos, paste the URLs, and push.
 
-Lay out the four options at session start; the founder picks one.
+## Next session (founder picks)
 
-### Option A — Supabase backend (the unlock for paid pilots)
-- Free Supabase account, schema for `schools`, `class_codes`, `students`, `attempts`, `reports`
-- Class-code join flow (`/join/[code]`)
-- Migrate Quiz, PaperAttempt, PracticeRunner to write to Supabase + localStorage
-- Dashboard reads real data instead of demo class
-- ~2 sessions of work
+### If the founder has 3 video URLs
+- Uncomment the `// videoUrl: ...` lines in `app/lib/topics.ts` for the three topics.
+- Replace the placeholder with the real YouTube watch link (e.g., `https://www.youtube.com/watch?v=ABC123`).
+- Run `npm run build` and `npm run dev` to verify the Watch tab loads the video.
+- Push to `main`. Vercel auto-deploys and auto-promotes.
 
-### Option B — Content depth
-- Bank: 210 → 350 questions (push to ~25/topic)
-- 2 more past papers (PLE 2021, 2022)
-- Promote 5 "coming soon" topics (Prime factorisation, Integers, Travel graphs, Probability intro, Algebraic expressions) to full topics
-- ~1 session
+### If the founder wants to expand video coverage before deepening subjects
+- Pick the next 2–3 high-stakes Math topics (e.g., `area`, `volume`, `venn-diagrams-2-events`).
+- Add `// videoUrl: ...` placeholder comments to those topics.
+- Copy the relevant prompt from the guide and adapt it to the topic's worked example.
+- No code changes needed beyond adding the URL once the video is uploaded.
 
-### Option C — NotebookLM videos for top 10 topics
-- Founder generates videos (manual, in NotebookLM)
-- We add `videoUrl?: string` to Topic, wire Watch tab to embed YouTube when present
-- ~0.5 session on our side; founder's time on NotebookLM is the bottleneck
-
-### Option D — P6 Math content track
-- Build `content/curriculum/p6-math.json` (80% overlap with P7)
-- Add P6 topic shells to home page
-- Start porting topics from P7 to P6 versions (lighter content)
-- ~2 sessions
+### If the founder wants to pick up the multi-subject Phase 5 work
+- The uploaded docs (from the crashed chat) describe a Phase 5 state with English, Science, and SST live.
+- **That code is not in the GitHub repo.** The repo is still Math-only at the end of Phase 4.
+- Rebuilding it means: adding a `Subject` registry, refactoring `topics.ts`/`papers.ts`/`question-bank.ts` with `subjectId`, and creating parallel route trees for each subject. This is a full session, not a quick add-on.
 
 ## Watch-outs
 
 - **Vercel deploy blocks vulnerable Next.js versions.** Currently pinned at 15.5.19. Bump if a new CVE drops.
 - **Push to `main` auto-promotes to production.** The "Redeploy" button does NOT.
 - **The question bank now drives multiple features.** When adding/removing/editing a question, both Practice mode AND worksheet output reflect the change. Bank quality matters more than ever.
-- **localStorage keys in use:** `tendo:progress` (topic quiz scores), `tendo:papers` (paper attempts), `tendo:practice` (practice sessions), `tendo:reports` (problem reports), `tendo:demo-class` (seeded demo students). When Phase 5A (Supabase) migrates, all five need a migration path.
+- **localStorage keys in use:** `tendo:progress` (topic quiz scores), `tendo:papers` (paper attempts), `tendo:practice` (practice sessions), `tendo:reports` (problem reports), `tendo:demo-class` (seeded demo students). When the Supabase phase migrates, all five need a migration path.
 - **No em dashes in user-facing copy.** Still applies.
-- **Watch tab is per-topic placeholder.** When we have a video for one topic, just add `videoUrl` to that topic; the panel logic should handle "has video" vs "no video" gracefully.
+- **YouTube watch links are auto-converted to embeds.** You can paste either `https://www.youtube.com/watch?v=VIDEO_ID` or `https://youtu.be/VIDEO_ID` — the `toEmbedUrl` helper in `TopicTabs` will handle it.
+- **Placeholder comments must be replaced before the videos are visible.** The placeholder text remains on the site until the real URL is uncommented.
 
 ## Architectural reminders
 
 - Plain CSS, no Tailwind (DEV-007)
 - Data in TypeScript not MDX (DEV-006)
-- No auth, localStorage only — UNTIL Phase 5A flips this
+- No auth, localStorage only — UNTIL the Supabase phase flips this
 - No streaks/gamification beyond the practice streak counter (DEV-010 still applies; the practice counter is per-session, not persistent leaderboards)
 - All content auto-verified in v0; honest content-sources doc backs us up (DEV-016)
-- Pre-generated bank, not runtime AI (DEV-017) — unless we explicitly add a "Generate fresh" button in Phase 6+
+- Pre-generated bank, not runtime AI (DEV-017) — unless we explicitly add a "Generate fresh" button in a later phase
+- Optional `videoUrl` per topic; no global video config needed (DEV-018)
 
 ## Open questions to ask the founder
 
-1. Did the Phase 4 push work? Tested the worksheet generator end-to-end (generate → print)?
-2. Which of options A/B/C/D should we do next?
-3. Has any school given a verbal "yes" yet? Their needs reshape priorities.
-4. The bank is at ~210 questions. Comfortable shipping at that scale, or push to 350 before Phase 5?
+1. Did you generate the 3 Math videos with NotebookLM? Do you have the YouTube URLs ready?
+2. Did the Watch tab load the video correctly after you pasted the URL?
+3. After videos, should we make more Math videos or pick up the multi-subject Phase 5 work?
+4. Has any school given a verbal "yes" yet? Their needs reshape priorities.

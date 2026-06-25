@@ -223,3 +223,21 @@
 - Past papers are richest for math.
 - Showing the other three as Coming Soon signals breadth without overpromising.
 **Tracked across:** `docs/spec/PRD.md`, `preview.html`, all sales docs (only Math is promised today).
+
+---
+
+## DEV-018 · 2026-06-25 · Per-topic optional `videoUrl` with YouTube embed and placeholder-first UX
+
+**Previous decision (DEV-015):** The Watch tab was a per-topic "coming soon" placeholder with no code path to display a real video.
+**Problem reported:** Founder wanted to start adding videos now and needed a repeatable pipeline that didn't require a code change for every video.
+**New decision:**
+- Add an optional `videoUrl?: string` field to the `Topic` interface in `app/lib/topics.ts`.
+- In `app/components/TopicTabs.tsx`, if `videoUrl` is present, render a responsive 16:9 iframe using a YouTube embed URL; otherwise keep the "Video coming soon" placeholder.
+- Add a `toEmbedUrl()` helper that converts normal YouTube watch links (`youtube.com/watch?v=...`) and short links (`youtu.be/...`) into the iframe-safe embed form.
+- Add CSS in `app/app/globals.css` for a responsive `.video-wrapper` that keeps the 16:9 ratio on all screen sizes.
+- Keep the placeholder comments on topics that don't yet have videos, so adding a video is only a matter of uncommenting and pasting a URL.
+**Reasoning:**
+- Video generation is manual (NotebookLM + Canva/Loom + YouTube), so the code must make adding a video a one-line data change, not a component rewrite.
+- YouTube is the default host because it is free, handles bandwidth globally, and has a stable embed URL format.
+- Placeholder-first keeps the UI honest: topics without videos still say "coming soon", and topics with videos immediately show the player without extra UI work.
+**Tracked across:** `app/lib/topics.ts`, `app/components/TopicTabs.tsx`, `app/app/globals.css`, `docs/ops/notebooklm-video-guide.md`.

@@ -1,12 +1,28 @@
 # STATUS — Tendo
 
-*Updated: 2026-06-25, end of Phase 4 session*
+*Updated: 2026-06-25, video wiring session*
 
-## Where we are: **Phase 4 — Practice + Worksheets + UI cleanup (DONE LOCALLY)**
+## Current focus: Video support is wired; first video locked in; awaiting the other 2 Math videos
 
-Phases 0-3 also done. Site live on Vercel at `tendo-ug.vercel.app`.
+Phase 4 (Practice + Worksheets + UI cleanup) is done locally. The GitHub repo is at the Phase 4 state (Math only). The previous session's multi-subject Phase 5 work (English / Science / SST) was **not pushed to GitHub** before the chat crashed; those files existed only as uploaded docs, not in the repo.
+
+The Watch tab now supports per-topic YouTube embeds. **Fractions video is live:** `https://youtu.be/HuitLoh1Q9g`. Percentages and Equations still have placeholder comments waiting for URLs.
+
+Site live on Vercel at `tendo-ug.vercel.app`.
 
 ## What shipped this session
+
+### 1. Per-topic video wiring
+- `videoUrl?: string` added to the `Topic` interface in `app/lib/topics.ts`.
+- `app/components/TopicTabs.tsx` now embeds a YouTube video when `videoUrl` is set, and shows the placeholder when it is not.
+- Added `toEmbedUrl()` helper so you can paste a normal YouTube watch link and the tab converts it to an embed URL.
+- Responsive `.video-wrapper` CSS added to `app/app/globals.css`.
+- Placeholder `// videoUrl: ...` comments added to `fractions-core`, `proportion-percentages`, and `equations`.
+
+### 2. NotebookLM video guide
+- New doc: `docs/ops/notebooklm-video-guide.md` with step-by-step workflow, tool recommendations, and prompts for the 3 starter topics.
+
+## Phase 4 recap (already shipped)
 
 ### 1. ~210-question bank (`app/lib/question-bank.ts`)
 - 13 topics × 12–15 questions each, difficulty-tagged (easy/medium/hard)
@@ -43,21 +59,24 @@ Phases 0-3 also done. Site live on Vercel at `tendo-ug.vercel.app`.
 ## What's next 🎯
 
 ### Immediate (founder)
-**Push to GitHub.** Vercel auto-deploys, auto-promotes to production (push-to-main rule, DEV_JOURNAL 2026-06-24).
+**Generate the first 3 Math videos.** Follow `docs/ops/notebooklm-video-guide.md` for Fractions, Percentages, and Equations. Upload to YouTube, then paste the URLs into `app/lib/topics.ts` by uncommenting the `// videoUrl: ...` lines and replacing the placeholder. Push to `main`; Vercel auto-deploys.
 
-Then in incognito, test these new URLs:
-- `https://tendo-ug.vercel.app/math/p7/fractions-core/practice`
-- `https://tendo-ug.vercel.app/teacher/worksheet` (generate one, print it, that's the killer demo)
+After pushing, test in incognito:
+- `https://tendo-ug.vercel.app/math/p7/fractions-core` — click **Watch** and confirm the video plays.
+- `https://tendo-ug.vercel.app/math/p7/proportion-percentages` — should show placeholder until a URL is added.
+- `https://tendo-ug.vercel.app/teacher/worksheet` — still the killer demo for teachers.
 
-### Phase 5 options (founder picks)
+### Phase 5 options (after the 3 videos are live)
+- **More Math videos** — repeat the pipeline for the remaining 10 topics, or at least the top 5 high-stakes ones.
+- **Deepen subjects** — add English / Science / SST (this requires a multi-subject refactor; the uploaded Phase 5 docs describe it, but the current GitHub repo is still Math-only).
 - **Supabase backend** — real class codes, cross-device progress, real dashboard not demo. Unlocks paid pilots.
-- **More content depth** — push bank to 300+ questions; add 2 more PLE papers (2021, 2022); add 5 more "coming soon" topics as full topics. Stays free-tier.
-- **NotebookLM video pipeline** — manual generation, YouTube embed wiring, ~10 high-stakes topics first.
+- **More content depth** — push bank to 300+ questions; add 2 more PLE papers (2021, 2022); promote 5 "coming soon" topics to full topics.
 - **P6 Math** — start parallel content track for the second class.
 
 ## Decisions made this session
 
 See `DECISIONS.md`:
+- DEV-018: Per-topic `videoUrl` + YouTube embed + placeholder-first approach
 - DEV-017: Pre-generated bank, not runtime AI generation
 - DEV-016: Auto-verify content, hide pill, keep field (supersedes DEV-013)
 - DEV-015: Watch tab placeholder kept, Listen demoted to icon

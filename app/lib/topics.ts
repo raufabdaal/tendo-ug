@@ -37,6 +37,8 @@ export interface Topic {
   quiz: QuizQuestion[];
   status: "published" | "coming-soon";
   reviewStatus: "verified" | "draft";
+  /** YouTube / direct video URL to embed in the Watch tab. Undefined = placeholder. */
+  videoUrl?: string;
 }
 
 export const TOPICS: Topic[] = [
@@ -177,6 +179,7 @@ export const TOPICS: Topic[] = [
     estMinutes: 12,
     status: "published",
     reviewStatus: "verified",
+    videoUrl: "https://youtu.be/HuitLoh1Q9g",
     note: {
       intro: "Why this matters: Fractions appear in roughly a third of every PLE Maths paper, in word problems, in measurement, and in algebra setup.",
       whatYouNeedToKnow: [
@@ -258,6 +261,7 @@ export const TOPICS: Topic[] = [
     estMinutes: 12,
     status: "published",
     reviewStatus: "verified",
+    // videoUrl: "https://www.youtube.com/embed/...", // TODO: paste NotebookLM video URL after upload
     note: {
       intro: "Why this matters: Percentages turn up in money, discounts, exam marks and population questions. PLE consistently asks 4 to 6 marks on percentages per paper.",
       whatYouNeedToKnow: [
@@ -414,6 +418,7 @@ export const TOPICS: Topic[] = [
     estMinutes: 10,
     status: "published",
     reviewStatus: "verified",
+    // videoUrl: "https://www.youtube.com/embed/...", // TODO: paste NotebookLM video URL after upload
     note: {
       intro: "Why this matters: Linear equations are the gateway to algebra. PLE asks at least one in every paper, usually 2 marks, sometimes hidden inside a word problem.",
       whatYouNeedToKnow: [
