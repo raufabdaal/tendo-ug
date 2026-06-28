@@ -1,4 +1,4 @@
-> **Partnership proposal — one A4 page, black and white, product only, full PLE picture.**
+> **Partnership proposal - one A4 page, black and white, full PLE picture, no placeholders.**
 > For the print-ready version, open `school-proposal.html` in a browser and print to PDF.
 
 ---
@@ -6,15 +6,14 @@
 # Tendo
 ## PLE revision, built for Ugandan upper-primary
 
-**Proposal for:** School Name  
-**Date:** June 2026  
+**Proposal for:** scalemedia.pro  
 **Prepared by:** scalemedia.pro
 
 ---
 
-Tendo is a school-branded web platform that helps upper-primary students prepare for the PLE across Mathematics, English, Integrated Science, and Social Studies. It gives students structured notes, worked examples, auto-marked quizzes, and real past papers — all on any phone.
+## A structured revision programme for every upper-primary student
 
----
+Tendo is a school-branded web platform that helps upper-primary students prepare for the PLE across Mathematics, English, Integrated Science, and Social Studies. It gives students structured notes, worked examples, auto-marked quizzes, and real past papers on any phone.
 
 ## Why this matters
 
@@ -22,18 +21,18 @@ The PLE syllabus is knowable and finite. Students who practise every topic with 
 
 ## What students get
 
-- **Watch and Read** on every topic — video explainers for high-stakes topics, text notes for all others.
+- **Watch and Read** on every topic. Video explainers for high-stakes topics, text notes for all others.
 - **Worked examples** written in plain language with Ugandan contexts.
 - **Auto-marked quizzes** with instant feedback after every topic.
-- **Endless practice** — a different question every time from a growing bank.
-- **Past PLE papers** — attempt as a student, get an exam-style score and review.
+- **Endless practice** with a different question every time from a growing bank.
+- **Past PLE papers** to attempt as a student, with an exam-style score and review.
 
 ## What teachers get
 
-- **Worksheet generator** — mix topics, set length and difficulty, print in two clicks.
-- **Browse-by-topic past papers** — find relevant questions without flipping through booklets.
-- **Class dashboard** — see which topics need re-teaching and drill down to any student.
-- **Teacher Fellowship** — senior teachers earn recognition for reviewing and improving content.
+- **Worksheet generator** to mix topics, set length and difficulty, and print in two clicks.
+- **Browse-by-topic past papers** to find relevant questions without flipping through booklets.
+- **Class dashboard** to see which topics need re-teaching and drill down to any student.
+- **Teacher Fellowship** so senior teachers earn recognition for reviewing and improving content.
 
 ## What the school gets
 
@@ -44,7 +43,7 @@ The PLE syllabus is knowable and finite. Students who practise every topic with 
 
 ## What we are looking for
 
-We are looking for one partner school to pilot Tendo with a single P7 class this term. We want to work closely with your teachers and students to make sure the platform is genuinely useful before we expand the rollout.
+We are looking for partner schools to pilot Tendo with a single P7 class this term. We want to work closely with your teachers and students to make sure the platform is genuinely useful before we expand the rollout.
 
 ## The pilot
 
@@ -56,5 +55,6 @@ We are looking for one partner school to pilot Tendo with a single P7 class this
 
 ---
 
-**Contact:** scalemedia.pro · +256 753 825 453 · zinduro@gmail.com  
-**Website:** tendo-ug.vercel.app
+**Contact:** scalemedia.pro  
++256 753 825 453 · zinduro@gmail.com  
+Website: tendo-ug.vercel.app
