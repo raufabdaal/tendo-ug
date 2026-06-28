@@ -2,27 +2,27 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tendo - Partnership Proposal</title>
   <style>
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: Georgia, "Times New Roman", "DejaVu Serif", serif;
-      background: #f4f4f4;
+      font-size: 10px;
+      line-height: 1.45;
       color: #111;
-      line-height: 1.6;
-      padding: 24px;
+      background: white;
     }
 
     .page {
       width: 210mm;
-      min-height: 297mm;
-      max-height: 297mm;
-      margin: 0 auto;
-      background: white;
-      padding: 24mm 22mm;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      height: 297mm;
+      padding: 18mm 18mm;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -30,77 +30,77 @@
 
     header {
       border-bottom: 1.5px solid #111;
-      padding-bottom: 14px;
-      margin-bottom: 20px;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
     }
 
     .brand {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: 700;
       letter-spacing: -0.02em;
       line-height: 1.1;
     }
 
     .tagline {
-      font-size: 12px;
+      font-size: 11px;
       font-style: italic;
       color: #444;
-      margin-top: 4px;
+      margin-top: 3px;
     }
 
     .meta {
-      margin-top: 16px;
-      font-size: 11px;
-      color: #333;
+      margin-top: 12px;
+      font-size: 10px;
+      display: flex;
+      gap: 24px;
     }
 
-    .meta-row {
-      margin-bottom: 3px;
+    .meta-block {
+      display: flex;
+      flex-direction: column;
     }
 
     .meta-label {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 8px;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: 0.04em;
-      font-size: 9px;
+      letter-spacing: 0.06em;
       color: #555;
-      display: block;
       margin-bottom: 1px;
     }
 
     h1 {
-      font-size: 17px;
+      font-size: 16px;
       font-weight: 700;
-      margin: 0 0 12px;
-      line-height: 1.3;
+      line-height: 1.25;
+      margin-bottom: 10px;
     }
 
     h2 {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin: 18px 0 7px;
+      margin: 12px 0 5px;
+      padding-bottom: 2px;
+      border-bottom: 1px solid #bbb;
       color: #222;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 4px;
     }
 
     p {
-      font-size: 11px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
       color: #222;
     }
 
     ul {
-      margin: 0 0 12px 18px;
-      font-size: 11px;
+      margin: 0 0 8px 14px;
       color: #222;
     }
 
     li {
-      margin-bottom: 5px;
+      margin-bottom: 3px;
       padding-left: 2px;
     }
 
@@ -109,48 +109,55 @@
     }
 
     .lead {
-      font-size: 13px;
+      font-size: 11px;
       font-weight: 500;
       line-height: 1.5;
-      margin-bottom: 14px;
       color: #111;
+      margin-bottom: 10px;
     }
 
     .box {
       border: 1.5px solid #111;
-      padding: 12px 14px;
-      margin: 14px 0;
+      padding: 8px 10px;
+      margin: 10px 0 8px;
     }
 
     .box-title {
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 700;
-      margin-bottom: 8px;
       text-transform: uppercase;
       letter-spacing: 0.08em;
-    }
-
-    .box p {
       margin-bottom: 5px;
     }
 
-    .divider {
-      height: 1px;
-      background: #111;
-      margin: 14px 0;
+    .box p {
+      margin-bottom: 3px;
+    }
+
+    .two-col {
+      display: flex;
+      gap: 12px;
+      margin: 6px 0;
+    }
+
+    .two-col .col {
+      flex: 1;
+    }
+
+    .two-col ul {
+      margin-bottom: 0;
     }
 
     footer {
       border-top: 1.5px solid #111;
-      padding-top: 12px;
-      margin-top: 16px;
-      font-size: 10px;
+      padding-top: 8px;
+      font-size: 9px;
       color: #333;
     }
 
     footer p {
-      margin-bottom: 4px;
+      margin-bottom: 2px;
     }
 
     .contact {
@@ -163,16 +170,6 @@
       text-decoration: underline;
       text-underline-offset: 2px;
     }
-
-    @media print {
-      body { background: white; padding: 0; }
-      .page { box-shadow: none; width: 100%; min-height: 100vh; padding: 24mm 22mm; }
-    }
-
-    @page {
-      size: A4;
-      margin: 0;
-    }
   </style>
 </head>
 <body>
@@ -180,53 +177,58 @@
     <div>
       <header>
         <div class="brand">Tendo</div>
-        <div class="tagline">PLE revision, built for Ugandan upper-primary</div>
+        <div class="tagline">PLE study, built for Ugandan upper-primary</div>
 
         <div class="meta">
-          <div class="meta-row">
+          <div class="meta-block">
             <span class="meta-label">Proposal for</span>
             scalemedia.pro
           </div>
-          <div class="meta-row">
+          <div class="meta-block">
             <span class="meta-label">Prepared by</span>
             scalemedia.pro
           </div>
         </div>
       </header>
 
-      <h1>A structured revision programme for every upper-primary student</h1>
+      <h1>A structured study programme for every upper-primary student</h1>
 
       <p class="lead">
-        Tendo is a school-branded web platform that helps upper-primary students prepare for the PLE across Mathematics, English, Integrated Science, and Social Studies. It gives students structured notes, worked examples, auto-marked quizzes, and real past papers on any phone.
+        Tendo is a school-branded web platform that helps upper-primary students study for the PLE across Mathematics, English, Integrated Science, and Social Studies. It gives students structured notes, worked examples, auto-marked quizzes, and real past papers on any phone.
       </p>
 
       <h2>Why this matters</h2>
       <p>
-        The PLE syllabus is knowable and finite. Students who practise every topic with the right questions and feedback are better prepared. We are building Tendo to make that revision path calm, structured, and easy for every school to offer its parents.
+        The PLE syllabus is knowable and finite. Students who study every topic with the right questions and feedback are better prepared. We are building Tendo to make that study path calm, structured, and easy for every school to offer its parents.
       </p>
 
-      <h2>What students get</h2>
-      <ul>
-        <li><strong>Watch and Read</strong> on every topic. Video explainers for high-stakes topics, text notes for all others.</li>
-        <li><strong>Worked examples</strong> written in plain language with Ugandan contexts.</li>
-        <li><strong>Auto-marked quizzes</strong> with instant feedback after every topic.</li>
-        <li><strong>Endless practice</strong> with a different question every time from a growing bank.</li>
-        <li><strong>Past PLE papers</strong> to attempt as a student, with an exam-style score and review.</li>
-      </ul>
-
-      <h2>What teachers get</h2>
-      <ul>
-        <li><strong>Worksheet generator</strong> to mix topics, set length and difficulty, and print in two clicks.</li>
-        <li><strong>Browse-by-topic past papers</strong> to find relevant questions without flipping through booklets.</li>
-        <li><strong>Class dashboard</strong> to see which topics need re-teaching and drill down to any student.</li>
-        <li><strong>Teacher Fellowship</strong> so senior teachers earn recognition for reviewing and improving content.</li>
-      </ul>
+      <div class="two-col">
+        <div class="col">
+          <h2>What students get</h2>
+          <ul>
+            <li><strong>Watch and Read</strong> on every topic. Video explainers for high-stakes topics, text notes for all others.</li>
+            <li><strong>Worked examples</strong> written in plain language with Ugandan contexts.</li>
+            <li><strong>Auto-marked quizzes</strong> with instant feedback after every topic.</li>
+            <li><strong>Endless practice</strong> with a different question every time.</li>
+            <li><strong>Past PLE papers</strong> to attempt as a student, with a score and review.</li>
+          </ul>
+        </div>
+        <div class="col">
+          <h2>What teachers get</h2>
+          <ul>
+            <li><strong>Worksheet generator</strong> to mix topics, set difficulty, and print in two clicks.</li>
+            <li><strong>Browse-by-topic past papers</strong> to find relevant questions fast.</li>
+            <li><strong>Class dashboard</strong> to see which topics need re-teaching and drill down to any student.</li>
+            <li><strong>Teacher Fellowship</strong> so senior teachers earn recognition for improving content.</li>
+          </ul>
+        </div>
+      </div>
 
       <h2>What the school gets</h2>
       <ul>
         <li>A school-branded page, ready for your parents to see.</li>
         <li>Zero IT burden: no installation, no server, no support tickets.</li>
-        <li>A termly usage report showing what students have practised.</li>
+        <li>A termly usage report showing what students have studied.</li>
         <li>A clear, credible answer to parents asking, "What extra are you doing for PLE?"</li>
       </ul>
 
@@ -237,10 +239,8 @@
 
       <div class="box">
         <div class="box-title">The pilot</div>
-        <p>One P7 class of your choice.</p>
-        <p>We set up a branded page for your school in five working days.</p>
-        <p>We provide a short message you can share with parents.</p>
-        <p>At the end of the term we review what worked and what to improve.</p>
+        <p>One P7 class of your choice. We set up a branded page for your school in five working days.</p>
+        <p>We provide a short message you can share with parents. At the end of the term we review what worked and what to improve.</p>
         <p>No cost for the pilot term.</p>
       </div>
     </div>
