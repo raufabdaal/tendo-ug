@@ -11,6 +11,8 @@
 **Added:**
 - `videoUrl?: string` field on the `Topic` interface in `app/lib/topics.ts`.
 - `docs/ops/notebooklm-video-guide.md` — full prompt-and-workflow guide for generating 3 Math videos (Fractions, Percentages, Equations) with NotebookLM, Canva/PowerPoint, Loom/OBS, and YouTube.
+- `docs/sales/school-proposal.html` — print-ready official proposal for schools, with inline CSS and print styles.
+- `docs/sales/school-proposal.md` — editable Markdown version of the same proposal.
 - `toEmbedUrl()` helper in `app/components/TopicTabs.tsx` — converts YouTube watch/short links into iframe-ready embed URLs.
 - Responsive `.video-wrapper` CSS in `app/app/globals.css` for 16:9 embeds.
 - Placeholder `// videoUrl: ...` comments on `fractions-core`, `proportion-percentages`, and `equations` topics so the founder knows exactly where to paste URLs.
