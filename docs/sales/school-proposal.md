@@ -41,15 +41,15 @@ The PLE syllabus is knowable and finite. Students who study every topic with the
 - A termly usage report showing what students have studied.
 - A clear, credible answer to parents asking, "What extra are you doing for PLE?"
 
-## What we are looking for
+## Why we are reaching out to your school
 
-We are looking for partner schools to pilot Tendo with a single P7 class this term. We want to work closely with your teachers and students to make sure the platform is genuinely useful before we expand the rollout.
+We are reaching out to your school because we believe Tendo can become a lasting part of how your students study for the PLE. We would like to start with a small pilot, and if it works for your teachers and students, integrate Tendo into your school for the long term.
 
 ## The pilot
 
-- One P7 class of your choice. We set up a branded page for your school in five working days.
+- We suggest starting with one class so your teachers and students can test the platform. We set up a branded page for your school in five working days.
 - We provide a short message you can share with parents. At the end of the term we review what worked and what to improve.
-- No cost for the pilot term.
+- No cost for the pilot term. If the pilot works, we roll it out across the school and continue together.
 
 ---
 
