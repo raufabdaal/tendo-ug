@@ -3,272 +3,207 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tendo — School Proposal</title>
+  <title>Tendo — Partnership Proposal</title>
   <style>
-    :root {
-      --cream: #FAF6F0;
-      --charcoal: #1F1B17;
-      --charcoal-soft: #3A332B;
-      --muted: #7A7065;
-      --terracotta: #C25A3C;
-      --indigo: #3B4A8A;
-      --border: #E7DFD0;
-    }
     * { box-sizing: border-box; margin: 0; padding: 0; }
+
     body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f4f1ea;
-      color: var(--charcoal);
-      line-height: 1.6;
-      padding: 40px 20px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: #f5f5f5;
+      color: #111;
+      line-height: 1.5;
+      padding: 24px;
     }
+
     .page {
-      max-width: 760px;
+      width: 210mm;
+      min-height: 297mm;
+      max-height: 297mm;
       margin: 0 auto;
       background: white;
-      padding: 56px 64px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-    }
-    header {
-      border-bottom: 2px solid var(--terracotta);
-      padding-bottom: 20px;
-      margin-bottom: 32px;
-    }
-    .brand {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      color: var(--charcoal);
+      padding: 22mm 20mm;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       display: flex;
-      align-items: center;
-      gap: 10px;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .brand-dot {
-      width: 12px;
-      height: 12px;
-      background: var(--terracotta);
-      border-radius: 2px;
-    }
-    .tagline {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 4px;
-      font-style: italic;
-    }
-    .meta {
-      margin-top: 24px;
-      font-size: 14px;
-      color: var(--charcoal-soft);
-    }
-    .meta-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 6px; }
-    .meta-label { color: var(--muted); font-weight: 600; }
 
-    h1 {
+    header {
+      border-bottom: 1px solid #111;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+    }
+
+    .brand {
       font-size: 24px;
       font-weight: 700;
-      margin: 32px 0 16px;
-      color: var(--charcoal);
+      letter-spacing: -0.02em;
     }
-    h2 {
-      font-size: 16px;
-      font-weight: 700;
-      margin: 28px 0 10px;
-      color: var(--terracotta);
+
+    .tagline {
+      font-size: 11px;
+      color: #555;
+      margin-top: 2px;
       text-transform: uppercase;
       letter-spacing: 0.04em;
     }
-    p { margin-bottom: 12px; color: var(--charcoal-soft); }
-    ul { margin: 12px 0 16px 22px; color: var(--charcoal-soft); }
-    li { margin-bottom: 6px; }
 
-    .highlight {
-      background: var(--cream);
-      border-left: 4px solid var(--terracotta);
-      padding: 16px 20px;
-      margin: 20px 0;
-      font-size: 15px;
+    .meta {
+      margin-top: 14px;
+      font-size: 11px;
     }
 
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
-      font-size: 14px;
-    }
-    th, td {
-      text-align: left;
-      padding: 10px 12px;
-      border-bottom: 1px solid var(--border);
-    }
-    th {
-      background: var(--cream);
-      font-weight: 700;
-      color: var(--charcoal);
-    }
-    tr:last-child td { border-bottom: none; }
-    .price { font-weight: 700; color: var(--terracotta); }
-
-    .pilot-box {
-      background: var(--indigo);
-      color: white;
-      padding: 20px 24px;
-      border-radius: 6px;
-      margin: 24px 0;
-    }
-    .pilot-box h2 { color: white; margin-top: 0; }
-    .pilot-box p { color: rgba(255,255,255,0.9); }
-    .pilot-box ul { color: rgba(255,255,255,0.9); }
-
-    .next-steps {
+    .meta-row {
       display: flex;
-      gap: 12px;
+      justify-content: space-between;
+      gap: 20px;
       flex-wrap: wrap;
-      margin: 24px 0 8px;
+      margin-bottom: 3px;
     }
-    .step {
-      flex: 1;
-      min-width: 160px;
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      padding: 14px;
-      text-align: center;
-      font-size: 14px;
-    }
-    .step-num {
-      display: inline-block;
-      width: 26px;
-      height: 26px;
-      line-height: 26px;
-      background: var(--terracotta);
-      color: white;
-      border-radius: 50%;
+
+    .meta-label { color: #555; font-weight: 600; }
+    .editable { border-bottom: 1px dashed #777; min-width: 80px; display: inline-block; }
+
+    h1 {
+      font-size: 16px;
       font-weight: 700;
-      margin-bottom: 8px;
+      margin: 0 0 8px;
     }
+
+    h2 {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 14px 0 6px;
+      color: #333;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 3px;
+    }
+
+    p {
+      font-size: 10.5px;
+      margin-bottom: 8px;
+      color: #222;
+    }
+
+    ul {
+      margin: 0 0 10px 16px;
+      font-size: 10.5px;
+      color: #222;
+    }
+
+    li { margin-bottom: 4px; }
+
+    .lead {
+      font-size: 12px;
+      font-weight: 500;
+      margin-bottom: 12px;
+    }
+
+    .box {
+      border: 1px solid #111;
+      padding: 10px 12px;
+      margin: 12px 0;
+    }
+
+    .box-title {
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .box p { margin-bottom: 4px; }
+
+    .two-col {
+      display: flex;
+      gap: 16px;
+      margin: 8px 0;
+    }
+
+    .col { flex: 1; }
 
     footer {
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid var(--border);
-      font-size: 13px;
-      color: var(--muted);
+      border-top: 1px solid #111;
+      padding-top: 10px;
+      margin-top: 14px;
+      font-size: 10px;
+      color: #555;
     }
-    .contact { color: var(--charcoal); font-weight: 600; }
 
-    .editable {
-      border-bottom: 1px dashed var(--muted);
-      min-width: 80px;
-      display: inline-block;
-    }
+    .contact { font-weight: 700; color: #111; }
 
     @media print {
       body { background: white; padding: 0; }
-      .page { box-shadow: none; padding: 0; max-width: 100%; }
-      .pilot-box { background: #3B4A8A !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { box-shadow: none; width: 100%; min-height: 100vh; padding: 22mm 20mm; }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
     }
   </style>
 </head>
 <body>
   <div class="page">
-    <header>
-      <div class="brand"><span class="brand-dot"></span>Tendo</div>
-      <div class="tagline">PLE Mathematics revision, built for Ugandan upper-primary</div>
+    <div>
+      <header>
+        <div class="brand">Tendo</div>
+        <div class="tagline">PLE Mathematics revision, built for Ugandan upper-primary</div>
 
-      <div class="meta">
-        <div class="meta-row"><span class="meta-label">Proposal for:</span> <span class="editable">School Name</span></div>
-        <div class="meta-row"><span class="meta-label">Date:</span> <span class="editable">June 2026</span></div>
-        <div class="meta-row"><span class="meta-label">Prepared by:</span> <span class="editable">Your Name</span></div>
-      </div>
-    </header>
+        <div class="meta">
+          <div class="meta-row"><span class="meta-label">Proposal for:</span> <span class="editable">School Name</span></div>
+          <div class="meta-row"><span class="meta-label">Date:</span> <span class="editable">June 2026</span></div>
+          <div class="meta-row"><span class="meta-label">Prepared by:</span> <span class="editable">Your Name</span></div>
+        </div>
+      </header>
 
-    <h1>A structured revision programme for every P7 student</h1>
+      <p class="lead">
+        Tendo is a school-branded web platform that helps P7 students master the entire UNEB Mathematics syllabus through structured notes, worked examples, auto-marked quizzes, and real past PLE papers.
+      </p>
 
-    <p>
-      Tendo is a school-branded web platform that helps P7 students master the entire UNEB Mathematics syllabus through structured notes, worked examples, auto-marked quizzes, and real past PLE papers. Your school offers it to parents as part of your revision programme. We handle the technology; you keep the relationship and the margin.
-    </p>
+      <h2>Why this matters</h2>
+      <p>
+        The PLE Mathematics syllabus is finite: 6 themes, 11 topics, 40 sub-topics. Students who practise every sub-topic with real questions are prepared. We are building Tendo to make that path calm, clear, and available on any phone.
+      </p>
 
-    <div class="highlight">
-      <strong>Why this matters:</strong> The PLE Mathematics syllabus is finite — 6 themes, 11 topics, 40 sub-topics. Students who practice every sub-topic with real questions are prepared. Tendo turns that syllabus into a calm, phone-friendly revision path.
-    </div>
-
-    <h2>What students get</h2>
-    <ul>
-      <li><strong>Watch or Read</strong> every topic — video explainers for high-stakes topics, text notes for all others.</li>
-      <li><strong>Worked examples</strong> written in plain language with Ugandan contexts.</li>
-      <li><strong>Auto-marked quizzes</strong> with instant feedback after every topic.</li>
-      <li><strong>Endless practice</strong> — a different question every time from a 200+ question bank.</li>
-      <li><strong>Past PLE papers</strong> — attempt as a student, get an exam-style score and review.</li>
-    </ul>
-
-    <h2>What teachers get</h2>
-    <ul>
-      <li><strong>Worksheet generator</strong> — mix topics, set length and difficulty, print in two clicks.</li>
-      <li><strong>Browse-by-topic past papers</strong> — find relevant questions without flipping through booklets.</li>
-      <li><strong>Class dashboard</strong> — see which topics need re-teaching, drill down to any student, export reports to parents.</li>
-      <li><strong>Teacher Fellowship</strong> — senior teachers earn public recognition for reviewing and improving content.</li>
-    </ul>
-
-    <h2>What the school gets</h2>
-    <ul>
-      <li>A school-branded subdomain, e.g. <strong>tendo-your-school.ug</strong>.</li>
-      <li>Zero IT burden: no installation, no server, no support tickets.</li>
-      <li>A usage report at the end of the term.</li>
-      <li>A credible answer to parents asking, "What extra are you doing for PLE?"</li>
-    </ul>
-
-    <h2>Pricing</h2>
-    <table>
-      <tr>
-        <th>Tier</th>
-        <th>Per student, per term</th>
-        <th>Notes</th>
-      </tr>
-      <tr>
-        <td><strong>Pilot</strong></td>
-        <td class="price">UGX 0</td>
-        <td>First term, one P7 class only.</td>
-      </tr>
-      <tr>
-        <td><strong>Standard</strong></td>
-        <td class="price">UGX 5,000</td>
-        <td>Schools of 30–250 students; P7 + P6 Math; past papers; termly report.</td>
-      </tr>
-      <tr>
-        <td><strong>Plus</strong></td>
-        <td class="price">UGX 8,000</td>
-        <td>Schools of 250+ students; everything in Standard plus certificates and priority support.</td>
-      </tr>
-    </table>
-
-    <p>
-      You decide what parents pay. Most schools add it as a Revision Programme fee of <strong>UGX 20,000 – 30,000 per term</strong>. Example: 120 P7 students × (UGX 25,000 − UGX 5,000) = <strong>UGX 2,400,000 per term margin</strong> for the school.
-    </p>
-
-    <div class="pilot-box">
-      <h2>Term 1 pilot — free</h2>
-      <p>We recommend starting with one P7 class this term:</p>
+      <h2>What students get</h2>
       <ul>
-        <li>One P7 class of your choice.</li>
-        <li>We set you up on your branded subdomain in <strong>5 working days</strong>.</li>
-        <li>We provide a template message you can send to parents.</li>
-        <li>At the end of the term, you receive a usage report.</li>
-        <li>You decide whether to roll out school-wide next term.</li>
+        <li><strong>Watch and Read</strong> on every topic — video explainers for high-stakes topics, text notes for all others.</li>
+        <li><strong>Worked examples</strong> written in plain language with Ugandan contexts.</li>
+        <li><strong>Auto-marked quizzes</strong> with instant feedback after every topic.</li>
+        <li><strong>Endless practice</strong> — a different question every time from a growing bank.</li>
+        <li><strong>Past PLE papers</strong> — attempt as a student, get an exam-style score and review.</li>
       </ul>
-      <p><strong>No invoice this term. No contract beyond a one-page MoU.</strong></p>
-    </div>
 
-    <h2>Next steps</h2>
-    <div class="next-steps">
-      <div class="step"><div class="step-num">1</div><strong>Sign the MoU</strong><br>One page, one term.</div>
-      <div class="step"><div class="step-num">2</div><strong>Share your logo</strong><br>We brand the page.</div>
-      <div class="step"><div class="step-num">3</div><strong>Go live</strong><br>Students start next week.</div>
+      <h2>What teachers get</h2>
+      <ul>
+        <li><strong>Worksheet generator</strong> — mix topics, set length and difficulty, print in two clicks.</li>
+        <li><strong>Browse-by-topic past papers</strong> — find relevant questions without flipping through booklets.</li>
+        <li><strong>Class dashboard</strong> — see which topics need re-teaching and drill down to any student.</li>
+        <li><strong>Teacher Fellowship</strong> — senior teachers earn recognition for reviewing and improving content.</li>
+      </ul>
+
+      <h2>What we are looking for</h2>
+      <p>
+        We are looking for one partner school to pilot Tendo with a single P7 class this term. We want to work with your teachers and students to make sure the platform is genuinely useful before we expand.
+      </p>
+
+      <div class="box">
+        <div class="box-title">The pilot</div>
+        <p>One P7 class of your choice.</p>
+        <p>We set up a branded page for your school in five working days.</p>
+        <p>We provide a short message you can share with parents.</p>
+        <p>At the end of the term we review what worked and what to improve.</p>
+        <p>No cost for the pilot term.</p>
+      </div>
     </div>
 
     <footer>
       <p><span class="contact">Contact:</span> <span class="editable">Your Name</span> · <span class="editable">Phone</span> · <span class="editable">Email</span></p>
       <p>Website: <strong>tendo-ug.vercel.app</strong></p>
-      <p style="margin-top: 8px; font-style: italic;">"A quiet, dependable part of how your school prepares for PLE."</p>
     </footer>
   </div>
 </body>
