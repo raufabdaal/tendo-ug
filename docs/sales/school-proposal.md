@@ -1,24 +1,24 @@
-> **Partnership proposal — one A4 page, black and white, product only.**
+> **Partnership proposal — one A4 page, black and white, product only, full PLE picture.**
 > For the print-ready version, open `school-proposal.html` in a browser and print to PDF.
 
 ---
 
 # Tendo
-## PLE Mathematics revision, built for Ugandan upper-primary
+## PLE revision, built for Ugandan upper-primary
 
-**Proposal for:** [School Name]  
-**Date:** [Date]  
-**Prepared by:** [Your Name]
+**Proposal for:** School Name  
+**Date:** June 2026  
+**Prepared by:** scalemedia.pro
 
 ---
 
-Tendo is a school-branded web platform that helps P7 students master the entire UNEB Mathematics syllabus through structured notes, worked examples, auto-marked quizzes, and real past PLE papers.
+Tendo is a school-branded web platform that helps upper-primary students prepare for the PLE across Mathematics, English, Integrated Science, and Social Studies. It gives students structured notes, worked examples, auto-marked quizzes, and real past papers — all on any phone.
 
 ---
 
 ## Why this matters
 
-The PLE Mathematics syllabus is finite: 6 themes, 11 topics, 40 sub-topics. Students who practise every sub-topic with real questions are prepared. We are building Tendo to make that path calm, clear, and available on any phone.
+The PLE syllabus is knowable and finite. Students who practise every topic with the right questions and feedback are better prepared. We are building Tendo to make that revision path calm, structured, and easy for every school to offer its parents.
 
 ## What students get
 
@@ -35,9 +35,16 @@ The PLE Mathematics syllabus is finite: 6 themes, 11 topics, 40 sub-topics. Stud
 - **Class dashboard** — see which topics need re-teaching and drill down to any student.
 - **Teacher Fellowship** — senior teachers earn recognition for reviewing and improving content.
 
+## What the school gets
+
+- A school-branded page, ready for your parents to see.
+- Zero IT burden: no installation, no server, no support tickets.
+- A termly usage report showing what students have practised.
+- A clear, credible answer to parents asking, "What extra are you doing for PLE?"
+
 ## What we are looking for
 
-We are looking for one partner school to pilot Tendo with a single P7 class this term. We want to work with your teachers and students to make sure the platform is genuinely useful before we expand.
+We are looking for one partner school to pilot Tendo with a single P7 class this term. We want to work closely with your teachers and students to make sure the platform is genuinely useful before we expand the rollout.
 
 ## The pilot
 
@@ -49,5 +56,5 @@ We are looking for one partner school to pilot Tendo with a single P7 class this
 
 ---
 
-**Contact:** [Your Name] · [Phone] · [Email]  
+**Contact:** scalemedia.pro · +256 753 825 453 · zinduro@gmail.com  
 **Website:** tendo-ug.vercel.app
