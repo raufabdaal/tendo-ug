@@ -21,7 +21,7 @@ The product positioning is **study**, not just revision. The platform is archite
 - `app/lib/school.ts` + `BrandBar` component: `/trainup` path shows Trainup branding.
 - New route `/trainup` with a Trainup-branded landing page.
 - Extended `TopicNote` type to support `learningObjectives`, `commonMistakes`, and `tryThis`.
-- Rewrote the **Fractions**, **Percentages**, **Equations**, **Decimals**, **Venn diagrams**, **Area**, **Perimeter**, **Volume**, and **Money** topics as full NCDC-aligned study modules (not revision notes).
+- Rewrote the **Fractions**, **Percentages**, **Equations**, **Decimals**, **Venn diagrams**, **Area**, **Perimeter**, **Volume**, **Money**, and **Mean, median, mode and range** topics as full NCDC-aligned study modules (not revision notes).
 
 ## Still open from previous sessions
 
