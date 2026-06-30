@@ -436,24 +436,48 @@ export const TOPICS: Topic[] = [
     reviewStatus: "verified",
     // videoUrl: "https://www.youtube.com/embed/...", // TODO: paste NotebookLM video URL after upload
     note: {
-      intro: "Why this matters: Linear equations are the gateway to algebra. PLE asks at least one in every paper, usually 2 marks, sometimes hidden inside a word problem.",
+      intro: "Why this matters: Linear equations are the gateway to algebra. PLE asks at least one in every paper, usually 2 marks, sometimes hidden inside a word problem. If you can solve one equation confidently, you can turn many word problems into marks.",
+      learningObjectives: [
+        "Understand what an equation is and what it means to solve it.",
+        "Solve one-step equations using addition, subtraction, multiplication, or division.",
+        "Solve two-step equations by undoing operations in the correct order.",
+        "Check the answer by substituting it back into the original equation.",
+        "Turn simple word problems into equations and solve them.",
+      ],
       whatYouNeedToKnow: [
-        "An equation is a statement that two things are equal. To solve for the unknown letter, do the same thing to both sides until the letter is alone on one side.",
-        "Three rules. (1) To remove a number being added, subtract it from both sides. (2) To remove a number being subtracted, add it to both sides. (3) To remove a number multiplying the letter, divide both sides by it.",
+        "An equation is a statement that two quantities are equal. It has an equals sign (=) and usually an unknown letter, often x. Solving the equation means finding the value of the unknown that makes the statement true.",
+        "The most important rule: whatever you do to one side of the equation, you must do to the other side. This keeps the equation balanced. If you add 5 to the left side, add 5 to the right side. If you divide the left side by 3, divide the right side by 3.",
+        "Think of solving as undoing. If a number is added to the letter, subtract it from both sides. If a number is subtracted from the letter, add it to both sides. If the letter is multiplied by a number, divide both sides by that number. If the letter is divided by a number, multiply both sides by that number.",
+        "For two-step equations, undo addition and subtraction first, then undo multiplication and division. For example, in 4x − 5 = 19, first add 5 to both sides to get 4x = 24, then divide by 4 to get x = 6.",
+        "Always check your answer by putting it back into the original equation. If x = 6, then 4(6) − 5 = 24 − 5 = 19, which matches the right side. That means the answer is correct.",
+        "Many word problems can be written as equations. The sum of a number and 12 is 30 becomes x + 12 = 30. Three times a number plus 4 equals 25 becomes 3x + 4 = 25. Look for the unknown and the equals sign in the sentence.",
       ],
       worked: {
         problem: "Solve for x: 4x − 5 = 19.",
         steps: [
-          "Step 1. Add 5 to both sides: 4x = 24.",
-          "Step 2. Divide both sides by 4: x = 6.",
-          "Step 3. Check: 4 × 6 − 5 = 24 − 5 = 19. ✓",
+          "Step 1. Add 5 to both sides to undo the subtraction: 4x − 5 + 5 = 19 + 5, so 4x = 24.",
+          "Step 2. Divide both sides by 4 to undo the multiplication: 4x ÷ 4 = 24 ÷ 4, so x = 6.",
+          "Step 3. Check by substituting x = 6 back into the original equation: 4(6) − 5 = 24 − 5 = 19. The left side equals the right side, so x = 6 is correct.",
         ],
         answer: "Answer: x = 6.",
       },
+      commonMistakes: [
+        "Only doing the operation on one side of the equation. You must always do the same thing to both sides.",
+        "Dividing before removing the added or subtracted number. In 4x − 5 = 19, you cannot divide by 4 first because the − 5 is also being divided. Add 5 first, then divide.",
+        "Forgetting to check the answer. Substituting back catches most sign errors and arithmetic mistakes.",
+        "Writing the answer as an equation. The answer to 4x − 5 = 19 is x = 6, not 4x = 24 or 6.",
+      ],
+      tryThis: {
+        question: "Solve for n: 3n + 7 = 22. Then check your answer.",
+        choices: ["n = 3", "n = 5", "n = 7", "n = 9"],
+        correct: 1,
+        explanation: "Subtract 7 from both sides: 3n = 15. Divide by 3: n = 5. Check: 3(5) + 7 = 15 + 7 = 22. The answer is n = 5.",
+      },
       recap: [
-        "Same thing to both sides keeps the equation balanced.",
-        "Undo addition with subtraction, multiplication with division.",
-        "Always check by substituting back into the original equation.",
+        "An equation is balanced. Do the same thing to both sides.",
+        "Undo addition and subtraction first, then multiplication and division.",
+        "Always check your answer by substituting it back into the original equation.",
+        "Turn word problems into equations by finding the unknown and the equals sign.",
       ],
     },
     quiz: [
