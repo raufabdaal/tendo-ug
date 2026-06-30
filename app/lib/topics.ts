@@ -254,24 +254,49 @@ export const TOPICS: Topic[] = [
     reviewStatus: "verified",
     // videoUrl: "https://www.youtube.com/embed/...", // TODO: paste NotebookLM video URL after upload
     note: {
-      intro: "Why this matters: Percentages turn up in money, discounts, exam marks and population questions. PLE consistently asks 4 to 6 marks on percentages per paper.",
+      intro: "Why this matters: Percentages turn up in money, discounts, exam marks, profit and loss, and population questions. PLE consistently asks 4 to 6 marks on percentages every year. If you can handle the four main percentage situations, those marks are easy to collect.",
+      learningObjectives: [
+        "Explain what a percentage means and change between fractions, decimals, and percentages.",
+        "Find a percentage of a given number.",
+        "Express one number as a percentage of another.",
+        "Calculate percentage increase, decrease, profit, loss, and discount.",
+        "Solve simple-interest problems using the percentage formula.",
+      ],
       whatYouNeedToKnow: [
-        "Percent means 'out of a hundred'. So 25% means 25 out of 100, which is the fraction 25/100 = 1/4. To convert a fraction to a percentage, multiply by 100. To find a percentage of a number, change the percent to a fraction or decimal and multiply.",
-        "The two question types that show up most often in PLE: (1) 'find X% of Y' — multiply Y by X then divide by 100. (2) 'express A as a percentage of B' — divide A by B then multiply by 100.",
+        "Percent means 'out of a hundred'. The symbol % is just a short way of writing '/100'. So 25% means 25/100, which simplifies to 1/4. This means 25% = 0.25 = 1/4. You should be able to move between these three forms quickly.",
+        "To find a percentage of a number, change the percentage to a fraction or decimal, then multiply. For example, 20% of 150 = 0.20 × 150 = 30. A quick way is: multiply by the percentage, then divide by 100. So 150 × 20 ÷ 100 = 30.",
+        "To express one number as a percentage of another, divide the first number by the second, then multiply by 100. For example, if Akello scored 36 out of 50, the percentage is (36 ÷ 50) × 100 = 72%. The second number is always the total, the mark, or the original amount.",
+        "A percentage increase makes a number bigger. A percentage decrease makes it smaller. If the increase is 10%, the new amount is 110% of the original. If the decrease is 15%, the new amount is 85% of the original. To find the original amount after a percentage change, divide the new amount by the percentage it represents.",
+        "Profit and loss percentages are always worked out on the cost price, not the selling price. Profit % = (Profit ÷ Cost price) × 100. Loss % = (Loss ÷ Cost price) × 100. Discount % is worked out on the marked price: Discount % = (Discount ÷ Marked price) × 100.",
+        "Simple interest is the money paid for using someone else's money. The formula is I = (P × R × T) ÷ 100, where P is the principal, R is the rate per year, and T is the time in years. The total amount paid back is P + I.",
       ],
       worked: {
         problem: "Akello scored 36 out of 50 in a Maths test. What percentage did she score?",
         steps: [
-          "Step 1. Write her score as a fraction: 36/50.",
-          "Step 2. Multiply by 100 to convert to a percentage: 36/50 × 100.",
-          "Step 3. 36 × 100 ÷ 50 = 3600 ÷ 50 = 72.",
+          "Step 1. Write the score as a fraction of the total: 36/50.",
+          "Step 2. Convert the fraction to a percentage by multiplying by 100: (36/50) × 100.",
+          "Step 3. Simplify: 36 × 100 = 3600, then 3600 ÷ 50 = 72.",
         ],
-        answer: "Answer: 72%.",
+        answer: "Answer: Akello scored 72%.",
+      },
+      commonMistakes: [
+        "Mixing up the two percentage formulas. 'Find 20% of 150' means 150 × 20 ÷ 100. 'Express 18 as a percentage of 60' means 18 ÷ 60 × 100. The first starts with the total; the second starts with the part.",
+        "Working profit or loss on the selling price instead of the cost price. Profit and loss percentages are always based on what the seller paid, not what the buyer paid.",
+        "Subtracting a percentage from the new amount when you are asked to find the original. If the new amount is 110% of the original, divide by 110 and multiply by 100, not subtract 10%.",
+        "Forgetting that % means /100. Always move the decimal point two places when changing from a percentage to a decimal.",
+      ],
+      tryThis: {
+        question: "A trader bought a radio at UGX 60,000 and sold it at UGX 75,000. What was the profit percentage?",
+        choices: ["15%", "20%", "25%", "30%"],
+        correct: 2,
+        explanation: "Profit = 75,000 − 60,000 = 15,000. Profit % = (15,000 ÷ 60,000) × 100 = 25%. The answer is 25%.",
       },
       recap: [
         "Percentage means 'out of 100'.",
-        "Find a percentage of a number: multiply, then divide by 100.",
-        "Express A as a percentage of B: (A ÷ B) × 100.",
+        "Find X% of Y: (Y × X) ÷ 100.",
+        "Express A as a % of B: (A ÷ B) × 100.",
+        "Profit/loss % is always on the cost price. Discount % is on the marked price.",
+        "Simple interest: I = (P × R × T) ÷ 100.",
       ],
     },
     quiz: [
