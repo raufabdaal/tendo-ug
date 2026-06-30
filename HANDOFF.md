@@ -1,105 +1,164 @@
 # HANDOFF — for the next session
 
-*Written: 2026-06-25, end of video-wiring session*
+*Written: 2026-06-30*
 
-## TL;DR for the next agent
+## Read this first
 
-Read in this order:
-1. `AGENT_BRIEF.md` — founder's working style
-2. `STATUS.md` — Phase 4 done; video wiring just landed; founder is generating the first 3 Math videos
-3. `DECISIONS.md` — DEV-001 through DEV-018. Newest: DEV-018 (per-topic videoUrl + YouTube embed + placeholder-first)
-4. `docs/ops/notebooklm-video-guide.md` — the prompts and workflow the founder is following
-5. `docs/spec/content-sources.md` — how content is sourced and what we tell schools
+1. `STATUS.md`
+2. `docs/ops/ncdc-p7-math-coverage-audit-2026-06-30.md`
+3. `docs/ops/update-handoff-protocol.md`
+4. `DECISIONS.md`
+5. `CHECKLIST.md`
 
-## Where you're picking up
+---
 
-<<<<<<< HEAD
-The project is in **pilot-prep mode for Trainup a Child Uganda**.
+## Where the project really is
 
-**Phase 1 and 2 are done:**
-- All-answers-are-A bias fixed (91 quiz + 194 bank questions now randomized).
-- `/trainup` path shows Trainup branding and a school-specific landing page.
-- **Fractions, Percentages, Equations, Decimals, Venn diagrams, Area, Perimeter, Volume, Money, and Mean, median, mode and range** are rewritten as full NCDC-aligned study modules (learning objectives, common mistakes, try-this exercises).
-- The `TopicNote` type now supports the new study structure.
+The project is in **Trainup pilot-prep mode** and in the middle of a broader **NCDC-alignment sweep**.
 
-**Product framing:** Tendo is a **study** platform. The proposal PDF reflects this.
+This is the key thing to understand:
 
-**Still ready from earlier:**
-- Watch tab video support; Fractions video is locked in.
-- School proposal PDF at `docs/sales/school-proposal.pdf`.
-- The app is still Phase 4 / Math only. The multi-subject Phase 5 work from the crashed chat was not pushed to GitHub.
+The app is no longer being treated as just a polished demo.
+We are now trying to make it **study-ready for real use**, starting with **P7 Mathematics**.
 
-**Next decision:** Continue Phase 2 topic-by-topic. I recommend the next topic be **Percentages** or **Equations** — both high-stakes and both already have strong question banks. Or we can pause to audit the NCDC P7 syllabus coverage before writing more content.
+That means the work is now happening on four layers at once:
+1. topic study notes
+2. quizzes / question-bank quality
+3. curriculum structure and navigation
+4. documentation / handoff quality
 
-## Next session (founder picks)
+---
 
-### If the founder has 3 video URLs
-- Uncomment the `// videoUrl: ...` lines in `app/lib/topics.ts` for the three topics.
-- Replace the placeholder with the real YouTube watch link (e.g., `https://www.youtube.com/watch?v=ABC123`).
-- Run `npm run build` and `npm run dev` to verify the Watch tab loads the video.
-- Push to `main`. Vercel auto-deploys and auto-promotes.
+## What is already done
 
-### If the founder wants to expand video coverage before deepening subjects
-- Pick the next 2–3 high-stakes Math topics (e.g., `area`, `volume`, `venn-diagrams-2-events`).
-- Add `// videoUrl: ...` placeholder comments to those topics.
-- Copy the relevant prompt from the guide and adapt it to the topic's worked example.
-- No code changes needed beyond adding the URL once the video is uploaded.
+### Product / feature layer
+Already built and usable:
+- Next.js app shell
+- P7 Math topic pages
+- auto-graded quizzes
+- past papers
+- teacher dashboard
+- practice mode
+- worksheet generator
+- Watch / Listen / Read topic experience
+- Trainup branding layer and `/trainup` route
 
-=======
-Phase 4 is **functionally done**. The Watch tab is now **video-ready**:
-- `Topic` type has an optional `videoUrl` field.
-- `TopicTabs` embeds a YouTube video when `videoUrl` is set, and keeps the placeholder when it is not.
-- **Fractions video is locked in:** `videoUrl: "https://youtu.be/HuitLoh1Q9g"`.
-- Percentages and Equations still have placeholder comments ready for URLs.
-- The NotebookLM video guide is in `docs/ops/notebooklm-video-guide.md`.
+### Pilot-prep work already completed
+- Fixed the all-answers-are-A bias across quiz + question-bank content
+- Added `docs/ops/trainup-pilot-plan.md`
+- Added Trainup branding support
+- Shifted product framing from **revision** to **study**
+- Rewrote about 10 topics into fuller NCDC-aligned study modules
 
-**Important:** The previous session's multi-subject Phase 5 work (English / Science / SST) was **not pushed to GitHub** before the chat crashed. Those files existed only as uploaded docs. The current repo is still Phase 4 (Math only). If you want to recover that work, we need a dedicated session to rebuild it from the docs.
+### Strongest current study-ready topics
+- Venn diagrams
+- Fractions
+- Decimals
+- Proportion and percentages
+- Perimeter
+- Area
+- Volume
+- Equations
+- Mean, median, mode and range
+- Money
 
-The founder's next action is to generate the remaining 2 videos, paste the URLs, and push.
+### Published but still lighter than the new standard
+These are live but still need standardisation:
+- Roman numerals
+- Substitution
+- 12-hour and 24-hour clocks
 
-## Next session (founder picks)
+---
 
-### If the founder has 3 video URLs
-- Uncomment the `// videoUrl: ...` lines in `app/lib/topics.ts` for the three topics.
-- Replace the placeholder with the real YouTube watch link (e.g., `https://www.youtube.com/watch?v=ABC123`).
-- Run `npm run build` and `npm run dev` to verify the Watch tab loads the video.
-- Push to `main`. Vercel auto-deploys and auto-promotes.
+## Current curriculum truth
 
-### If the founder wants to expand video coverage before deepening subjects
-- Pick the next 2–3 high-stakes Math topics (e.g., `area`, `volume`, `venn-diagrams-2-events`).
-- Add `// videoUrl: ...` placeholder comments to those topics.
-- Copy the relevant prompt from the guide and adapt it to the topic's worked example.
-- No code changes needed beyond adding the URL once the video is uploaded.
+A proper coverage audit has now been done.
 
->>>>>>> 51a291d5b347cbd7e752e478bb96b9e5b5418023
-### If the founder wants to pick up the multi-subject Phase 5 work
-- The uploaded docs (from the crashed chat) describe a Phase 5 state with English, Science, and SST live.
-- **That code is not in the GitHub repo.** The repo is still Math-only at the end of Phase 4.
-- Rebuilding it means: adding a `Subject` registry, refactoring `topics.ts`/`papers.ts`/`question-bank.ts` with `subjectId`, and creating parallel route trees for each subject. This is a full session, not a quick add-on.
+See:
+- `docs/ops/ncdc-p7-math-coverage-audit-2026-06-30.md`
+
+Important takeaways:
+- **13** topics are currently published
+- about **10** are at or near the new study-ready standard
+- several more are only placeholders
+- some NCDC sub-topics are not yet represented cleanly in the app
+
+Do not assume the app is fully curriculum-complete.
+It is not.
+
+---
+
+## What still needs work
+
+### 1. Practice/question alignment
+The topic-note rewrites were only the first pass.
+The next major quality task is to audit:
+- topic quizzes in `app/lib/topics.ts`
+- practice / worksheet bank in `app/lib/question-bank.ts`
+
+We need to classify:
+- what is strong
+- what is mathematically okay but too demo-like
+- what is too weak for real study use
+- which topics need practice rewritten first
+
+### 2. Curriculum structure in the UI
+The current layout is still too loose for a real study product.
+Likely future improvements:
+- group by **term**
+- group by topic / sub-topic more clearly
+- mark published vs coming soon vs study-ready more clearly
+
+### 3. Remaining NCDC topic coverage
+After standardising current content, likely next high-priority builds are:
+- Integers
+- Four basic operations
+- Pie charts and travel graphs
+- Timetables
+- Algebraic expressions
+
+---
+
+## What was just done in this sweep
+
+This session started the **documentation cleanup**.
+The goal is to remove merge-conflict leftovers and restore a reliable project narrative before deeper content work continues.
+
+The process/reporting workflow is now formalised in:
+- `docs/ops/update-handoff-protocol.md`
+
+This matters because the founder applies changes manually by downloading the workspace and overwriting local files.
+So future sessions must always clearly report:
+- what changed
+- why it changed
+- which files changed
+- whether to overwrite or add them
+
+---
 
 ## Watch-outs
 
-- **Vercel deploy blocks vulnerable Next.js versions.** Currently pinned at 15.5.19. Bump if a new CVE drops.
-- **Push to `main` auto-promotes to production.** The "Redeploy" button does NOT.
-- **The question bank now drives multiple features.** When adding/removing/editing a question, both Practice mode AND worksheet output reflect the change. Bank quality matters more than ever.
-- **localStorage keys in use:** `tendo:progress` (topic quiz scores), `tendo:papers` (paper attempts), `tendo:practice` (practice sessions), `tendo:reports` (problem reports), `tendo:demo-class` (seeded demo students). When the Supabase phase migrates, all five need a migration path.
-- **No em dashes in user-facing copy.** Still applies.
-- **YouTube watch links are auto-converted to embeds.** You can paste either `https://www.youtube.com/watch?v=VIDEO_ID` or `https://youtu.be/VIDEO_ID` — the `toEmbedUrl` helper in `TopicTabs` will handle it.
-- **Placeholder comments must be replaced before the videos are visible.** The placeholder text remains on the site until the real URL is uncommented.
+- The founder has **not** asked for broad sensitive-file changes. Avoid touching `.gitignore`, env files, or unrelated config unless necessary.
+- Pushes to `main` auto-promote to production.
+- Production is currently healthy, so prioritise **clarity and quality alignment**, not emergency fixes.
+- The docs used to contain mixed historical states. Do not trust older phase language blindly without checking current repo reality.
+- The app is still **Math only** in code, despite earlier multi-subject ambitions.
+- Fractions video is live. Other video placeholders exist, but video is not the main current priority.
 
-## Architectural reminders
+---
 
-- Plain CSS, no Tailwind (DEV-007)
-- Data in TypeScript not MDX (DEV-006)
-- No auth, localStorage only — UNTIL the Supabase phase flips this
-- No streaks/gamification beyond the practice streak counter (DEV-010 still applies; the practice counter is per-session, not persistent leaderboards)
-- All content auto-verified in v0; honest content-sources doc backs us up (DEV-016)
-- Pre-generated bank, not runtime AI (DEV-017) — unless we explicitly add a "Generate fresh" button in a later phase
-- Optional `videoUrl` per topic; no global video config needed (DEV-018)
+## Best next move after the doc sweep
 
-## Open questions to ask the founder
+1. Finish cleaning the remaining core docs:
+   - `CHECKLIST.md`
+   - `DECISIONS.md`
+   - `CHANGELOG.md`
+2. Then run a **practice-layer audit**
+3. Then standardise the 3 lighter published topics
+4. Then continue filling missing high-priority NCDC topics
 
-1. Did you generate the 3 Math videos with NotebookLM? Do you have the YouTube URLs ready?
-2. Did the Watch tab load the video correctly after you pasted the URL?
-3. After videos, should we make more Math videos or pick up the multi-subject Phase 5 work?
-4. Has any school given a verbal "yes" yet? Their needs reshape priorities.
+If you need to choose only one next content task after the docs, the best choice is:
+
+**Audit the practice/question layer first.**
+
+That is the biggest quality gap between “demo-ready” and “study-ready”.
