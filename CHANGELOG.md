@@ -2,6 +2,7 @@
 
 > Newest at the top. Dated, append-only. Sessions are blocks.
 
+<<<<<<< HEAD
 ## v0.5.3 — 2026-07-01 — Trainup branding and Fractions as a study module
 
 **Session theme:** Founder confirmed we go slow and steady: milestone-based deploys, no redeploys on small changes, P7 Math first, Fractions first, then the rest of Math, then other subjects. We started with the `/trainup` branding path and a full study rewrite of the Fractions topic.
@@ -26,6 +27,9 @@
 ---
 
 ## v0.5.2 — 2026-06-30 — Trainup pilot focus: fix answer bias, plan the pilot
+=======
+## v0.5.1 — 2026-06-25 — Video wiring for Watch tab
+>>>>>>> 51a291d5b347cbd7e752e478bb96b9e5b5418023
 
 **Session theme:** Founder wanted to pick up after a chat crash and focus on the Watch tab first. Wired per-topic video URLs and wrote a NotebookLM → YouTube → embed pipeline so the founder can generate the first 3 Math videos without needing more code changes.
 
@@ -34,8 +38,11 @@
 **Added:**
 - `videoUrl?: string` field on the `Topic` interface in `app/lib/topics.ts`.
 - `docs/ops/notebooklm-video-guide.md` — full prompt-and-workflow guide for generating 3 Math videos (Fractions, Percentages, Equations) with NotebookLM, Canva/PowerPoint, Loom/OBS, and YouTube.
+<<<<<<< HEAD
 - `docs/sales/school-proposal.html` — print-ready official proposal for schools, with inline CSS and print styles.
 - `docs/sales/school-proposal.md` — editable Markdown version of the same proposal.
+=======
+>>>>>>> 51a291d5b347cbd7e752e478bb96b9e5b5418023
 - `toEmbedUrl()` helper in `app/components/TopicTabs.tsx` — converts YouTube watch/short links into iframe-ready embed URLs.
 - Responsive `.video-wrapper` CSS in `app/app/globals.css` for 16:9 embeds.
 - Placeholder `// videoUrl: ...` comments on `fractions-core`, `proportion-percentages`, and `equations` topics so the founder knows exactly where to paste URLs.

@@ -13,6 +13,7 @@ Read in this order:
 
 ## Where you're picking up
 
+<<<<<<< HEAD
 The project is in **pilot-prep mode for Trainup a Child Uganda**.
 
 **Phase 1 and 2 are done:**
@@ -44,6 +45,33 @@ The project is in **pilot-prep mode for Trainup a Child Uganda**.
 - Copy the relevant prompt from the guide and adapt it to the topic's worked example.
 - No code changes needed beyond adding the URL once the video is uploaded.
 
+=======
+Phase 4 is **functionally done**. The Watch tab is now **video-ready**:
+- `Topic` type has an optional `videoUrl` field.
+- `TopicTabs` embeds a YouTube video when `videoUrl` is set, and keeps the placeholder when it is not.
+- **Fractions video is locked in:** `videoUrl: "https://youtu.be/HuitLoh1Q9g"`.
+- Percentages and Equations still have placeholder comments ready for URLs.
+- The NotebookLM video guide is in `docs/ops/notebooklm-video-guide.md`.
+
+**Important:** The previous session's multi-subject Phase 5 work (English / Science / SST) was **not pushed to GitHub** before the chat crashed. Those files existed only as uploaded docs. The current repo is still Phase 4 (Math only). If you want to recover that work, we need a dedicated session to rebuild it from the docs.
+
+The founder's next action is to generate the remaining 2 videos, paste the URLs, and push.
+
+## Next session (founder picks)
+
+### If the founder has 3 video URLs
+- Uncomment the `// videoUrl: ...` lines in `app/lib/topics.ts` for the three topics.
+- Replace the placeholder with the real YouTube watch link (e.g., `https://www.youtube.com/watch?v=ABC123`).
+- Run `npm run build` and `npm run dev` to verify the Watch tab loads the video.
+- Push to `main`. Vercel auto-deploys and auto-promotes.
+
+### If the founder wants to expand video coverage before deepening subjects
+- Pick the next 2–3 high-stakes Math topics (e.g., `area`, `volume`, `venn-diagrams-2-events`).
+- Add `// videoUrl: ...` placeholder comments to those topics.
+- Copy the relevant prompt from the guide and adapt it to the topic's worked example.
+- No code changes needed beyond adding the URL once the video is uploaded.
+
+>>>>>>> 51a291d5b347cbd7e752e478bb96b9e5b5418023
 ### If the founder wants to pick up the multi-subject Phase 5 work
 - The uploaded docs (from the crashed chat) describe a Phase 5 state with English, Science, and SST live.
 - **That code is not in the GitHub repo.** The repo is still Math-only at the end of Phase 4.

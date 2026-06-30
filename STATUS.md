@@ -2,6 +2,7 @@
 
 *Updated: 2026-06-25, video wiring session*
 
+<<<<<<< HEAD
 > **Updated 2026-07-01: Trainup pilot — Phase 1 and 2 in progress.**
 
 ## Current focus: Trainup a Child Uganda pilot
@@ -33,6 +34,18 @@ Site live on Vercel at `tendo-ug.vercel.app`.
 
 ## What shipped this session
 
+=======
+## Current focus: Video support is wired; first video locked in; awaiting the other 2 Math videos
+
+Phase 4 (Practice + Worksheets + UI cleanup) is done locally. The GitHub repo is at the Phase 4 state (Math only). The previous session's multi-subject Phase 5 work (English / Science / SST) was **not pushed to GitHub** before the chat crashed; those files existed only as uploaded docs, not in the repo.
+
+The Watch tab now supports per-topic YouTube embeds. **Fractions video is live:** `https://youtu.be/HuitLoh1Q9g`. Percentages and Equations still have placeholder comments waiting for URLs.
+
+Site live on Vercel at `tendo-ug.vercel.app`.
+
+## What shipped this session
+
+>>>>>>> 51a291d5b347cbd7e752e478bb96b9e5b5418023
 ### 1. Per-topic video wiring
 - `videoUrl?: string` added to the `Topic` interface in `app/lib/topics.ts`.
 - `app/components/TopicTabs.tsx` now embeds a YouTube video when `videoUrl` is set, and shows the placeholder when it is not.

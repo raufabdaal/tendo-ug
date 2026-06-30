@@ -226,6 +226,7 @@
 
 ---
 
+<<<<<<< HEAD
 ## PILOT-001 · 2026-06-30 · First pilot customer: Trainup a Child Uganda, P7 Math only
 
 **Context:** A school is ready to pilot Tendo. They have ~3,000 primary students and are affluent.
@@ -277,6 +278,8 @@
 
 ---
 
+=======
+>>>>>>> 51a291d5b347cbd7e752e478bb96b9e5b5418023
 ## DEV-018 · 2026-06-25 · Per-topic optional `videoUrl` with YouTube embed and placeholder-first UX
 
 **Previous decision (DEV-015):** The Watch tab was a per-topic "coming soon" placeholder with no code path to display a real video.

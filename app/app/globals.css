@@ -533,6 +533,7 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
   border-radius: var(--radius);
 }
 
+<<<<<<< HEAD
 /* ============================================
    Try this section (inside Read tab)
    ============================================ */
@@ -558,6 +559,8 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
   border-radius: 6px;
 }
 
+=======
+>>>>>>> 51a291d5b347cbd7e752e478bb96b9e5b5418023
 /* ============================================
    Mode tabs (Demo class / This device)
    ============================================ */
