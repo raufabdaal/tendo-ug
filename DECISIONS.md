@@ -226,6 +226,57 @@
 
 ---
 
+## PILOT-001 · 2026-06-30 · First pilot customer: Trainup a Child Uganda, P7 Math only
+
+**Context:** A school is ready to pilot Tendo. They have ~3,000 primary students and are affluent.
+**Decision:** The pilot starts with **one P7 Mathematics class** at Trainup a Child Uganda. If the pilot works, the goal is long-term integration across the school, not a one-term experiment.
+**Reasoning:**
+- P7 Math is the most complete part of the product today.
+- Starting with one class keeps the pilot small enough to observe and fix issues quickly.
+- A successful P7 Math pilot is the strongest evidence for a school-wide rollout.
+**Tracked across:** `docs/ops/trainup-pilot-plan.md`, `STATUS.md`, `HANDOFF.md`.
+
+---
+
+## PILOT-002 · 2026-06-30 · Position Tendo as "study", not "revision"
+
+**Previous framing:** The product was described as a "revision" platform.
+**Problem reported:** The founder clarified that the end goal is for students to actually learn from the platform, not just review before exams. "Revision" under-sells the product and misrepresents the learning content we need to build.
+**New decision:** All student-facing language and content are being reframed as **study**. Topic notes must become full learning material, not revision summaries. The product is "a structured study programme for every upper-primary student."
+**Reasoning:**
+- A study platform has a longer, more valuable relationship with the school.
+- It aligns with the long-term integration goal.
+- It changes what content we build: full explanations, common mistakes, and practice, not just cram notes.
+**Tracked across:** `docs/sales/school-proposal.md`, `docs/sales/school-proposal.html`, `docs/ops/trainup-pilot-plan.md`, and future topic-note rewrites.
+
+---
+
+## PILOT-003 · 2026-06-30 · School provides its own videos and branding
+
+**Decision:** For the Trainup pilot, the school will provide its own video content and branding assets. Tendo provides the `videoUrl` slot per topic and a school-branding layer.
+**Reasoning:**
+- A school-specific video with its own teachers is more credible to parents than a generic Tendo video.
+- The branding layer makes the platform feel like the school's own tool, which increases adoption.
+- Once the branding system is built for Trainup, it can be copied for the next school with only asset swaps.
+**Tracked across:** `app/lib/topics.ts` (videoUrl field), `docs/ops/trainup-pilot-plan.md`, Phase 4 of the pilot plan.
+
+---
+
+## PILOT-004 · 2026-06-30 · Fix quality before the school sees the app: randomize correct answers
+
+**Problem reported:** Every question in the quiz (`app/lib/topics.ts`) and question bank (`app/lib/question-bank.ts`) had `correct: 0`. That meant every worksheet, quiz, and practice question had the correct answer as option A. This looks fake and would destroy credibility with teachers and students immediately.
+**Decision:**
+- Build a script (`scripts/shuffle-correct-answers.js`) that shuffles each question's choices so the correct answer lands on a random A/B/C/D position.
+- Run it across all 285 questions (91 quiz + 194 bank).
+- Verify the distribution is roughly even and the build still passes.
+**Reasoning:**
+- The answer bias is a critical quality bug that blocks any credible pilot.
+- Randomizing is a fast, deterministic fix. It does not replace a full content audit, but it removes the most visible sign of low quality.
+- Going forward, every new question must have its correct answer intentionally placed, not defaulted to A.
+**Tracked across:** `app/lib/topics.ts`, `app/lib/question-bank.ts`, `scripts/shuffle-correct-answers.js`, `CHANGELOG.md`.
+
+---
+
 ## DEV-018 · 2026-06-25 · Per-topic optional `videoUrl` with YouTube embed and placeholder-first UX
 
 **Previous decision (DEV-015):** The Watch tab was a per-topic "coming soon" placeholder with no code path to display a real video.

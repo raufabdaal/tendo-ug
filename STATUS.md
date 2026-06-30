@@ -2,11 +2,31 @@
 
 *Updated: 2026-06-25, video wiring session*
 
-## Current focus: Video support is wired; first video locked in; awaiting the other 2 Math videos
+> **Updated 2026-06-30: Pilot focus — Trainup a Child Uganda, P7 Math only, quality-first.**
 
-Phase 4 (Practice + Worksheets + UI cleanup) is done locally. The GitHub repo is at the Phase 4 state (Math only). The previous session's multi-subject Phase 5 work (English / Science / SST) was **not pushed to GitHub** before the chat crashed; those files existed only as uploaded docs, not in the repo.
+## Current focus: Trainup a Child Uganda pilot
 
-The Watch tab now supports per-topic YouTube embeds. **Fractions video is live:** `https://youtu.be/HuitLoh1Q9g`. Percentages and Equations still have placeholder comments waiting for URLs.
+We have a school ready to pilot: **Trainup a Child Uganda** (~3,000 primary students, affluent). The pilot will start with **one P7 Mathematics class** and, if it works, roll out school-wide and continue long-term.
+
+The immediate product positioning is **study**, not just revision. The platform is architected for all four PLE subjects, but the pilot build is **P7 Math only**.
+
+## What shipped this session
+
+### 1. Pilot plan
+- New doc: `docs/ops/trainup-pilot-plan.md` with a four-phase quality-first approach.
+- Decisions logged: PILOT-001 to PILOT-004.
+
+### 2. Fixed the all-answers-are-A bias
+- Added `scripts/shuffle-correct-answers.js` to randomize correct answer positions.
+- Shuffled **91 quiz questions** in `app/lib/topics.ts` and **194 bank questions** in `app/lib/question-bank.ts`.
+- Correct answer distribution is now roughly even across A/B/C/D.
+- This fixes the visible bug in the worksheet generator, practice mode, and topic quizzes.
+
+## Still open from previous sessions
+
+- **Fractions video is live:** `https://youtu.be/HuitLoh1Q9g`. The other two Math video slots are still placeholders.
+- **Multi-subject Phase 5 work (English / Science / SST)** was not pushed to GitHub before the previous chat crash; those files existed only as uploaded docs. The current repo remains Math only.
+- **School proposal PDF** at `docs/sales/school-proposal.pdf` is ready for Trainup outreach.
 
 Site live on Vercel at `tendo-ug.vercel.app`.
 

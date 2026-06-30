@@ -2,6 +2,28 @@
 
 > Newest at the top. Dated, append-only. Sessions are blocks.
 
+## v0.5.2 — 2026-06-30 — Trainup pilot focus: fix answer bias, plan the pilot
+
+**Session theme:** Founder landed a pilot school (Trainup a Child Uganda, ~3,000 primary students). We agreed to go slow and quality-first, starting with P7 Math only, positioning Tendo as a study platform, not just revision. First priority was fixing the visible "all answers are A" bug before the school sees the app.
+
+**Added:**
+- `docs/ops/trainup-pilot-plan.md` — four-phase pilot plan for Trainup a Child Uganda.
+- `scripts/shuffle-correct-answers.js` — utility to randomize correct answer positions in quiz and bank questions.
+- PILOT-001 to PILOT-004 decisions in `DECISIONS.md`.
+
+**Changed:**
+- `app/lib/topics.ts` — 91 quiz questions now have randomized correct answer positions.
+- `app/lib/question-bank.ts` — 194 bank questions now have randomized correct answer positions.
+- `STATUS.md` — rewritten to reflect the Trainup pilot focus and the P7 Math-only scope.
+
+**Verified locally:**
+- `npm run build` succeeds — 43 routes, all SSG, no errors.
+- Correct answer distribution is roughly even across A/B/C/D in both files.
+
+**Next session:** Phase 2 of the pilot plan — restructure the 13 topic notes as full study material, then audit the P7 Math syllabus coverage.
+
+---
+
 ## v0.5.1 — 2026-06-25 — Video wiring for Watch tab
 
 **Session theme:** Founder wanted to pick up after a chat crash and focus on the Watch tab first. Wired per-topic video URLs and wrote a NotebookLM → YouTube → embed pipeline so the founder can generate the first 3 Math videos without needing more code changes.

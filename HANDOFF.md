@@ -13,16 +13,21 @@ Read in this order:
 
 ## Where you're picking up
 
-Phase 4 is **functionally done**. The Watch tab is now **video-ready**:
-- `Topic` type has an optional `videoUrl` field.
-- `TopicTabs` embeds a YouTube video when `videoUrl` is set, and keeps the placeholder when it is not.
-- **Fractions video is locked in:** `videoUrl: "https://youtu.be/HuitLoh1Q9g"`.
-- Percentages and Equations still have placeholder comments ready for URLs.
-- The NotebookLM video guide is in `docs/ops/notebooklm-video-guide.md`.
+The project is now in **pilot-prep mode for Trainup a Child Uganda**.
 
-**Important:** The previous session's multi-subject Phase 5 work (English / Science / SST) was **not pushed to GitHub** before the chat crashed. Those files existed only as uploaded docs. The current repo is still Phase 4 (Math only). If you want to recover that work, we need a dedicated session to rebuild it from the docs.
+**Phase 1 of the pilot plan is done:**
+- The all-answers-are-A bias is fixed. `app/lib/topics.ts` and `app/lib/question-bank.ts` now have roughly even A/B/C/D correct answer distribution.
+- Pilot plan is in `docs/ops/trainup-pilot-plan.md`.
+- PILOT-001 to PILOT-004 are logged in `DECISIONS.md`.
 
-The founder's next action is to generate the remaining 2 videos, paste the URLs, and push.
+**Product framing:** Tendo is now a **study** platform, not a revision platform. The school proposal PDF reflects this.
+
+**Still ready from earlier:**
+- Watch tab video support; Fractions video is locked in.
+- School proposal PDF at `docs/sales/school-proposal.pdf`.
+- The app is still Phase 4 / Math only. The multi-subject Phase 5 work from the crashed chat was not pushed to GitHub.
+
+**The founder's next action is to decide which Phase 2 task to start first.** Recommended order: restructure the 13 topic notes as full study material, then audit the NCDC P7 syllabus coverage.
 
 ## Next session (founder picks)
 
