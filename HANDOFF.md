@@ -18,7 +18,7 @@ The project is in **pilot-prep mode for Trainup a Child Uganda**.
 **Phase 1 and 2 are done:**
 - All-answers-are-A bias fixed (91 quiz + 194 bank questions now randomized).
 - `/trainup` path shows Trainup branding and a school-specific landing page.
-- **Fractions, Percentages, Equations, and Decimals** are rewritten as full study modules (learning objectives, common mistakes, try-this exercises).
+- **Fractions, Percentages, Equations, Decimals, and Venn diagrams** are rewritten as full study modules (learning objectives, common mistakes, try-this exercises).
 - The `TopicNote` type now supports the new study structure.
 
 **Product framing:** Tendo is a **study** platform. The proposal PDF reflects this.

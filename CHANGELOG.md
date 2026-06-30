@@ -11,7 +11,7 @@
 - `app/components/BrandBar.tsx` — shows Trainup branding when the user is on `/trainup`.
 - `app/app/trainup/page.tsx` — Trainup-branded landing page at `/trainup`.
 - Extended `TopicNote` interface with `learningObjectives`, `commonMistakes`, and `tryThis`.
-- Rewrote the **Fractions**, **Percentages**, **Equations**, and **Decimals** topics as full study modules with learning objectives, common mistakes, and try-this exercises.
+- Rewrote the **Fractions**, **Percentages**, **Equations**, **Decimals**, and **Venn diagrams** topics as full study modules with learning objectives, common mistakes, and try-this exercises.
 
 **Changed:**
 - `app/components/TopicTabs.tsx` — now renders the new study sections and includes them in the listen-aloud script.
