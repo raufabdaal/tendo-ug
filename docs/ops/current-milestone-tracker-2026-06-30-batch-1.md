@@ -1,26 +1,27 @@
-# Current Milestone Tracker — Batch 1 Second-Pass Read Rewrites
+# Current Milestone Tracker — Batch 2 Second-Pass Read Rewrites
 
 *Started: 2026-06-30*
 
 ## Scope of this milestone
 
-This tracker starts **after** the founder already pushed the previous milestone.
+This tracker starts **after** the founder already pushed the Batch 1 milestone.
 
 So this file tracks only the **new changes from this point forward**.
 
 ## Goal
 
-Apply the second-pass study rewrite to the strongest near-ready topics first:
-1. Venn diagrams
-2. Perimeter
-3. Equations
+Apply the second-pass study rewrite to the next solid-but-compressed topics:
+1. Decimals
+2. Area
+3. Volume
+4. Mean, median, mode and range
 
 ## Progress
 
-- [x] Audit of stronger 10 topics completed
-- [x] Venn diagrams second-pass rewrite completed
-- [x] Perimeter second-pass rewrite completed
-- [x] Equations second-pass rewrite completed
+- [x] Decimals second-pass rewrite completed
+- [x] Area second-pass rewrite completed
+- [x] Volume second-pass rewrite completed
+- [x] Mean, median, mode and range second-pass rewrite completed
 
 ## Files currently changed in this milestone
 
@@ -28,7 +29,6 @@ Apply the second-pass study rewrite to the strongest near-ready topics first:
 - `app/lib/topics.ts`
 
 ### Add new
-- `docs/ops/second-pass-read-audit-stronger-topics-2026-06-30.md`
 - `docs/ops/current-milestone-tracker-2026-06-30-batch-1.md`
 
 ## Reminder
