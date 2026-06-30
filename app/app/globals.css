@@ -59,6 +59,30 @@ button { font-family: inherit; }
   background: var(--terracotta);
   border-radius: 2px;
 }
+
+.brand-bar {
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 8px 24px;
+  font-size: 13px;
+}
+.brand-bar-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.brand-bar-logo {
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: -0.01em;
+}
+.brand-bar-tagline {
+  opacity: 0.85;
+  font-size: 12px;
+}
 .nav-meta { color: var(--muted); font-size: 14px; }
 
 main {
@@ -507,6 +531,31 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
   height: 100%;
   border: 0;
   border-radius: var(--radius);
+}
+
+/* ============================================
+   Try this section (inside Read tab)
+   ============================================ */
+.try-this {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+  margin: 18px 0;
+}
+.try-this h2 { margin-top: 0; }
+.try-this .choice:disabled {
+  cursor: default;
+  opacity: 1;
+  background: var(--cream-deep);
+}
+.try-this-hint {
+  font-size: 14px;
+  color: var(--charcoal-soft);
+  margin-top: 12px;
+  background: var(--cream-deep);
+  padding: 10px 12px;
+  border-radius: 6px;
 }
 
 /* ============================================

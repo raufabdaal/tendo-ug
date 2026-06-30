@@ -18,11 +18,19 @@ export interface QuizQuestion {
 
 export interface TopicNote {
   intro: string; // "Why this matters" callout
-  whatYouNeedToKnow: string[]; // paragraphs
+  learningObjectives?: string[]; // what the student will be able to do after this topic
+  whatYouNeedToKnow: string[]; // core concept explanations
   worked: {
     problem: string;
     steps: string[];
     answer: string;
+  };
+  commonMistakes?: string[]; // traps students often fall into
+  tryThis?: {
+    question: string;
+    choices: string[];
+    correct: number; // index 0-3
+    explanation: string;
   };
   recap: string[];
 }
@@ -143,25 +151,46 @@ export const TOPICS: Topic[] = [
     reviewStatus: "verified",
     videoUrl: "https://youtu.be/HuitLoh1Q9g",
     note: {
-      intro: "Why this matters: Fractions appear in roughly a third of every PLE Maths paper, in word problems, in measurement, and in algebra setup.",
+      intro: "Why this matters: Fractions appear in roughly a third of every PLE Maths paper, in word problems, in measurement, and in algebra. Learning them well means easy marks in many different questions.",
+      learningObjectives: [
+        "Understand what a fraction means and name its parts.",
+        "Compare fractions and put them in order.",
+        "Add, subtract, multiply and divide fractions.",
+        "Apply fractions to word problems and money questions.",
+      ],
       whatYouNeedToKnow: [
-        "A fraction is a part of a whole. The bottom number (the denominator) says how many equal parts the whole is cut into. The top number (the numerator) says how many of those parts you have.",
-        "To compare or add fractions with different denominators, find a common denominator first. The lowest common multiple of the two denominators is the cleanest one to use. To multiply fractions, multiply the tops and multiply the bottoms. To divide, flip the second fraction and multiply.",
+        "A fraction is a part of a whole. The bottom number is the denominator: it tells you how many equal parts the whole has been cut into. The top number is the numerator: it tells you how many of those parts you are looking at. In 3/4, the whole is cut into 4 equal parts and you have 3 of them.",
+        "To compare or add fractions with different denominators, change them so they share the same denominator. The lowest common multiple (LCM) of the two denominators is usually the best choice. For example, to compare 3/4 and 5/8, change 3/4 into 6/8. Then it is easy to see that 6/8 is larger than 5/8.",
+        "To add or subtract fractions, first make the denominators the same, then add or subtract only the numerators. Keep the denominator the same. For example, 2/3 + 1/4 = 8/12 + 3/12 = 11/12. The denominator stays 12.",
+        "To multiply fractions, multiply the numerators together and multiply the denominators together. The word 'of' with a fraction usually means multiply. For example, 1/2 of 16 means 1/2 × 16 = 8.",
+        "To divide by a fraction, turn the second fraction upside down and multiply. For example, 3/4 ÷ 1/2 becomes 3/4 × 2/1 = 6/4 = 3/2. This is often called 'flip and multiply'.",
       ],
       worked: {
         problem: "Akello has 16 mangoes. She gives 1/2 to her brother and then sells 1/4 of what is left. How many mangoes does she have now?",
         steps: [
-          "Step 1. 1/2 of 16 = 8 (given to brother)",
-          "Step 2. 16 − 8 = 8 mangoes remain",
-          "Step 3. 1/4 of 8 = 2 (sold)",
-          "Step 4. 8 − 2 = 6 mangoes left",
+          "Step 1. 1/2 of 16 = 8 mangoes given to her brother.",
+          "Step 2. 16 − 8 = 8 mangoes remain after giving some to her brother.",
+          "Step 3. 1/4 of 8 = 2 mangoes sold.",
+          "Step 4. 8 − 2 = 6 mangoes left.",
         ],
-        answer: "Answer: 6 mangoes.",
+        answer: "Answer: Akello has 6 mangoes left.",
+      },
+      commonMistakes: [
+        "Adding the denominators: 2/3 + 1/4 is NOT 3/7. You must make the denominators the same first.",
+        "Forgetting the new total: after giving 1/2 away, the next fraction is taken from the remaining 8, not from the original 16.",
+        "Dividing the wrong way: 3/4 ÷ 1/2 is not 3/4 × 1/2. You must flip the second fraction before multiplying.",
+      ],
+      tryThis: {
+        question: "Mukasa had 20 books. He lent 1/4 to his friend and then sold 1/3 of what was left. How many books did he sell?",
+        choices: ["4 books", "5 books", "6 books", "10 books"],
+        correct: 1,
+        explanation: "1/4 of 20 = 5 books lent. Remaining = 20 − 5 = 15 books. 1/3 of 15 = 5 books sold. The answer is 5 books.",
       },
       recap: [
         "'Of' with a fraction means multiply.",
-        "Always work from the new total, not the original.",
-        "Read the question twice before you start.",
+        "Always work from the new total after each step, not the original amount.",
+        "Before adding or comparing fractions, make the denominators the same.",
+        "To divide by a fraction, flip the second fraction and multiply.",
       ],
     },
     quiz: [

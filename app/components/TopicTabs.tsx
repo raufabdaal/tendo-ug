@@ -121,6 +121,15 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
             </div>
           )}
 
+          {topic.note.learningObjectives && (
+            <>
+              <h2>What you will learn</h2>
+              <ul>
+                {topic.note.learningObjectives.map((obj, i) => <li key={i}>{obj}</li>)}
+              </ul>
+            </>
+          )}
+
           <h2>What you need to know</h2>
           {topic.note.whatYouNeedToKnow.map((p, i) => <p key={i}>{p}</p>)}
 
@@ -136,6 +145,31 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
             <div className="answer">{topic.note.worked.answer}</div>
           </div>
 
+          {topic.note.commonMistakes && (
+            <>
+              <h2>Common mistakes</h2>
+              <ul>
+                {topic.note.commonMistakes.map((m, i) => <li key={i}>{m}</li>)}
+              </ul>
+            </>
+          )}
+
+          {topic.note.tryThis && (
+            <div className="try-this">
+              <h2>Try this</h2>
+              <p>{topic.note.tryThis.question}</p>
+              <div className="quiz-choices">
+                {topic.note.tryThis.choices.map((choice, i) => (
+                  <button key={i} className="choice" disabled>
+                    <span className="choice-letter">{String.fromCharCode(65 + i)}</span>
+                    {choice}
+                  </button>
+                ))}
+              </div>
+              <p className="try-this-hint"><strong>Answer:</strong> {topic.note.tryThis.explanation}</p>
+            </div>
+          )}
+
           <h2>Quick recap</h2>
           <ul>
             {topic.note.recap.map((r, i) => <li key={i}>{r}</li>)}
@@ -150,12 +184,25 @@ function buildScript(topic: Topic): string {
   const parts: string[] = [];
   parts.push(topic.title + ".");
   parts.push(topic.note.intro);
+  if (topic.note.learningObjectives) {
+    parts.push("What you will learn.");
+    parts.push(topic.note.learningObjectives.join(" "));
+  }
   parts.push("What you need to know.");
   parts.push(topic.note.whatYouNeedToKnow.join(" "));
   parts.push("Here is a worked example.");
   parts.push(topic.note.worked.problem);
   parts.push(topic.note.worked.steps.join(" "));
   parts.push(topic.note.worked.answer);
+  if (topic.note.commonMistakes) {
+    parts.push("Common mistakes.");
+    parts.push(topic.note.commonMistakes.join(" "));
+  }
+  if (topic.note.tryThis) {
+    parts.push("Try this.");
+    parts.push(topic.note.tryThis.question);
+    parts.push(topic.note.tryThis.explanation);
+  }
   parts.push("Quick recap.");
   parts.push(topic.note.recap.join(" "));
   return parts.join(" ");
