@@ -1,34 +1,32 @@
-# Current Milestone Tracker — Batch 2 Second-Pass Read Rewrites
+# Current Milestone Tracker — Batch 3 Deeper Read Rewrites
 
 *Started: 2026-06-30*
 
 ## Scope of this milestone
 
-This tracker starts **after** the founder already pushed the Batch 1 milestone.
+This tracker starts **after** the founder already pushed the Batch 2 milestone.
 
 So this file tracks only the **new changes from this point forward**.
 
 ## Goal
 
-Apply the second-pass study rewrite to the next solid-but-compressed topics:
-1. Decimals
-2. Area
-3. Volume
-4. Mean, median, mode and range
+Apply deeper read rewrites to the heaviest compressed topics:
+1. Fractions
+2. Proportion and percentages
+3. Money
 
 ## Progress
 
-- [x] Decimals second-pass rewrite completed
-- [x] Area second-pass rewrite completed
-- [x] Volume second-pass rewrite completed
-- [x] Mean, median, mode and range second-pass rewrite completed
+- [x] Fractions deeper rewrite completed
+- [x] Proportion and percentages deeper rewrite completed
+- [x] Money deeper rewrite completed
 
 ## Files currently changed in this milestone
 
 ### Overwrite existing
 - `app/lib/topics.ts`
 
-### Add new
+### Overwrite existing
 - `docs/ops/current-milestone-tracker-2026-06-30-batch-1.md`
 
 ## Reminder
