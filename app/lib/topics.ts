@@ -61,26 +61,48 @@ export const TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro:
-        "Why this matters: UNEB has asked at least one Venn-diagram question in every PLE Maths paper since 2014.",
+        "Why this matters: UNEB has asked at least one Venn-diagram question in every PLE Maths paper since 2014. The question is usually worth 2 or 3 marks, and it is almost always the same structure: total, group A, group B, overlap, and the number in neither. Once you know where the four numbers go, the rest is arithmetic.",
+      learningObjectives: [
+        "Read a two-circle Venn diagram and name each region.",
+        "Find the number of items in only one group, both groups, or neither group.",
+        "Use the Venn rule: total in group A or B = n(A) + n(B) − n(A and B).",
+        "Solve word problems by drawing or filling in a Venn diagram.",
+      ],
       whatYouNeedToKnow: [
-        "A Venn diagram is a picture of sets. Two overlapping circles show two groups, and the part where they overlap shows the items that are in both groups.",
-        "The most common PLE question gives you the total number of people, the number in group A, the number in group B, and asks you to find either the overlap or how many are in neither. Once you can put four numbers in the right place, the rest is arithmetic.",
+        "A Venn diagram is a picture of sets. Each circle is a set, or a group. The area where the two circles overlap is called the intersection: it shows the items that belong to both groups. The area outside both circles shows the items that belong to neither group.",
+        "A two-circle Venn diagram has four regions. (1) Only A. (2) Only B. (3) Both A and B (the overlap). (4) Neither A nor B. When you fill in these four numbers correctly, you can answer almost any PLE question.",
+        "The most useful formula for two sets is: number in A or B (or both) = n(A) + n(B) − n(A and B). The overlap is subtracted because it is counted twice when you simply add n(A) and n(B).",
+        "To find 'only A', subtract the overlap from the total of A. To find 'only B', subtract the overlap from the total of B. To find 'neither', subtract the number in 'at least one group' from the overall total.",
+        "If the question gives you the total, the two group totals, and the number in neither, you can find the overlap by working backwards: n(A or B) = total − neither. Then use n(A and B) = n(A) + n(B) − n(A or B).",
       ],
       worked: {
         problem:
           "In a class of 40 pupils, 24 play football and 22 play netball. 10 pupils play both games. How many pupils play neither game?",
         steps: [
-          "Step 1. Football-only = 24 − 10 = 14",
-          "Step 2. Netball-only = 22 − 10 = 12",
-          "Step 3. Total playing at least one = 14 + 12 + 10 = 36",
-          "Step 4. Neither = 40 − 36 = 4",
+          "Step 1. Find football only. Total football = 24, and 10 of those also play netball. So football only = 24 − 10 = 14.",
+          "Step 2. Find netball only. Total netball = 22, and 10 of those also play football. So netball only = 22 − 10 = 12.",
+          "Step 3. Find the total who play at least one game. Add the three regions: 14 (football only) + 12 (netball only) + 10 (both) = 36.",
+          "Step 4. Find neither. The whole class has 40 pupils, and 36 play at least one game. So neither = 40 − 36 = 4.",
         ],
         answer: "Answer: 4 pupils play neither game.",
       },
+      commonMistakes: [
+        "Forgetting to subtract the overlap. The total number in group A includes the pupils who are also in group B. 'Only A' is always n(A) minus the overlap.",
+        "Double-counting the overlap. When you add n(A) + n(B), the overlap is counted twice. That is why the formula subtracts it once.",
+        "Mixing up 'neither' and 'both'. 'Both' is the overlap in the middle. 'Neither' is the area outside both circles, found by subtracting the 'at least one' total from the overall total.",
+        "Stopping after finding 'only A' and 'only B'. Some pupils leave out the overlap or the 'neither' region and miss a whole number they need for the final answer.",
+      ],
+      tryThis: {
+        question: "In a class of 50 pupils, 30 like rice and 25 like beans. 12 pupils like both. How many pupils like neither?",
+        choices: ["7", "12", "18", "43"],
+        correct: 0,
+        explanation: "Rice only = 30 − 12 = 18. Beans only = 25 − 12 = 13. At least one = 18 + 13 + 12 = 43. Neither = 50 − 43 = 7. The answer is 7.",
+      },
       recap: [
-        "Subtract the overlap from each group first.",
-        "Add the three parts to get 'at least one'.",
-        "Subtract from the total to get 'neither'.",
+        "A two-circle Venn diagram has four regions: only A, only B, both, and neither.",
+        "Only A = n(A) − overlap. Only B = n(B) − overlap.",
+        "At least one group = n(A) + n(B) − overlap.",
+        "Neither = total − at least one group.",
       ],
     },
     quiz: [
