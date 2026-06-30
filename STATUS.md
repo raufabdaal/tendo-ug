@@ -2,25 +2,26 @@
 
 *Updated: 2026-06-25, video wiring session*
 
-> **Updated 2026-06-30: Pilot focus — Trainup a Child Uganda, P7 Math only, quality-first.**
+> **Updated 2026-07-01: Trainup pilot — Phase 1 and 2 in progress.**
 
 ## Current focus: Trainup a Child Uganda pilot
 
 We have a school ready to pilot: **Trainup a Child Uganda** (~3,000 primary students, affluent). The pilot will start with **one P7 Mathematics class** and, if it works, roll out school-wide and continue long-term.
 
-The immediate product positioning is **study**, not just revision. The platform is architected for all four PLE subjects, but the pilot build is **P7 Math only**.
+The product positioning is **study**, not just revision. The platform is architected for all four PLE subjects, but the pilot build is **P7 Math only**.
 
 ## What shipped this session
 
-### 1. Pilot plan
-- New doc: `docs/ops/trainup-pilot-plan.md` with a four-phase quality-first approach.
-- Decisions logged: PILOT-001 to PILOT-004.
+### Phase 1 — Pilot plan and quality fix (done)
+- `docs/ops/trainup-pilot-plan.md` with the four-phase quality-first approach.
+- Decisions PILOT-001 to PILOT-004 logged in `DECISIONS.md`.
+- Fixed the all-answers-are-A bias: shuffled **91 quiz questions** and **194 bank questions** so correct answers are spread across A/B/C/D.
 
-### 2. Fixed the all-answers-are-A bias
-- Added `scripts/shuffle-correct-answers.js` to randomize correct answer positions.
-- Shuffled **91 quiz questions** in `app/lib/topics.ts` and **194 bank questions** in `app/lib/question-bank.ts`.
-- Correct answer distribution is now roughly even across A/B/C/D.
-- This fixes the visible bug in the worksheet generator, practice mode, and topic quizzes.
+### Phase 2 — Trainup branding and Fractions rewrite (done)
+- `app/lib/school.ts` + `BrandBar` component: `/trainup` path shows Trainup branding.
+- New route `/trainup` with a Trainup-branded landing page.
+- Extended `TopicNote` type to support `learningObjectives`, `commonMistakes`, and `tryThis`.
+- Rewrote the **Fractions** topic as a full study module (not revision notes).
 
 ## Still open from previous sessions
 

@@ -13,21 +13,22 @@ Read in this order:
 
 ## Where you're picking up
 
-The project is now in **pilot-prep mode for Trainup a Child Uganda**.
+The project is in **pilot-prep mode for Trainup a Child Uganda**.
 
-**Phase 1 of the pilot plan is done:**
-- The all-answers-are-A bias is fixed. `app/lib/topics.ts` and `app/lib/question-bank.ts` now have roughly even A/B/C/D correct answer distribution.
-- Pilot plan is in `docs/ops/trainup-pilot-plan.md`.
-- PILOT-001 to PILOT-004 are logged in `DECISIONS.md`.
+**Phase 1 and 2 are done:**
+- All-answers-are-A bias fixed (91 quiz + 194 bank questions now randomized).
+- `/trainup` path shows Trainup branding and a school-specific landing page.
+- **Fractions** is rewritten as a full study module (learning objectives, common mistakes, try-this exercise).
+- The `TopicNote` type now supports the new study structure.
 
-**Product framing:** Tendo is now a **study** platform, not a revision platform. The school proposal PDF reflects this.
+**Product framing:** Tendo is a **study** platform. The proposal PDF reflects this.
 
 **Still ready from earlier:**
 - Watch tab video support; Fractions video is locked in.
 - School proposal PDF at `docs/sales/school-proposal.pdf`.
 - The app is still Phase 4 / Math only. The multi-subject Phase 5 work from the crashed chat was not pushed to GitHub.
 
-**The founder's next action is to decide which Phase 2 task to start first.** Recommended order: restructure the 13 topic notes as full study material, then audit the NCDC P7 syllabus coverage.
+**Next decision:** Continue Phase 2 topic-by-topic. I recommend the next topic be **Percentages** or **Equations** — both high-stakes and both already have strong question banks. Or we can pause to audit the NCDC P7 syllabus coverage before writing more content.
 
 ## Next session (founder picks)
 

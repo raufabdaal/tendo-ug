@@ -2,29 +2,30 @@
 
 > Newest at the top. Dated, append-only. Sessions are blocks.
 
-## v0.5.2 — 2026-06-30 — Trainup pilot focus: fix answer bias, plan the pilot
+## v0.5.3 — 2026-07-01 — Trainup branding and Fractions as a study module
 
-**Session theme:** Founder landed a pilot school (Trainup a Child Uganda, ~3,000 primary students). We agreed to go slow and quality-first, starting with P7 Math only, positioning Tendo as a study platform, not just revision. First priority was fixing the visible "all answers are A" bug before the school sees the app.
+**Session theme:** Founder confirmed we go slow and steady: milestone-based deploys, no redeploys on small changes, P7 Math first, Fractions first, then the rest of Math, then other subjects. We started with the `/trainup` branding path and a full study rewrite of the Fractions topic.
 
 **Added:**
-- `docs/ops/trainup-pilot-plan.md` — four-phase pilot plan for Trainup a Child Uganda.
-- `scripts/shuffle-correct-answers.js` — utility to randomize correct answer positions in quiz and bank questions.
-- PILOT-001 to PILOT-004 decisions in `DECISIONS.md`.
+- `app/lib/school.ts` — school config layer with Tendo and Trainup a Child Uganda configs.
+- `app/components/BrandBar.tsx` — shows Trainup branding when the user is on `/trainup`.
+- `app/app/trainup/page.tsx` — Trainup-branded landing page at `/trainup`.
+- Extended `TopicNote` interface with `learningObjectives`, `commonMistakes`, and `tryThis`.
+- Rewrote the **Fractions** topic (`fractions-core`) as a full study module with learning objectives, common mistakes, and a try-this exercise.
 
 **Changed:**
-- `app/lib/topics.ts` — 91 quiz questions now have randomized correct answer positions.
-- `app/lib/question-bank.ts` — 194 bank questions now have randomized correct answer positions.
-- `STATUS.md` — rewritten to reflect the Trainup pilot focus and the P7 Math-only scope.
+- `app/components/TopicTabs.tsx` — now renders the new study sections and includes them in the listen-aloud script.
+- `app/app/globals.css` — added styles for the brand bar and the "Try this" section.
+- `STATUS.md` — updated to show Phase 2 progress.
 
 **Verified locally:**
-- `npm run build` succeeds — 43 routes, all SSG, no errors.
-- Correct answer distribution is roughly even across A/B/C/D in both files.
+- `npm run build` succeeds — 44 routes (the new `/trainup` route), all SSG, no errors.
 
-**Next session:** Phase 2 of the pilot plan — restructure the 13 topic notes as full study material, then audit the P7 Math syllabus coverage.
+**Next session:** Continue Phase 2 — rewrite the next high-stakes topic (e.g., Percentages or Equations) as full study material, or start the NCDC P7 syllabus audit.
 
 ---
 
-## v0.5.1 — 2026-06-25 — Video wiring for Watch tab
+## v0.5.2 — 2026-06-30 — Trainup pilot focus: fix answer bias, plan the pilot
 
 **Session theme:** Founder wanted to pick up after a chat crash and focus on the Watch tab first. Wired per-topic video URLs and wrote a NotebookLM → YouTube → embed pipeline so the founder can generate the first 3 Math videos without needing more code changes.
 
