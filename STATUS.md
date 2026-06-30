@@ -17,11 +17,11 @@ The product positioning is **study**, not just revision. The platform is archite
 - Decisions PILOT-001 to PILOT-004 logged in `DECISIONS.md`.
 - Fixed the all-answers-are-A bias: shuffled **91 quiz questions** and **194 bank questions** so correct answers are spread across A/B/C/D.
 
-### Phase 2 — Trainup branding and Fractions rewrite (done)
+### Phase 2 — Trainup branding and first three topics as full study material (done)
 - `app/lib/school.ts` + `BrandBar` component: `/trainup` path shows Trainup branding.
 - New route `/trainup` with a Trainup-branded landing page.
 - Extended `TopicNote` type to support `learningObjectives`, `commonMistakes`, and `tryThis`.
-- Rewrote the **Fractions** topic as a full study module (not revision notes).
+- Rewrote the **Fractions**, **Percentages**, and **Equations** topics as full study modules (not revision notes).
 
 ## Still open from previous sessions
 
