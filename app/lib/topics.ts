@@ -1221,6 +1221,139 @@ export const TOPICS: Topic[] = [
       { q: "Which statement is correct?", choices: ["An expression always has an equals sign", "3x + 2 and 5x are the same kind of terms", "x + 4 is an equation", "Letters in algebra can stand for numbers"], correct: 3, why: "Letters in algebra are used to stand for numbers. The other statements are false." },
     ],
   },
+  {
+    id: "tests-of-divisibility",
+    themeId: "theme-2-numeracy",
+    themeName: "Numeracy · Patterns",
+    title: "Tests of divisibility",
+    estMinutes: 13,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Tests of divisibility help learners decide quickly whether one number can divide another exactly. This saves time in factor work, fractions, prime factorisation, and many written calculations.",
+      learningObjectives: [
+        "Use the divisibility tests for 2, 3, 4, 5, 6, 8, 9 and 10.",
+        "Decide whether a number is divisible by another number without long division.",
+        "Explain why a number passes or fails a test of divisibility.",
+        "Use divisibility tests in simple number problems.",
+      ],
+      whatYouNeedToKnow: [
+        "A number is divisible by another number if it can be divided exactly with no remainder. For example, 24 is divisible by 6 because 24 ÷ 6 = 4 with no remainder.",
+        "A number is divisible by 2 if its last digit is 0, 2, 4, 6, or 8. These are even numbers.",
+        "A number is divisible by 5 if its last digit is 0 or 5. It is divisible by 10 if its last digit is 0.",
+        "A number is divisible by 3 if the sum of its digits is divisible by 3. In the same way, a number is divisible by 9 if the sum of its digits is divisible by 9.",
+        "A number is divisible by 4 if the last two digits form a number divisible by 4. A number is divisible by 8 if the last three digits form a number divisible by 8.",
+        "A number is divisible by 6 only if it is divisible by both 2 and 3. This is a very useful combined test.",
+      ],
+      worked: {
+        problem:
+          "Is 4,356 divisible by 2, 3, 4, 6 and 9?",
+        steps: [
+          "Step 1. Check divisibility by 2. The last digit is 6, so 4,356 is divisible by 2.",
+          "Step 2. Add the digits: 4 + 3 + 5 + 6 = 18. Since 18 is divisible by 3, the number is divisible by 3.",
+          "Step 3. Since the last two digits are 56 and 56 is divisible by 4, the number is divisible by 4.",
+          "Step 4. A number divisible by both 2 and 3 is divisible by 6, so 4,356 is divisible by 6.",
+          "Step 5. Since the digit sum 18 is divisible by 9, the number is also divisible by 9.",
+        ],
+        answer: "Answer: 4,356 is divisible by 2, 3, 4, 6 and 9.",
+      },
+      commonMistakes: [
+        "Checking all the digits for divisibility by 2 instead of looking only at the last digit.",
+        "Forgetting to add the digits when testing divisibility by 3 or 9.",
+        "Using the whole number instead of the last two digits for divisibility by 4.",
+        "Saying a number is divisible by 6 just because it is even, without checking divisibility by 3.",
+      ],
+      tryThis: {
+        question: "Which of these numbers is divisible by both 2 and 3?",
+        choices: ["245", "318", "455", "701"],
+        correct: 1,
+        explanation: "318 ends in 8, so it is divisible by 2. Its digits add to 3 + 1 + 8 = 12, and 12 is divisible by 3. So 318 is divisible by both 2 and 3.",
+      },
+      recap: [
+        "Divisible by 2: last digit is even.",
+        "Divisible by 3 or 9: use the sum of the digits.",
+        "Divisible by 4: check the last two digits.",
+        "Divisible by 5 or 10: check the last digit.",
+        "Divisible by 6: it must be divisible by both 2 and 3.",
+      ],
+    },
+    quiz: [
+      { q: "Which number is divisible by 2?", choices: ["347", "518", "625", "731"], correct: 1, why: "518 ends in 8, so it is divisible by 2." },
+      { q: "Which number is divisible by 5?", choices: ["432", "781", "640", "923"], correct: 2, why: "A number divisible by 5 ends in 0 or 5. 640 ends in 0." },
+      { q: "Is 2,736 divisible by 3?", choices: ["Yes", "No", "Only by 2", "Cannot tell"], correct: 0, why: "2 + 7 + 3 + 6 = 18, and 18 is divisible by 3, so 2,736 is divisible by 3." },
+      { q: "Which number is divisible by 4?", choices: ["1,326", "2,118", "3,512", "4,327"], correct: 2, why: "Look at the last two digits. 12 is divisible by 4, so 3,512 is divisible by 4." },
+      { q: "Which number is divisible by 9?", choices: ["234", "546", "728", "812"], correct: 0, why: "Add the digits. For 234, 2 + 3 + 4 = 9, and 9 is divisible by 9. So 234 is divisible by 9." },
+      { q: "A number is divisible by 6 if it is divisible by:", choices: ["2 only", "3 only", "2 and 3", "3 and 5"], correct: 2, why: "For divisibility by 6, the number must be divisible by both 2 and 3." },
+      { q: "Which number is divisible by 10?", choices: ["4,205", "7,130", "6,421", "8,333"], correct: 1, why: "A number divisible by 10 must end in 0. 7,130 ends in 0." },
+    ],
+  },
+  {
+    id: "prime-factorisation",
+    themeId: "theme-2-numeracy",
+    themeName: "Numeracy · Whole Numbers",
+    title: "Prime factorisation",
+    estMinutes: 14,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Prime factorisation helps learners break numbers into smaller exact factors. It is useful in divisibility work, simplifying fractions, and later ideas like HCF and LCM.",
+      learningObjectives: [
+        "Explain the meaning of a prime number and a factor.",
+        "Find the prime factors of a whole number.",
+        "Write a number as a product of prime factors.",
+        "Check a factorisation by multiplying the factors again.",
+      ],
+      whatYouNeedToKnow: [
+        "A factor of a number is a whole number that divides it exactly. For example, factors of 12 include 1, 2, 3, 4, 6 and 12.",
+        "A prime number has exactly two factors: 1 and itself. Examples are 2, 3, 5, 7 and 11. The number 1 is not a prime number.",
+        "A composite number has more than two factors. For example, 12 is composite because it has several factors.",
+        "Prime factorisation means writing a number as a product of prime numbers only. For example, 12 = 2 × 2 × 3.",
+        "When factorising, it helps to divide by small prime numbers first, such as 2, 3, or 5. Keep dividing until only prime numbers remain.",
+        "Always check the final answer by multiplying the prime factors together to see whether they give the original number.",
+      ],
+      worked: {
+        problem:
+          "Write 60 as a product of prime factors.",
+        steps: [
+          "Step 1. Divide 60 by 2 because it is even. 60 ÷ 2 = 30.",
+          "Step 2. Divide 30 by 2 again. 30 ÷ 2 = 15.",
+          "Step 3. Divide 15 by 3. 15 ÷ 3 = 5.",
+          "Step 4. 5 is a prime number, so stop there.",
+          "Step 5. Write the answer as 60 = 2 × 2 × 3 × 5.",
+        ],
+        answer: "Answer: 60 = 2 × 2 × 3 × 5.",
+      },
+      commonMistakes: [
+        "Including 1 as a prime factor.",
+        "Stopping before all the factors are prime numbers.",
+        "Forgetting to check the answer by multiplying the factors again.",
+        "Mixing up ordinary factors with prime factors.",
+      ],
+      tryThis: {
+        question: "Which of these is the correct prime factorisation of 18?",
+        choices: ["2 × 9", "3 × 6", "2 × 3 × 3", "1 × 18"],
+        correct: 2,
+        explanation: "18 = 2 × 9 and 9 = 3 × 3. So the product of prime factors is 2 × 3 × 3.",
+      },
+      recap: [
+        "A prime number has exactly two factors.",
+        "Prime factorisation uses prime numbers only.",
+        "Keep dividing until all the factors are prime.",
+        "Check by multiplying the prime factors again.",
+      ],
+    },
+    quiz: [
+      { q: "Which of these is a prime number?", choices: ["1", "9", "11", "15"], correct: 2, why: "11 has exactly two factors: 1 and 11." },
+      { q: "Which of these is a factor of 24?", choices: ["5", "7", "8", "11"], correct: 2, why: "24 ÷ 8 = 3 with no remainder, so 8 is a factor of 24." },
+      { q: "Write 20 as a product of prime factors.", choices: ["4 × 5", "2 × 2 × 5", "10 × 2", "1 × 20"], correct: 1, why: "20 = 2 × 10 = 2 × 2 × 5, and 2 and 5 are prime." },
+      { q: "Which of these numbers is composite?", choices: ["2", "3", "5", "12"], correct: 3, why: "12 has more than two factors, so it is composite." },
+      { q: "What are the prime factors of 28?", choices: ["2 × 14", "4 × 7", "2 × 2 × 7", "1 × 28"], correct: 2, why: "28 = 2 × 14 = 2 × 2 × 7, and all these factors are prime." },
+      { q: "Why is 1 not a prime number?", choices: ["Because it is odd", "Because it has only one factor", "Because it is too small", "Because it has many factors"], correct: 1, why: "A prime number must have exactly two factors. The number 1 has only one factor, itself." },
+      { q: "Which is the correct prime factorisation of 30?", choices: ["2 × 15", "3 × 10", "2 × 3 × 5", "5 × 6"], correct: 2, why: "30 = 2 × 3 × 5, and all three numbers are prime." },
+    ],
+  },
 ];
 
 export function getTopic(id: string): Topic | undefined {
@@ -1241,8 +1374,6 @@ export const COMING_SOON: Array<{
   { id: "bases", themeName: "Numeracy · Whole Numbers", title: "Bases (non-decimal number systems)" },
   // removed from coming soon
   // { id: "four-basic-operations", themeName: "Numeracy · Operations", title: "Four basic operations" },
-  { id: "prime-factorisation", themeName: "Numeracy · Whole Numbers", title: "Prime factorisation" },
-  { id: "tests-of-divisibility", themeName: "Numeracy · Patterns", title: "Tests of divisibility" },
   // removed from coming soon
   // { id: "integers-core", themeName: "Numeracy · Integers", title: "Integers (positive, negative, zero)" },
   { id: "coordinates", themeName: "Interpretation of Graphs and Data", title: "Coordinates (ordered pairs)" },
