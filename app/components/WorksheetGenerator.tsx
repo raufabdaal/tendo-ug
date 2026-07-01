@@ -32,6 +32,8 @@ export default function WorksheetGenerator() {
   function defaultTitleForSubject(nextSubject: SubjectFilter) {
     if (nextSubject === "mathematics") return "P7 Mathematics worksheet";
     if (nextSubject === "science") return "P7 Integrated Science worksheet";
+    if (nextSubject === "social-studies") return "P7 Social Studies worksheet";
+    if (nextSubject === "english") return "P7 English worksheet";
     return "P7 mixed-subject worksheet";
   }
 
@@ -140,6 +142,20 @@ export default function WorksheetGenerator() {
               onClick={() => changeSubject("science")}
             >
               Science only
+            </button>
+            <button
+              type="button"
+              className={"subject-filter-btn" + (subject === "social-studies" ? " on" : "")}
+              onClick={() => changeSubject("social-studies")}
+            >
+              Social Studies only
+            </button>
+            <button
+              type="button"
+              className={"subject-filter-btn" + (subject === "english" ? " on" : "")}
+              onClick={() => changeSubject("english")}
+            >
+              English only
             </button>
             <button
               type="button"

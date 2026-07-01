@@ -10,13 +10,15 @@
 
 import type { QuizQuestion } from "./topics";
 import { SCIENCE_TOPICS } from "./science-topics";
+import { SOCIAL_TOPICS } from "./social-topics";
+import { ENGLISH_TOPICS } from "./english-topics";
 
 export type BankQuestion = QuizQuestion & {
   difficulty: "easy" | "medium" | "hard";
 };
 
-export type SubjectId = "mathematics" | "science";
-export type SubjectName = "Mathematics" | "Integrated Science";
+export type SubjectId = "mathematics" | "science" | "social-studies" | "english";
+export type SubjectName = "Mathematics" | "Integrated Science" | "Social Studies" | "English";
 
 export interface TopicBank {
   topicId: string;
@@ -452,7 +454,166 @@ const SCIENCE_BANK: TopicBank[] = SCIENCE_TOPICS.map((topic) => ({
   ],
 }));
 
-export const ALL_BANKS: TopicBank[] = [...MATHS_BANK, ...SCIENCE_BANK];
+
+
+const SOCIAL_EXTRA_QUESTIONS: Record<string, BankQuestion[]> = {
+  "location-of-africa": [
+    { q: "Which continent is largest in the world?", choices: ["Asia", "Africa", "Europe", "Australia"], correct: 0, why: "Asia is the largest continent; Africa is second largest.", difficulty: "easy" },
+    { q: "Which line of longitude passes through Greenwich?", choices: ["Prime Meridian", "Equator", "Tropic of Capricorn", "Tropic of Cancer"], correct: 0, why: "The Prime Meridian is the 0° longitude line passing through Greenwich.", difficulty: "medium" },
+    { q: "Which water body separates Africa from Europe in the north?", choices: ["Mediterranean Sea", "Red Sea", "Indian Ocean", "Lake Victoria"], correct: 0, why: "The Mediterranean Sea lies between North Africa and Southern Europe.", difficulty: "medium" },
+    { q: "Which region of Africa includes Egypt and Libya?", choices: ["North Africa", "East Africa", "Southern Africa", "Central Africa"], correct: 0, why: "Egypt and Libya are in North Africa.", difficulty: "easy" },
+    { q: "Why are latitudes and longitudes important?", choices: ["They help locate places accurately", "They make mountains", "They create governments", "They stop rainfall"], correct: 0, why: "Latitudes and longitudes form a grid used to locate places on maps and globes.", difficulty: "medium" },
+  ],
+  "physical-features-of-africa": [
+    { q: "Which river flows through Egypt to the Mediterranean Sea?", choices: ["Nile", "Congo", "Orange", "Limpopo"], correct: 0, why: "The Nile flows northwards through Egypt into the Mediterranean Sea.", difficulty: "easy" },
+    { q: "Which physical feature can make road construction difficult?", choices: ["Mountain", "Capital city", "Flag", "Market"], correct: 0, why: "Mountains are steep and can make transport and road construction difficult.", difficulty: "medium" },
+    { q: "Which lake is one of the deep rift valley lakes?", choices: ["Tanganyika", "Victoria", "Kyoga", "Chad only"], correct: 0, why: "Lake Tanganyika is a long, deep rift valley lake.", difficulty: "medium" },
+    { q: "Which physical feature is useful for fishing?", choices: ["Lake", "Desert only", "Plateau only", "Mountain peak only"], correct: 0, why: "Lakes provide fish and support fishing communities.", difficulty: "easy" },
+    { q: "How can physical features attract tourists?", choices: ["By providing scenery and wildlife habitats", "By removing all roads", "By stopping maps", "By ending trade"], correct: 0, why: "Mountains, lakes, waterfalls and valleys can attract tourists because of scenery and wildlife.", difficulty: "medium" },
+  ],
+  "climate-of-africa": [
+    { q: "Which factor means distance north or south of the Equator?", choices: ["Latitude", "Altitude", "Vegetation", "Population"], correct: 0, why: "Latitude is distance north or south of the Equator.", difficulty: "easy" },
+    { q: "Why do coastal places often have moderate temperatures?", choices: ["The sea heats and cools slowly", "They have no winds", "They are always deserts", "They have no clouds"], correct: 0, why: "Large water bodies heat and cool slowly, moderating nearby temperatures.", difficulty: "hard" },
+    { q: "Which climate supports thick rainforests?", choices: ["Equatorial climate", "Desert climate", "Semi-arid climate", "Polar climate"], correct: 0, why: "Equatorial climate has high rainfall and temperatures, supporting rainforests.", difficulty: "easy" },
+    { q: "Which human activity can help improve local climate conditions?", choices: ["Tree planting", "Deforestation", "Burning forests", "Draining all wetlands"], correct: 0, why: "Trees support rainfall, reduce heat and protect the environment.", difficulty: "medium" },
+    { q: "Which statement is true?", choices: ["Climate affects farming and settlement", "Climate has no effect on people", "Africa has only one climate", "Altitude never affects temperature"], correct: 0, why: "Climate strongly affects where people live and what they grow.", difficulty: "medium" },
+  ],
+  "vegetation-of-africa": [
+    { q: "Which vegetation has short scattered plants adapted to little rainfall?", choices: ["Desert vegetation", "Equatorial forest", "Mangrove forest", "Mountain forest only"], correct: 0, why: "Desert vegetation is sparse and adapted to dry conditions.", difficulty: "easy" },
+    { q: "Which factor can cause vegetation zones to change with height?", choices: ["Altitude", "Flag colour", "Capital city", "Political party"], correct: 0, why: "Temperature and rainfall change with altitude, causing different vegetation zones.", difficulty: "medium" },
+    { q: "Why are forests important for soil?", choices: ["They reduce erosion", "They remove all rain", "They create deserts", "They stop humus"], correct: 0, why: "Roots hold soil and tree cover reduces the force of rain on soil.", difficulty: "medium" },
+    { q: "Which activity helps conserve vegetation?", choices: ["Afforestation", "Overgrazing", "Charcoal burning without replanting", "Bush burning"], correct: 0, why: "Afforestation means planting trees where there were few or none.", difficulty: "easy" },
+    { q: "Why do some animals live in savanna?", choices: ["There is grass for grazers and prey for carnivores", "There is permanent ice", "There are no plants", "There is no water anywhere"], correct: 0, why: "Savanna supports grasses, herbivores and carnivores.", difficulty: "medium" },
+  ],
+  "people-ethnic-groups-settlement": [
+    { q: "Which group is commonly associated with Bantu-speaking peoples?", choices: ["Baganda", "Berbers only", "Arabs only", "Boers only"], correct: 0, why: "Baganda are a Bantu-speaking people in Uganda.", difficulty: "medium" },
+    { q: "Which is a pull factor for migration?", choices: ["Fertile land", "War", "Drought", "Disease outbreak"], correct: 0, why: "Fertile land attracts people to move into an area.", difficulty: "medium" },
+    { q: "Which is a push factor for migration?", choices: ["Conflict", "Good pasture", "Reliable water", "Trade opportunity"], correct: 0, why: "Conflict can force people to leave their homes.", difficulty: "medium" },
+    { q: "Why do many people settle near rivers?", choices: ["Water and fertile soils", "No farming possible", "No transport", "No fish"], correct: 0, why: "Rivers provide water, fish, transport routes and fertile soils.", difficulty: "easy" },
+    { q: "Which value should guide study of different ethnic groups?", choices: ["Respect", "Hatred", "Mockery", "Discrimination"], correct: 0, why: "Social Studies promotes respect and appreciation of different cultures.", difficulty: "easy" },
+  ],
+  "foreign-influence-africa": [
+    { q: "Which trade involved Europe, Africa and the Americas?", choices: ["Triangular trade", "Local barter only", "COMESA trade", "Silent trade only"], correct: 0, why: "The triangular trade linked Europe, Africa and the Americas.", difficulty: "medium" },
+    { q: "Which meeting is commonly linked to partition of Africa?", choices: ["Berlin Conference", "Adwa meeting", "OAU summit only", "UN General Assembly"], correct: 0, why: "The Berlin Conference of 1884–1885 is linked to European partition of Africa.", difficulty: "hard" },
+    { q: "Which colonial method used local chiefs to govern?", choices: ["Indirect rule", "Assimilation", "Direct rule only", "Apartheid"], correct: 0, why: "Indirect rule used local leaders under colonial supervision.", difficulty: "medium" },
+    { q: "Which policy of racial separation existed in South Africa?", choices: ["Apartheid", "Pan-Africanism", "Nationalism", "Afforestation"], correct: 0, why: "Apartheid was a system of racial segregation in South Africa.", difficulty: "medium" },
+    { q: "Which foreign group built many mission schools?", choices: ["Missionaries", "Only explorers", "Only settlers", "Only soldiers"], correct: 0, why: "Missionaries built schools and hospitals as part of their work.", difficulty: "easy" },
+  ],
+  "nationalism-road-independence": [
+    { q: "Which leader is associated with Ghana's independence struggle?", choices: ["Kwame Nkrumah", "Mungo Park", "Bartholomew Diaz", "Prince Henry"], correct: 0, why: "Kwame Nkrumah was a key nationalist leader in Ghana.", difficulty: "medium" },
+    { q: "Which method is peaceful?", choices: ["Negotiation", "Armed struggle", "Violence", "Burning villages"], correct: 0, why: "Negotiation is a peaceful method of seeking change.", difficulty: "easy" },
+    { q: "Why did nationalists form political parties?", choices: ["To organise people for self-rule", "To increase colonial control", "To end all voting", "To stop independence"], correct: 0, why: "Political parties helped mobilise people and demand independence.", difficulty: "medium" },
+    { q: "Which country is commonly studied as founded by freed formerly enslaved people from America?", choices: ["Liberia", "Kenya", "Tanzania", "Algeria"], correct: 0, why: "Liberia has a special history linked to freed formerly enslaved people from America.", difficulty: "hard" },
+    { q: "Which problem did Pan-Africanists face?", choices: ["Limited funds and colonial opposition", "Too many oceans", "No African countries", "No communication anywhere"], correct: 0, why: "Pan-Africanists faced colonial resistance, limited resources and travel/communication challenges.", difficulty: "medium" },
+  ],
+  "post-independence-africa": [
+    { q: "Where was the OAU formed?", choices: ["Addis Ababa", "Kampala", "Lagos", "Cape Town"], correct: 0, why: "The OAU was formed in Addis Ababa, Ethiopia, in 1963.", difficulty: "medium" },
+    { q: "Which was one aim of the OAU?", choices: ["Support African liberation", "Promote colonial rule", "Divide Africa permanently", "Stop cooperation"], correct: 0, why: "The OAU supported liberation and unity of African states.", difficulty: "easy" },
+    { q: "Which grouping is mainly in West Africa?", choices: ["ECOWAS", "IGAD", "SADC", "EAC only"], correct: 0, why: "ECOWAS is the Economic Community of West African States.", difficulty: "medium" },
+    { q: "Which is a disadvantage of economic cooperation?", choices: ["Unequal benefits among members", "Larger markets", "Shared roads", "More bargaining power"], correct: 0, why: "Some countries may benefit more than others, causing tension.", difficulty: "hard" },
+    { q: "Which can help regional groupings work better?", choices: ["Peace and good transport links", "Civil wars", "Trade barriers only", "Poor communication"], correct: 0, why: "Peace and better transport make cooperation easier.", difficulty: "medium" },
+  ],
+  "economic-developments-africa": [
+    { q: "Which resource is important in Libya's economy?", choices: ["Oil", "Snow", "Tea only", "Cocoa only"], correct: 0, why: "Libya is known for oil production.", difficulty: "easy" },
+    { q: "Which country is very rich in minerals such as copper and cobalt?", choices: ["DRC", "Somalia", "Gambia", "Lesotho only"], correct: 0, why: "The Democratic Republic of Congo has important mineral resources, including copper and cobalt.", difficulty: "medium" },
+    { q: "Which activity is linked to pastoralism?", choices: ["Keeping livestock", "Mining gold", "Making steel", "Running an airport only"], correct: 0, why: "Pastoralism involves keeping animals such as cattle, goats and sheep.", difficulty: "easy" },
+    { q: "Which problem can result from careless mining?", choices: ["Environmental degradation", "Better soil everywhere", "More forests always", "No pollution"], correct: 0, why: "Careless mining can damage land, water and vegetation.", difficulty: "medium" },
+    { q: "Which solution helps countries earn more from minerals?", choices: ["Processing minerals before export", "Exporting only raw minerals forever", "Stopping all training", "Destroying factories"], correct: 0, why: "Processing adds value and can create jobs before export.", difficulty: "hard" },
+  ],
+  "major-world-organisations": [
+    { q: "What does FAO focus on?", choices: ["Food and agriculture", "Football only", "Banking only", "Military rule"], correct: 0, why: "FAO is the Food and Agriculture Organization.", difficulty: "medium" },
+    { q: "Which agency supports refugees?", choices: ["UNHCR", "WHO", "FAO", "UNESCO"], correct: 0, why: "UNHCR is the UN Refugee Agency.", difficulty: "medium" },
+    { q: "Which agency focuses on education, science and culture?", choices: ["UNESCO", "WHO", "WFP", "UNHCR"], correct: 0, why: "UNESCO works in education, science and culture.", difficulty: "medium" },
+    { q: "Why was the UN formed after World War II?", choices: ["To promote peace and prevent future wars", "To colonise Africa", "To stop human rights", "To end cooperation"], correct: 0, why: "The UN was formed to promote peace, security and cooperation after the destruction of World War II.", difficulty: "medium" },
+    { q: "Which is a challenge of the Commonwealth?", choices: ["Different interests among member states", "No member countries", "No history", "No meetings ever"], correct: 0, why: "Member states may have different interests and priorities, making cooperation difficult.", difficulty: "hard" },
+  ],
+};
+
+const SOCIAL_STUDIES_BANK: TopicBank[] = SOCIAL_TOPICS.map((topic) => ({
+  topicId: topic.id,
+  topicTitle: topic.title,
+  themeName: topic.themeName,
+  subjectId: "social-studies",
+  subjectName: "Social Studies",
+  questions: [
+    ...topic.quiz.map((question, index) => ({
+      ...question,
+      difficulty: (index < 2 ? "easy" : index < 5 ? "medium" : "hard") as BankQuestion["difficulty"],
+    })),
+    ...(SOCIAL_EXTRA_QUESTIONS[topic.id] ?? []),
+  ],
+}));
+
+
+
+const ENGLISH_EXTRA_QUESTIONS: Record<string, BankQuestion[]> = {
+  "school-holidays": [
+    { q: "Choose the correct sentence about a future plan.", choices: ["We shall visit our cousins.", "We visited tomorrow.", "We visits next week.", "We was visit."], correct: 0, why: "'Shall visit' correctly shows a future plan.", difficulty: "easy" },
+    { q: "Which word best completes the sentence? During the holiday, I ___ my mother in the garden.", choices: ["helped", "help", "will helped", "helping"], correct: 0, why: "The sentence talks about a completed holiday activity, so past tense 'helped' is correct.", difficulty: "easy" },
+    { q: "Which is the best topic sentence for a paragraph about holidays?", choices: ["My last holiday was interesting and useful.", "And then after.", "Because playing.", "Holiday good."], correct: 0, why: "It clearly introduces the main idea of the paragraph.", difficulty: "medium" },
+    { q: "Which sequence is correct for recounting holiday events?", choices: ["First, then, afterwards, finally", "Finally, first, then, before", "Then, finally, first, afterwards", "Afterwards, finally, first, then"], correct: 0, why: "This sequence follows a clear time order.", difficulty: "medium" },
+    { q: "Rewrite correctly: 'I will went to the village.'", choices: ["I will go to the village.", "I will went to the village.", "I going to the village.", "I will goes to the village."], correct: 0, why: "After 'will', use the base verb 'go'.", difficulty: "medium" },
+  ],
+  "letter-writing": [
+    { q: "Which address appears first in a formal letter?", choices: ["Writer's address", "Receiver's address", "Post office stamp", "Signature only"], correct: 0, why: "A formal letter begins with the writer's address and date.", difficulty: "medium" },
+    { q: "Which is suitable as a formal letter greeting?", choices: ["Dear Sir/Madam", "Hi bro", "My dear bestie", "Hello uncle"], correct: 0, why: "'Dear Sir/Madam' is a polite formal greeting.", difficulty: "easy" },
+    { q: "Which letter needs a subject heading?", choices: ["Formal letter", "Friendly letter only", "Birthday card only", "Shopping list"], correct: 0, why: "Formal letters usually include a subject or heading.", difficulty: "medium" },
+    { q: "Which is the best reason to write a formal letter?", choices: ["Applying for permission", "Chatting with a cousin", "Telling a friend jokes", "Inviting a brother casually"], correct: 0, why: "Applying for permission is an official purpose.", difficulty: "easy" },
+    { q: "Which closing is informal?", choices: ["Your loving daughter", "Yours faithfully", "Yours obediently", "Yours sincerely"], correct: 0, why: "'Your loving daughter' is personal and suitable for an informal family letter.", difficulty: "medium" },
+  ],
+  "examinations": [
+    { q: "Which word means to study again before an exam?", choices: ["Revise", "Invigilate", "Postpone", "Broadcast"], correct: 0, why: "To revise is to study again in preparation for an exam.", difficulty: "easy" },
+    { q: "Which should a candidate do if a question is difficult?", choices: ["Leave space and return to it later", "Panic and stop writing", "Copy from a neighbour", "Tear the paper"], correct: 0, why: "Good time management means attempting easier questions and returning to hard ones later.", difficulty: "medium" },
+    { q: "Choose the correct sentence.", choices: ["The invigilator gave us instructions.", "The invigilator give us instructions yesterday.", "The invigilator giving instructions.", "The invigilator were give instructions."], correct: 0, why: "The sentence is grammatically correct in past tense.", difficulty: "medium" },
+    { q: "Which is a good examination habit?", choices: ["Writing clearly", "Ignoring instructions", "Cheating", "Arriving late"], correct: 0, why: "Clear handwriting helps the examiner read the answer.", difficulty: "easy" },
+    { q: "What is a revision timetable used for?", choices: ["Planning study time", "Cooking meals", "Marking roads", "Replacing all books"], correct: 0, why: "A revision timetable organises study time before examinations.", difficulty: "easy" },
+  ],
+  "electronic-media": [
+    { q: "Which electronic medium is best for listening to news without pictures?", choices: ["Radio", "Television", "Newspaper", "Poster"], correct: 0, why: "Radio gives audio broadcasts without pictures.", difficulty: "easy" },
+    { q: "Which word means a paid message promoting a product?", choices: ["Advertisement", "Invigilator", "Condolence", "Latitude"], correct: 0, why: "An advertisement promotes a product, service or event.", difficulty: "medium" },
+    { q: "Which is responsible media behaviour?", choices: ["Checking facts before sharing", "Sharing rumours", "Insulting people online", "Posting private information"], correct: 0, why: "Checking facts helps prevent misinformation.", difficulty: "medium" },
+    { q: "Which electronic medium can show moving pictures and sound?", choices: ["Television", "Printed book", "Newspaper", "Noticeboard"], correct: 0, why: "Television shows moving pictures and sound.", difficulty: "easy" },
+    { q: "What should a child do after receiving a strange unsafe message?", choices: ["Tell a trusted adult", "Reply secretly", "Send private details", "Meet the stranger"], correct: 0, why: "Unsafe messages should be reported to a trusted adult.", difficulty: "medium" },
+  ],
+  "rights-responsibilities-freedom": [
+    { q: "Complete: I have a right to food and a responsibility to avoid ___ food.", choices: ["wasting", "respecting", "protecting", "sharing fairly only"], correct: 0, why: "A matching responsibility is not wasting food.", difficulty: "medium" },
+    { q: "Which sentence correctly uses 'freedom'?", choices: ["Freedom should be enjoyed responsibly.", "Freedom mean hurting others.", "Freedom are a table.", "Freedom does steal."], correct: 0, why: "It is grammatical and gives the correct idea.", difficulty: "medium" },
+    { q: "Which is an example of animal care?", choices: ["Giving animals clean water", "Beating animals", "Starving animals", "Leaving wounds untreated"], correct: 0, why: "Animals need clean water and humane care.", difficulty: "easy" },
+    { q: "Which word is closest in meaning to responsibility?", choices: ["Duty", "Game", "Noise", "Colour"], correct: 0, why: "A responsibility is a duty.", difficulty: "easy" },
+    { q: "Which right is linked to visiting a health centre when sick?", choices: ["Right to health care", "Right to destroy property", "Right to litter", "Right to insult"], correct: 0, why: "Health care is a basic right for children.", difficulty: "medium" },
+  ],
+  "environmental-protection": [
+    { q: "Choose the best slogan for a clean-up campaign.", choices: ["Keep our school clean!", "Rubbish everywhere good", "Dirty water is nice", "Cut all trees today"], correct: 0, why: "It is short, clear and action-focused.", difficulty: "easy" },
+    { q: "Which word means using resources carefully so they last?", choices: ["Conservation", "Pollution", "Littering", "Destruction"], correct: 0, why: "Conservation means protecting and using resources carefully.", difficulty: "medium" },
+    { q: "Which sentence uses a command correctly?", choices: ["Plant more trees.", "Planted more trees yesterday.", "Trees planting more.", "More trees planted?"], correct: 0, why: "'Plant more trees' is a clear command.", difficulty: "medium" },
+    { q: "Which problem can come from dumping rubbish in water?", choices: ["Water pollution", "Better health", "Cleaner fish", "More safe water"], correct: 0, why: "Dumping rubbish in water pollutes it and can spread disease.", difficulty: "easy" },
+    { q: "What should a good environmental speech include?", choices: ["Problem, importance and solutions", "Only jokes", "No examples", "Only insults"], correct: 0, why: "A good speech explains the issue and suggests solutions.", difficulty: "medium" },
+  ],
+  "ceremonies": [
+    { q: "Which word means the woman getting married?", choices: ["Bride", "Bridegroom", "Mourner", "Candidate"], correct: 0, why: "The bride is the woman getting married.", difficulty: "easy" },
+    { q: "Which detail is most important in an invitation?", choices: ["Time", "Shoe size", "Exam score", "Favourite colour only"], correct: 0, why: "An invitation must tell guests the time of the event.", difficulty: "easy" },
+    { q: "Choose the respectful funeral sentence.", choices: ["May the family be comforted.", "That death is funny.", "No one cares.", "Laugh at them."], correct: 0, why: "It expresses sympathy respectfully.", difficulty: "medium" },
+    { q: "Which word means sadness after a death?", choices: ["Grief", "Reception", "Bride", "Invitation"], correct: 0, why: "Grief is deep sadness after loss or death.", difficulty: "medium" },
+    { q: "Which sequence word can start the last event in a ceremony description?", choices: ["Finally", "First", "Before", "At the beginning"], correct: 0, why: "'Finally' introduces the last event.", difficulty: "easy" },
+  ],
+};
+
+const ENGLISH_BANK: TopicBank[] = ENGLISH_TOPICS.map((topic) => ({
+  topicId: topic.id,
+  topicTitle: topic.title,
+  themeName: topic.themeName,
+  subjectId: "english",
+  subjectName: "English",
+  questions: [
+    ...topic.quiz.map((question, index) => ({
+      ...question,
+      difficulty: (index < 2 ? "easy" : index < 5 ? "medium" : "hard") as BankQuestion["difficulty"],
+    })),
+    ...(ENGLISH_EXTRA_QUESTIONS[topic.id] ?? []),
+  ],
+}));
+
+export const ALL_BANKS: TopicBank[] = [...MATHS_BANK, ...SCIENCE_BANK, ...SOCIAL_STUDIES_BANK, ...ENGLISH_BANK];
 
 export function getBank(topicId: string): TopicBank | undefined {
   return ALL_BANKS.find((b) => b.topicId === topicId);

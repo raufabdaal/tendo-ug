@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "country": "Uganda",
+    "level": "Primary 7 (P.7)",
+    "subject": "Social Studies",
+    "examBody": "UNEB",
+    "exam": "PLE (Primary Leaving Examination)",
+    "source": "NCDC Primary Seven Curriculum Set One, Social Studies Syllabus, Theme: Living Together in Africa",
+    "lastReviewed": "2026-07-01",
+    "notes": "Mapped from the official NCDC P7 Set One Social Studies topic outline. P7 SST has one broad theme, Living Together in Africa, with 10 topics across three terms."
+  },
+  "themes": [
+    {
+      "id": "sst-living-together-africa",
+      "name": "Living Together in Africa",
+      "topics": [
+        {
+          "id": "location-of-africa",
+          "term": "Term I",
+          "title": "Location of Africa on the Map of the World",
+          "periods": 8,
+          "subTopics": [
+            "Location and position of Africa using lines of latitudes and longitudes",
+            "World continents and their sizes",
+            "Water bodies that surround Africa",
+            "Regions that make up Africa",
+            "Countries in each region and their capital cities"
+          ]
+        },
+        {
+          "id": "physical-features-of-africa",
+          "term": "Term I",
+          "title": "Physical Features of Africa",
+          "periods": 12,
+          "subTopics": [
+            "Names and location of physical features in Africa",
+            "Mountains and highlands",
+            "Rivers",
+            "Lakes",
+            "Plateau",
+            "Rift valley",
+            "Coastal plains",
+            "Formation of major physical features of Africa"
+          ]
+        },
+        {
+          "id": "climate-of-africa",
+          "term": "Term I",
+          "title": "Climate of Africa",
+          "periods": 22,
+          "subTopics": [
+            "Climatic regions of Africa",
+            "Characteristics of different climatic regions",
+            "Factors that influence climate of Africa",
+            "Influence of climate on human activities",
+            "Influence of human activities on climate"
+          ]
+        },
+        {
+          "id": "vegetation-of-africa",
+          "term": "Term I",
+          "title": "Vegetation of Africa",
+          "periods": 18,
+          "subTopics": [
+            "Location and names of vegetation types of Africa",
+            "Factors that influence vegetation distribution in Africa",
+            "Importance of vegetation to people and animals",
+            "Importance of game parks",
+            "Animals found in different vegetation zones",
+            "Reasons why animals live in different vegetation zones",
+            "Population distribution in relation to vegetation",
+            "Reasons for differences in population distribution in different vegetation zones",
+            "Effects of population on vegetation"
+          ]
+        },
+        {
+          "id": "people-ethnic-groups-settlement",
+          "term": "Term II",
+          "title": "The People of Africa, the Ethnic Groups and Settlement Patterns",
+          "periods": 12,
+          "subTopics": [
+            "Origin of different ethnic groups",
+            "Movements of different ethnic groups into Africa",
+            "Settlement patterns of different ethnic groups",
+            "Tribes belonging to different ethnic groups",
+            "Reasons for migration and settlement of ethnic groups in Africa",
+            "Problems met by ethnic groups during movement and settlement in Africa",
+            "Effects of ethnic migrations"
+          ]
+        },
+        {
+          "id": "foreign-influence-africa",
+          "term": "Term II",
+          "title": "Foreign Influence in Africa",
+          "periods": 18,
+          "subTopics": [
+            "Foreign groups in Africa",
+            "Reasons for the coming of European explorers into Africa",
+            "Problems faced by European explorers in Africa",
+            "Effects of European explorers",
+            "European traders in Africa and Triangular trade",
+            "Reasons for the coming of traders into Africa",
+            "European colonialists in Africa",
+            "Scramble and partition of Africa",
+            "Establishment of colonial rule in Africa",
+            "Methods of acquiring colonies",
+            "European settlers in South Africa and Zimbabwe",
+            "Great Trek in South Africa",
+            "Effects of foreign influence",
+            "Methods used by colonialists to administer colonies"
+          ]
+        },
+        {
+          "id": "nationalism-road-independence",
+          "term": "Term II",
+          "title": "Nationalism and the Road to Independence of Africa",
+          "periods": 20,
+          "subTopics": [
+            "Meaning of Pan-Africanism, Pan-Africanists, nationalism, nationalists and patriotism",
+            "Work of Pan-Africanists and nationalists",
+            "Countries that were not colonised in Africa",
+            "Reasons for maintaining independence",
+            "Leading Pan-Africanists who fought for Africa's independence",
+            "Methods of work by Pan-Africanists and nationalists",
+            "Problems Pan-Africanists and nationalists faced",
+            "Multiparty system",
+            "Single party system"
+          ]
+        },
+        {
+          "id": "post-independence-africa",
+          "term": "Term II",
+          "title": "Post-Independence Africa",
+          "periods": 10,
+          "subTopics": [
+            "Formation of OAU",
+            "Objectives, functions, achievements and failures of OAU",
+            "Formation and objectives of AU",
+            "Challenges and organs of AU",
+            "Regional economic groupings including COMESA, ECOWAS, SADC and IGAD",
+            "Advantages and disadvantages of economic cooperation",
+            "Ways of solving problems faced by economic groupings"
+          ]
+        },
+        {
+          "id": "economic-developments-africa",
+          "term": "Term III",
+          "title": "Economic Developments in Africa",
+          "periods": 30,
+          "subTopics": [
+            "Major economic resources of Africa",
+            "Problems faced in the utilisation of resources",
+            "Caring for our resources",
+            "Major economic development in Africa",
+            "Case studies: Nigeria, Sudan, Libya, South Africa, DRC and Uganda",
+            "Comparison with other countries in terms of economic development",
+            "Challenges affecting economic development in Africa",
+            "Possible solutions to problems that affect economic development in Africa"
+          ]
+        },
+        {
+          "id": "major-world-organisations",
+          "term": "Term III",
+          "title": "Major World Organisations",
+          "periods": 10,
+          "subTopics": [
+            "Formation of the United Nations",
+            "Origin, objectives, membership, organs and functions of the UN",
+            "UN agencies and their functions",
+            "Importance of the United Nations",
+            "UN Human Rights Charter",
+            "The Commonwealth of Nations",
+            "Membership and functions of the Commonwealth",
+            "Challenges of the UN and the Commonwealth of Nations"
+          ]
+        }
+      ]
+    }
+  ]
+}

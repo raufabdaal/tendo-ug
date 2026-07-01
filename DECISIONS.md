@@ -264,3 +264,24 @@
 **Decision:** Do not reproduce harmful or explicit wording directly in learner-facing content. Use respectful, safety-focused, adult-guided language while preserving curriculum intent around community health and safe behaviour.
 **Reasoning:** P7 learners need protection, clarity and respect. The app should support teachers and pupils without normalising stigma or unsafe phrasing.
 **Tracked across:** `app/lib/science-topics.ts`, `docs/ops/p7-science-quality-audit-2026-07-01.md`.
+
+---
+
+## SUBJECT-003 · 2026-07-01 · P7 Social Studies is complete enough for current product scope
+
+**Context:** After Science was pushed, Social Studies became the next active subject. The NCDC P7 SST syllabus has one broad theme, Living Together in Africa, with 10 official topics.
+**Decision:** Treat P7 Social Studies as done enough to move on after completing the topic build, routes, practice banks, worksheet support, diagrams, heavy-topic depth pass and completion audit.
+**Reasoning:** SST now has all official topics live and has passed the same “done enough” standard used for Maths and Science. Remaining work is enhancement, teacher review and future exam-paper integration.
+**Tracked across:** `app/lib/social-topics.ts`, `content/curriculum/p7-social-studies.json`, `app/app/social-studies/*`, `app/components/TopicDiagram.tsx`, `app/lib/question-bank.ts`, `docs/ops/p7-social-studies-first-wave-audit-2026-07-01.md`.
+
+---
+
+## SUBJECT-004 · 2026-07-01 · P7 English is complete enough for current product scope
+
+**Context:** The founder had not yet pushed the Social Studies work and chose to continue into English first, with Religious Education explicitly paused.
+
+**Decision:** Treat P7 English as done enough for current product scope after completing all 7 official NCDC topics, routes, practice banks, worksheet support, writing templates, writing-heavy depth passes and the English quality audit.
+
+**Reasoning:** English now meets the same product-completion standard used for Maths, Science and Social Studies. Remaining English work — deeper composition rubrics, more comprehension passages, UNEB-style tagging and teacher marking guides — is enhancement rather than a blocker.
+
+**Tracked across:** `app/lib/english-topics.ts`, `content/curriculum/p7-english.json`, `app/app/english/*`, `app/components/TopicDiagram.tsx`, `app/lib/question-bank.ts`, `app/components/WorksheetGenerator.tsx`, `docs/ops/p7-english-quality-audit-2026-07-01.md`, root tracking docs.

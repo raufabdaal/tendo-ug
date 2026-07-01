@@ -2,6 +2,87 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
+## v0.5.8 — 2026-07-01 — P7 English built, practiced, templated and completed enough for grouped push
+
+**Session theme:** The founder intentionally stretched the Social Studies push and asked to continue into English before pushing. Religious Education was explicitly paused. This milestone completes P7 English enough to group with the unpushed Social Studies work.
+
+**Added:**
+- `app/lib/english-topics.ts` — all 7 NCDC-aligned P7 English topics across Terms I–III.
+- `app/app/english/p7/page.tsx` — English topic landing page grouped by term.
+- `app/app/english/p7/[topic]/page.tsx` — English topic detail route.
+- `app/app/english/p7/[topic]/practice/page.tsx` — English practice route.
+- `content/curriculum/p7-english.json` — NCDC-based English curriculum map.
+- `docs/ops/p7-english-quality-audit-2026-07-01.md` — English quality and closeout audit.
+
+**Changed:**
+- `app/app/page.tsx` — English is now active.
+- `app/components/TopicDiagram.tsx` — added English writing templates/diagrams for all 7 topics.
+- `app/app/english/p7/page.tsx` — shows template counts and writing-template cues.
+- `app/lib/question-bank.ts` — added English subject metadata and 12-question banks per topic.
+- `app/components/WorksheetGenerator.tsx` — added English-only worksheets.
+- `app/app/teacher/worksheet/page.tsx` — updated worksheet copy to include English.
+- `app/lib/english-topics.ts` — deepened writing-heavy topics: Letter Writing; Rights, Responsibilities and Freedom; Environmental Protection; Ceremonies.
+- Root docs updated to reflect English completion and the grouped Social Studies + English push.
+
+**English coverage now live:**
+1. School Holidays
+2. Letter Writing
+3. Examinations
+4. Electronic Media
+5. Rights, Responsibilities and Freedom
+6. Environmental Protection
+7. Ceremonies
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- P7 English is complete enough to move on and to push as part of the grouped Social Studies + English milestone. Remaining English work is enhancement, not a core blocker.
+
+---
+
+## v0.5.7 — 2026-07-01 — P7 Social Studies built, diagrammed, practiced and completed enough to move on
+
+**Session theme:** After the Science milestone was pushed, Social Studies became the next active subject. This milestone turns SST from coming-soon into a complete enough P7 subject build for current product scope.
+
+**Added:**
+- `app/lib/social-topics.ts` — all 10 NCDC-aligned P7 Social Studies topics under Living Together in Africa.
+- `app/app/social-studies/p7/page.tsx` — Social Studies topic landing page grouped by term.
+- `app/app/social-studies/p7/[topic]/page.tsx` — Social Studies topic detail route.
+- `app/app/social-studies/p7/[topic]/practice/page.tsx` — Social Studies practice route.
+- `content/curriculum/p7-social-studies.json` — NCDC-based SST curriculum map.
+- `docs/ops/p7-social-studies-first-wave-audit-2026-07-01.md` — upgraded to completion audit after depth/diagram passes.
+
+**Changed:**
+- `app/app/page.tsx` — Social Studies is now active.
+- `app/components/TopicDiagram.tsx` — added diagrams for all 10 SST topics.
+- `app/app/social-studies/p7/page.tsx` — shows diagram counts and visual cues.
+- `app/lib/question-bank.ts` — added Social Studies subject metadata and 12-question banks per topic.
+- `app/components/WorksheetGenerator.tsx` — added Social Studies-only worksheets.
+- `app/app/teacher/worksheet/page.tsx` — updated worksheet copy to include Social Studies.
+- `app/lib/social-topics.ts` — heavy topics deepened after the first wave.
+- Root docs updated to reflect SST completion status.
+
+**SST coverage now live:**
+1. Location of Africa on the Map of the World
+2. Physical Features of Africa
+3. Climate of Africa
+4. Vegetation of Africa
+5. People of Africa, Ethnic Groups and Settlement Patterns
+6. Foreign Influence in Africa
+7. Nationalism and the Road to Independence of Africa
+8. Post-Independence Africa
+9. Economic Developments in Africa
+10. Major World Organisations
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (132/132)`.
+
+**Result:**
+- P7 Social Studies is complete enough to move on. Remaining work is enhancement and teacher feedback, not core subject completion.
+
+---
+
 ## v0.5.6 — 2026-07-01 — P7 Integrated Science built, diagrammed, practiced, audited, and added to worksheets
 
 **Session theme:** After finishing Mathematics, the founder redirected the next-subject push from Social Studies to **P7 Integrated Science**. This milestone turns Science from unavailable/coming-soon into a serious active subject build.

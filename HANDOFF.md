@@ -5,22 +5,27 @@
 ## Read this first
 
 1. `STATUS.md`
-2. `docs/ops/p7-science-quality-audit-2026-07-01.md`
-3. `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
+2. `CHECKLIST.md`
+3. `CHANGELOG.md`
 4. `DECISIONS.md`
-5. `CHECKLIST.md`
-6. `docs/ops/update-handoff-protocol.md`
+5. `docs/ops/p7-english-quality-audit-2026-07-01.md`
+6. `docs/ops/p7-social-studies-first-wave-audit-2026-07-01.md`
+7. `docs/ops/update-handoff-protocol.md`
 
 ---
 
 ## Where the project really is
 
-The project has now completed two major subject pushes:
+The project has now completed four major P7 subject pushes/builds for current scope:
 
 1. **P7 Mathematics** — founder-safe complete for current scope.
-2. **P7 Integrated Science** — active second subject build, now strong enough to demo and continue from.
+2. **P7 Integrated Science** — complete enough and already pushed by the founder.
+3. **P7 Social Studies** — complete enough after the SST build, diagrams, practice-bank, depth and audit passes.
+4. **P7 English** — complete enough after the English build, practice-bank, templates, writing-depth and audit passes.
 
-Earlier root docs said Social Studies was next. That became stale after the founder redirected: “let's do science.” Science has now been built instead.
+Important workflow truth: the founder has **not yet pushed** the Social Studies + English grouped work. The next action is a grouped manual copy, commit and push.
+
+Religious Education is intentionally paused and should not be started unless the founder explicitly asks.
 
 ---
 
@@ -35,32 +40,18 @@ Already built and usable:
 - teacher dashboard
 - practice mode
 - worksheet generator
-- worksheet subject filters: Maths only / Science only / Mixed
+- worksheet subject filters: Maths only / English only / Science only / Social Studies only / Mixed
 - Watch / Read structure with in-read speech support
 - Trainup branding layer and `/trainup` route
 
-### P7 Mathematics completion state
-Maths is materially complete for the current founder goal.
-
-Important points:
-- `app/lib/topics.ts` carries **38 published maths topics**
-- maths route: `/math/p7`
-- maths practice routes: `/math/p7/[topic]/practice`
-- the maths landing page was restructured in `app/app/math/p7/page.tsx`
+### P7 Mathematics state
+- `app/lib/topics.ts` carries 38 published maths topics
+- routes: `/math/p7`, `/math/p7/[topic]`, `/math/p7/[topic]/practice`
 - selected maths diagrams exist through `app/components/TopicDiagram.tsx`
 - maths closeout docs exist in repo
 
-Relevant files:
-- `app/lib/topics.ts`
-- `app/lib/question-bank.ts`
-- `app/app/math/p7/page.tsx`
-- `app/components/TopicDiagram.tsx`
-- `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
-- `docs/ops/p7-maths-diagram-visual-plan-2026-07-01.md`
-
 ### P7 Integrated Science state
-Science now includes all 8 NCDC P7 Integrated Science topics:
-
+Science includes all 8 NCDC P7 Integrated Science topics:
 1. Muscular-skeletal system
 2. Electricity and magnetism
 3. Energy resources in the environment
@@ -76,53 +67,84 @@ Science files/routes:
 - `app/app/science/p7/page.tsx`
 - `app/app/science/p7/[topic]/page.tsx`
 - `app/app/science/p7/[topic]/practice/page.tsx`
+- `docs/ops/p7-science-quality-audit-2026-07-01.md`
 
-Science supports:
-- subject landing page
-- topic pages
-- diagrams for all 8 topics
-- quizzes
-- practice mode
-- worksheet generator inclusion
-- 15-question practice bank per Science topic
-- sensitive wording pass for Population and Health
-- audit note at `docs/ops/p7-science-quality-audit-2026-07-01.md`
+### P7 Social Studies state
+Social Studies includes all 10 NCDC P7 SST topics under Living Together in Africa:
+1. Location of Africa on the Map of the World
+2. Physical Features of Africa
+3. Climate of Africa
+4. Vegetation of Africa
+5. The People of Africa, Ethnic Groups and Settlement Patterns
+6. Foreign Influence in Africa
+7. Nationalism and the Road to Independence of Africa
+8. Post-Independence Africa
+9. Economic Developments in Africa
+10. Major World Organisations
+
+Relevant files:
+- `app/lib/social-topics.ts`
+- `content/curriculum/p7-social-studies.json`
+- `app/app/social-studies/p7/page.tsx`
+- `app/app/social-studies/p7/[topic]/page.tsx`
+- `app/app/social-studies/p7/[topic]/practice/page.tsx`
+- `docs/ops/p7-social-studies-first-wave-audit-2026-07-01.md`
+
+SST supports topic pages, quizzes, practice mode, diagrams for all 10 topics, worksheet generation and 12-question banks per topic.
+
+### P7 English state
+English includes all 7 official NCDC P7 English topics:
+1. School Holidays
+2. Letter Writing
+3. Examinations
+4. Electronic Media
+5. Rights, Responsibilities and Freedom
+6. Environmental Protection
+7. Ceremonies
+
+Relevant files:
+- `app/lib/english-topics.ts`
+- `content/curriculum/p7-english.json`
+- `app/app/english/p7/page.tsx`
+- `app/app/english/p7/[topic]/page.tsx`
+- `app/app/english/p7/[topic]/practice/page.tsx`
+- `docs/ops/p7-english-quality-audit-2026-07-01.md`
+
+English supports topic pages, quizzes, practice mode, worksheet generation, 12-question banks per topic and writing templates/diagrams for all 7 topics.
 
 ---
 
-## Documentation policy going forward
+## Latest verification
 
-The founder explicitly wants docs to be safer inside the repo.
+Latest production build from `app/` passed:
+- `✓ Compiled successfully`
+- `✓ Generating static pages (147/147)`
 
-That means:
-- prefer in-repo docs over external workspace-only notes
-- keep root tracking docs current
-- keep documentation strong enough that a future session does not need archaeology to know the real state
-
-If a useful operational doc exists outside the repo and still matters, move or recreate it inside `tendo-ug/docs/ops/`.
+Build command:
+```bash
+cd app && npm run build
+```
 
 ---
 
 ## What still needs work
 
-### 1. Science milestone decision
-Science is strong enough to be considered a meaningful grouped milestone.
+### 1. Manual grouped push
+Prepare/copy the grouped files for Social Studies + English + shared app/docs changes, then commit and push.
 
-Open question for the next session/founder:
-- accept this as “P7 Science done enough to move on,” or
-- do one more teacher-style depth pass before making that claim.
+### 2. Production verification after push
+After GitHub Desktop push, wait for Vercel and verify:
+- `/english/p7`
+- `/social-studies/p7`
+- `/teacher/worksheet`
+- home page subject cards
 
-Do not overclaim. Current honest phrasing:
-> P7 Integrated Science is live, structured, diagrammed, practice-enabled, worksheet-enabled, quality-audited and deepened. It is strong enough to demo and continue from.
-
-### 2. Next subject after Science
-If Science is accepted, the likely next target is **Social Studies**.
-
-Start Social Studies deliberately:
-- check curriculum/source material
-- inspect whether any Social Studies files already exist
-- map expected topics
-- build first grouped implementation wave
+### 3. Future enhancement, not current blocker
+Possible next enhancements:
+- more English composition rubrics and comprehension passages
+- exam-paper tagging for English/SST/Science
+- teacher review pass
+- maps/diagrams enrichment
 
 ---
 
@@ -130,16 +152,30 @@ Start Social Studies deliberately:
 
 - The founder uses a **manual overwrite workflow**. Keep file instructions explicit.
 - Pushes to `main` auto-promote to production.
-- Avoid touching unrelated sensitive/config files unless necessary.
-- Do not reopen maths scope casually. Treat it as complete unless a clearly material issue is discovered.
-- Population and Health contains sensitive curriculum wording. Keep learner-facing wording respectful, safety-focused and adult-guided.
-- Repo docs are now the preferred canonical record.
-- Run build from `app/`, not repo root.
+- Avoid copying generated/cache folders.
+- Do not copy `tmp/`.
+- Do not start Religious Education for now.
+- Do not reopen maths scope casually.
 
 ---
 
-## Best next move
+## Copy categories for the grouped push
 
-1. Verify build one last time after docs updates.
-2. If founder approves, package this as a grouped Science milestone.
-3. Either push, or continue into Social Studies if intentionally stretching pushes further.
+Use the final assistant response/checklist as the practical source, but broadly:
+
+### App-critical — copy this
+- new Social Studies files/routes/data/curriculum
+- new English files/routes/data/curriculum
+- shared updated app files: home page, question bank, worksheet generator, teacher worksheet copy, topic diagrams, topic tabs/practice runner if changed in this workspace
+
+### Documentation — copy this
+- root tracking docs
+- Social Studies audit
+- English audit
+- Science/Maths audit docs if not already present locally
+
+### Do not copy
+- `tmp/`
+- `app/.next/`
+- `app/node_modules/`
+- generated/cache/build folders

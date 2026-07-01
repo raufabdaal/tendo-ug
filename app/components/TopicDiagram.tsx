@@ -40,6 +40,23 @@ export const TOPIC_DIAGRAM_IDS = [
   "light-energy",
   "interdependence-environment",
   "population-and-health",
+  "location-of-africa",
+  "physical-features-of-africa",
+  "climate-of-africa",
+  "vegetation-of-africa",
+  "people-ethnic-groups-settlement",
+  "foreign-influence-africa",
+  "nationalism-road-independence",
+  "post-independence-africa",
+  "economic-developments-africa",
+  "major-world-organisations",
+  "school-holidays",
+  "letter-writing",
+  "examinations",
+  "electronic-media",
+  "rights-responsibilities-freedom",
+  "environmental-protection",
+  "ceremonies",
 ] as const;
 
 export function hasTopicDiagram(topicId: string): boolean {
@@ -441,6 +458,390 @@ function getDiagram(topicId: string): DiagramSpec | null {
             ))}
             <defs><marker id="arrowHealth" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
             <text x="140" y="230" fill={diagramText.fill} fontWeight="700" fontSize="18">Survey → organise → report → health action</text>
+          </svg>
+        ),
+      };
+    case "location-of-africa":
+      return {
+        title: "Africa on the world map",
+        caption: "Africa is crossed by the Equator and Prime Meridian, and is surrounded by major oceans and seas.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="Simple map diagram showing Africa crossed by Equator and Prime Meridian">
+            <rect x="30" y="24" width="580" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <ellipse cx="320" cy="154" rx="220" ry="108" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="3" />
+            <path d="M315 62 C370 70 410 112 398 158 C390 188 368 214 350 250 C316 240 286 216 278 176 C270 138 286 112 300 92 Z" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" />
+            <line x1="78" y1="154" x2="562" y2="154" stroke={diagramText.success} strokeWidth="5" strokeDasharray="10 9" />
+            <line x1="320" y1="46" x2="320" y2="266" stroke={diagramText.indigo} strokeWidth="5" strokeDasharray="10 9" />
+            <text x="456" y="145" fill={diagramText.success} fontWeight="800" fontSize="18">Equator</text>
+            <text x="330" y="64" fill={diagramText.indigo} fontWeight="800" fontSize="18">Prime Meridian</text>
+            <text x="286" y="166" fill={diagramText.fill} fontWeight="900" fontSize="22">Africa</text>
+            <text x="92" y="58" fill={diagramText.muted} fontWeight="700" fontSize="15">Atlantic Ocean west</text>
+            <text x="410" y="252" fill={diagramText.muted} fontWeight="700" fontSize="15">Indian Ocean east</text>
+            <text x="250" y="38" fill={diagramText.muted} fontWeight="700" fontSize="15">Mediterranean Sea north</text>
+          </svg>
+        ),
+      };
+    case "physical-features-of-africa":
+      return {
+        title: "Major physical features shape life",
+        caption: "Mountains, rivers, lakes, plateaus and rift valleys influence settlement, transport, power and tourism.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="Africa physical features diagram showing mountains rivers lakes and rift valley">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <path d="M82 230 L142 126 L198 230 Z" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <path d="M126 154 L142 126 L160 158" fill="#fffaf3" stroke={diagramText.border} strokeWidth="3" />
+            <text x="105" y="252" fill={diagramText.fill} fontWeight="800" fontSize="16">Mountains</text>
+            <path d="M270 60 C244 112 296 132 262 176 C242 204 268 230 238 256" fill="none" stroke={diagramText.indigo} strokeWidth="7" strokeLinecap="round" />
+            <text x="286" y="156" fill={diagramText.fill} fontWeight="800" fontSize="16">River</text>
+            <ellipse cx="424" cy="108" rx="72" ry="36" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <text x="398" y="114" fill={diagramText.fill} fontWeight="800" fontSize="16">Lake</text>
+            <path d="M398 204 C440 160 482 170 536 126" fill="none" stroke={diagramText.terracotta} strokeWidth="8" strokeLinecap="round" />
+            <path d="M426 232 C468 188 510 198 566 154" fill="none" stroke={diagramText.terracotta} strokeWidth="8" strokeLinecap="round" opacity="0.55" />
+            <text x="430" y="260" fill={diagramText.fill} fontWeight="800" fontSize="16">Rift valley</text>
+            <rect x="82" y="64" width="120" height="36" rx="12" fill="#F2EBDE" stroke={diagramText.border} strokeWidth="3" />
+            <text x="105" y="88" fill={diagramText.fill} fontWeight="800" fontSize="16">Plateau</text>
+          </svg>
+        ),
+      };
+    case "climate-of-africa":
+      return {
+        title: "Climate changes across Africa",
+        caption: "Latitude, altitude, winds, distance from the sea and human activities influence climate.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="Climate diagram for Africa showing wet equator dry deserts and cooler highlands">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <path d="M318 60 C370 72 406 112 398 158 C390 190 368 218 350 252 C316 242 286 216 278 176 C270 138 286 112 300 92 Z" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" />
+            <rect x="272" y="138" width="136" height="36" rx="18" fill="#DDEDDD" stroke={diagramText.success} strokeWidth="3" />
+            <text x="284" y="162" fill={diagramText.success} fontWeight="900" fontSize="16">Wet equator</text>
+            <rect x="282" y="78" width="112" height="34" rx="17" fill="#F2EBDE" stroke={diagramText.terracotta} strokeWidth="3" />
+            <text x="304" y="101" fill={diagramText.terracotta} fontWeight="900" fontSize="15">Desert</text>
+            <path d="M104 222 L150 132 L200 222 Z" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <text x="98" y="246" fill={diagramText.indigo} fontWeight="800" fontSize="16">Cooler highlands</text>
+            <path d="M488 98 C452 112 452 146 496 156" fill="none" stroke={diagramText.indigo} strokeWidth="5" markerEnd="url(#arrowClimate)" />
+            <text x="470" y="82" fill={diagramText.fill} fontWeight="800" fontSize="16">Winds</text>
+            <defs><marker id="arrowClimate" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.indigo} /></marker></defs>
+            <text x="236" y="274" fill={diagramText.fill} fontWeight="800" fontSize="17">Climate affects farming, settlement and vegetation</text>
+          </svg>
+        ),
+      };
+    case "vegetation-of-africa":
+      return {
+        title: "Vegetation follows climate and relief",
+        caption: "Rainfall, temperature and altitude help explain forests, savanna, deserts and mountain vegetation.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="Vegetation zones diagram showing rainforest savanna desert and mountain vegetation">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            {[
+              { x: 92, color: "#3F8A4D", label: "Rainforest", sub: "wet" },
+              { x: 226, color: "#9CAA54", label: "Savanna", sub: "grass + trees" },
+              { x: 360, color: "#C25A3C", label: "Desert", sub: "dry" },
+              { x: 494, color: "#3B4A8A", label: "Mountain", sub: "altitude" },
+            ].map((zone) => (
+              <g key={zone.label}>
+                <rect x={zone.x} y="80" width="104" height="130" rx="18" fill="#fffaf3" stroke={diagramText.border} strokeWidth="3" />
+                <circle cx={zone.x + 52} cy="128" r="30" fill={zone.color} opacity="0.9" />
+                <text x={zone.x + 52} y="230" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="16">{zone.label}</text>
+                <text x={zone.x + 52} y="253" textAnchor="middle" fill={diagramText.muted} fontWeight="700" fontSize="13">{zone.sub}</text>
+              </g>
+            ))}
+            <text x="138" y="58" fill={diagramText.fill} fontWeight="800" fontSize="18">Plant cover changes from wet to dry areas</text>
+          </svg>
+        ),
+      };
+    case "people-ethnic-groups-settlement":
+      return {
+        title: "Migration has push and pull reasons",
+        caption: "People move because some conditions push them away while others attract them to new places.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="Migration diagram showing push factors pull factors and settlement">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <rect x="72" y="82" width="150" height="132" rx="18" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" />
+            <text x="116" y="114" fill={diagramText.terracotta} fontWeight="900" fontSize="20">Push</text>
+            <text x="96" y="148" fill={diagramText.fill} fontWeight="700" fontSize="15">war</text>
+            <text x="96" y="174" fill={diagramText.fill} fontWeight="700" fontSize="15">drought</text>
+            <text x="96" y="200" fill={diagramText.fill} fontWeight="700" fontSize="15">land shortage</text>
+            <path d="M240 148 H396" stroke={diagramText.fill} strokeWidth="6" markerEnd="url(#arrowMigration)" />
+            <rect x="418" y="82" width="150" height="132" rx="18" fill="#DDEDDD" stroke={diagramText.success} strokeWidth="4" />
+            <text x="466" y="114" fill={diagramText.success} fontWeight="900" fontSize="20">Pull</text>
+            <text x="442" y="148" fill={diagramText.fill} fontWeight="700" fontSize="15">water</text>
+            <text x="442" y="174" fill={diagramText.fill} fontWeight="700" fontSize="15">fertile land</text>
+            <text x="442" y="200" fill={diagramText.fill} fontWeight="700" fontSize="15">security</text>
+            <defs><marker id="arrowMigration" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+            <text x="210" y="254" fill={diagramText.fill} fontWeight="800" fontSize="18">movement → settlement patterns → cultural change</text>
+          </svg>
+        ),
+      };
+    case "foreign-influence-africa":
+      return {
+        title: "Foreign influence had political, economic and social effects",
+        caption: "Explorers, traders, missionaries and colonialists came for different reasons and changed African societies in different ways.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="Foreign influence flow diagram with groups reasons and effects">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <rect x="70" y="72" width="150" height="150" rx="18" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <text x="102" y="104" fill={diagramText.indigo} fontWeight="900" fontSize="18">Groups</text>
+            <text x="92" y="136" fill={diagramText.fill} fontWeight="700" fontSize="14">traders</text>
+            <text x="92" y="160" fill={diagramText.fill} fontWeight="700" fontSize="14">explorers</text>
+            <text x="92" y="184" fill={diagramText.fill} fontWeight="700" fontSize="14">missionaries</text>
+            <text x="92" y="208" fill={diagramText.fill} fontWeight="700" fontSize="14">colonialists</text>
+            <path d="M238 148 H384" stroke={diagramText.fill} strokeWidth="5" markerEnd="url(#arrowForeign)" />
+            <rect x="406" y="72" width="164" height="150" rx="18" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" />
+            <text x="454" y="104" fill={diagramText.terracotta} fontWeight="900" fontSize="18">Effects</text>
+            <text x="430" y="136" fill={diagramText.fill} fontWeight="700" fontSize="14">political</text>
+            <text x="430" y="160" fill={diagramText.fill} fontWeight="700" fontSize="14">economic</text>
+            <text x="430" y="184" fill={diagramText.fill} fontWeight="700" fontSize="14">social</text>
+            <defs><marker id="arrowForeign" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+            <text x="202" y="254" fill={diagramText.fill} fontWeight="800" fontSize="18">Different groups → different reasons → mixed effects</text>
+          </svg>
+        ),
+      };
+    case "nationalism-road-independence":
+      return {
+        title: "Road to independence",
+        caption: "Nationalism, Pan-Africanism and organised action helped African countries regain self-rule.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="Timeline from colonial rule to nationalism to independence">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <line x1="92" y1="160" x2="548" y2="160" stroke={diagramText.fill} strokeWidth="6" markerEnd="url(#arrowIndependence)" />
+            {[
+              { x: 120, label: "Colonial rule", color: diagramText.terracotta },
+              { x: 272, label: "Nationalism", color: diagramText.indigo },
+              { x: 424, label: "Pan-Africanism", color: diagramText.success },
+              { x: 536, label: "Independence", color: diagramText.terracotta },
+            ].map((item) => (
+              <g key={item.label}>
+                <circle cx={item.x} cy="160" r="24" fill="#fffaf3" stroke={item.color} strokeWidth="5" />
+                <text x={item.x} y="214" textAnchor="middle" fill={diagramText.fill} fontWeight="800" fontSize="15">{item.label}</text>
+              </g>
+            ))}
+            <defs><marker id="arrowIndependence" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+            <text x="170" y="92" fill={diagramText.fill} fontWeight="800" fontSize="18">parties · petitions · strikes · negotiations · struggle</text>
+          </svg>
+        ),
+      };
+    case "post-independence-africa":
+      return {
+        title: "African cooperation after independence",
+        caption: "OAU, AU and regional groupings help countries work together on peace, trade and development.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="African cooperation diagram showing OAU AU and regional groupings">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <circle cx="320" cy="150" r="62" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="5" />
+            <text x="294" y="146" fill={diagramText.fill} fontWeight="900" fontSize="20">AU</text>
+            <text x="278" y="172" fill={diagramText.muted} fontWeight="700" fontSize="14">from OAU</text>
+            {[
+              { x: 138, y: 84, label: "COMESA" },
+              { x: 498, y: 84, label: "ECOWAS" },
+              { x: 146, y: 232, label: "SADC" },
+              { x: 500, y: 232, label: "IGAD" },
+            ].map((item) => (
+              <g key={item.label}>
+                <circle cx={item.x} cy={item.y} r="42" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+                <text x={item.x} y={item.y + 5} textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="15">{item.label}</text>
+                <line x1={item.x} y1={item.y} x2="320" y2="150" stroke={diagramText.border} strokeWidth="4" />
+              </g>
+            ))}
+            <text x="198" y="274" fill={diagramText.fill} fontWeight="800" fontSize="17">peace · trade · development · cooperation</text>
+          </svg>
+        ),
+      };
+    case "economic-developments-africa":
+      return {
+        title: "Resources become development through good use",
+        caption: "Resources need skills, infrastructure, peace, value addition and environmental care to support development.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="Economic development flow from resources to processing to jobs and trade">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            {[
+              { x: 112, label: "Resources", sub: "oil · land · minerals" },
+              { x: 300, label: "Value addition", sub: "process" },
+              { x: 494, label: "Development", sub: "jobs · trade" },
+            ].map((item, i) => (
+              <g key={item.label}>
+                <rect x={item.x - 70} y="102" width="140" height="92" rx="18" fill={i === 1 ? "#F5E1DB" : "#E5E8F2"} stroke={i === 1 ? diagramText.terracotta : diagramText.indigo} strokeWidth="4" />
+                <text x={item.x} y="140" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="16">{item.label}</text>
+                <text x={item.x} y="166" textAnchor="middle" fill={diagramText.muted} fontWeight="700" fontSize="13">{item.sub}</text>
+                {i < 2 && <path d={`M ${item.x + 76} 148 H ${item.x + 118}`} stroke={diagramText.fill} strokeWidth="5" markerEnd="url(#arrowEcon)" />}
+              </g>
+            ))}
+            <defs><marker id="arrowEcon" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+            <text x="154" y="246" fill={diagramText.fill} fontWeight="800" fontSize="17">Good governance + infrastructure + skills + environment</text>
+          </svg>
+        ),
+      };
+    case "major-world-organisations":
+      return {
+        title: "World organisations connect countries",
+        caption: "The UN and Commonwealth support cooperation, peace, rights, health, education and development.",
+        svg: (
+          <svg viewBox="0 0 640 320" role="img" aria-label="World organisations diagram showing UN agencies and Commonwealth">
+            <rect x="34" y="24" width="572" height="260" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <circle cx="186" cy="150" r="62" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="5" />
+            <text x="172" y="144" fill={diagramText.fill} fontWeight="900" fontSize="24">UN</text>
+            <text x="145" y="170" fill={diagramText.muted} fontWeight="700" fontSize="14">peace + rights</text>
+            <circle cx="454" cy="150" r="62" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="5" />
+            <text x="394" y="146" fill={diagramText.fill} fontWeight="900" fontSize="20">Commonwealth</text>
+            <text x="418" y="170" fill={diagramText.muted} fontWeight="700" fontSize="14">cooperation</text>
+            {[
+              { x: 104, y: 72, label: "WHO" },
+              { x: 272, y: 72, label: "UNICEF" },
+              { x: 104, y: 238, label: "FAO" },
+              { x: 272, y: 238, label: "UNESCO" },
+            ].map((item) => (
+              <g key={item.label}>
+                <rect x={item.x - 38} y={item.y - 18} width="76" height="36" rx="12" fill="#fffaf3" stroke={diagramText.border} strokeWidth="3" />
+                <text x={item.x} y={item.y + 5} textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="14">{item.label}</text>
+              </g>
+            ))}
+            <line x1="248" y1="150" x2="392" y2="150" stroke={diagramText.border} strokeWidth="5" />
+          </svg>
+        ),
+      };
+    case "school-holidays":
+      return {
+        title: "Holiday writing: plan or activity?",
+        caption: "Use future tense for plans and past tense for completed holiday activities.",
+        svg: (
+          <svg viewBox="0 0 640 300" role="img" aria-label="Holiday writing diagram comparing future plans and past activities">
+            <rect x="34" y="24" width="572" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <rect x="72" y="82" width="220" height="132" rx="18" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <text x="122" y="116" fill={diagramText.indigo} fontWeight="900" fontSize="20">Plan</text>
+            <text x="100" y="152" fill={diagramText.fill} fontWeight="700" fontSize="16">I will visit...</text>
+            <text x="100" y="182" fill={diagramText.fill} fontWeight="700" fontSize="16">I am going to...</text>
+            <rect x="350" y="82" width="220" height="132" rx="18" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" />
+            <text x="410" y="116" fill={diagramText.terracotta} fontWeight="900" fontSize="20">Activity</text>
+            <text x="378" y="152" fill={diagramText.fill} fontWeight="700" fontSize="16">I visited...</text>
+            <text x="378" y="182" fill={diagramText.fill} fontWeight="700" fontSize="16">I helped...</text>
+            <text x="150" y="242" fill={diagramText.fill} fontWeight="800" fontSize="18">future tense vs past tense</text>
+          </svg>
+        ),
+      };
+    case "letter-writing":
+      return {
+        title: "Formal letter layout",
+        caption: "Formal letters need addresses, date, greeting, subject, body and a polite close.",
+        svg: (
+          <svg viewBox="0 0 640 360" role="img" aria-label="Formal letter layout template">
+            <rect x="132" y="24" width="376" height="310" rx="14" fill="#fffaf3" stroke={diagramText.border} strokeWidth="4" />
+            {[
+              { y: 58, label: "Writer's address" },
+              { y: 92, label: "Date" },
+              { y: 128, label: "Receiver's address" },
+              { y: 164, label: "Dear Sir/Madam," },
+              { y: 198, label: "RE: Subject / heading" },
+              { y: 238, label: "Body: reason + details" },
+              { y: 288, label: "Yours faithfully," },
+              { y: 316, label: "Signature + name" },
+            ].map((item, i) => (
+              <g key={item.label}>
+                <line x1="170" y1={item.y} x2={i === 5 ? 464 : 360} y2={item.y} stroke={i === 5 ? diagramText.terracotta : diagramText.indigo} strokeWidth="4" strokeLinecap="round" />
+                <text x="172" y={item.y - 8} fill={diagramText.fill} fontWeight="700" fontSize="13">{item.label}</text>
+              </g>
+            ))}
+          </svg>
+        ),
+      };
+    case "examinations":
+      return {
+        title: "Examination strategy",
+        caption: "Read instructions, manage time, answer clearly, then check your work.",
+        svg: (
+          <svg viewBox="0 0 640 300" role="img" aria-label="Examination strategy flow diagram">
+            <rect x="34" y="24" width="572" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            {[
+              { x: 108, label: "Read", sub: "instructions" },
+              { x: 248, label: "Plan", sub: "time" },
+              { x: 388, label: "Answer", sub: "clearly" },
+              { x: 528, label: "Check", sub: "work" },
+            ].map((item, i) => (
+              <g key={item.label}>
+                <circle cx={item.x} cy="142" r="45" fill={i % 2 ? "#F5E1DB" : "#E5E8F2"} stroke={i % 2 ? diagramText.terracotta : diagramText.indigo} strokeWidth="4" />
+                <text x={item.x} y="138" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="17">{item.label}</text>
+                <text x={item.x} y="160" textAnchor="middle" fill={diagramText.muted} fontWeight="700" fontSize="13">{item.sub}</text>
+                {i < 3 && <path d={`M ${item.x + 50} 142 H ${item.x + 84}`} stroke={diagramText.fill} strokeWidth="4" markerEnd="url(#arrowExam)" />}
+              </g>
+            ))}
+            <defs><marker id="arrowExam" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+          </svg>
+        ),
+      };
+    case "electronic-media":
+      return {
+        title: "Check before you share",
+        caption: "Responsible media use means listening carefully, checking facts and protecting private information.",
+        svg: (
+          <svg viewBox="0 0 640 300" role="img" aria-label="Electronic media safety diagram">
+            <rect x="34" y="24" width="572" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <rect x="86" y="86" width="130" height="110" rx="18" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <text x="126" y="134" fill={diagramText.fill} fontWeight="900" fontSize="18">Radio</text>
+            <rect x="256" y="86" width="130" height="110" rx="18" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" />
+            <text x="286" y="134" fill={diagramText.fill} fontWeight="900" fontSize="18">Phone</text>
+            <rect x="426" y="86" width="130" height="110" rx="18" fill="#DDEDDD" stroke={diagramText.success} strokeWidth="4" />
+            <text x="438" y="134" fill={diagramText.fill} fontWeight="900" fontSize="18">Television</text>
+            <text x="172" y="236" fill={diagramText.fill} fontWeight="900" fontSize="18">Listen/read → check facts → share safely</text>
+          </svg>
+        ),
+      };
+    case "rights-responsibilities-freedom":
+      return {
+        title: "Rights go with responsibilities",
+        caption: "A right is enjoyed better when the matching responsibility is respected.",
+        svg: (
+          <svg viewBox="0 0 640 300" role="img" aria-label="Rights and responsibilities balance scale">
+            <rect x="34" y="24" width="572" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <line x1="320" y1="78" x2="320" y2="220" stroke={diagramText.fill} strokeWidth="6" />
+            <line x1="170" y1="116" x2="470" y2="116" stroke={diagramText.fill} strokeWidth="6" />
+            <path d="M170 116 L122 194 H218 Z" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <path d="M470 116 L422 194 H518 Z" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" />
+            <text x="142" y="178" fill={diagramText.fill} fontWeight="900" fontSize="18">Rights</text>
+            <text x="430" y="178" fill={diagramText.fill} fontWeight="900" fontSize="18">Duties</text>
+            <text x="220" y="252" fill={diagramText.fill} fontWeight="800" fontSize="18">education ↔ attend and learn</text>
+          </svg>
+        ),
+      };
+    case "environmental-protection":
+      return {
+        title: "A strong environmental message",
+        caption: "Name the problem, explain why it matters, then give a clear action.",
+        svg: (
+          <svg viewBox="0 0 640 300" role="img" aria-label="Environmental message template">
+            <rect x="34" y="24" width="572" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            {[
+              { x: 120, label: "Problem", sub: "rubbish" },
+              { x: 320, label: "Why it matters", sub: "disease" },
+              { x: 520, label: "Action", sub: "use bins" },
+            ].map((item, i) => (
+              <g key={item.label}>
+                <rect x={item.x - 70} y="94" width="140" height="94" rx="18" fill={i === 1 ? "#F5E1DB" : "#E5E8F2"} stroke={i === 1 ? diagramText.terracotta : diagramText.indigo} strokeWidth="4" />
+                <text x={item.x} y="132" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="16">{item.label}</text>
+                <text x={item.x} y="160" textAnchor="middle" fill={diagramText.muted} fontWeight="700" fontSize="14">{item.sub}</text>
+                {i < 2 && <path d={`M ${item.x + 76} 142 H ${item.x + 116}`} stroke={diagramText.fill} strokeWidth="5" markerEnd="url(#arrowEnvMsg)" />}
+              </g>
+            ))}
+            <defs><marker id="arrowEnvMsg" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+          </svg>
+        ),
+      };
+    case "ceremonies":
+      return {
+        title: "Invitation format checklist",
+        caption: "An invitation should tell guests the occasion, date, time, venue and host.",
+        svg: (
+          <svg viewBox="0 0 640 340" role="img" aria-label="Invitation card format checklist">
+            <rect x="130" y="42" width="380" height="246" rx="20" fill="#fffaf3" stroke={diagramText.border} strokeWidth="4" />
+            <text x="240" y="84" fill={diagramText.terracotta} fontWeight="900" fontSize="24">INVITATION</text>
+            {[
+              "Occasion: marriage / funeral / ceremony",
+              "Date and time",
+              "Venue",
+              "Host / family",
+              "Polite request to attend",
+            ].map((line, i) => (
+              <g key={line}>
+                <circle cx="172" cy={124 + i * 32} r="7" fill={diagramText.success} />
+                <text x="190" y={130 + i * 32} fill={diagramText.fill} fontWeight="700" fontSize="15">{line}</text>
+              </g>
+            ))}
           </svg>
         ),
       };

@@ -1,0 +1,180 @@
+{
+  "meta": {
+    "country": "Uganda",
+    "level": "Primary 7 (P.7)",
+    "subject": "Integrated Science",
+    "examBody": "UNEB",
+    "exam": "PLE (Primary Leaving Examination)",
+    "source": "NCDC Primary Seven Curriculum Set One, Integrated Science Syllabus, 8 topics across 4 themes",
+    "lastReviewed": "2026-07-01",
+    "notes": "Mapped from the NCDC P7 Integrated Science topic outline: Term I has Muscular-Skeletal System, Electricity and Magnetism, Energy Resources in the Environment; Term II has Simple Machines and Friction, Excretory System, Light Energy; Term III has Interdependence of Things in the Environment, Population and Health."
+  },
+  "themes": [
+    {
+      "id": "science-human-body",
+      "name": "Human Body",
+      "topics": [
+        {
+          "id": "muscular-skeletal-system",
+          "name": "Muscular-Skeletal System",
+          "term": "I",
+          "periods": 24,
+          "subTopics": [
+            "The structure of the human skeleton",
+            "Names of different bones",
+            "Joints",
+            "Voluntary and involuntary muscles",
+            "Functions of the system",
+            "Diseases and disorders of bones, muscles and the system",
+            "Health habits that keep the system healthy",
+            "Prevention of muscular and skeletal diseases",
+            "Importance of correct posture"
+          ]
+        },
+        {
+          "id": "excretory-system",
+          "name": "Excretory System",
+          "term": "II",
+          "periods": 18,
+          "subTopics": [
+            "The excretory organs",
+            "The human skin: structure, function and care",
+            "Diseases and disorders of the human skin",
+            "The urinary system",
+            "Kidneys: structure, function and care",
+            "Diseases and disorders of the kidney",
+            "The lungs as excretory organs",
+            "Diseases and disorders of lungs",
+            "Good habits for proper functioning of the system"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-matter-energy",
+      "name": "Matter and Energy",
+      "topics": [
+        {
+          "id": "electricity-and-magnetism",
+          "name": "Electricity and Magnetism",
+          "term": "I",
+          "periods": 24,
+          "subTopics": [
+            "Sources and types of electricity",
+            "Conductors and insulators",
+            "Electric circuits",
+            "Short circuits",
+            "Safety precautions in handling electricity and electrical appliances",
+            "Importance of electricity",
+            "Natural and artificial magnets",
+            "Making temporary magnets",
+            "Generating electricity using a dynamo",
+            "Permanent magnets",
+            "Uses of magnets and the electric bell",
+            "Electricity and magnetism in the modern world of work"
+          ]
+        },
+        {
+          "id": "simple-machines-friction",
+          "name": "Simple Machines and Friction",
+          "term": "II",
+          "periods": 24,
+          "subTopics": [
+            "Mechanical advantage of machines",
+            "Principle of moments",
+            "Levers",
+            "Inclined planes",
+            "Wedges",
+            "Screws",
+            "Pulleys",
+            "Wheels and axles",
+            "Examples of friction in nature",
+            "Useful friction and how to increase it",
+            "Friction as a nuisance force and how to reduce it"
+          ]
+        },
+        {
+          "id": "light-energy",
+          "name": "Light Energy",
+          "term": "II",
+          "periods": 18,
+          "subTopics": [
+            "Natural and artificial sources of light",
+            "How light travels",
+            "Beams of light",
+            "Importance of light in the environment",
+            "Effects of different materials on light",
+            "Shadows, eclipses and pin-hole camera",
+            "Reflections, plane mirrors and periscope",
+            "Refraction, dispersion and rainbow",
+            "Lenses and magnifying glass",
+            "Lens camera",
+            "The human eye",
+            "Common eye defects and their corrections",
+            "Care for the human eye"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-environment",
+      "name": "The Environment",
+      "topics": [
+        {
+          "id": "energy-resources-environment",
+          "name": "Energy Resources in the Environment",
+          "term": "I",
+          "periods": 12,
+          "subTopics": [
+            "The sun as a major source of energy",
+            "Energy resources from water",
+            "Energy resources from fossil fuels",
+            "Energy resources from plants",
+            "Energy resources from animals",
+            "Energy resources from wind",
+            "Importance of energy resources"
+          ]
+        },
+        {
+          "id": "interdependence-environment",
+          "name": "Interdependence of Things in the Environment",
+          "term": "III",
+          "periods": 24,
+          "subTopics": [
+            "Components of the environment",
+            "Interdependence of plants and animals",
+            "Interdependence of living and non-living things",
+            "Agroforestry and its importance",
+            "Care for trees in agroforestry",
+            "Proper harvesting of trees in agroforestry",
+            "Managing a school or home wood project"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "science-community-health",
+      "name": "The Community, Population and Family Life",
+      "topics": [
+        {
+          "id": "population-and-health",
+          "name": "Population and Health",
+          "term": "III",
+          "periods": 24,
+          "subTopics": [
+            "Community health and social problems",
+            "Common sicknesses in a home and their causes",
+            "Community health and social problems among young people",
+            "Anti-social behaviour",
+            "Controlling common sicknesses in a home",
+            "Activities to address health concerns",
+            "Collecting information and data on human population",
+            "Avoiding health and social problems",
+            "Simple health survey and health data",
+            "Activities of health clubs"
+          ]
+        }
+      ]
+    }
+  ]
+}

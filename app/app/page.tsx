@@ -21,15 +21,15 @@ export default function HomePage() {
         </div>
       </Link>
 
-      <div className="card card-disabled">
+      <Link href="/english/p7" className="card">
         <div className="card-row">
           <div>
             <div className="card-title">English</div>
-            <div className="card-sub">Comprehension, grammar, composition</div>
+            <div className="card-sub">P7 · writing, media, rights, environment</div>
           </div>
-          <span className="badge badge-phase">Coming, Phase 2</span>
+          <span className="badge badge-math">Active</span>
         </div>
-      </div>
+      </Link>
 
       <Link href="/science/p7" className="card">
         <div className="card-row">
@@ -41,15 +41,15 @@ export default function HomePage() {
         </div>
       </Link>
 
-      <div className="card card-disabled">
+      <Link href="/social-studies/p7" className="card">
         <div className="card-row">
           <div>
             <div className="card-title">Social Studies</div>
-            <div className="card-sub">Uganda, East Africa, geography</div>
+            <div className="card-sub">P7 · Living Together in Africa</div>
           </div>
-          <span className="badge badge-phase">Coming, Phase 2</span>
+          <span className="badge badge-math">Active</span>
         </div>
-      </div>
+      </Link>
 
       <h2>Past PLE papers</h2>
 

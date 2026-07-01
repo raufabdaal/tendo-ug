@@ -1,0 +1,39 @@
+{
+  "meta": {
+    "country": "Uganda",
+    "level": "Primary 7 (P.7)",
+    "subject": "English Language",
+    "examBody": "UNEB",
+    "exam": "PLE (Primary Leaving Examination)",
+    "source": "NCDC Primary Seven Curriculum Set One, English Language Syllabus topic outline",
+    "lastReviewed": "2026-07-01",
+    "notes": "Mapped from the official NCDC P7 Set One English topic outline. P7 English has 7 topics across three terms."
+  },
+  "themes": [
+    {
+      "id": "english-term-i",
+      "name": "Term I",
+      "topics": [
+        { "id": "school-holidays", "title": "School Holidays", "periods": 30, "subTopics": ["Holiday Plans", "Holiday Activities"] },
+        { "id": "letter-writing", "title": "Letter Writing", "periods": 28, "subTopics": ["Informal Letters", "Formal Letters"] },
+        { "id": "examinations", "title": "Examinations", "periods": 26, "subTopics": ["Preparing for Examinations", "Sitting Examinations"] }
+      ]
+    },
+    {
+      "id": "english-term-ii",
+      "name": "Term II",
+      "topics": [
+        { "id": "electronic-media", "title": "Electronic Media", "periods": 27, "subTopics": ["Radio/Television", "Other Electronic Media"] },
+        { "id": "rights-responsibilities-freedom", "title": "Rights, Responsibilities and Freedom", "periods": 41, "subTopics": ["Children's Rights and Freedom", "Animal Needs and Freedom"] }
+      ]
+    },
+    {
+      "id": "english-term-iii",
+      "name": "Term III",
+      "topics": [
+        { "id": "environmental-protection", "title": "Environmental Protection", "periods": 25, "subTopics": ["Importance of Environmental Protection", "Ways of Protecting the Environment"] },
+        { "id": "ceremonies", "title": "Ceremonies", "periods": 40, "subTopics": ["Marriage", "Funeral"] }
+      ]
+    }
+  ]
+}

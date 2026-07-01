@@ -1,58 +1,36 @@
-# CHECKLIST — Tendo at a glance
+# CHECKLIST — Tendo execution tracker
 
 *Updated: 2026-07-01*
 
-## Current milestone
-- [x] P7 Mathematics brought to a founder-safe completion state
-- [x] Maths landing page structure cleaned up
-- [x] Maths final coverage audit written
-- [x] Maths diagram/visual plan written and stored in repo
-- [x] Repo chosen as the source of truth for active docs
-- [x] P7 Integrated Science NCDC topic map created
-- [x] P7 Integrated Science route `/science/p7` created
-- [x] All 8 P7 Integrated Science topics created
-- [x] Science topic pages created
-- [x] Science practice routes created
-- [x] Science diagrams added for all 8 topics
-- [x] Science added to central question bank
-- [x] Worksheet generator subject filters added
-- [x] Science practice banks deepened to 15 questions per topic
-- [x] Heavy Science topics deepened: Electricity, Simple Machines, Light, Population and Health
-- [x] Science quality audit written in repo
-- [x] Root docs refreshed to reflect Science instead of stale Social Studies-next state
-- [ ] Founder decides whether Science is accepted as “done enough to move on”
-- [ ] Next subject, likely Social Studies, audited and scoped
+## Immediate grouped milestone — Social Studies + English
+- [x] P7 Social Studies completed enough for current scope
+- [x] P7 English completed enough for current scope
+- [x] Social Studies + English routes built
+- [x] Social Studies + English practice routes built
+- [x] Social Studies + English added to central question bank
+- [x] Social Studies + English added to worksheet generator subject filters
+- [x] Social Studies diagrams added for all 10 topics
+- [x] English writing templates/diagrams added for all 7 topics
+- [x] Social Studies completion audit created/updated
+- [x] English quality audit created
+- [x] Root docs updated
+- [x] Final local build passed: `✓ Generating static pages (147/147)`
+- [ ] Founder copies grouped files into real local repo
+- [ ] Founder commits grouped milestone in GitHub Desktop
+- [ ] Founder pushes to `main`
+- [ ] Production deployment verified after push
 
 ---
 
-## Phase 0 — Foundation
-- [x] Workspace skeleton
-- [x] Session docs (STATUS, HANDOFF, CHANGELOG, CHECKLIST, DECISIONS)
-- [x] P7 Math curriculum map added in `content/curriculum/p7-math.json`
-- [x] PRD + design philosophy + content guidelines written
-- [x] Sales pack written
-- [x] `preview.html` clickable demo created
-- [x] Initial decisions logged
+## Phase 1 — Foundation
+- [x] Next.js app shell created
+- [x] Basic topic pages created
+- [x] Quiz structure created
+- [x] Past paper route created
+- [x] Teacher dashboard shell created
 
-## Phase 1 — App shell + first topics
-- [x] GitHub repo created
-- [x] Vercel connected
-- [x] Next.js app scaffolded in `app/`
-- [x] Home route `/`
-- [x] Topic index route `/math/p7`
-- [x] Topic detail route `/math/p7/[topic]`
-- [x] localStorage progress
-- [x] First 3 topics live (Venn diagrams, Roman numerals, Fractions)
-- [x] Local build verified
-- [x] Live deploy working
-
-## Phase 2 — Teacher and study features
-- [x] Past papers added
-- [x] Student attempt mode built
-- [x] Teacher browse mode built
-- [x] Topic tabs built
-- [x] Audio narration added
-- [x] Teacher dashboard added
+## Phase 2 — Teacher + print flows
+- [x] Teacher dashboard strengthened
 - [x] Print/copy flows added
 - [x] Sales materials updated for new feature set
 
@@ -74,34 +52,57 @@
 - [x] Review pill removed from visible UI
 - [x] Content-sources documentation added
 
-## Phase 5 — Trainup pilot prep + P7 Mathematics completion
-- [x] Trainup pilot plan documented
-- [x] Answer-bias bug fixed across quizzes and bank
-- [x] Trainup branding support added
-- [x] `/trainup` route added
-- [x] School proposal files prepared
-- [x] Fractions video connected
+## Phase 5 — P7 Mathematics completion
 - [x] Coverage audit completed against `content/curriculum/p7-math.json`
 - [x] Practice/question layer audited and corrected
 - [x] Published lighter maths topics strengthened
-- [x] Curriculum structure/UI reorganised more clearly for maths
+- [x] Curriculum structure/UI reorganised for maths
 - [x] Major missing high-priority P7 maths topics built
 - [x] P7 Mathematics final completion audit written
+- [x] P7 Mathematics can be stated as complete enough for current scope
 
-## Phase 6 — Documentation consolidation + Science subject expansion
-- [x] Repo chosen as the source of truth for active docs
-- [x] Maths completion docs moved/created inside repo
-- [x] P7 Science curriculum map added in `content/curriculum/p7-science.json`
-- [x] Science data layer added in `app/lib/science-topics.ts`
+## Phase 6 — P7 Integrated Science
+- [x] P7 Science curriculum map added
+- [x] Science data layer added
 - [x] Science landing and topic pages added
 - [x] Science practice mode added
-- [x] Science diagrams added
+- [x] Science diagrams added for all 8 topics
 - [x] Science integrated into question bank and worksheet generator
-- [x] Worksheet subject filters added
-- [x] Science quality audit created in repo
-- [x] Root tracking docs harmonised after Science work
-- [ ] External workspace-only docs reviewed for either migration or retirement
-- [ ] Founder accepts Science milestone or requests one final depth pass
+- [x] Science quality audit created
+- [x] Sensitive Population and Health wording handled cautiously
+- [x] Science pushed by founder
+
+## Phase 7 — P7 Social Studies
+- [x] NCDC SST outline extracted from P7 Set One PDF
+- [x] `content/curriculum/p7-social-studies.json` added
+- [x] `app/lib/social-topics.ts` added
+- [x] `/social-studies/p7` landing page added
+- [x] SST topic and practice routes added
+- [x] Social Studies activated on home page
+- [x] Social Studies integrated into question bank and worksheet generator
+- [x] First-wave audit created and upgraded to completion audit
+- [x] Diagrams added for all 10 SST topics
+- [x] Heavy topic depth pass completed
+- [x] Social Studies complete enough to move on
+- [ ] Push milestone, grouped with English
+
+## Phase 8 — P7 English
+- [x] NCDC English outline extracted from P7 Set One PDF
+- [x] `content/curriculum/p7-english.json` added
+- [x] `app/lib/english-topics.ts` added
+- [x] `/english/p7` landing page added
+- [x] English topic and practice routes added
+- [x] English activated on home page
+- [x] English integrated into question bank and worksheet generator
+- [x] English-only worksheet filter added
+- [x] Writing templates/diagrams added for all 7 topics
+- [x] Letter Writing depth pass completed
+- [x] Rights, Responsibilities and Freedom depth pass completed
+- [x] Environmental Protection depth pass completed
+- [x] Ceremonies depth pass completed
+- [x] English quality audit created
+- [x] English complete enough for current scope
+- [ ] Push milestone, grouped with Social Studies
 
 ---
 
@@ -117,30 +118,41 @@
 ### P7 Integrated Science
 - [x] All 8 NCDC P7 Integrated Science topics mapped
 - [x] All 8 topics built in app
-- [x] Science landing page built
-- [x] Science topic pages built
-- [x] Science practice pages built
+- [x] Science landing/topic/practice pages built
 - [x] Diagrams included for all Science topics
 - [x] 15-question practice bank per topic
-- [x] Worksheet generator subject filtering supports Science
-- [x] Sensitive Population and Health wording handled cautiously
-- [x] Heavy topic depth pass completed
-- [ ] Founder acceptance as “done enough”
+- [x] Worksheet generator supports Science
+- [x] Done enough and pushed
 
-### Social Studies
-- [ ] Current repo state audited
-- [ ] Coverage mapped
-- [ ] Structure gaps identified
-- [ ] First content wave built
+### P7 Social Studies
+- [x] All 10 NCDC topics live
+- [x] Practice routes added
+- [x] 12-question practice bank per topic
+- [x] Worksheet generator supports SST
+- [x] Diagrams included for all SST topics
+- [x] Heavy topic depth pass completed
+- [x] Completion audit updated
+- [ ] Push milestone, grouped with English
+
+### P7 English
+- [x] All 7 NCDC topics live
+- [x] Practice routes added
+- [x] 12-question practice bank per topic
+- [x] Worksheet generator supports English
+- [x] Writing templates/diagrams included for all topics
+- [x] Writing-heavy topic depth pass completed
+- [x] Quality audit created
+- [ ] Push milestone, grouped with Social Studies
 
 ---
 
-## Totals (current reality)
+## Totals
 - **Published P7 Mathematics topics:** 38
 - **Published P7 Integrated Science topics:** 8
-- **Science practice questions:** 120 total across 8 topics
+- **Published P7 Social Studies topics:** 10
+- **Published P7 English topics:** 7
 - **Visible maths coming-soon backlog:** 0
-- **Current subject just strengthened:** P7 Integrated Science
-- **Likely next subject target:** Social Studies, after Science milestone acceptance
+- **Current grouped push:** Social Studies + English + shared docs/app support
+- **Religious Education:** intentionally paused
 - **Pilot school:** Trainup a Child Uganda
 - **Monthly recurring cost:** UGX 0

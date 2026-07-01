@@ -2,12 +2,12 @@
 
 *Updated: 2026-07-01*
 
-> **Current state:** P7 Mathematics is founder-safe complete, and P7 Integrated Science has now become the active second subject build. Science is live, structured, diagrammed, practice-enabled, worksheet-enabled, quality-audited, and deepened across the heavy topics. Root docs now reflect Science instead of the earlier Social Studies next-target assumption.
+> **Current state:** P7 Mathematics, P7 Integrated Science, P7 Social Studies and P7 English are now complete enough for current product scope. The founder has **not pushed** the Social Studies + English grouped work yet; the next recommended action is a grouped copy/commit/push after copying the required files into the real local repo.
 
 ## Current focus
 
-### 1. P7 Mathematics is complete enough to stop being the pressure subject
-Mathematics has reached a founder-safe “done” state for current product scope.
+### 1. P7 Mathematics is complete enough
+Mathematics has reached a founder-safe “done enough” state for current product scope.
 
 That means:
 - 38 published P7 Mathematics topics exist
@@ -19,25 +19,44 @@ That means:
 
 Further maths work should be treated as enhancement unless a materially missing curriculum issue is discovered.
 
-### 2. P7 Integrated Science is now active and strong
-The project switched from the planned Social Studies start to **P7 Integrated Science**.
+### 2. P7 Integrated Science is complete enough
+Science includes all 8 NCDC-aligned P7 Integrated Science topics, with routes, diagrams, quizzes, practice banks, worksheet support and a quality audit.
 
-Science now has:
-- 8 NCDC-aligned P7 Integrated Science topics across the official themes
-- `/science/p7` subject landing page
-- `/science/p7/[topic]` topic pages
-- `/science/p7/[topic]/practice` practice routes
-- diagrams for all 8 Science topics
-- central question-bank integration
-- worksheet generator support with subject filters
-- 15 practice questions per topic: 7 quiz questions + 8 additional bank questions
-- a quality audit note in `docs/ops/p7-science-quality-audit-2026-07-01.md`
+Science is already pushed by the founder and should not be reopened casually.
 
-Science is no longer a shell. It is a serious active subject build. The honest status is: **done enough to demo and continue from, but not yet a permanent final closeout unless the founder accepts this milestone as sufficient.**
+### 3. P7 Social Studies is complete enough
+Social Studies includes all 10 NCDC-aligned topics under **Living Together in Africa**.
 
-### 3. Repo documentation is the source of truth
-The founder chose the repo as the safest place for live documentation.
+Social Studies now has:
+- `/social-studies/p7` landing page
+- topic pages and practice pages
+- diagrams for all 10 topics
+- central question-bank and worksheet support
+- 12-question practice banks per topic
+- curriculum map at `content/curriculum/p7-social-studies.json`
+- completion audit at `docs/ops/p7-social-studies-first-wave-audit-2026-07-01.md`
 
+Honest status: **complete enough to move on**, with future improvements treated as enhancement.
+
+### 4. P7 English is complete enough
+English includes all 7 official NCDC Set One P7 English topics.
+
+English now has:
+- `/english/p7` landing page
+- topic pages and practice pages
+- all 7 official topics across Terms I–III
+- central question-bank and worksheet support
+- 12-question practice banks per topic
+- writing templates/diagrams for all 7 topics
+- curriculum map at `content/curriculum/p7-english.json`
+- quality audit at `docs/ops/p7-english-quality-audit-2026-07-01.md`
+
+Honest status: **complete enough for the grouped Social Studies + English push**. Later English improvements should focus on longer writing rubrics, teacher marking guides, more comprehension passages and UNEB-style paper tagging.
+
+### 5. Religious Education is intentionally paused
+Religious Education is **not being worked on for now**, per founder direction.
+
+### 6. Repo documentation is the source of truth
 Root docs must stay current:
 - `STATUS.md`
 - `HANDOFF.md`
@@ -54,76 +73,49 @@ Operational notes should live under `docs/ops/` where useful.
 ### Product features already built
 - Next.js app shell
 - Topic pages with notes + quizzes
-- Subject landing pages for Maths and Science
+- Subject landing pages for Maths, English, Science and Social Studies
 - Past papers
 - Teacher dashboard
 - Practice mode
 - Worksheet generator
-- Worksheet subject filters: Maths only / Science only / Mixed
+- Worksheet subject filters: Maths only / English only / Science only / Social Studies only / Mixed
 - Watch / Read topic structure with in-read audio support
 - Trainup branding layer and `/trainup` route
 
-### P7 Mathematics
-- 38 published topics
-- strand-first landing page
-- topic diagrams for selected maths topics
-- practice and worksheet support
-- final completion audit in repo
-
-### P7 Integrated Science
-NCDC topic coverage currently includes:
-1. Muscular-skeletal system
-2. Electricity and magnetism
-3. Energy resources in the environment
-4. Simple machines and friction
-5. Excretory system
-6. Light energy
-7. Interdependence of things in the environment
-8. Population and health
-
-Each topic has:
-- learner notes
-- learning objectives
-- worked example
-- common mistakes
-- try-this activity
-- recap
-- quiz
-- diagram
-- practice mode
+### Current subject totals
+- Published P7 Mathematics topics: 38
+- Published P7 Integrated Science topics: 8
+- Published P7 Social Studies topics: 10
+- Published P7 English topics: 7
+- English practice questions: 84 total across 7 topics
+- Science practice questions: 120 total across 8 topics
+- Social Studies practice questions: 120 total across 10 topics
 
 ---
 
 ## What still needs work right now
 
-### 1. Decide whether Science is accepted as “done enough”
-Science has crossed from first-wave to strong active subject. The remaining question is product standard, not basic functionality.
+### 1. Push the grouped Social Studies + English milestone
+The founder intentionally stretched pushes. Since English is now done enough, this is the meaningful grouped milestone to copy into the real local repo, commit and push.
 
-Possible final Science enhancements:
-- teacher feedback pass
-- second question-bank layer for the heaviest topics
-- optional subtopic cards if teachers want more classroom segmentation
-- additional diagrams or worksheet-specific exam drills
-
-### 2. Next subject after Science
-The earlier docs said Social Studies was next. That was true before the founder redirected the next subject to Science.
-
-After accepting the Science milestone, the likely next subject target can again become **Social Studies**, but it should start intentionally:
-- curriculum/source check
-- route/data audit
-- content and structure gap map
-- first grouped implementation wave
+### 2. Later enrichment for completed subjects
+Possible future enhancements:
+- richer exam-style banks for heaviest Science, SST and English topics
+- more English composition/comprehension rubrics
+- real UNEB paper tagging by subject
+- teacher review and feedback pass
+- more precise maps/diagrams if requested by teachers
 
 ---
 
 ## Immediate next steps
 
 Recommended next move:
-1. Run final build verification after documentation updates.
-2. If the founder agrees, treat this as a meaningful Science milestone.
-3. Then either:
-   - push this grouped milestone, or
-   - continue straight into Social Studies audit/build if intentionally stretching pushes further.
+1. Copy the grouped Social Studies + English files into the real local `tendo-ug` repo.
+2. Let GitHub Desktop detect the changes.
+3. Commit as a grouped milestone.
+4. Push to `main` when ready.
+5. Verify production after Vercel deploy completes.
 
 ---
 
@@ -136,7 +128,7 @@ Recommended next move:
   - why it changed
   - which files changed
   - whether to overwrite or add each file
-- Repo docs should be treated as the canonical record going forward.
+- Repo docs are the canonical record.
 - Build command should run from `app/`, not repo root:
   - `cd app && npm run build`
 
