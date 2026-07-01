@@ -1027,7 +1027,6 @@ export const TOPICS: Topic[] = [
       { q: "Which statement is true?", choices: ["−9 is greater than −4", "0 is a negative integer", "−1 is less than 2", "5 is less than −3"], correct: 2, why: "−1 is to the left of 2 on the number line, so −1 is less than 2." },
     ],
   },
-  },
   {
     id: "data-handling",
     themeId: "theme-3-data",
@@ -1157,7 +1156,6 @@ export const TOPICS: Topic[] = [
       { q: "A train leaves at 14:15 and reaches its destination at 16:00. What is the travel time?", choices: ["1 hour 35 minutes", "1 hour 45 minutes", "2 hours", "2 hours 15 minutes"], correct: 1, why: "14:15 to 15:15 is 1 hour, then to 16:00 is 45 minutes. Total = 1 hour 45 minutes." },
       { q: "A lesson ends at 12:15 and the next one starts at 12:35. What is the waiting time?", choices: ["10 minutes", "15 minutes", "20 minutes", "25 minutes"], correct: 2, why: "From 12:15 to 12:35 is 20 minutes." },
     ],
-  },
   },
   {
     id: "algebraic-expressions",
