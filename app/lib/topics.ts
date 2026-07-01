@@ -896,7 +896,6 @@ export const TOPICS: Topic[] = [
       { q: "Akello sold a basket for UGX 18,000 at a loss of UGX 2,000. What was her cost price?", choices: ["UGX 2,000", "UGX 16,000", "UGX 36,000", "UGX 20,000"], correct: 3, why: "Loss means SP < CP. CP = SP + Loss = 18,000 + 2,000 = 20,000." },
     ],
   },
-  },
   {
     id: "four-basic-operations",
     themeId: "theme-2-numeracy",
