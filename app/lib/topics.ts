@@ -1354,6 +1354,201 @@ export const TOPICS: Topic[] = [
       { q: "Which is the correct prime factorisation of 30?", choices: ["2 × 15", "3 × 10", "2 × 3 × 5", "5 × 6"], correct: 2, why: "30 = 2 × 3 × 5, and all three numbers are prime." },
     ],
   },
+  {
+    id: "length",
+    themeId: "theme-5-measurement",
+    themeName: "Measurement",
+    title: "Length",
+    estMinutes: 14,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Length is used in everyday life when measuring distance, height, width, rope, cloth, roads, and classroom objects. Learners also need it for perimeter, area, scale work, and word problems.",
+      learningObjectives: [
+        "Identify common units of length.",
+        "Convert between millimetres, centimetres, metres and kilometres.",
+        "Choose a suitable unit for a measurement situation.",
+        "Solve simple problems involving length.",
+      ],
+      whatYouNeedToKnow: [
+        "Length tells how long or how far something is. Common units are millimetres (mm), centimetres (cm), metres (m), and kilometres (km).",
+        "Small objects are often measured in millimetres or centimetres. Larger objects such as a classroom or a tree may be measured in metres. Long road distances are measured in kilometres.",
+        "Useful conversion facts include: 10 mm = 1 cm, 100 cm = 1 m, and 1,000 m = 1 km.",
+        "When converting from a larger unit to a smaller unit, multiply. For example, 3 m = 300 cm. When converting from a smaller unit to a larger unit, divide. For example, 500 cm = 5 m.",
+        "Always check whether your answer makes sense. For example, a door cannot be 3 km high, and a road between towns is not 8 cm long.",
+        "In word problems, read carefully to see whether the question asks for total length, remaining length, or a conversion between units.",
+      ],
+      worked: {
+        problem:
+          "A rope is 3 m 45 cm long. Another rope is 2 m 80 cm long. Find their total length in metres and centimetres.",
+        steps: [
+          "Step 1. Add the centimetres: 45 cm + 80 cm = 125 cm.",
+          "Step 2. 125 cm = 1 m 25 cm.",
+          "Step 3. Add the metres: 3 m + 2 m + 1 m = 6 m.",
+          "Step 4. Keep the remaining 25 cm.",
+        ],
+        answer: "Answer: The total length is 6 m 25 cm.",
+      },
+      commonMistakes: [
+        "Mixing up the conversion steps, for example dividing when you should multiply.",
+        "Using the wrong unit for the object being measured.",
+        "Forgetting to regroup 100 cm as 1 m.",
+        "Adding mixed units without converting carefully.",
+      ],
+      tryThis: {
+        question: "Change 4.5 m to centimetres.",
+        choices: ["45 cm", "450 cm", "4,500 cm", "405 cm"],
+        correct: 1,
+        explanation: "1 m = 100 cm, so 4.5 m = 4.5 × 100 = 450 cm.",
+      },
+      recap: [
+        "Length measures how long or how far something is.",
+        "10 mm = 1 cm, 100 cm = 1 m, and 1,000 m = 1 km.",
+        "Multiply when changing to a smaller unit.",
+        "Divide when changing to a larger unit.",
+      ],
+    },
+    quiz: [
+      { q: "How many centimetres are in 3 metres?", choices: ["30 cm", "300 cm", "3,000 cm", "13 cm"], correct: 1, why: "1 m = 100 cm, so 3 m = 300 cm." },
+      { q: "Which unit is best for measuring the distance from Kampala to Jinja?", choices: ["mm", "cm", "m", "km"], correct: 3, why: "Long distances between towns are measured in kilometres." },
+      { q: "Change 250 cm to metres.", choices: ["2.5 m", "25 m", "0.25 m", "250 m"], correct: 0, why: "100 cm = 1 m, so 250 cm = 2.5 m." },
+      { q: "How many millimetres are in 8 cm?", choices: ["80 mm", "18 mm", "800 mm", "8 mm"], correct: 0, why: "1 cm = 10 mm, so 8 cm = 80 mm." },
+      { q: "A ribbon is 1 m 75 cm long. How long is it in centimetres?", choices: ["175 cm", "1075 cm", "75 cm", "1.75 cm"], correct: 0, why: "1 m = 100 cm, so 1 m 75 cm = 175 cm." },
+      { q: "Which is longer?", choices: ["90 cm", "1 m", "They are equal", "Cannot tell"], correct: 1, why: "1 m = 100 cm, and 100 cm is greater than 90 cm." },
+      { q: "A road is 5 km long. How many metres is this?", choices: ["500 m", "5,000 m", "50,000 m", "500,000 m"], correct: 1, why: "1 km = 1,000 m, so 5 km = 5,000 m." },
+    ],
+  },
+  {
+    id: "mass",
+    themeId: "theme-5-measurement",
+    themeName: "Measurement",
+    title: "Mass and weight",
+    estMinutes: 14,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Mass and weight are used in markets, homes, shops, transport, and health work. Learners need these ideas when measuring goods, comparing quantities, and solving practical everyday maths questions.",
+      learningObjectives: [
+        "Identify common units of mass and weight.",
+        "Convert between grams, kilograms and tonnes.",
+        "Choose a suitable unit for a measurement situation.",
+        "Solve simple problems involving mass and weight.",
+      ],
+      whatYouNeedToKnow: [
+        "Mass tells how heavy something is. The common units are grams (g), kilograms (kg), and tonnes (t).",
+        "Small objects such as sugar in a packet or a pencil box may be measured in grams. Heavier objects such as sacks, people, or animals are often measured in kilograms. Very heavy loads such as large lorries may be measured in tonnes.",
+        "Useful conversion facts include: 1,000 g = 1 kg and 1,000 kg = 1 tonne.",
+        "To change from kilograms to grams, multiply by 1,000. To change from grams to kilograms, divide by 1,000.",
+        "In practical questions, the words mass and weight are often used in everyday ways. What matters most at this stage is using the units correctly and calculating carefully.",
+        "Always check whether the answer is sensible. For example, a mango cannot weigh 40 kg, and a truck is not likely to weigh 12 g.",
+      ],
+      worked: {
+        problem:
+          "A shopkeeper had 3 kg 500 g of sugar in one bag and 2 kg 750 g in another bag. Find the total mass.",
+        steps: [
+          "Step 1. Add the grams: 500 g + 750 g = 1,250 g.",
+          "Step 2. 1,250 g = 1 kg 250 g.",
+          "Step 3. Add the kilograms: 3 kg + 2 kg + 1 kg = 6 kg.",
+          "Step 4. Keep the remaining 250 g.",
+        ],
+        answer: "Answer: The total mass is 6 kg 250 g.",
+      },
+      commonMistakes: [
+        "Forgetting that 1,000 g makes 1 kg.",
+        "Using grams for very heavy objects or tonnes for very small ones.",
+        "Adding kilograms and grams without regrouping.",
+        "Placing the decimal wrongly during conversion.",
+      ],
+      tryThis: {
+        question: "Change 2.5 kg to grams.",
+        choices: ["250 g", "2,500 g", "25 g", "25,000 g"],
+        correct: 1,
+        explanation: "1 kg = 1,000 g, so 2.5 kg = 2.5 × 1,000 = 2,500 g.",
+      },
+      recap: [
+        "Mass shows how heavy something is.",
+        "1,000 g = 1 kg.",
+        "1,000 kg = 1 tonne.",
+        "Use sensible units for the object being measured.",
+      ],
+    },
+    quiz: [
+      { q: "How many grams are in 4 kg?", choices: ["400 g", "4,000 g", "40 g", "400,000 g"], correct: 1, why: "1 kg = 1,000 g, so 4 kg = 4,000 g." },
+      { q: "Which unit is best for measuring the mass of a sack of maize?", choices: ["g", "kg", "cm", "mm"], correct: 1, why: "A sack of maize is commonly measured in kilograms." },
+      { q: "Change 750 g to kilograms.", choices: ["7.5 kg", "0.75 kg", "75 kg", "750 kg"], correct: 1, why: "750 ÷ 1,000 = 0.75 kg." },
+      { q: "How many kilograms are in 2 tonnes?", choices: ["200 kg", "2,000 kg", "20,000 kg", "200,000 kg"], correct: 1, why: "1 tonne = 1,000 kg, so 2 tonnes = 2,000 kg." },
+      { q: "A bag has mass 1 kg 250 g. What is this in grams?", choices: ["1,025 g", "1,250 g", "125 g", "12,500 g"], correct: 1, why: "1 kg = 1,000 g, so 1 kg 250 g = 1,250 g." },
+      { q: "Which is heavier?", choices: ["900 g", "1 kg", "They are equal", "Cannot tell"], correct: 1, why: "1 kg = 1,000 g, and 1,000 g is heavier than 900 g." },
+      { q: "A trader buys 3 kg and 2 kg of beans. What is the total mass?", choices: ["5 g", "5 kg", "6 kg", "1 kg"], correct: 1, why: "3 kg + 2 kg = 5 kg." },
+    ],
+  },
+  {
+    id: "capacity",
+    themeId: "theme-5-measurement",
+    themeName: "Measurement",
+    title: "Capacity",
+    estMinutes: 14,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Capacity helps learners measure how much liquid a container can hold. It is used in homes, shops, farming, cooking, and science-related activities.",
+      learningObjectives: [
+        "Identify common units of capacity.",
+        "Convert between millilitres and litres.",
+        "Choose a suitable unit for a real-life situation.",
+        "Solve simple problems involving capacity.",
+      ],
+      whatYouNeedToKnow: [
+        "Capacity tells how much liquid a container can hold. The common units are millilitres (mL) and litres (L).",
+        "Small amounts of liquid are often measured in millilitres. Larger amounts, such as water in a jerrycan or milk in a large container, are often measured in litres.",
+        "The main conversion fact is 1,000 mL = 1 L.",
+        "To change litres to millilitres, multiply by 1,000. To change millilitres to litres, divide by 1,000.",
+        "When solving word problems, check whether the question asks for total capacity, remaining capacity, or conversion into a different unit.",
+        "Always ask whether the answer is sensible. A bucket does not usually hold 5 mL, and a medicine spoon does not usually hold 40 L.",
+      ],
+      worked: {
+        problem:
+          "A tank contains 3 L 450 mL of water. Another 2 L 800 mL is poured into it. How much water is there now?",
+        steps: [
+          "Step 1. Add the millilitres: 450 mL + 800 mL = 1,250 mL.",
+          "Step 2. 1,250 mL = 1 L 250 mL.",
+          "Step 3. Add the litres: 3 L + 2 L + 1 L = 6 L.",
+          "Step 4. Keep the remaining 250 mL.",
+        ],
+        answer: "Answer: There are now 6 L 250 mL of water.",
+      },
+      commonMistakes: [
+        "Forgetting that 1,000 mL = 1 L.",
+        "Choosing litres for very tiny amounts or millilitres for very large containers.",
+        "Adding litres and millilitres without regrouping.",
+        "Confusing capacity with length or mass units.",
+      ],
+      tryThis: {
+        question: "Change 1.5 L to millilitres.",
+        choices: ["150 mL", "1,500 mL", "15 mL", "15,000 mL"],
+        correct: 1,
+        explanation: "1 L = 1,000 mL, so 1.5 L = 1.5 × 1,000 = 1,500 mL.",
+      },
+      recap: [
+        "Capacity measures how much liquid a container can hold.",
+        "1,000 mL = 1 L.",
+        "Multiply to change litres to millilitres.",
+        "Divide to change millilitres to litres.",
+      ],
+    },
+    quiz: [
+      { q: "How many millilitres are in 2 L?", choices: ["200 mL", "2,000 mL", "20 mL", "200,000 mL"], correct: 1, why: "1 L = 1,000 mL, so 2 L = 2,000 mL." },
+      { q: "Which unit is best for measuring a teaspoon of cough syrup?", choices: ["L", "mL", "kg", "km"], correct: 1, why: "A teaspoon holds a small amount, so millilitres are the suitable unit." },
+      { q: "Change 750 mL to litres.", choices: ["7.5 L", "0.75 L", "75 L", "750 L"], correct: 1, why: "750 ÷ 1,000 = 0.75 L." },
+      { q: "A jerrycan holds 5 L of water. How many millilitres is that?", choices: ["500 mL", "5,000 mL", "50,000 mL", "500,000 mL"], correct: 1, why: "5 × 1,000 = 5,000 mL." },
+      { q: "A bottle contains 1 L 250 mL of juice. What is this in millilitres?", choices: ["1,025 mL", "1,250 mL", "125 mL", "12,500 mL"], correct: 1, why: "1 L = 1,000 mL, so 1 L 250 mL = 1,250 mL." },
+      { q: "Which is greater?", choices: ["900 mL", "1 L", "They are equal", "Cannot tell"], correct: 1, why: "1 L = 1,000 mL, and 1,000 mL is greater than 900 mL." },
+      { q: "A container holds 3 L and another holds 2 L. What is the total capacity?", choices: ["5 L", "6 L", "1 L", "5 mL"], correct: 0, why: "3 L + 2 L = 5 L." },
+    ],
+  },
 ];
 
 export function getTopic(id: string): Topic | undefined {
@@ -1381,8 +1576,5 @@ export const COMING_SOON: Array<{
   { id: "line-segments-angles", themeName: "Geometry · Construction", title: "Line segments and angles" },
   { id: "simple-polygons", themeName: "Geometry · Construction", title: "Simple polygons" },
   { id: "bearing-scale-drawing", themeName: "Geometry · Construction", title: "Bearing and scale drawing" },
-  { id: "length", themeName: "Measurement", title: "Length" },
-  { id: "capacity", themeName: "Measurement", title: "Capacity" },
-  { id: "mass", themeName: "Measurement", title: "Mass and weight" },
   { id: "inequalities", themeName: "Algebra", title: "Inequalities and solution sets" },
 ];
