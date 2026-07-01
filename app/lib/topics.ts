@@ -2323,6 +2323,203 @@ export const TOPICS: Topic[] = [
       { q: "Why is it important to check the whole pattern before answering?", choices: ["Because one step may be misleading", "Because patterns always end", "Because the first number is always the answer", "Because all patterns are multiplication"], correct: 0, why: "You should check the whole pattern because one step alone may not show the full rule correctly." },
     ],
   },
+  {
+    id: "probability-of-numbers",
+    themeId: "theme-1-sets",
+    themeName: "Sets",
+    title: "Probability of numbers and events",
+    estMinutes: 15,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: After learning basic probability words, learners need to apply probability to numbers and simple events. This helps them reason clearly about chance in games, number cards, counters, and everyday situations.",
+      learningObjectives: [
+        "Find the probability of a simple event.",
+        "Use favourable outcomes and total outcomes correctly.",
+        "Find probabilities involving numbers and number cards.",
+        "Compare which events are more likely or less likely.",
+      ],
+      whatYouNeedToKnow: [
+        "Probability tells how likely an event is to happen.",
+        "For simple events with equally likely outcomes, probability = favourable outcomes ÷ total outcomes.",
+        "A favourable outcome is an outcome that matches what the question asks for. The total outcomes are all the possible results.",
+        "For example, if one number card is chosen from the cards 1 to 10, the probability of choosing an even number depends on how many even numbers there are in that set.",
+        "The probability of an impossible event is 0. The probability of a certain event is 1. Most ordinary events lie between 0 and 1.",
+        "When comparing probabilities, the event with the larger probability is more likely to happen.",
+      ],
+      worked: {
+        problem:
+          "A card is chosen at random from the numbers 1 to 12. What is the probability of choosing a multiple of 3?",
+        steps: [
+          "Step 1. List the multiples of 3 from 1 to 12: 3, 6, 9, 12.",
+          "Step 2. Count the favourable outcomes. There are 4.",
+          "Step 3. Count the total outcomes. There are 12 cards in all.",
+          "Step 4. Probability = 4/12.",
+          "Step 5. Simplify if needed: 4/12 = 1/3.",
+        ],
+        answer: "Answer: The probability is 4/12 or 1/3.",
+      },
+      commonMistakes: [
+        "Counting the favourable outcomes wrongly.",
+        "Forgetting to count all possible outcomes.",
+        "Mixing up even numbers, odd numbers, factors, or multiples in number-based probability questions.",
+        "Comparing events without first writing their probabilities clearly.",
+      ],
+      tryThis: {
+        question: "A number is picked from 1 to 8. What is the probability of picking an odd number?",
+        choices: ["3/8", "4/8", "5/8", "1/8"],
+        correct: 1,
+        explanation: "The odd numbers from 1 to 8 are 1, 3, 5, and 7. That is 4 favourable outcomes out of 8 total outcomes, so the probability is 4/8.",
+      },
+      recap: [
+        "Probability = favourable outcomes ÷ total outcomes.",
+        "Count carefully before writing the fraction.",
+        "Probabilities are between 0 and 1.",
+        "A larger probability means a more likely event.",
+      ],
+    },
+    quiz: [
+      { q: "A card is chosen from the numbers 1 to 6. What is the probability of choosing an even number?", choices: ["1/6", "2/6", "3/6", "4/6"], correct: 2, why: "The even numbers are 2, 4, and 6. That is 3 favourable outcomes out of 6." },
+      { q: "A number is chosen from 1 to 10. What is the probability of choosing a factor of 10?", choices: ["2/10", "4/10", "5/10", "6/10"], correct: 1, why: "The factors of 10 are 1, 2, 5, and 10. That is 4 favourable outcomes out of 10." },
+      { q: "A fair die is thrown once. What is the probability of getting a number greater than 4?", choices: ["1/6", "2/6", "3/6", "4/6"], correct: 1, why: "Numbers greater than 4 are 5 and 6, so there are 2 favourable outcomes out of 6." },
+      { q: "A card is chosen from 1 to 12. What is the probability of choosing an odd number?", choices: ["5/12", "6/12", "7/12", "4/12"], correct: 1, why: "There are 6 odd numbers from 1 to 12: 1, 3, 5, 7, 9, 11. So the probability is 6/12." },
+      { q: "Which event is more likely when choosing from 1 to 8?", choices: ["Choosing an even number", "Choosing the number 7", "They are equally likely", "Cannot tell"], correct: 0, why: "Even numbers are 2, 4, 6, and 8, so the probability is 4/8. The probability of getting 7 is only 1/8. So choosing an even number is more likely." },
+      { q: "A box has number cards 1 to 9. What is the probability of choosing a multiple of 2?", choices: ["3/9", "4/9", "5/9", "2/9"], correct: 1, why: "The multiples of 2 are 2, 4, 6, and 8. That is 4 favourable outcomes out of 9." },
+      { q: "If an event has probability 1, what does that mean?", choices: ["The event is impossible", "The event is certain", "The event is unlikely", "The event is even chance"], correct: 1, why: "A probability of 1 means the event must happen, so it is certain." },
+    ],
+  },
+  {
+    id: "regular-polygons",
+    themeId: "theme-4-geometry",
+    themeName: "Geometry · Construction",
+    title: "Regular polygons",
+    estMinutes: 14,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Regular polygons help learners understand equal sides, equal angles, and shape families more clearly. This topic strengthens geometry language and supports later work in perimeter, construction, and shape recognition.",
+      learningObjectives: [
+        "Explain what a regular polygon is.",
+        "Distinguish regular and irregular polygons.",
+        "Identify common regular polygons.",
+        "Use side and angle equality to classify polygons correctly.",
+      ],
+      whatYouNeedToKnow: [
+        "A polygon is a closed shape made of straight line segments.",
+        "A regular polygon has all sides equal and all angles equal.",
+        "An irregular polygon does not have all sides and angles equal.",
+        "Examples of regular polygons include a regular triangle, a square, and a regular pentagon.",
+        "Not every polygon with the same number of sides is regular. A pentagon may be regular or irregular depending on its sides and angles.",
+        "To identify a regular polygon, check both the sides and the angles, not just one of them.",
+      ],
+      worked: {
+        problem:
+          "A shape has 6 sides. All the sides are equal, and all the angles are equal. What kind of shape is it?",
+        steps: [
+          "Step 1. Count the sides. There are 6 sides.",
+          "Step 2. A polygon with 6 sides is a hexagon.",
+          "Step 3. Since all the sides and all the angles are equal, it is regular.",
+        ],
+        answer: "Answer: It is a regular hexagon.",
+      },
+      commonMistakes: [
+        "Calling any polygon regular just because it looks neat.",
+        "Checking only the sides and forgetting the angles.",
+        "Mixing up the names of polygons with different numbers of sides.",
+        "Thinking every square is not a regular polygon because it is a special shape.",
+      ],
+      tryThis: {
+        question: "Which statement is true about a regular polygon?",
+        choices: ["Only the sides are equal", "Only the angles are equal", "Sides and angles are equal", "It must have five sides"],
+        correct: 2,
+        explanation: "A regular polygon has all sides equal and all angles equal.",
+      },
+      recap: [
+        "A regular polygon has equal sides and equal angles.",
+        "Count the sides to name the polygon.",
+        "A polygon can be regular or irregular.",
+        "Squares are regular polygons.",
+      ],
+    },
+    quiz: [
+      { q: "What is a regular polygon?", choices: ["A shape with curved sides", "A polygon with equal sides and equal angles", "Any polygon with four sides", "A polygon with only equal sides"], correct: 1, why: "A regular polygon has all sides equal and all angles equal." },
+      { q: "Which of these is a regular polygon?", choices: ["A square", "Any rectangle", "Any quadrilateral", "A circle"], correct: 0, why: "A square has all sides equal and all angles equal, so it is a regular polygon." },
+      { q: "A regular polygon has 5 sides. What is it called?", choices: ["Hexagon", "Quadrilateral", "Pentagon", "Octagon"], correct: 2, why: "A polygon with 5 sides is a pentagon, and if its sides and angles are equal it is a regular pentagon." },
+      { q: "Which statement about an irregular polygon is true?", choices: ["All sides and angles are equal", "It has no sides", "Its sides or angles are not all equal", "It must be a triangle"], correct: 2, why: "An irregular polygon does not have all sides and angles equal." },
+      { q: "A regular hexagon has how many sides?", choices: ["5", "6", "7", "8"], correct: 1, why: "A hexagon has 6 sides." },
+      { q: "Why is a circle not a regular polygon?", choices: ["Because it is too large", "Because it has no straight sides", "Because it has equal parts", "Because it is not closed"], correct: 1, why: "A circle is not a polygon because it has no straight sides." },
+      { q: "Which feature must be checked before saying a polygon is regular?", choices: ["Only colour", "Only size", "Sides and angles", "Only perimeter"], correct: 2, why: "A polygon is regular only if both its sides and angles are all equal." },
+    ],
+  },
+  {
+    id: "algebra-real-life",
+    themeId: "theme-4-algebra",
+    themeName: "Algebra",
+    title: "Algebra in real-life situations",
+    estMinutes: 15,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Learners should not see algebra as only letters on paper. Algebra helps describe real-life situations such as age, cost, distance, and sharing. It turns everyday statements into mathematical language.",
+      learningObjectives: [
+        "Translate simple real-life statements into algebraic form.",
+        "Use letters to represent unknown numbers in real situations.",
+        "Form simple equations from word statements.",
+        "Solve straightforward real-life algebra problems.",
+      ],
+      whatYouNeedToKnow: [
+        "In algebra, a letter can stand for an unknown number or changing quantity.",
+        "Real-life algebra begins by deciding what the letter represents. For example, let x be the number of books or the age of a child.",
+        "Once the letter is chosen, word statements can be translated into expressions or equations. For example, 'three more than a number' becomes x + 3.",
+        "'Twice a number' becomes 2x. 'The total is 15' helps us form an equation such as 2x + 3 = 15.",
+        "The most important habit in real-life algebra is reading the words carefully before writing the mathematics.",
+        "After solving, always check whether the answer makes sense in the story.",
+      ],
+      worked: {
+        problem:
+          "Amina has x mangoes. Her brother has 3 more mangoes than Amina. Together they have 15 mangoes. Find how many mangoes Amina has.",
+        steps: [
+          "Step 1. Let Amina have x mangoes.",
+          "Step 2. Her brother has x + 3 mangoes.",
+          "Step 3. Together they have 15, so x + (x + 3) = 15.",
+          "Step 4. Simplify: 2x + 3 = 15.",
+          "Step 5. Subtract 3: 2x = 12.",
+          "Step 6. Divide by 2: x = 6.",
+        ],
+        answer: "Answer: Amina has 6 mangoes.",
+      },
+      commonMistakes: [
+        "Choosing a letter but forgetting what it represents.",
+        "Writing the wrong operation from the word statement.",
+        "Adding where the story means subtracting, or vice versa.",
+        "Solving the equation correctly but giving an answer that does not fit the story.",
+      ],
+      tryThis: {
+        question: "A trader sells pens at UGX p each. What is the cost of 4 pens?",
+        choices: ["p + 4", "4p", "p ÷ 4", "p − 4"],
+        correct: 1,
+        explanation: "If one pen costs p shillings, then 4 pens cost 4 × p, written as 4p.",
+      },
+      recap: [
+        "Choose a letter to represent the unknown clearly.",
+        "Translate the words carefully into algebra.",
+        "Form the expression or equation step by step.",
+        "Check whether the final answer fits the story.",
+      ],
+    },
+    quiz: [
+      { q: "Which expression means 'five more than a number x'?", choices: ["5x", "x + 5", "x − 5", "5 − x"], correct: 1, why: "'Five more than x' means add 5 to x, so the expression is x + 5." },
+      { q: "A book costs b shillings. What is the cost of 3 books?", choices: ["b + 3", "3b", "b ÷ 3", "b − 3"], correct: 1, why: "Three books each costing b shillings cost 3 × b, written as 3b." },
+      { q: "If a child is y years old, how old will the child be in 4 years?", choices: ["y − 4", "4y", "y + 4", "y ÷ 4"], correct: 2, why: "In 4 years, the age increases by 4, so it becomes y + 4." },
+      { q: "Which equation matches the statement 'Twice a number plus 3 is 11'?", choices: ["2x + 3 = 11", "x + 2 + 3 = 11", "2 + 3x = 11", "x − 3 = 11"], correct: 0, why: "'Twice a number' is 2x, and 'plus 3 is 11' gives 2x + 3 = 11." },
+      { q: "A basket has m oranges. Another basket has 2 more than the first basket. How many oranges are in the second basket?", choices: ["2m", "m + 2", "m − 2", "2 − m"], correct: 1, why: "Two more than m is written as m + 2." },
+      { q: "In a class, boys are b and girls are 5 more than boys. Which expression shows the number of girls?", choices: ["b − 5", "5b", "b + 5", "b ÷ 5"], correct: 2, why: "Five more than b is written as b + 5." },
+      { q: "Why do we use letters in real-life algebra?", choices: ["To make answers longer", "To stand for unknown or changing numbers", "To avoid using numbers at all", "To draw shapes"], correct: 1, why: "Letters are used to represent unknown or changing numbers." },
+    ],
+  },
 ];
 
 export function getTopic(id: string): Topic | undefined {
