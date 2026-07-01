@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import type { Topic } from "@/lib/topics";
+import TopicDiagram from "@/components/TopicDiagram";
 
 type Tab = "watch" | "read";
 
@@ -129,6 +130,8 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
               </ul>
             </>
           )}
+
+          <TopicDiagram topicId={topic.id} />
 
           <h2>What you need to know</h2>
           {topic.note.whatYouNeedToKnow.map((p, i) => <p key={i}>{p}</p>)}

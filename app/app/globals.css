@@ -533,7 +533,6 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
   border-radius: var(--radius);
 }
 
-<<<<<<< HEAD
 /* ============================================
    Try this section (inside Read tab)
    ============================================ */
@@ -559,8 +558,6 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
   border-radius: 6px;
 }
 
-=======
->>>>>>> 51a291d5b347cbd7e752e478bb96b9e5b5418023
 /* ============================================
    Mode tabs (Demo class / This device)
    ============================================ */
@@ -1035,4 +1032,175 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
 @media print {
   .worksheet { border: none; padding: 0; }
   .worksheet-school, .worksheet-title, .worksheet-meta { text-align: center; }
+}
+
+/* ============================================
+   Maths strand-first landing page
+   ============================================ */
+.maths-overview {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 18px 0 18px;
+}
+.maths-overview-item {
+  background: var(--cream-deep);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+  text-align: center;
+}
+.maths-overview-item strong {
+  display: block;
+  color: var(--terracotta);
+  font-size: 28px;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.maths-overview-item span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 6px;
+}
+.strand-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 30px;
+}
+.strand-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: var(--cream);
+  border: 1px solid var(--border);
+  color: var(--charcoal-soft);
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 700;
+}
+.strand-chip:hover {
+  border-color: var(--terracotta);
+  color: var(--charcoal);
+}
+.strand-chip span {
+  background: var(--cream-deep);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 1px 7px;
+  font-size: 11px;
+}
+.strand-section {
+  background: rgba(250, 246, 240, 0.65);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin-bottom: 24px;
+  scroll-margin-top: 90px;
+}
+.strand-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+.strand-head .theme-label { margin-bottom: 4px; }
+.strand-desc {
+  color: var(--charcoal-soft);
+  font-size: 14px;
+  margin: 0;
+}
+.strand-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  flex-shrink: 0;
+}
+.strand-meta span {
+  display: inline-flex;
+  background: var(--cream-deep);
+  color: var(--muted);
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.strand-start {
+  display: inline-flex;
+  align-items: center;
+  background: var(--indigo-soft);
+  color: var(--indigo);
+  border-radius: 999px;
+  padding: 5px 11px;
+  font-size: 12px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+.topic-card-grid { display: grid; gap: 10px; }
+.topic-card { margin-bottom: 0; }
+.visual-cue {
+  display: inline-flex;
+  margin-top: 8px;
+  background: var(--success-soft);
+  color: var(--success);
+  border-radius: 999px;
+  padding: 3px 9px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* ============================================
+   Topic diagrams
+   ============================================ */
+.topic-diagram {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin: 22px 0 26px;
+  box-shadow: 0 1px 0 rgba(31, 27, 23, 0.03);
+}
+.topic-diagram-copy h2 {
+  margin: 0 0 6px;
+  font-size: 20px;
+}
+.topic-diagram-copy p {
+  margin: 0 0 12px;
+  color: var(--charcoal-soft);
+  font-size: 14px;
+}
+.topic-diagram-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--terracotta);
+  margin-bottom: 4px;
+}
+.topic-diagram-art {
+  background: #fffaf3;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.topic-diagram-art svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .maths-overview { grid-template-columns: 1fr; }
+  .strand-head { flex-direction: column; }
+  .strand-meta { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
+  .strand-section { padding: 14px; }
 }
