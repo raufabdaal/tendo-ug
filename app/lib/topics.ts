@@ -2129,6 +2129,200 @@ export const TOPICS: Topic[] = [
       { q: "Which probability is the same as a certain event?", choices: ["0", "1/2", "1", "1/6"], correct: 2, why: "A certain event has probability 1." },
     ],
   },
+  {
+    id: "inequalities",
+    themeId: "theme-4-algebra",
+    themeName: "Algebra",
+    title: "Inequalities and solution sets",
+    estMinutes: 15,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Inequalities help learners compare quantities that are not equal. They connect naturally with integers, number lines, algebraic expressions, and equations, and they help learners describe ranges of values instead of one exact answer.",
+      learningObjectives: [
+        "Use the symbols <, >, ≤ and ≥ correctly.",
+        "Explain the meaning of an inequality.",
+        "Solve simple inequalities.",
+        "Describe the solution set of a simple inequality.",
+      ],
+      whatYouNeedToKnow: [
+        "An inequality shows that two quantities are not equal. Instead of using =, it uses signs such as > (greater than), < (less than), ≥ (greater than or equal to), and ≤ (less than or equal to).",
+        "For example, x > 4 means x is any number greater than 4. The answer is not just one number. It is a group of possible values.",
+        "An equation usually has one exact answer or a small fixed set of answers. An inequality often has many possible answers, called the solution set.",
+        "When solving a simple inequality, the steps are like solving an equation: add, subtract, multiply, or divide carefully to isolate the letter.",
+        "A number line is very useful for inequalities because it helps learners see which numbers are allowed in the solution set.",
+        "When a question says 'at least', it often means greater than or equal to. When it says 'at most', it often means less than or equal to.",
+      ],
+      worked: {
+        problem:
+          "Solve the inequality x + 3 < 8.",
+        steps: [
+          "Step 1. Start with x + 3 < 8.",
+          "Step 2. Subtract 3 from both sides.",
+          "Step 3. x < 5.",
+          "Step 4. This means any number less than 5 is part of the solution set.",
+        ],
+        answer: "Answer: x < 5.",
+      },
+      commonMistakes: [
+        "Treating an inequality as if it has only one answer.",
+        "Mixing up > and < signs.",
+        "Forgetting that words such as 'at least' and 'at most' have special meanings.",
+        "Writing one number instead of describing the full solution set.",
+      ],
+      tryThis: {
+        question: "Which inequality means 'n is at least 7'?",
+        choices: ["n > 7", "n < 7", "n ≥ 7", "n ≤ 7"],
+        correct: 2,
+        explanation: "'At least 7' means 7 or more, so the correct inequality is n ≥ 7.",
+      },
+      recap: [
+        "Inequalities compare quantities that are not equal.",
+        "> means greater than and < means less than.",
+        "≥ means greater than or equal to, and ≤ means less than or equal to.",
+        "An inequality often has many answers, called a solution set.",
+      ],
+    },
+    quiz: [
+      { q: "Which symbol means 'greater than'?", choices: ["<", ">", "=", "≤"], correct: 1, why: "> means greater than." },
+      { q: "Which inequality means 'a is less than 9'?", choices: ["a > 9", "a < 9", "a ≥ 9", "a = 9"], correct: 1, why: "'Less than 9' is written as a < 9." },
+      { q: "Solve: x + 2 > 6", choices: ["x > 8", "x > 4", "x < 4", "x = 4"], correct: 1, why: "Subtract 2 from both sides: x > 4." },
+      { q: "Which inequality means 'm is at most 5'?", choices: ["m ≥ 5", "m > 5", "m ≤ 5", "m < 5 only"], correct: 2, why: "'At most 5' means 5 or less, so m ≤ 5." },
+      { q: "Solve: y − 4 < 3", choices: ["y < 7", "y > 7", "y = 7", "y ≤ 7 only"], correct: 0, why: "Add 4 to both sides: y < 7." },
+      { q: "Which of these is a solution to n > 10?", choices: ["8", "10", "11", "9"], correct: 2, why: "11 is greater than 10, so it satisfies n > 10." },
+      { q: "What is a solution set?", choices: ["One exact answer only", "A group of values that make the inequality true", "A set with no numbers", "A type of equation"], correct: 1, why: "A solution set is the group of all values that make the inequality true." },
+    ],
+  },
+  {
+    id: "bases",
+    themeId: "theme-2-numeracy",
+    themeName: "Numeracy · Whole Numbers",
+    title: "Bases (non-decimal number systems)",
+    estMinutes: 15,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Bases help learners understand that numbers can be written using different place-value systems, not only base ten. This topic strengthens place value and careful number reading.",
+      learningObjectives: [
+        "Explain the meaning of a base.",
+        "Read and write simple numbers in small bases.",
+        "Convert simple numbers between base ten and another base.",
+        "Use place value correctly in non-decimal number systems.",
+      ],
+      whatYouNeedToKnow: [
+        "The ordinary number system we use every day is base ten. It uses the digits 0 to 9.",
+        "In another base, the value of each place still depends on position, but the grouping changes. For example, base five uses only the digits 0, 1, 2, 3, and 4.",
+        "In base five, the places stand for ones, fives, twenty-fives, and so on. So 23 in base five means 2 fives and 3 ones.",
+        "To change a number from another base to base ten, expand it using place value. For example, 23 base five = 2 × 5 + 3 = 13 in base ten.",
+        "To change a base ten number into another base, divide repeatedly by the base and read the remainders in reverse order.",
+        "A very important rule is that a base never uses a digit equal to or greater than the base itself. For example, the digit 7 cannot appear in base seven.",
+      ],
+      worked: {
+        problem:
+          "Change 24 in base five to a number in base ten.",
+        steps: [
+          "Step 1. Identify the place values in base five: the first digit shows fives and the second shows ones.",
+          "Step 2. 24 in base five means 2 fives and 4 ones.",
+          "Step 3. Calculate: 2 × 5 + 4 = 10 + 4 = 14.",
+        ],
+        answer: "Answer: 24 in base five is 14 in base ten.",
+      },
+      commonMistakes: [
+        "Using a digit that is too large for the base.",
+        "Forgetting that place value changes with the base.",
+        "Reading a base number as if it were an ordinary base-ten number.",
+        "Writing the remainders in the wrong order when converting from base ten to another base.",
+      ],
+      tryThis: {
+        question: "What is 12 in base three as a base-ten number?",
+        choices: ["5", "6", "3", "12"],
+        correct: 0,
+        explanation: "12 in base three means 1 three and 2 ones. So 1 × 3 + 2 = 5.",
+      },
+      recap: [
+        "A base changes the place-value grouping system.",
+        "Base ten uses digits 0 to 9.",
+        "In base n, no digit can be equal to or bigger than n.",
+        "Use place value carefully when converting.",
+      ],
+    },
+    quiz: [
+      { q: "Which digits are allowed in base five?", choices: ["0 to 5", "1 to 5", "0 to 4", "1 to 4"], correct: 2, why: "Base five uses the digits 0, 1, 2, 3, and 4 only." },
+      { q: "What is 23 in base five as a base-ten number?", choices: ["10", "13", "23", "8"], correct: 1, why: "23 in base five = 2 × 5 + 3 = 13." },
+      { q: "Which of these cannot be a number in base four?", choices: ["123", "302", "214", "33"], correct: 2, why: "Base four can only use 0, 1, 2, and 3. The digit 4 is not allowed." },
+      { q: "What is 12 in base three in base ten?", choices: ["5", "6", "4", "12"], correct: 0, why: "12 in base three = 1 × 3 + 2 = 5." },
+      { q: "What does 10 in base two mean in base ten?", choices: ["10", "1", "2", "0"], correct: 2, why: "10 in base two means 1 two and 0 ones, so it equals 2." },
+      { q: "Why can't the digit 7 appear in base seven?", choices: ["Because it is too small", "Because a base uses digits smaller than the base", "Because 7 is even", "Because it must be written twice"], correct: 1, why: "In base seven, the allowed digits are 0 to 6 only." },
+      { q: "What is 14 in base five as a base-ten number?", choices: ["9", "14", "7", "20"], correct: 0, why: "14 in base five = 1 × 5 + 4 = 9." },
+    ],
+  },
+  {
+    id: "number-patterns",
+    themeId: "theme-2-numeracy",
+    themeName: "Numeracy · Patterns",
+    title: "Number patterns",
+    estMinutes: 14,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Number patterns help learners notice order and predict what comes next. This builds careful thinking in numeracy and prepares learners for algebraic reasoning.",
+      learningObjectives: [
+        "Identify simple number patterns.",
+        "Find the rule used in a sequence.",
+        "Continue a pattern correctly.",
+        "Use number patterns to find missing terms.",
+      ],
+      whatYouNeedToKnow: [
+        "A number pattern is a sequence of numbers that follows a rule.",
+        "Some patterns increase by adding the same number each time. For example, 4, 7, 10, 13, ... increases by 3.",
+        "Some patterns decrease by subtracting the same number each time. For example, 20, 18, 16, 14, ... decreases by 2.",
+        "Other patterns may multiply or divide by the same number, or they may use alternating steps.",
+        "To find the rule, compare one term with the next term carefully. Ask: what changed? Did we add, subtract, multiply, divide, or alternate between two steps?",
+        "When solving missing-term questions, use the same rule all the way through the pattern and check whether it works for every pair of numbers.",
+      ],
+      worked: {
+        problem:
+          "Find the next two numbers in the pattern 6, 11, 16, 21, ...",
+        steps: [
+          "Step 1. Compare the numbers: 11 − 6 = 5, 16 − 11 = 5, and 21 − 16 = 5.",
+          "Step 2. The rule is 'add 5 each time'.",
+          "Step 3. Add 5 to 21 to get 26.",
+          "Step 4. Add 5 again to get 31.",
+        ],
+        answer: "Answer: The next two numbers are 26 and 31.",
+      },
+      commonMistakes: [
+        "Using a rule that works for only one step instead of the whole pattern.",
+        "Missing an alternating pattern and forcing one single rule on it.",
+        "Adding when the pattern is really multiplying, or subtracting when it is dividing.",
+        "Rushing to the next term without first identifying the rule clearly.",
+      ],
+      tryThis: {
+        question: "What is the missing number in 3, 6, 9, __, 15?",
+        choices: ["10", "11", "12", "13"],
+        correct: 2,
+        explanation: "The pattern adds 3 each time: 3, 6, 9, 12, 15. So the missing number is 12.",
+      },
+      recap: [
+        "A number pattern follows a rule.",
+        "Find the rule before filling in missing terms.",
+        "Check whether the rule works for the whole pattern.",
+        "Patterns may add, subtract, multiply, divide, or alternate.",
+      ],
+    },
+    quiz: [
+      { q: "What is the next number in 5, 10, 15, 20, ...?", choices: ["22", "24", "25", "30"], correct: 2, why: "The pattern adds 5 each time, so the next number is 25." },
+      { q: "What is the missing number in 18, 16, 14, __, 10?", choices: ["11", "12", "13", "15"], correct: 1, why: "The pattern subtracts 2 each time, so the missing number is 12." },
+      { q: "Which rule fits the pattern 4, 8, 12, 16, ...?", choices: ["Add 2", "Multiply by 2 every time", "Add 4", "Subtract 4"], correct: 2, why: "Each number is 4 more than the one before, so the rule is add 4." },
+      { q: "What comes next in 2, 4, 8, 16, ...?", choices: ["18", "20", "24", "32"], correct: 3, why: "Each number is doubled, so the next number is 32." },
+      { q: "Find the missing number: 30, 25, 20, __, 10", choices: ["18", "17", "15", "12"], correct: 2, why: "The pattern subtracts 5 each time, so the missing number is 15." },
+      { q: "What is the next number in 1, 3, 6, 10, ...?", choices: ["12", "14", "15", "16"], correct: 2, why: "The differences are +2, +3, +4, so the next step is +5. 10 + 5 = 15." },
+      { q: "Why is it important to check the whole pattern before answering?", choices: ["Because one step may be misleading", "Because patterns always end", "Because the first number is always the answer", "Because all patterns are multiplication"], correct: 0, why: "You should check the whole pattern because one step alone may not show the full rule correctly." },
+    ],
+  },
 ];
 
 export function getTopic(id: string): Topic | undefined {
@@ -2142,10 +2336,4 @@ export const COMING_SOON: Array<{
   themeName: string;
   title: string;
 }> = [
-  { id: "bases", themeName: "Numeracy · Whole Numbers", title: "Bases (non-decimal number systems)" },
-  // removed from coming soon
-  // { id: "four-basic-operations", themeName: "Numeracy · Operations", title: "Four basic operations" },
-  // removed from coming soon
-  // { id: "integers-core", themeName: "Numeracy · Integers", title: "Integers (positive, negative, zero)" },
-  { id: "inequalities", themeName: "Algebra", title: "Inequalities and solution sets" },
 ];
