@@ -1936,6 +1936,199 @@ export const TOPICS: Topic[] = [
       { q: "Which statement about scale is correct?", choices: ["It only works with angles", "It compares a drawing to the real object or distance", "It is the same as perimeter", "It is used only in algebra"], correct: 1, why: "A scale compares the size or distance on a drawing with the real size or distance." },
     ],
   },
+  {
+    id: "subsets",
+    themeId: "theme-1-sets",
+    themeName: "Sets",
+    title: "Subsets",
+    estMinutes: 13,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Subsets help learners understand how one group can belong completely inside another group. This idea connects directly to Venn diagrams, classification, and later probability language.",
+      learningObjectives: [
+        "Explain what a subset is.",
+        "Identify whether one set is a subset of another.",
+        "Use simple examples of subsets from daily life.",
+        "Show subsets clearly in a Venn diagram or set statement.",
+      ],
+      whatYouNeedToKnow: [
+        "A set is a collection of objects, numbers, or things grouped together clearly.",
+        "A subset is a set whose members are all found in another set. If every element of set A is also in set B, then A is a subset of B.",
+        "For example, if A = {2, 4} and B = {2, 4, 6, 8}, then A is a subset of B because every member of A is in B.",
+        "If even one member of the first set is missing from the second set, then it is not a subset.",
+        "A set is also a subset of itself because every member of the set belongs to that set.",
+        "In Venn diagrams, a subset is often shown by drawing one smaller circle completely inside a bigger circle.",
+      ],
+      worked: {
+        problem:
+          "Let A = {1, 3, 5} and B = {1, 2, 3, 4, 5, 6}. Is A a subset of B?",
+        steps: [
+          "Step 1. List the members of A: 1, 3, 5.",
+          "Step 2. Check whether each of these numbers is also in B.",
+          "Step 3. Since 1, 3, and 5 are all in B, every member of A belongs to B.",
+        ],
+        answer: "Answer: Yes, A is a subset of B.",
+      },
+      commonMistakes: [
+        "Checking only one or two members instead of all members of the smaller set.",
+        "Thinking a subset must be smaller in size every time, forgetting that a set is also a subset of itself.",
+        "Mixing up subset ideas with overlapping sets that are not fully contained.",
+        "Using Venn circles that overlap only partly instead of putting one fully inside the other.",
+      ],
+      tryThis: {
+        question: "If P = {a, e} and Q = {a, b, c, d, e}, which statement is true?",
+        choices: ["P is a subset of Q", "Q is a subset of P", "P and Q are equal", "P is not related to Q"],
+        correct: 0,
+        explanation: "Every member of P appears in Q, so P is a subset of Q.",
+      },
+      recap: [
+        "A subset has all its members inside another set.",
+        "Check every member carefully.",
+        "A set is a subset of itself.",
+        "In a Venn diagram, a subset can be drawn fully inside another set.",
+      ],
+    },
+    quiz: [
+      { q: "What is a subset?", choices: ["A set with no members", "A set whose members are all in another set", "A very large set", "A set with only numbers"], correct: 1, why: "A subset is a set whose members are all contained in another set." },
+      { q: "If A = {2, 4} and B = {2, 4, 6}, which is true?", choices: ["A is a subset of B", "B is a subset of A", "A and B are equal", "A is not related to B"], correct: 0, why: "All members of A are found in B, so A is a subset of B." },
+      { q: "Which statement is true about a set and itself?", choices: ["A set cannot be a subset of itself", "A set is always a subset of itself", "Only number sets can be subsets", "Only empty sets are subsets"], correct: 1, why: "Every member of a set belongs to that same set, so it is a subset of itself." },
+      { q: "If C = {1, 5} and D = {1, 3, 4, 5}, is C a subset of D?", choices: ["Yes", "No", "Only if D gets bigger", "Cannot tell"], correct: 0, why: "Both 1 and 5 are in D, so C is a subset of D." },
+      { q: "Which Venn diagram best shows a subset?", choices: ["Two separate circles", "Two overlapping circles partly", "One circle completely inside another", "A triangle inside a square"], correct: 2, why: "A subset is shown by one set being completely inside another." },
+      { q: "If one member of set X is missing from set Y, then X is:", choices: ["a subset of Y", "not a subset of Y", "equal to Y", "always larger than Y"], correct: 1, why: "For X to be a subset of Y, every member of X must be in Y." },
+      { q: "If M = {red, blue} and N = {red, blue, green}, which is correct?", choices: ["M is a subset of N", "N is a subset of M", "M and N are equal", "Neither set has members"], correct: 0, why: "All members of M are contained in N, so M is a subset of N." },
+    ],
+  },
+  {
+    id: "finite-infinite-sets",
+    themeId: "theme-1-sets",
+    themeName: "Sets",
+    title: "Finite and infinite sets",
+    estMinutes: 13,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Learners need to know whether a set has a limited number of members or goes on without end. This helps them describe sets correctly and reason clearly in later set work.",
+      learningObjectives: [
+        "Explain the difference between finite and infinite sets.",
+        "Identify examples of finite sets.",
+        "Identify examples of infinite sets.",
+        "Classify a set correctly as finite or infinite.",
+      ],
+      whatYouNeedToKnow: [
+        "A finite set has a limited number of elements. You can count all its members and finish.",
+        "An infinite set has no end. Its members continue without stopping.",
+        "For example, the set of days of the week is finite because there are only seven days. The set of whole numbers is infinite because the numbers continue forever.",
+        "A class register is an example of a finite set because the pupils can be counted. The set of counting numbers 1, 2, 3, 4, ... is infinite because it keeps going.",
+        "When deciding whether a set is finite or infinite, ask whether the members come to an end or continue forever.",
+        "Do not confuse a very large set with an infinite set. A set can be large and still be finite if it has an end.",
+      ],
+      worked: {
+        problem:
+          "Classify these sets as finite or infinite: (a) months of the year, (b) natural numbers.",
+        steps: [
+          "Step 1. The months of the year can be counted from January to December. There are 12 months, so this set is finite.",
+          "Step 2. The natural numbers continue as 1, 2, 3, 4, 5, ... with no end.",
+          "Step 3. So the set of natural numbers is infinite.",
+        ],
+        answer: "Answer: Months of the year form a finite set, while natural numbers form an infinite set.",
+      },
+      commonMistakes: [
+        "Calling a very large set infinite just because it has many members.",
+        "Forgetting that an infinite set has no end at all.",
+        "Using examples that are not clearly defined as sets.",
+        "Thinking that anything difficult to count must be infinite.",
+      ],
+      tryThis: {
+        question: "Which of these is an infinite set?",
+        choices: ["Pupils in a class", "Months of the year", "Whole numbers", "Books on a desk"],
+        correct: 2,
+        explanation: "Whole numbers continue without end, so they form an infinite set.",
+      },
+      recap: [
+        "Finite sets have an end.",
+        "Infinite sets continue without end.",
+        "Large does not always mean infinite.",
+        "Ask whether all the members can be counted completely.",
+      ],
+    },
+    quiz: [
+      { q: "What is a finite set?", choices: ["A set with no order", "A set with a limited number of members", "A set that never ends", "A set with only numbers"], correct: 1, why: "A finite set has a limited number of members that can be counted completely." },
+      { q: "Which of these is an infinite set?", choices: ["Days of the week", "Letters in the word SCHOOL", "Whole numbers", "Months of the year"], correct: 2, why: "Whole numbers continue without end, so they form an infinite set." },
+      { q: "Which of these is a finite set?", choices: ["Natural numbers", "Stars in the sky as a mathematical idea of endless counting", "Pupils in P7 Blue", "Counting numbers forever"], correct: 2, why: "A class of pupils can be counted and has an end, so it is finite." },
+      { q: "Why are months of the year a finite set?", choices: ["Because they are hard to spell", "Because there are exactly 12 of them", "Because they are numbers", "Because they go on forever"], correct: 1, why: "There are only 12 months, so the set has a fixed end." },
+      { q: "Which statement is true?", choices: ["All large sets are infinite", "Infinite sets have no end", "Finite sets cannot contain numbers", "Only school objects make sets"], correct: 1, why: "An infinite set has no end, while a finite set does." },
+      { q: "The set {2, 4, 6, 8} is:", choices: ["infinite", "finite", "not a set", "a subset only"], correct: 1, why: "This set has only four members, so it is finite." },
+      { q: "Which is the best reason why counting numbers form an infinite set?", choices: ["They are difficult", "They continue forever", "They are all even", "They are too big to write"], correct: 1, why: "Counting numbers continue without end, so the set is infinite." },
+    ],
+  },
+  {
+    id: "probability-intro",
+    themeId: "theme-1-sets",
+    themeName: "Sets",
+    title: "Probability (introduction)",
+    estMinutes: 14,
+    status: "published",
+    reviewStatus: "verified",
+    note: {
+      intro:
+        "Why this matters: Probability helps learners describe how likely an event is to happen. It connects naturally with sets, counting, and everyday prediction, such as weather, games, and choosing objects.",
+      learningObjectives: [
+        "Explain probability in simple language.",
+        "Use words such as impossible, unlikely, likely, and certain correctly.",
+        "Find simple probability as favourable outcomes over total outcomes.",
+        "Use probability ideas in everyday examples.",
+      ],
+      whatYouNeedToKnow: [
+        "Probability tells how likely something is to happen.",
+        "Some events are impossible, which means they cannot happen. Some are certain, which means they must happen. Between these are events that may be unlikely, even chance, or likely.",
+        "When all outcomes are equally likely, simple probability can be found using: probability = favourable outcomes ÷ total outcomes.",
+        "For example, if a bag has 5 red balls and 3 blue balls, the probability of picking a red ball is 5 out of 8, written as 5/8.",
+        "A probability is usually between 0 and 1. A probability of 0 means impossible, and a probability of 1 means certain.",
+        "At this level, learners should connect probability to clear situations such as coins, dice, coloured objects, and everyday events.",
+      ],
+      worked: {
+        problem:
+          "A box contains 4 green counters and 6 yellow counters. One counter is chosen at random. What is the probability of choosing a green counter?",
+        steps: [
+          "Step 1. Count the favourable outcomes. There are 4 green counters.",
+          "Step 2. Count the total outcomes. There are 4 + 6 = 10 counters.",
+          "Step 3. Probability = favourable outcomes ÷ total outcomes = 4/10.",
+          "Step 4. Simplify if needed: 4/10 = 2/5.",
+        ],
+        answer: "Answer: The probability of choosing a green counter is 4/10 or 2/5.",
+      },
+      commonMistakes: [
+        "Using only the favourable outcomes and forgetting to count the total outcomes.",
+        "Mixing up impossible and unlikely.",
+        "Adding the favourable outcomes twice when finding the total.",
+        "Treating events as equally likely when the question does not support that.",
+      ],
+      tryThis: {
+        question: "A fair die is thrown once. What is the probability of getting a 3?",
+        choices: ["1/3", "1/6", "3/6", "1"],
+        correct: 1,
+        explanation: "A fair die has 6 equal outcomes, and only one of them is 3. So the probability is 1/6.",
+      },
+      recap: [
+        "Probability tells how likely an event is.",
+        "Impossible = 0 and certain = 1.",
+        "Simple probability = favourable outcomes ÷ total outcomes.",
+        "Count carefully before writing the fraction.",
+      ],
+    },
+    quiz: [
+      { q: "Which word means an event must happen?", choices: ["Impossible", "Likely", "Certain", "Unlikely"], correct: 2, why: "A certain event must happen." },
+      { q: "Which word means an event cannot happen?", choices: ["Certain", "Likely", "Impossible", "Even chance"], correct: 2, why: "An impossible event cannot happen at all." },
+      { q: "A fair coin is tossed once. What is the probability of getting heads?", choices: ["1/2", "1/3", "2/3", "1"], correct: 0, why: "A fair coin has 2 equal outcomes, and one of them is heads, so the probability is 1/2." },
+      { q: "A bag has 3 red balls and 2 blue balls. What is the probability of picking a blue ball?", choices: ["2/5", "3/5", "1/2", "5/2"], correct: 0, why: "There are 2 blue balls out of 5 balls in total, so the probability is 2/5." },
+      { q: "If an event has probability 0, it is:", choices: ["certain", "impossible", "likely", "even chance"], correct: 1, why: "Probability 0 means the event is impossible." },
+      { q: "A fair die is rolled once. What is the probability of getting an even number?", choices: ["1/6", "2/6", "3/6", "4/6"], correct: 2, why: "The even numbers are 2, 4, and 6. That is 3 favourable outcomes out of 6, so the probability is 3/6." },
+      { q: "Which probability is the same as a certain event?", choices: ["0", "1/2", "1", "1/6"], correct: 2, why: "A certain event has probability 1." },
+    ],
+  },
 ];
 
 export function getTopic(id: string): Topic | undefined {
@@ -1949,9 +2142,6 @@ export const COMING_SOON: Array<{
   themeName: string;
   title: string;
 }> = [
-  { id: "finite-infinite-sets", themeName: "Sets", title: "Finite and infinite sets" },
-  { id: "subsets", themeName: "Sets", title: "Subsets" },
-  { id: "probability-intro", themeName: "Sets", title: "Probability (introduction)" },
   { id: "bases", themeName: "Numeracy · Whole Numbers", title: "Bases (non-decimal number systems)" },
   // removed from coming soon
   // { id: "four-basic-operations", themeName: "Numeracy · Operations", title: "Four basic operations" },
