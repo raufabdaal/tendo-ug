@@ -2,6 +2,128 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
+## v0.5.13 — 2026-07-01 — Four-subject P7 core closeout audit completed
+
+**Session theme:** Close out the post-push verification, teacher usefulness and non-maths subject-deepening sequence with a full four-subject audit.
+
+**Added:**
+- `docs/ops/four-subject-core-closeout-audit-2026-07-01.md` — final closeout audit for Maths, English, Science, Social Studies and teacher worksheet readiness.
+
+**Changed:**
+- `STATUS.md`, `HANDOFF.md`, `CHECKLIST.md` — updated to reflect the four-subject core closeout and current practice totals.
+- `docs/ops/p7-english-quality-audit-2026-07-01.md` and `docs/ops/p7-science-quality-audit-2026-07-01.md` — clarified later deepening updates where earlier first-wave totals were stale.
+
+**Verified totals:**
+- Mathematics: 195 central-bank questions
+- English: 140 central-bank questions
+- Integrated Science: 160 central-bank questions
+- Social Studies: 200 central-bank questions
+- Total central question-bank pool: 695 questions
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- The four-subject P7 core is product-level complete for present scope. Remaining work is enhancement and teacher-feedback iteration.
+
+---
+
+## v0.5.12 — 2026-07-01 — P7 Social Studies deepened with guided SST tasks and larger practice bank
+
+**Session theme:** Continue deepening non-maths subjects toward maths-level product completeness, after English and Science.
+
+**Changed:**
+- `app/lib/social-topics.ts` — added guided map/history/development/organisation tasks for all 10 SST topics.
+- `app/lib/question-bank.ts` — expanded Social Studies practice depth to 20 questions per topic.
+- `docs/ops/p7-social-studies-deepening-pass-2026-07-01.md` — documented the SST deepening pass.
+- Root docs updated to reflect Social Studies strengthening.
+
+**Social Studies practice now:**
+- 10 topics
+- 20 questions per topic
+- 200 Social Studies practice questions total
+- guided map/history/development tasks for all 10 topics
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- Social Studies now has stronger PLE-oriented depth inside the official NCDC Living Together in Africa outline.
+
+---
+
+## v0.5.11 — 2026-07-01 — P7 Science deepened with guided application tasks and larger practice bank
+
+**Session theme:** Continue deepening non-maths subjects toward maths-level product completeness, after English.
+
+**Changed:**
+- `app/components/TopicTabs.tsx` — renamed the practice section to Guided practice so it fits Science and SST, not only English writing.
+- `app/lib/science-topics.ts` — added guided application/experiment tasks for all 8 Science topics.
+- `app/lib/question-bank.ts` — expanded Science practice depth to 20 questions per topic.
+- `app/app/globals.css` — reused guided-practice card styles for Science.
+- `docs/ops/p7-science-deepening-pass-2026-07-01.md` — documented the Science deepening pass.
+- Root docs updated to reflect Science strengthening.
+
+**Science practice now:**
+- 8 topics
+- 20 questions per topic
+- 160 Science practice questions total
+- guided application/experiment tasks for all 8 topics
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- Science now has stronger classroom and exam-prep depth inside the official 8 NCDC topics.
+
+---
+
+## v0.5.10 — 2026-07-01 — P7 English deepened with writing-practice packs and larger practice bank
+
+**Session theme:** Start deepening the non-maths subjects toward maths-level product completeness, beginning with English.
+
+**Changed:**
+- `app/lib/topics.ts` — topic notes now support optional writing-practice tasks.
+- `app/components/TopicTabs.tsx` — Read tab renders writing-practice cards with prompts, planning steps, checklists and model openings.
+- `app/lib/english-topics.ts` — added writing-practice packs for all 7 English topics.
+- `app/lib/question-bank.ts` — expanded English practice depth to 20 questions per topic.
+- `app/app/globals.css` — added writing-practice card styles.
+- `docs/ops/p7-english-deepening-pass-2026-07-01.md` — documented the English deepening pass.
+- Root docs updated to reflect English strengthening.
+
+**English practice now:**
+- 7 topics
+- 20 questions per topic
+- 140 English practice questions total
+- writing-practice packs for all 7 topics
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- English now has more depth inside fewer official NCDC themes, which is the correct standard for English compared with Maths.
+
+---
+
+## v0.5.9 — 2026-07-01 — Teacher worksheet generator made more classroom-ready
+
+**Session theme:** After the Social Studies + English push was confirmed working, the next execution step was teacher-facing usefulness.
+
+**Changed:**
+- `app/components/WorksheetGenerator.tsx` — added subject pool summary cards, class/term/time/marks fields, quick length buttons, custom instructions and a separate answer-key section.
+- `app/app/teacher/worksheet/page.tsx` — clarified the worksheet pool as question-bank topics and updated teacher-facing copy.
+- `app/app/globals.css` — added styles for worksheet summary cards, quick picks, metadata grid and printable answer key.
+- `docs/ops/teacher-worksheet-usefulness-pass-2026-07-01.md` — added audit note for the teacher-facing pass.
+- Root docs updated to reflect the teacher usefulness pass.
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- The worksheet generator is more credible for real classroom use: cleaner pupil sheet, separate answer key, better metadata and clearer subject/question-pool controls.
+
+---
+
 ## v0.5.8 — 2026-07-01 — P7 English built, practiced, templated and completed enough for grouped push
 
 **Session theme:** The founder intentionally stretched the Social Studies push and asked to continue into English before pushing. Religious Education was explicitly paused. This milestone completes P7 English enough to group with the unpushed Social Studies work.

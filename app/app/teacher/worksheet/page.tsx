@@ -17,8 +17,8 @@ export default function WorksheetPage() {
       <div className="eyebrow no-print">For teachers</div>
       <h1 className="no-print">Worksheet generator</h1>
       <p className="lead no-print">
-        Choose Maths only, English only, Science only, Social Studies only, or a mixed worksheet. Pick a length, generate, then print for class or copy to WhatsApp.
-        Pool: <strong>{total} questions</strong> across <strong>{topicCount} topics</strong>.
+        Choose Maths only, English only, Science only, Social Studies only, or a mixed worksheet. Add class details, marks, timing and a separate answer key, then print or copy to WhatsApp.
+        Question-bank pool: <strong>{total} questions</strong> across <strong>{topicCount} bank topics</strong>.
         Re-shuffle for a fresh worksheet every time.
       </p>
 

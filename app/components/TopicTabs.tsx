@@ -173,6 +173,33 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
             </div>
           )}
 
+          {topic.note.writingTasks && topic.note.writingTasks.length > 0 && (
+            <div className="writing-practice-pack">
+              <h2>Guided practice</h2>
+              {topic.note.writingTasks.map((task, i) => (
+                <section key={i} className="writing-task-card">
+                  <h3>{task.title}</h3>
+                  <p className="writing-prompt"><strong>Task:</strong> {task.prompt}</p>
+                  <div className="writing-task-grid">
+                    <div>
+                      <h4>Plan before writing</h4>
+                      <ol>
+                        {task.planningSteps.map((step, j) => <li key={j}>{step}</li>)}
+                      </ol>
+                    </div>
+                    <div>
+                      <h4>Marking checklist</h4>
+                      <ul>
+                        {task.checklist.map((item, j) => <li key={j}>{item}</li>)}
+                      </ul>
+                    </div>
+                  </div>
+                  {task.modelOpening && <p className="model-opening"><strong>Model opening:</strong> {task.modelOpening}</p>}
+                </section>
+              ))}
+            </div>
+          )}
+
           <h2>Quick recap</h2>
           <ul>
             {topic.note.recap.map((r, i) => <li key={i}>{r}</li>)}
@@ -205,6 +232,16 @@ function buildScript(topic: Topic): string {
     parts.push("Try this.");
     parts.push(topic.note.tryThis.question);
     parts.push(topic.note.tryThis.explanation);
+  }
+  if (topic.note.writingTasks && topic.note.writingTasks.length > 0) {
+    parts.push("Writing practice.");
+    for (const task of topic.note.writingTasks) {
+      parts.push(task.title);
+      parts.push(task.prompt);
+      parts.push(task.planningSteps.join(" "));
+      parts.push(task.checklist.join(" "));
+      if (task.modelOpening) parts.push(task.modelOpening);
+    }
   }
   parts.push("Quick recap.");
   parts.push(topic.note.recap.join(" "));

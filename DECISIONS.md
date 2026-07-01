@@ -278,10 +278,70 @@
 
 ## SUBJECT-004 · 2026-07-01 · P7 English is complete enough for current product scope
 
-**Context:** The founder had not yet pushed the Social Studies work and chose to continue into English first, with Religious Education explicitly paused.
+**Context:** The founder chose to continue into English before the grouped Social Studies + English push, with Religious Education explicitly paused.
 
 **Decision:** Treat P7 English as done enough for current product scope after completing all 7 official NCDC topics, routes, practice banks, worksheet support, writing templates, writing-heavy depth passes and the English quality audit.
 
 **Reasoning:** English now meets the same product-completion standard used for Maths, Science and Social Studies. Remaining English work — deeper composition rubrics, more comprehension passages, UNEB-style tagging and teacher marking guides — is enhancement rather than a blocker.
 
 **Tracked across:** `app/lib/english-topics.ts`, `content/curriculum/p7-english.json`, `app/app/english/*`, `app/components/TopicDiagram.tsx`, `app/lib/question-bank.ts`, `app/components/WorksheetGenerator.tsx`, `docs/ops/p7-english-quality-audit-2026-07-01.md`, root tracking docs.
+
+---
+
+## TEACHER-002 · 2026-07-01 · Worksheet generator should produce classroom-ready sheets
+
+**Context:** After four P7 subjects were active, the teacher worksheet generator became one of the highest-value classroom tools. The founder asked to improve teacher-facing usefulness before deepening the non-maths subjects further.
+
+**Decision:** Upgrade worksheets from basic generated quizzes into more classroom-ready sheets with metadata, marks, timing, custom instructions, clearer subject pools and a separate answer key.
+
+**Reasoning:** Teachers need printable materials that can be used immediately in class, not just app-generated question lists. Separating the answer key also makes pupil handouts cleaner and more realistic.
+
+**Tracked across:** `app/components/WorksheetGenerator.tsx`, `app/app/teacher/worksheet/page.tsx`, `app/app/globals.css`, `docs/ops/teacher-worksheet-usefulness-pass-2026-07-01.md`.
+
+---
+
+## CONTENT-002 · 2026-07-01 · English depth is measured by writing richness, not maths-style topic count
+
+**Context:** The founder noticed that English, Science and Social Studies have fewer top-level topics than Mathematics. The official English outline has fewer broad themes, but each theme requires deeper writing, grammar, vocabulary, comprehension and communication practice.
+
+**Decision:** Do not inflate English by inventing unnecessary topic pages. Instead, deepen each official English topic with writing prompts, planning steps, marking checklists, model openings and a larger practice bank.
+
+**Reasoning:** This keeps Tendo aligned to the NCDC outline while making English genuinely useful for PLE preparation and classroom teaching.
+
+**Tracked across:** `app/lib/topics.ts`, `app/components/TopicTabs.tsx`, `app/lib/english-topics.ts`, `app/lib/question-bank.ts`, `docs/ops/p7-english-deepening-pass-2026-07-01.md`.
+
+---
+
+## CONTENT-003 · 2026-07-01 · Science depth is measured by application and experiment readiness
+
+**Context:** Science has fewer official top-level topics than Mathematics, but each topic needs observation, experiment, application, diagram and safety practice.
+
+**Decision:** Deepen Science by adding guided application/experiment tasks and increasing practice-bank depth, rather than inventing non-official extra topic pages.
+
+**Reasoning:** This keeps Tendo aligned with the NCDC Science outline while making each broad Science topic more useful for classroom teaching and PLE preparation.
+
+**Tracked across:** `app/lib/science-topics.ts`, `app/lib/question-bank.ts`, `app/components/TopicTabs.tsx`, `docs/ops/p7-science-deepening-pass-2026-07-01.md`.
+
+---
+
+## CONTENT-004 · 2026-07-01 · Social Studies depth is measured by map, source and case-study readiness
+
+**Context:** Social Studies has fewer official top-level topics than Mathematics because NCDC organises P7 SST under the broad theme Living Together in Africa.
+
+**Decision:** Deepen Social Studies through guided map tasks, history/source reasoning, country case studies, development problem-solving and organisation-function practice instead of inventing extra topic pages.
+
+**Reasoning:** This preserves curriculum alignment while making SST more useful for PLE preparation and classroom teaching.
+
+**Tracked across:** `app/lib/social-topics.ts`, `app/lib/question-bank.ts`, `docs/ops/p7-social-studies-deepening-pass-2026-07-01.md`.
+
+---
+
+## PRODUCT-005 · 2026-07-01 · Four-subject P7 core is product-level complete for current scope
+
+**Context:** After Maths completion, Science, Social Studies and English were built, pushed and then deepened. The teacher worksheet generator was also improved for classroom use.
+
+**Decision:** Treat the four-subject P7 core — Mathematics, English, Integrated Science and Social Studies — as product-level complete for the present Tendo scope.
+
+**Reasoning:** The app now has four active subjects, guided practice for English/Science/SST, strong central question-bank totals, worksheet generation for all four subjects, audit documentation and a passing production build. Remaining work is enhancement, teacher feedback and future exam-paper/marking-rubric sophistication rather than core subject completion.
+
+**Tracked across:** `docs/ops/four-subject-core-closeout-audit-2026-07-01.md`, `STATUS.md`, `HANDOFF.md`, `CHECKLIST.md`, `CHANGELOG.md`.

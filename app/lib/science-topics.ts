@@ -48,6 +48,25 @@ export const SCIENCE_TOPICS: Topic[] = [
         correct: 1,
         explanation: "The shoulder allows movement in many directions, so it is a ball-and-socket joint.",
       },
+      writingTasks: [
+        {
+          title: "Observation task: Good posture and movement",
+          prompt: "Observe how a learner sits, stands and carries a school bag. Explain how posture affects muscles and bones.",
+          planningSteps: [
+            "Name the body parts involved, such as backbone, shoulders, joints and muscles.",
+            "Describe one good posture habit and one poor posture habit.",
+            "Explain one possible effect of poor posture.",
+            "Suggest a safe habit that protects the muscular-skeletal system.",
+          ],
+          checklist: [
+            "Bones, joints and muscles are mentioned correctly.",
+            "The explanation links posture to health.",
+            "The advice is practical for a P7 learner.",
+            "The answer avoids unsafe treatment advice and recommends adult help for injuries.",
+          ],
+          modelOpening: "Good posture helps the backbone and muscles support the body properly. A learner should sit upright and avoid carrying a heavy bag on one shoulder only.",
+        },
+      ],
       recap: [
         "The skeleton gives shape, support and protection.",
         "Muscles contract and relax to cause movement.",
@@ -115,6 +134,25 @@ export const SCIENCE_TOPICS: Topic[] = [
         correct: 3,
         explanation: "Rubber is an insulator, so it does not allow electricity to pass through easily.",
       },
+      writingTasks: [
+        {
+          title: "Experiment plan: Making an electromagnet",
+          prompt: "Plan a simple experiment to make a temporary magnet using a dry cell, insulated wire and an iron nail.",
+          planningSteps: [
+            "List the materials needed.",
+            "Describe how to wind the wire around the nail and connect the dry cell.",
+            "State what you will use to test whether the nail is magnetic.",
+            "Give two safety precautions for using electricity.",
+          ],
+          checklist: [
+            "The circuit is described as complete only during testing.",
+            "The iron nail/core is included.",
+            "The test uses small iron objects such as pins or paper clips.",
+            "Electrical safety is clearly mentioned.",
+          ],
+          modelOpening: "To make an electromagnet, I would wind insulated copper wire around an iron nail and connect the wire ends briefly to a dry cell.",
+        },
+      ],
       recap: [
         "A complete circuit is needed for current to flow.",
         "Conductors allow current to pass; insulators do not.",
@@ -180,6 +218,25 @@ export const SCIENCE_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Biogas can be produced from animal waste and plant residues.",
       },
+      writingTasks: [
+        {
+          title: "Community application: Choosing an energy resource",
+          prompt: "A rural school wants safer and cheaper energy for cooking or lighting. Recommend one energy resource and explain your choice.",
+          planningSteps: [
+            "Name the energy resource you recommend.",
+            "State whether it is renewable or non-renewable.",
+            "Explain two advantages for the school.",
+            "Mention one environmental precaution or limitation.",
+          ],
+          checklist: [
+            "The energy resource is correctly classified.",
+            "Advantages are practical and local.",
+            "Environmental effects are considered.",
+            "The recommendation is clear.",
+          ],
+          modelOpening: "I would recommend solar energy for lighting because sunlight is renewable and solar panels can help pupils read without using kerosene lamps.",
+        },
+      ],
       recap: [
         "The sun is a major source of energy.",
         "Energy resources include solar, water, fossil fuels, plants, animals and wind.",
@@ -245,6 +302,25 @@ export const SCIENCE_TOPICS: Topic[] = [
         correct: 0,
         explanation: "A flagpole uses a pulley and rope to raise and lower the flag.",
       },
+      writingTasks: [
+        {
+          title: "Application task: Choosing a simple machine",
+          prompt: "A pupil wants to lift a heavy box onto a veranda. Choose a simple machine that can help and explain how it works.",
+          planningSteps: [
+            "Name a suitable simple machine.",
+            "Identify the load and effort.",
+            "Explain how the machine makes work easier.",
+            "State one safety precaution.",
+          ],
+          checklist: [
+            "The chosen machine fits the problem.",
+            "Load and effort are identified correctly.",
+            "The explanation uses correct Science vocabulary.",
+            "Friction or safety is considered where relevant.",
+          ],
+          modelOpening: "An inclined plane can help lift the heavy box because the pupil can push it up a sloping plank instead of lifting it straight up.",
+        },
+      ],
       recap: [
         "Simple machines make work easier.",
         "Examples include levers, ramps, wedges, screws, pulleys, wheels and axles.",
@@ -309,6 +385,25 @@ export const SCIENCE_TOPICS: Topic[] = [
         correct: 1,
         explanation: "The lungs remove carbon dioxide and water vapour during breathing out.",
       },
+      writingTasks: [
+        {
+          title: "Explanation task: Keeping excretory organs healthy",
+          prompt: "Explain how a P7 learner can help keep the kidneys, skin and lungs healthy.",
+          planningSteps: [
+            "Name at least three excretory organs.",
+            "State the waste each organ removes.",
+            "Give one healthy habit for each organ.",
+            "Explain why drinking clean water and avoiding harmful substances matters.",
+          ],
+          checklist: [
+            "Organs are matched to correct wastes.",
+            "Habits are safe and age-appropriate.",
+            "Excretion is not confused with egestion.",
+            "The explanation is clear and practical.",
+          ],
+          modelOpening: "The kidneys, skin and lungs remove wastes from the body. We can help them work well by drinking clean water, bathing regularly and breathing clean air.",
+        },
+      ],
       recap: [
         "Excretion removes waste products made by body activities.",
         "Kidneys form urine by filtering blood.",
@@ -377,6 +472,25 @@ export const SCIENCE_TOPICS: Topic[] = [
         correct: 2,
         explanation: "Wood does not allow light to pass through, so it is opaque.",
       },
+      writingTasks: [
+        {
+          title: "Ray diagram explanation: Reflection and shadows",
+          prompt: "Describe how light travels to form a shadow or reflect from a mirror.",
+          planningSteps: [
+            "State that light travels in straight lines.",
+            "Name the source of light and the object or mirror.",
+            "Explain what blocks light or reflects it.",
+            "Use correct words such as ray, reflection, opaque, transparent and shadow.",
+          ],
+          checklist: [
+            "Straight-line travel of light is included.",
+            "Reflection or shadow formation is explained correctly.",
+            "Correct light vocabulary is used.",
+            "The explanation matches the diagram or situation.",
+          ],
+          modelOpening: "Light travels in straight lines. When an opaque object blocks light from a torch, a shadow is formed behind the object.",
+        },
+      ],
       recap: [
         "Light travels in straight lines.",
         "Opaque objects form shadows by blocking light.",
@@ -443,6 +557,25 @@ export const SCIENCE_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Agroforestry involves growing trees together with crops or animals on the same land.",
       },
+      writingTasks: [
+        {
+          title: "Food chain task: Interdependence in a garden",
+          prompt: "Construct and explain a simple food chain found in a school garden.",
+          planningSteps: [
+            "Start with a green plant as the producer.",
+            "Add a plant eater and then a predator if possible.",
+            "Use arrows to show the direction of energy flow.",
+            "Explain what may happen if one organism is removed.",
+          ],
+          checklist: [
+            "The food chain starts with a producer.",
+            "Arrows show energy flow correctly.",
+            "Producer, consumer and predator are used correctly where possible.",
+            "The explanation shows interdependence.",
+          ],
+          modelOpening: "Grass → grasshopper → chicken is a simple food chain. The grass makes its own food, the grasshopper feeds on grass, and the chicken may feed on the grasshopper.",
+        },
+      ],
       recap: [
         "The environment has living and non-living components.",
         "Plants, animals and non-living things depend on one another.",
@@ -510,6 +643,25 @@ export const SCIENCE_TOPICS: Topic[] = [
         correct: 0,
         explanation: "A health club can promote hand washing, cleanliness, disease prevention and health education.",
       },
+      writingTasks: [
+        {
+          title: "Health advice task: Preventing disease in a community",
+          prompt: "Write health advice for a village that wants to reduce disease and improve population health.",
+          planningSteps: [
+            "Name two common causes of disease spread.",
+            "Give practical prevention methods such as clean water, latrines, immunisation or mosquito control.",
+            "Mention the role of parents, teachers or health workers.",
+            "Use respectful, age-appropriate language.",
+          ],
+          checklist: [
+            "Advice is safe and practical.",
+            "Disease prevention methods are scientifically correct.",
+            "The answer encourages trusted adult or health-worker guidance.",
+            "The wording is respectful and not stigmatizing.",
+          ],
+          modelOpening: "A community can improve health by keeping water clean, using latrines properly, sleeping under mosquito nets and visiting health workers for advice and immunisation.",
+        },
+      ],
       recap: [
         "Common sicknesses have causes and control measures.",
         "Community health improves through prevention and safe habits.",

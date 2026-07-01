@@ -45,6 +45,25 @@ export const ENGLISH_TOPICS: Topic[] = [
         correct: 0,
         explanation: "'I will read two storybooks' uses future tense, so it is a plan.",
       },
+      writingTasks: [
+        {
+          title: "Composition: My useful holiday",
+          prompt: "Write a short composition about a holiday that was useful to you and your family.",
+          planningSteps: [
+            "Choose whether you are writing about a past holiday or a future holiday plan.",
+            "List three main activities, such as helping at home, visiting relatives, reading or farming.",
+            "Arrange the activities in time order using first, then, afterwards and finally.",
+            "End by saying what you learnt or why the holiday was useful.",
+          ],
+          checklist: [
+            "Correct tense is used consistently.",
+            "The composition has a beginning, middle and ending.",
+            "Sequence words connect the events.",
+            "Sentences start with capital letters and end with full stops.",
+          ],
+          modelOpening: "During my last holiday, I stayed with my parents in the village. It was a useful holiday because I learnt new skills and helped my family.",
+        },
+      ],
       recap: [
         "Use future tense for holiday plans.",
         "Use past tense for completed holiday activities.",
@@ -111,6 +130,44 @@ export const ENGLISH_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Formal letters normally include the receiver's address.",
       },
+      writingTasks: [
+        {
+          title: "Formal letter: Request for permission",
+          prompt: "Write a formal letter to your head teacher requesting permission to be absent from school for one day.",
+          planningSteps: [
+            "Write the writer's address and date at the top.",
+            "Write the receiver's address below the date.",
+            "Use a polite greeting and a clear heading.",
+            "Explain the reason, the date of absence and how you will catch up with missed work.",
+            "Close politely with Yours faithfully, signature and name.",
+          ],
+          checklist: [
+            "Writer's address, date and receiver's address are present.",
+            "The heading states the purpose clearly.",
+            "Tone is formal, polite and respectful.",
+            "Paragraphs are organised and the request is clear.",
+            "The complimentary close matches a formal letter.",
+          ],
+          modelOpening: "RE: REQUEST FOR PERMISSION TO BE ABSENT FROM SCHOOL. I humbly request permission to be absent from school on Friday because I have a medical appointment.",
+        },
+        {
+          title: "Informal letter: Holiday news",
+          prompt: "Write a friendly letter to your cousin telling him or her about what you did during the holiday.",
+          planningSteps: [
+            "Begin with your address, date and a friendly greeting.",
+            "Ask about your cousin before giving your news.",
+            "Describe two or three holiday activities with clear details.",
+            "End warmly and write your name.",
+          ],
+          checklist: [
+            "The tone is friendly but still correct.",
+            "Past tense is used for completed holiday activities.",
+            "The body is divided into clear paragraphs.",
+            "The closing is suitable for a relative or friend.",
+          ],
+          modelOpening: "Dear Sarah, I hope you are well. I am writing to tell you about the interesting activities I did during the holiday.",
+        },
+      ],
       recap: [
         "Informal letters are friendly and personal.",
         "Formal letters are official and polite.",
@@ -173,6 +230,25 @@ export const ENGLISH_TOPICS: Topic[] = [
         correct: 0,
         explanation: "An invigilator supervises candidates during an examination.",
       },
+      writingTasks: [
+        {
+          title: "Paragraph: How to prepare for examinations",
+          prompt: "Write one well-organised paragraph explaining how a P7 learner should prepare for examinations.",
+          planningSteps: [
+            "Start with a topic sentence about good preparation.",
+            "Give at least three preparation habits.",
+            "Use linking words such as firstly, secondly, also and finally.",
+            "End with a sentence about confidence or success.",
+          ],
+          checklist: [
+            "The paragraph has one clear main idea.",
+            "Examples are practical for a P7 learner.",
+            "Linking words are used correctly.",
+            "The writing encourages honest examination behaviour.",
+          ],
+          modelOpening: "A P7 learner should prepare for examinations early and carefully. Firstly, the learner should make a revision timetable and follow it.",
+        },
+      ],
       recap: [
         "Revision should be planned.",
         "Read instructions before answering.",
@@ -234,6 +310,25 @@ export const ENGLISH_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Radio uses electronic technology to communicate messages.",
       },
+      writingTasks: [
+        {
+          title: "Announcement: School radio message",
+          prompt: "Write a short radio announcement informing pupils about a school clean-up activity.",
+          planningSteps: [
+            "State the event clearly in the first sentence.",
+            "Give the date, time and place.",
+            "Mention what pupils should bring or do.",
+            "End with a polite call to action.",
+          ],
+          checklist: [
+            "The announcement is short and clear.",
+            "Date, time and place are included.",
+            "Language is polite and suitable for public media.",
+            "The message does not include rumours or private information.",
+          ],
+          modelOpening: "This is to inform all P7 pupils that there will be a school clean-up activity on Friday at 8:00 a.m. near the main compound.",
+        },
+      ],
       recap: [
         "Electronic media use electronic technology.",
         "Radio, TV and phones can inform and educate.",
@@ -300,6 +395,42 @@ export const ENGLISH_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Respecting others is a learner's responsibility.",
       },
+      writingTasks: [
+        {
+          title: "Balanced paragraph: Rights and responsibilities",
+          prompt: "Write a paragraph explaining why children's rights should go together with responsibilities.",
+          planningSteps: [
+            "Define a right and a responsibility in simple words.",
+            "Choose two children's rights and match each with a duty.",
+            "Give examples from school or home.",
+            "End by explaining why responsible children help the community.",
+          ],
+          checklist: [
+            "Rights and responsibilities are both explained.",
+            "Each right is linked to a matching duty.",
+            "Examples are respectful and realistic.",
+            "The paragraph does not say freedom means doing anything without limits.",
+          ],
+          modelOpening: "Children's rights should go together with responsibilities because every right is enjoyed better when people act carefully and respectfully.",
+        },
+        {
+          title: "Short talk: Caring for animals",
+          prompt: "Prepare a short talk about the needs and freedoms of animals kept at home or at school.",
+          planningSteps: [
+            "Name the animals you are talking about.",
+            "List their needs, such as food, water, shelter and treatment.",
+            "Explain why cruelty is wrong.",
+            "End with one action pupils can take to care for animals.",
+          ],
+          checklist: [
+            "Animal needs are clearly named.",
+            "The language is humane and respectful.",
+            "The talk gives practical actions.",
+            "The conclusion is clear.",
+          ],
+          modelOpening: "Animals kept by people need care and protection. They need food, clean water, shelter, rest and treatment when they fall sick.",
+        },
+      ],
       recap: [
         "Rights are entitlements.",
         "Responsibilities are duties.",
@@ -366,6 +497,43 @@ export const ENGLISH_TOPICS: Topic[] = [
         correct: 0,
         explanation: "It gives clear advice that protects water sources.",
       },
+      writingTasks: [
+        {
+          title: "Speech: Protecting our environment",
+          prompt: "Write a short speech to your classmates about ways of protecting the school environment.",
+          planningSteps: [
+            "Start by greeting the audience.",
+            "Name one environmental problem at school.",
+            "Explain two effects of the problem.",
+            "Give three practical solutions pupils can follow.",
+            "End with a strong call to action.",
+          ],
+          checklist: [
+            "The speech has a greeting and conclusion.",
+            "Problem, effects and solutions are included.",
+            "Environmental vocabulary is used correctly.",
+            "The call to action is clear and possible.",
+          ],
+          modelOpening: "Good morning teachers and fellow pupils. I am going to talk about how we can protect our school environment and keep it healthy.",
+        },
+        {
+          title: "Poster message: Clean water source",
+          prompt: "Design words for a poster warning people not to dump rubbish near a water source.",
+          planningSteps: [
+            "Write a short heading in capital letters.",
+            "Give one clear command.",
+            "Add one reason connected to health or cleanliness.",
+            "Keep the words short enough for people to read quickly.",
+          ],
+          checklist: [
+            "The poster has a clear heading.",
+            "The message gives an action, not just a complaint.",
+            "A reason is included.",
+            "Punctuation makes the message easy to read.",
+          ],
+          modelOpening: "KEEP OUR WATER CLEAN! Do not dump rubbish near the well because dirty water spreads disease.",
+        },
+      ],
       recap: [
         "Environmental protection means caring for surroundings.",
         "Clear messages should suggest action and give a reason.",
@@ -432,6 +600,43 @@ export const ENGLISH_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Mourners are people who attend a funeral or grieve for someone who has died.",
       },
+      writingTasks: [
+        {
+          title: "Invitation: Marriage ceremony",
+          prompt: "Write an invitation card inviting a family friend to a marriage ceremony.",
+          planningSteps: [
+            "Name the host or family inviting the guest.",
+            "State the occasion clearly.",
+            "Give the date, time and venue.",
+            "Use polite invitation language.",
+            "End with contact or closing information if needed.",
+          ],
+          checklist: [
+            "Occasion, host, date, time and venue are included.",
+            "The tone is polite and celebratory.",
+            "Names are spelt carefully.",
+            "The invitation is neat and easy to understand.",
+          ],
+          modelOpening: "Mr and Mrs Kato request the pleasure of your company at the marriage ceremony of their daughter, Amina, on Saturday 15th August at 10:00 a.m.",
+        },
+        {
+          title: "Condolence message: Funeral",
+          prompt: "Write a short condolence message to a friend whose parent has died.",
+          planningSteps: [
+            "Begin by expressing sympathy.",
+            "Mention the loss respectfully.",
+            "Offer comfort or support.",
+            "Keep the message sincere and not too long.",
+          ],
+          checklist: [
+            "The language is kind and respectful.",
+            "No jokes, blame or careless words are used.",
+            "The message comforts the bereaved family.",
+            "The sentence is grammatically clear.",
+          ],
+          modelOpening: "I am very sorry for the loss of your father. May your family be comforted during this difficult time.",
+        },
+      ],
       recap: [
         "Ceremonies are special formal events.",
         "Marriage and funeral topics need respectful vocabulary.",

@@ -4,7 +4,7 @@
 
 P7 English is complete enough for the current Tendo product scope.
 
-This does **not** mean English can never improve. It means the core subject build no longer blocks a grouped push: all official NCDC Set One P7 English topics are live, routed, practice-enabled, worksheet-enabled, template-supported, curriculum-mapped and quality-checked.
+This does **not** mean English can never improve. It means the core subject build no longer blocks progress: all official NCDC Set One P7 English topics are live, routed, practice-enabled, worksheet-enabled, template-supported, curriculum-mapped and quality-checked.
 
 ---
 
@@ -88,9 +88,10 @@ English is integrated into the central question-bank and worksheet flow.
 Current practice depth:
 - 7 English topics
 - 7 quiz questions per topic
-- 5 additional bank questions per topic
-- 12 practice questions per English topic
-- 84 total English practice questions
+- originally 5 additional bank questions per topic in the first English closeout
+- later deepened to 13 additional bank questions + 7 quiz questions per topic
+- 20 practice questions per English topic after deepening
+- 140 total English practice questions after deepening
 
 Worksheet generator now supports:
 - Maths only
@@ -180,4 +181,4 @@ Future improvements can include:
 - more comprehension passages and grammar drills
 - teacher review of sample letters, speeches and invitations
 
-These are enhancements. They do not block the current grouped Social Studies + English push.
+These are enhancements. They do not block current progress because the grouped Social Studies + English push is already complete.

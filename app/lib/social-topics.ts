@@ -45,6 +45,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "The Equator is a line of latitude and crosses Africa near the middle.",
       },
+      writingTasks: [
+        {
+          title: "Map task: Locating Africa",
+          prompt: "Use a world map or globe to describe the location of Africa using nearby oceans, continents and major lines of latitude/longitude.",
+          planningSteps: [
+            "Name the oceans around Africa.",
+            "Name nearby continents north, east and north-east of Africa.",
+            "Mention the Equator, Tropics or Prime Meridian where relevant.",
+            "Use compass directions such as north, south, east and west.",
+          ],
+          checklist: [
+            "Oceans and neighbouring continents are named correctly.",
+            "Compass directions are used accurately.",
+            "Major imaginary lines are mentioned where useful.",
+            "The description is clear enough for someone to find Africa on a map.",
+          ],
+          modelOpening: "Africa lies south of Europe and south-west of Asia. It is bordered by the Atlantic Ocean to the west and the Indian Ocean to the east.",
+        },
+      ],
       recap: [
         "Africa is the second largest continent.",
         "Latitudes and longitudes help locate places.",
@@ -105,6 +124,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "A rift valley is a long depression formed by earth movements.",
       },
+      writingTasks: [
+        {
+          title: "Case study: How physical features help people",
+          prompt: "Choose one African physical feature and explain how it helps people and also creates challenges.",
+          planningSteps: [
+            "Name the physical feature and where it is found.",
+            "Explain at least two benefits, such as fishing, farming, tourism, minerals or transport.",
+            "Explain one challenge, such as flooding, steep slopes, disease vectors or transport difficulty.",
+            "Suggest one way people can use the feature responsibly.",
+          ],
+          checklist: [
+            "The feature is a real African physical feature.",
+            "Benefits and challenges are both included.",
+            "The answer links the feature to people's activities.",
+            "Responsible use or conservation is mentioned.",
+          ],
+          modelOpening: "Lake Victoria is an important physical feature in East Africa. It supports fishing, transport and rainfall, but people must avoid polluting its water.",
+        },
+      ],
       recap: [
         "Physical features are natural features of the earth's surface.",
         "Africa has mountains, rivers, lakes, plateaus and rift valleys.",
@@ -165,6 +203,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Desert climate has very little rainfall and is usually hot and dry.",
       },
+      writingTasks: [
+        {
+          title: "Climate reasoning task: Farming and settlement",
+          prompt: "Explain how climate affects farming and settlement in one region of Africa.",
+          planningSteps: [
+            "Name the climate region, such as equatorial, savanna, desert or Mediterranean.",
+            "Describe rainfall and temperature in that region.",
+            "Explain how the climate affects crops, animals or settlement patterns.",
+            "Mention one human activity that can improve or damage the local climate/environment.",
+          ],
+          checklist: [
+            "The climate type is named correctly.",
+            "Rainfall and temperature are described.",
+            "The link to farming or settlement is clear.",
+            "Human influence on climate/environment is included.",
+          ],
+          modelOpening: "Savanna climate has wet and dry seasons. It supports grasslands, crop growing during the rainy season and pastoralism in some areas.",
+        },
+      ],
       recap: [
         "Climate is long-term average weather.",
         "Africa has several climatic regions.",
@@ -227,6 +284,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Savanna vegetation is mainly grass with scattered trees.",
       },
+      writingTasks: [
+        {
+          title: "Vegetation comparison task",
+          prompt: "Compare two vegetation zones of Africa and explain how each supports people or animals.",
+          planningSteps: [
+            "Choose two vegetation zones, such as equatorial forest and savanna.",
+            "Describe the plants found in each zone.",
+            "Explain how rainfall, temperature or altitude affects each zone.",
+            "State how people or animals use each zone.",
+          ],
+          checklist: [
+            "Two correct vegetation zones are compared.",
+            "Characteristics of each zone are clear.",
+            "Climate or relief influence is mentioned.",
+            "Human/animal use is explained without encouraging destruction.",
+          ],
+          modelOpening: "Equatorial forests are thick and evergreen because they receive heavy rainfall, while savanna vegetation has grasses and scattered trees suited to wet and dry seasons.",
+        },
+      ],
       recap: [
         "Vegetation is plant cover.",
         "Rainfall and temperature strongly affect vegetation.",
@@ -288,6 +364,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Migration is movement from one place to another.",
       },
+      writingTasks: [
+        {
+          title: "Migration task: Push and pull factors",
+          prompt: "Explain why people move from one place to another and how migration can affect settlement patterns.",
+          planningSteps: [
+            "Define migration in simple words.",
+            "Give two push factors that force people to leave a place.",
+            "Give two pull factors that attract people to a new place.",
+            "Explain one effect of migration on settlement or culture.",
+          ],
+          checklist: [
+            "Push and pull factors are separated correctly.",
+            "Examples are realistic for Africa.",
+            "Settlement pattern is mentioned.",
+            "Different ethnic groups are discussed respectfully.",
+          ],
+          modelOpening: "Migration is the movement of people from one place to another. People may leave an area because of drought or conflict and move to places with fertile land, water or jobs.",
+        },
+      ],
       recap: [
         "Africa has many ethnic groups.",
         "Migration has push and pull reasons.",
@@ -351,6 +446,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "The scramble for Africa was the European rush to claim and control African territories.",
       },
+      writingTasks: [
+        {
+          title: "History source task: Foreign groups in Africa",
+          prompt: "Explain how one foreign group influenced Africa and give both positive and negative effects where appropriate.",
+          planningSteps: [
+            "Choose one group: traders, explorers, missionaries, colonialists or settlers.",
+            "State why they came to Africa.",
+            "Explain at least two effects of their coming.",
+            "Separate facts from opinions and avoid one-sided answers.",
+          ],
+          checklist: [
+            "The chosen foreign group is clearly named.",
+            "Reasons for coming are correct.",
+            "Effects are specific and balanced.",
+            "Historical terms such as colonialism, trade or missionary work are used correctly.",
+          ],
+          modelOpening: "Missionaries came to Africa mainly to spread Christianity. They built schools and hospitals, but their coming also helped prepare the way for colonial influence in some areas.",
+        },
+      ],
       recap: [
         "Different foreign groups came to Africa for different reasons.",
         "Colonialism led to loss of independence.",
@@ -414,6 +528,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Pan-Africanism promotes unity and cooperation among African people.",
       },
+      writingTasks: [
+        {
+          title: "Nationalist profile task",
+          prompt: "Choose one African nationalist and explain how he or she contributed to the struggle for independence.",
+          planningSteps: [
+            "Name the nationalist and country.",
+            "State the colonial power or problem being opposed.",
+            "Describe methods used, such as parties, writing, protests, negotiation or armed struggle.",
+            "Mention one challenge faced by nationalists.",
+          ],
+          checklist: [
+            "The nationalist and country are correct.",
+            "Methods of struggle are explained.",
+            "The answer uses terms like nationalism, independence or self-rule correctly.",
+            "Challenges are included.",
+          ],
+          modelOpening: "Kwame Nkrumah was a nationalist leader in Ghana. He helped organise people through political action and demanded self-rule from British colonial rule.",
+        },
+      ],
       recap: [
         "Nationalism helped African countries demand self-rule.",
         "Pan-Africanism promoted African unity.",
@@ -474,6 +607,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "The African Union replaced the Organisation of African Unity.",
       },
+      writingTasks: [
+        {
+          title: "Problem-solution task: Post-independence Africa",
+          prompt: "Choose one problem faced by African countries after independence and suggest practical solutions.",
+          planningSteps: [
+            "Name the problem, such as political instability, poverty, corruption, disease or poor transport.",
+            "Explain why the problem affected development.",
+            "Give two possible solutions.",
+            "Mention the role of citizens, leaders or regional organisations.",
+          ],
+          checklist: [
+            "The problem is clearly linked to post-independence Africa.",
+            "Effects on development are explained.",
+            "Solutions are realistic.",
+            "The answer promotes responsible citizenship and leadership.",
+          ],
+          modelOpening: "One problem faced by some African countries after independence was political instability. It reduced peace, slowed development and discouraged investment.",
+        },
+      ],
       recap: [
         "OAU promoted African unity and liberation.",
         "AU continues cooperation with wider development and governance aims.",
@@ -536,6 +688,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "Nigeria is a major oil producer in West Africa.",
       },
+      writingTasks: [
+        {
+          title: "Country case study: Resources and development",
+          prompt: "Choose one African country and explain how its resources can support economic development.",
+          planningSteps: [
+            "Name the country and at least two resources or economic activities.",
+            "Explain how the resources create jobs, trade or income.",
+            "Mention one problem that can limit development.",
+            "Suggest one way to improve resource use responsibly.",
+          ],
+          checklist: [
+            "Country examples are accurate.",
+            "Resources are linked to economic activities.",
+            "Problems such as poor transport, conflict or low value addition are mentioned.",
+            "Responsible development and environmental care are included.",
+          ],
+          modelOpening: "Nigeria has petroleum, fertile land and a large population. Petroleum can earn foreign exchange, while farming and industries can create jobs when resources are managed well.",
+        },
+      ],
       recap: [
         "Africa has many natural and human resources.",
         "Economic development depends on how resources are used.",
@@ -598,6 +769,25 @@ export const SOCIAL_TOPICS: Topic[] = [
         correct: 0,
         explanation: "WHO stands for World Health Organization and focuses on health.",
       },
+      writingTasks: [
+        {
+          title: "Organisation matching task",
+          prompt: "Choose one major world organisation and explain its work in Africa.",
+          planningSteps: [
+            "Name the organisation, such as UN, AU, Commonwealth or an agency like WHO/UNICEF.",
+            "State its main purpose.",
+            "Give two examples of how it helps people or countries.",
+            "Mention one challenge the organisation may face.",
+          ],
+          checklist: [
+            "The organisation and its purpose are correct.",
+            "Examples match the organisation's work.",
+            "Challenges are realistic.",
+            "The answer connects rights, peace, health, education or cooperation where relevant.",
+          ],
+          modelOpening: "The United Nations promotes peace, cooperation and human rights. In Africa, its agencies may support refugees, health, education and emergency relief.",
+        },
+      ],
       recap: [
         "The UN was formed in 1945 to promote peace and cooperation.",
         "UN agencies handle children, health, food, education, refugees and other needs.",

@@ -1243,3 +1243,171 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
   .strand-meta { flex-direction: row; align-items: flex-start; flex-wrap: wrap; }
   .strand-section { padding: 14px; }
 }
+
+/* ============================================
+   Teacher worksheet usefulness upgrades
+   ============================================ */
+.worksheet-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  margin: 0 0 22px;
+}
+.worksheet-stat {
+  background: var(--cream-deep);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+}
+.worksheet-stat strong {
+  display: block;
+  color: var(--terracotta);
+  font-size: 24px;
+  line-height: 1;
+}
+.worksheet-stat span {
+  display: block;
+  color: var(--charcoal);
+  font-weight: 800;
+  margin-top: 5px;
+}
+.worksheet-stat small {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 2px;
+}
+.compact-controls {
+  margin-top: 8px;
+}
+.quick-picks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+.quick-pick {
+  border: 1px solid var(--border);
+  background: var(--cream);
+  color: var(--charcoal-soft);
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 7px 11px;
+}
+.quick-pick.on {
+  background: var(--terracotta);
+  border-color: var(--terracotta);
+  color: var(--cream);
+}
+.instruction-box {
+  margin-top: 10px;
+}
+.worksheet-preview-note {
+  margin-top: 14px;
+  padding: 12px 14px;
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius);
+  background: rgba(238, 226, 211, 0.45);
+  color: var(--charcoal-soft);
+  font-size: 14px;
+}
+.worksheet-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px 14px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+  margin: 0 0 14px;
+  color: black;
+  font-size: 12px;
+}
+.worksheet-answer-key {
+  margin-top: 30px;
+  padding-top: 16px;
+  border-top: 2px solid #222;
+  page-break-before: auto;
+}
+.worksheet-answer-key h2 {
+  color: black;
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+.worksheet-answer-key ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+  margin: 0;
+  padding-left: 20px;
+}
+.worksheet-answer-key li {
+  color: black;
+  font-size: 12px;
+  line-height: 1.35;
+  page-break-inside: avoid;
+}
+.worksheet-answer-key li span {
+  display: block;
+  color: #444;
+  margin-top: 2px;
+}
+
+@media print {
+  .worksheet-meta-grid { grid-template-columns: repeat(3, 1fr); }
+  .worksheet-answer-key { page-break-before: always; }
+  .worksheet-answer-key ol { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 640px) {
+  .worksheet-meta-grid { grid-template-columns: 1fr; }
+  .worksheet-answer-key ol { grid-template-columns: 1fr; }
+}
+
+/* Guided practice packs for English writing and Science/SST application tasks */
+.writing-practice-pack {
+  margin-top: 28px;
+}
+.writing-task-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--cream-deep);
+  padding: 16px;
+  margin: 12px 0;
+}
+.writing-task-card h3 {
+  margin: 0 0 8px;
+  color: var(--charcoal);
+}
+.writing-prompt {
+  margin: 0 0 12px;
+  color: var(--charcoal-soft);
+}
+.writing-task-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+.writing-task-card h4 {
+  margin: 0 0 6px;
+  color: var(--terracotta);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.writing-task-card ol,
+.writing-task-card ul {
+  margin-top: 0;
+}
+.model-opening {
+  margin: 12px 0 0;
+  border-left: 3px solid var(--terracotta);
+  padding: 8px 10px;
+  background: rgba(255,255,255,0.45);
+  color: var(--charcoal-soft);
+}
+@media (max-width: 720px) {
+  .writing-task-grid { grid-template-columns: 1fr; }
+}

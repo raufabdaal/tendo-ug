@@ -32,6 +32,13 @@ export interface TopicNote {
     correct: number; // index 0-3
     explanation: string;
   };
+  writingTasks?: Array<{
+    title: string;
+    prompt: string;
+    planningSteps: string[];
+    checklist: string[];
+    modelOpening?: string;
+  }>;
   recap: string[];
 }
 

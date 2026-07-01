@@ -2,7 +2,7 @@
 
 *Updated: 2026-07-01*
 
-## Immediate grouped milestone — Social Studies + English
+## Immediate milestone — post-push verification + cleanup
 - [x] P7 Social Studies completed enough for current scope
 - [x] P7 English completed enough for current scope
 - [x] Social Studies + English routes built
@@ -15,10 +15,10 @@
 - [x] English quality audit created
 - [x] Root docs updated
 - [x] Final local build passed: `✓ Generating static pages (147/147)`
-- [ ] Founder copies grouped files into real local repo
-- [ ] Founder commits grouped milestone in GitHub Desktop
-- [ ] Founder pushes to `main`
-- [ ] Production deployment verified after push
+- [x] Founder copied grouped files into real local repo
+- [x] Founder committed grouped milestone in GitHub Desktop
+- [x] Founder pushed to `main`
+- [x] Production deployment verified after push
 
 ---
 
@@ -71,6 +71,7 @@
 - [x] Science quality audit created
 - [x] Sensitive Population and Health wording handled cautiously
 - [x] Science pushed by founder
+- [x] Science deepening pass completed
 
 ## Phase 7 — P7 Social Studies
 - [x] NCDC SST outline extracted from P7 Set One PDF
@@ -84,7 +85,8 @@
 - [x] Diagrams added for all 10 SST topics
 - [x] Heavy topic depth pass completed
 - [x] Social Studies complete enough to move on
-- [ ] Push milestone, grouped with English
+- [x] Social Studies deepening pass completed
+- [x] Push milestone, grouped with English
 
 ## Phase 8 — P7 English
 - [x] NCDC English outline extracted from P7 Set One PDF
@@ -96,13 +98,41 @@
 - [x] English integrated into question bank and worksheet generator
 - [x] English-only worksheet filter added
 - [x] Writing templates/diagrams added for all 7 topics
+- [x] Writing-practice packs added for all 7 English topics
+- [x] English practice bank expanded to 20 questions per topic
 - [x] Letter Writing depth pass completed
 - [x] Rights, Responsibilities and Freedom depth pass completed
 - [x] Environmental Protection depth pass completed
 - [x] Ceremonies depth pass completed
 - [x] English quality audit created
 - [x] English complete enough for current scope
-- [ ] Push milestone, grouped with Social Studies
+- [x] Push milestone, grouped with Social Studies
+
+---
+
+## Phase 9 — Teacher-facing usefulness
+- [x] Worksheet subject stats made clearer
+- [x] Worksheet page copy clarified as question-bank pool
+- [x] Class, term/week, time and marks fields added
+- [x] Quick worksheet length buttons added
+- [x] Separate answer-key section added
+- [x] Print layout improved for pupil sheet + answer key
+- [x] Teacher worksheet usefulness audit note created
+- [x] Add English composition/writing topic-page tasks
+- [x] Add guided/scaffolded application tasks for Science and English
+- [x] Add guided/scaffolded application tasks for SST
+
+---
+
+## Phase 10 — Four-subject core closeout
+- [x] Four active P7 subjects audited together
+- [x] Practice-bank totals verified
+- [x] Guided-practice coverage verified for English, Science and SST
+- [x] Worksheet generator support verified for all 4 subjects
+- [x] Stale current-doc wording cleaned
+- [x] Four-subject closeout audit created
+- [x] Final build passed
+- [ ] Founder copies/pushes grouped improvement batch
 
 ---
 
@@ -120,29 +150,31 @@
 - [x] All 8 topics built in app
 - [x] Science landing/topic/practice pages built
 - [x] Diagrams included for all Science topics
-- [x] 15-question practice bank per topic
+- [x] 20-question practice bank per topic
+- [x] Guided Science application tasks added for all 8 topics
 - [x] Worksheet generator supports Science
 - [x] Done enough and pushed
 
 ### P7 Social Studies
 - [x] All 10 NCDC topics live
 - [x] Practice routes added
-- [x] 12-question practice bank per topic
+- [x] 20-question practice bank per topic
+- [x] Guided SST map/history/development tasks added for all 10 topics
 - [x] Worksheet generator supports SST
 - [x] Diagrams included for all SST topics
 - [x] Heavy topic depth pass completed
 - [x] Completion audit updated
-- [ ] Push milestone, grouped with English
+- [x] Push milestone, grouped with English
 
 ### P7 English
 - [x] All 7 NCDC topics live
 - [x] Practice routes added
-- [x] 12-question practice bank per topic
+- [x] 20-question practice bank per topic
 - [x] Worksheet generator supports English
 - [x] Writing templates/diagrams included for all topics
 - [x] Writing-heavy topic depth pass completed
 - [x] Quality audit created
-- [ ] Push milestone, grouped with Social Studies
+- [x] Push milestone, grouped with Social Studies
 
 ---
 
@@ -152,7 +184,8 @@
 - **Published P7 Social Studies topics:** 10
 - **Published P7 English topics:** 7
 - **Visible maths coming-soon backlog:** 0
-- **Current grouped push:** Social Studies + English + shared docs/app support
+- **Latest grouped push completed:** Social Studies + English + shared docs/app support
+- **Current improvement pass:** Four-subject core closeout audit completed
 - **Religious Education:** intentionally paused
 - **Pilot school:** Trainup a Child Uganda
 - **Monthly recurring cost:** UGX 0

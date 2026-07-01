@@ -71,3 +71,10 @@ Recommended next quality/depth work:
 ## Current verdict
 
 P7 Integrated Science is now stronger than the first wave: all 8 topics are live, diagrammed, practice-enabled, worksheet-enabled and backed by 15-question topic banks. It is safe to treat as a serious active subject build, but do not yet call the whole subject complete until the next depth/feedback pass is done.
+
+
+---
+
+## Later deepening update
+
+After this original Science quality audit, Science was deepened further in `docs/ops/p7-science-deepening-pass-2026-07-01.md`. The current Science state is 20 practice questions per topic and guided application/experiment tasks for all 8 topics.
