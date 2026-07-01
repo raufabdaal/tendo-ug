@@ -1,16 +1,16 @@
 # CHECKLIST — Tendo at a glance
 
-*Updated: 2026-06-30*
+*Updated: 2026-07-01*
 
 ## Current milestone
-- [x] Trainup pilot direction confirmed
-- [x] Product reframed from revision to study
-- [x] Answer-bias fix completed across topic quizzes and question bank
-- [x] Trainup branding layer added
-- [x] About 10 published P7 Math topics upgraded to the fuller study-module standard
-- [ ] Practice/question layer fully audited for study-readiness
-- [ ] Curriculum structure in the UI cleaned up and grouped more clearly
-- [ ] Full P7 Math NCDC coverage achieved
+- [x] P7 Mathematics brought to a founder-safe completion state
+- [x] Maths landing page structure cleaned up
+- [x] Maths final coverage audit written
+- [x] Maths diagram/visual plan written and stored in repo
+- [x] Repo-docs consolidation direction agreed: repo is the source of truth
+- [ ] Root project docs fully refreshed for the post-maths state
+- [ ] Social Studies audited and scoped for the next build push
+- [ ] First Social Studies implementation wave defined
 
 ---
 
@@ -46,7 +46,7 @@
 - [x] Sales materials updated for new feature set
 
 ## Phase 3 — Content depth + dashboard + Fellowship
-- [x] Topic count expanded from 3 to 13
+- [x] Topic count expanded far beyond the initial 3-topic shell
 - [x] Past papers expanded from 1 to 3
 - [x] Demo class added
 - [x] Topic performance chart added
@@ -63,7 +63,7 @@
 - [x] Review pill removed from visible UI
 - [x] Content-sources documentation added
 
-## Phase 5 — Trainup pilot prep (current active phase)
+## Phase 5 — Trainup pilot prep + P7 Mathematics completion
 - [x] Trainup pilot plan documented
 - [x] Answer-bias bug fixed across quizzes and bank
 - [x] Trainup branding support added
@@ -71,62 +71,43 @@
 - [x] School proposal files prepared
 - [x] Fractions video connected
 - [x] Coverage audit completed against `content/curriculum/p7-math.json`
-- [x] Documentation sweep started
-- [ ] Practice/question layer audited topic by topic
-- [ ] Roman numerals upgraded to the new study-module standard
-- [ ] Substitution upgraded to the new study-module standard
-- [ ] 12-hour and 24-hour clocks upgraded to the new study-module standard
-- [ ] Curriculum structure/UI reorganised more clearly
-- [ ] Next high-priority missing NCDC topics built
+- [x] Practice/question layer audited and corrected
+- [x] Published lighter maths topics strengthened
+- [x] Curriculum structure/UI reorganised more clearly for maths
+- [x] Major missing high-priority P7 maths topics built
+- [x] P7 Mathematics final completion audit written
+
+## Phase 6 — Documentation consolidation + next-subject transition
+- [x] Repo chosen as the source of truth for active docs
+- [x] Maths completion docs moved/created inside repo
+- [ ] Root tracking docs fully harmonised
+- [ ] External workspace-only docs reviewed for either migration or retirement
+- [ ] Social Studies state audited in repo
+- [ ] Social Studies first milestone planned
 
 ---
 
-## Current published-topic quality snapshot
+## Current subject status
 
-### Stronger study-ready topics
-- [x] Venn diagrams
-- [x] Fractions
-- [x] Decimals
-- [x] Proportion and percentages
-- [x] Perimeter
-- [x] Area
-- [x] Volume
-- [x] Equations
-- [x] Mean, median, mode and range
-- [x] Money
+### P7 Mathematics
+- [x] Broad curriculum-shaped coverage exists
+- [x] Landing structure is improved
+- [x] Practice layer is aligned enough for current scope
+- [x] Completion can be stated honestly
+- [ ] First-wave diagram implementation (optional enhancement only)
 
-### Published but still lighter than the new standard
-- [ ] Roman numerals
-- [ ] Substitution
-- [ ] 12-hour and 24-hour clocks
-
----
-
-## Curriculum coverage status
-- [x] Coverage audit written: `docs/ops/ncdc-p7-math-coverage-audit-2026-06-30.md`
-- [x] Published topics counted
-- [x] Placeholder topics counted
-- [x] Unmapped NCDC gaps identified
-- [ ] All placeholder topics reviewed for priority order
-- [ ] All unmapped curriculum items represented cleanly in the app structure
-
----
-
-## Best next content candidates
-- [ ] Integers
-- [ ] Four basic operations
-- [ ] Pie charts and travel graphs
-- [ ] Timetables
-- [ ] Algebraic expressions
+### Social Studies
+- [ ] Current repo state audited
+- [ ] Coverage mapped
+- [ ] Structure gaps identified
+- [ ] First content wave built
 
 ---
 
 ## Totals (current reality)
-- **Published topics:** 13
-- **Topics near study-ready standard:** about 10
-- **Published but still needing standardisation:** 3
-- **Placeholder / coming-soon topics in app:** 20
-- **NCDC sub-topics in `p7-math.json`:** 41
-- **Current subject focus:** P7 Mathematics only
+- **Published P7 Mathematics topics:** 38
+- **Visible maths coming-soon backlog:** 0
+- **Current subject just completed:** P7 Mathematics
+- **Next subject target:** Social Studies
 - **Pilot school:** Trainup a Child Uganda
 - **Monthly recurring cost:** UGX 0

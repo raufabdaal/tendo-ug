@@ -1,157 +1,131 @@
 # STATUS — Tendo
 
-*Updated: 2026-06-30*
+*Updated: 2026-07-01*
 
-> **Current state:** Trainup pilot prep in progress. The app is no longer just a sales demo. We are now aligning it into a real **study-ready**, **NCDC-first** P7 Mathematics product.
+> **Current state:** P7 Mathematics is now complete enough to stop being the main pressure subject. The repo documentation is being consolidated so GitHub becomes the single source of truth, and the next major execution target is Social Studies.
 
 ## Current focus
 
-### 1. Trainup a Child Uganda pilot prep
-We have a real pilot direction with **Trainup a Child Uganda**.
+### 1. P7 Mathematics closeout is complete
+The maths subject has now reached a founder-safe “done” state.
 
-- Pilot scope: **one P7 Mathematics class** first
-- Product framing: **study**, not just revision
-- Current subject scope in code: **P7 Math only**
-- Long-term product vision: all four PLE subjects, but that is **not** the current build focus
+That means:
+- broad curriculum-shaped coverage exists in the app
+- the practice layer is no longer the obvious weak link
+- the maths landing page has been restructured to feel more study-first and less flat
+- the remaining maths work is now enhancement work, not core completion work
 
-### 2. NCDC alignment sweep
-We have started a broader cleanup to align the product more tightly to the **Uganda NCDC primary curriculum**.
+### 2. Repo documentation consolidation
+The founder correctly wants the working project docs to live inside the repo, not split between repo files and external workspace notes.
 
-This is not only about rewriting topic notes.
-The current alignment work now includes four layers:
-1. **Topic study notes**
-2. **Topic quizzes + practice/question bank quality**
-3. **Curriculum structure and presentation in the UI**
-4. **Documentation / handoff quality**
+The documentation direction is now:
+- **repo first**
+- **one strong source of truth**
+- root tracking docs kept current
+- high-value operational notes stored inside `tendo-ug/docs/ops/`
 
-### 3. Move from demo-ready to study-ready
-The first pass proved the product structure and sales story.
-The next pass is about making the product something schools can actually use for learning.
+### 3. Next subject: Social Studies
+With maths now out of the critical path, the next major subject push should be **Social Studies**.
+
+The goal is to carry over the same standard used for maths:
+1. curriculum-first
+2. study-ready, not just demo-ready
+3. honest documentation
+4. meaningful milestone pushes
 
 ---
 
 ## What is already in strong shape
 
 ### Product features already built
-- Next.js P7 Math app shell
+- Next.js subject app shell
 - Topic pages with notes + quizzes
 - Past papers
 - Teacher dashboard
 - Practice mode
 - Worksheet generator
-- Watch / Listen / Read structure
+- Watch / Read topic structure with in-read audio support
 - Trainup branding layer and `/trainup` route
-- Fractions video already connected
 
-### Pilot quality work already completed
-- Fixed the **all-answers-are-A** bias across quizzes and the question bank
-- Added pilot plan for Trainup
-- Added school-branding support
-- Shifted product framing from **revision** to **study**
+### P7 Mathematics is now substantially built out
+The app now has **38 published P7 Mathematics topics** and no active visible maths backlog in `COMING_SOON`.
 
-### Topics already rewritten to the newer study-module standard
-These are the strongest current study-ready topics:
-- Venn diagrams
-- Fractions
-- Decimals
-- Proportion and percentages
-- Perimeter
-- Area
-- Volume
-- Equations
-- Mean, median, mode and range
-- Money
+Major strand coverage now includes:
+- Sets
+- Numeracy
+- Algebra
+- Interpretation of graphs and data
+- Measurement
+- Geometry / construction
 
-### Published but still lighter than the new standard
-These are usable, but still need rewrite standardisation:
-- Roman numerals
-- Substitution
-- 12-hour and 24-hour clocks
+### Maths completion support now exists in-docs
+Maths now has explicit closeout documentation in-repo:
+- `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
+- `docs/ops/p7-maths-diagram-visual-plan-2026-07-01.md`
 
 ---
 
-## Current curriculum truth
+## What is no longer the main blocker
 
-### Published topics in app
-**13 topics** are currently published.
+### Mathematics
+Maths should no longer be treated as the unfinished emergency subject.
 
-### NCDC study-ready audit
-A coverage audit was completed to compare the app against `content/curriculum/p7-math.json`.
+Possible later maths enhancements still exist, such as:
+- first-wave diagrams for the most visual topics
+- small wording refinements
+- later confirmation of ambiguous curriculum edge labels
 
-See:
-- `docs/ops/ncdc-p7-math-coverage-audit-2026-06-30.md`
-
-Key outcome:
-- about **10 topics** are at or near the newer study-ready standard
-- **3 published topics** still need standardisation
-- several NCDC topics are only placeholders
-- some NCDC sub-topics are still not mapped cleanly into the app yet
+But these are now enhancement tasks, not reasons to delay moving on.
 
 ---
 
-## Biggest open issues right now
+## What still needs work right now
 
-### 1. Documentation layer is messy
-The core status docs had unresolved merge-conflict leftovers and mixed historical states.
-This sweep is now cleaning that up.
+### 1. Documentation layer needs final tidying
+The docs are much better than before, but they must now reflect the real project state cleanly and consistently inside the repo.
 
-### 2. Practice layer still needs alignment
-The rewritten topic notes were only the first pass.
-The quizzes and question-bank content still need a topic-by-topic NCDC / study-readiness audit.
-
-### 3. Curriculum presentation is still mediocre
-The content structure in the app still needs a clearer syllabus-style presentation.
-Likely future direction:
-- group by **term**
-- show topic clusters more clearly
-- distinguish published / study-ready / coming soon more clearly
-
-### 4. NCDC coverage is still incomplete
-The product is strong in some P7 Math areas, but not yet complete against the full curriculum.
-Weakest overall areas right now:
-- Geometry
-- Data handling beyond central tendency
-- Whole-number numeracy foundations
-- Integers / timetables / algebraic expressions and other unmapped items
-
----
-
-## Immediate next steps
-
-### Documentation sweep
-Clean, reconcile, and standardise:
+This includes keeping these root docs honest and current:
 - `STATUS.md`
 - `HANDOFF.md`
 - `CHECKLIST.md`
 - `DECISIONS.md`
 - `CHANGELOG.md`
 
-### Then content alignment work
-After the doc sweep:
-1. audit the **practice/question** layer
-2. standardise the 3 lighter published topics
-3. improve curriculum/topic structure in the UI
-4. continue building the next high-priority missing NCDC topics
+### 2. Social Studies needs to start intentionally
+We should not drift into Social Studies casually.
 
-Recommended next content candidates after the sweep:
-- Integers
-- Four basic operations
-- Pie charts and travel graphs
-- Timetables
-- Algebraic expressions
+The next subject pass should begin with:
+- curriculum/source check
+- current repo state audit
+- content and structure gap identification
+- then a deliberate first build wave
+
+---
+
+## Immediate next steps
+
+### Documentation cleanup milestone
+Complete the repo-docs consolidation and make sure the root tracking docs are aligned to the post-maths reality.
+
+### Then start Social Studies
+Recommended next move after docs cleanup:
+1. audit current Social Studies state in the repo
+2. map coverage against the intended Uganda primary scope
+3. identify the first high-value gaps
+4. begin the first meaningful Social Studies build wave
 
 ---
 
 ## Operational reminders
 
 - Push to `main` auto-promotes to production.
-- The current production site is healthy; this session is not a production-firefighting session.
 - The founder uses a **manual overwrite workflow** from downloaded workspace files into the GitHub-connected local copy.
 - Every meaningful update must clearly state:
   - what changed
   - why it changed
   - which files changed
   - whether to overwrite or add each file
+- Repo docs should be treated as the safe canonical record going forward.
 
 See:
 - `docs/ops/update-handoff-protocol.md`

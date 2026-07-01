@@ -2,6 +2,45 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
+## v0.5.5 — 2026-07-01 — P7 Mathematics completed, docs consolidated into repo, and handoff reset for Social Studies next
+
+**Session theme:** Finish P7 Mathematics properly, close the documentation gap, and make the repo itself the single source of truth before moving to the next subject.
+
+**Added:**
+- `docs/ops/p7-maths-final-completion-audit-2026-07-01.md` — final founder-safe audit for whether mathematics can truthfully be treated as done.
+- `docs/ops/p7-maths-diagram-visual-plan-2026-07-01.md` — consolidated in-repo plan for first-wave maths diagrams and visual support.
+
+**Changed:**
+- `app/lib/topics.ts` — expanded P7 Mathematics coverage substantially and cleared the held final wave with:
+  - probability of numbers and events
+  - regular polygons
+  - algebra in real-life situations
+  - plus the wider completed topic-build waves already prepared during the maths finish push
+- `app/lib/question-bank.ts` — audited and corrected so the practice layer no longer lags behind the topic content.
+- `app/app/math/p7/page.tsx` — reworked the maths landing page to feel more study-first, less flat, and more honestly structured; also fixed stale footer counting.
+- `STATUS.md` — rewritten to reflect the real current state: P7 Mathematics is now complete enough to move focus, docs are being consolidated into the repo, and Social Studies is the next major execution target.
+- `HANDOFF.md` — rewritten as a clean next-session operating brief for post-maths execution.
+- `CHECKLIST.md` — updated so maths closeout is reflected accurately and the next core subject push is visible.
+- `DECISIONS.md` — appended with the maths-completion and repo-docs-source-of-truth decisions.
+- `CHANGELOG.md` — this entry records the maths closeout and documentation consolidation milestone.
+
+**Removed / superseded operationally:**
+- External workspace-only maths planning notes are no longer the authoritative source. Equivalent high-value docs now live inside `tendo-ug/docs/ops/`.
+
+**Why this mattered:**
+- The product could not safely move to another subject while maths still felt half-finished.
+- The workspace had started splitting key documentation between repo files and external workspace docs, which is unsafe for your manual overwrite workflow.
+- Root tracking docs had gone stale relative to the real maths state.
+
+**Result:**
+- P7 Mathematics is now in a founder-safe “done” state.
+- The repo is now the intended home for live project documentation.
+- The next subject can be started without losing the maths narrative or operational context.
+
+**Next session:** Start Social Studies intentionally, using the same curriculum-first and study-ready standard used to finish Mathematics.
+
+---
+
 ## v0.5.4 — 2026-06-30 — Documentation sweep begins for Trainup + NCDC study-ready alignment
 
 **Session theme:** Before continuing deeper content work, the docs needed to stop behaving like two merged timelines. This sweep begins the cleanup so the repo reflects the real current state: Trainup pilot prep, study-first framing, NCDC alignment, and a move from demo-ready to study-ready.

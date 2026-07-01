@@ -219,3 +219,21 @@
 - whether to overwrite or add each file
 **Reasoning:** Cleaner commits, safer merges, and lower risk of overwriting unrelated files.
 **Tracked across:** `docs/ops/update-handoff-protocol.md`, session reporting style.
+
+---
+
+## WORKFLOW-002 · 2026-07-01 · Repo docs are now the source of truth for active project state
+
+**Context:** Important operating notes had been split between the repo and external workspace docs.
+**Decision:** Active project documentation should live inside `tendo-ug`, with root tracking docs kept current and high-value operational notes stored under `docs/ops/`.
+**Reasoning:** This is safer for the founder's manual overwrite workflow and safer as a GitHub-backed record.
+**Tracked across:** `STATUS.md`, `HANDOFF.md`, `CHECKLIST.md`, `CHANGELOG.md`, `docs/ops/*`.
+
+---
+
+## SUBJECT-001 · 2026-07-01 · P7 Mathematics can now be treated as complete enough to move focus
+
+**Context:** Maths had been the highest-pressure subject and had to be finished honestly before attention shifted elsewhere.
+**Decision:** Treat P7 Mathematics as done for current product scope, with any further maths work considered enhancement unless a materially missing curriculum issue is discovered.
+**Reasoning:** Maths now has broad coverage, aligned practice, improved structure, and explicit visual planning; remaining issues are polish and enrichment rather than core subject-completion blockers.
+**Tracked across:** `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`, `app/lib/topics.ts`, `app/app/math/p7/page.tsx`, root tracking docs.

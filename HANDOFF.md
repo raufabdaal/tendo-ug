@@ -1,11 +1,11 @@
 # HANDOFF — for the next session
 
-*Written: 2026-06-30*
+*Written: 2026-07-01*
 
 ## Read this first
 
 1. `STATUS.md`
-2. `docs/ops/ncdc-p7-math-coverage-audit-2026-06-30.md`
+2. `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
 3. `docs/ops/update-handoff-protocol.md`
 4. `DECISIONS.md`
 5. `CHECKLIST.md`
@@ -14,18 +14,12 @@
 
 ## Where the project really is
 
-The project is in **Trainup pilot-prep mode** and in the middle of a broader **NCDC-alignment sweep**.
+The project has just completed the main P7 Mathematics push.
 
-This is the key thing to understand:
-
-The app is no longer being treated as just a polished demo.
-We are now trying to make it **study-ready for real use**, starting with **P7 Mathematics**.
-
-That means the work is now happening on four layers at once:
-1. topic study notes
-2. quizzes / question-bank quality
-3. curriculum structure and navigation
-4. documentation / handoff quality
+This is the key thing to understand now:
+- Mathematics should no longer be treated as the primary unfinished pressure area.
+- The repo docs are being consolidated so the GitHub repo itself becomes the operating source of truth.
+- The next major execution target is **Social Studies**.
 
 ---
 
@@ -34,131 +28,80 @@ That means the work is now happening on four layers at once:
 ### Product / feature layer
 Already built and usable:
 - Next.js app shell
-- P7 Math topic pages
-- auto-graded quizzes
+- topic pages
+- quizzes
 - past papers
 - teacher dashboard
 - practice mode
 - worksheet generator
-- Watch / Listen / Read topic experience
+- Watch / Read structure with in-read speech support
 - Trainup branding layer and `/trainup` route
 
-### Pilot-prep work already completed
-- Fixed the all-answers-are-A bias across quiz + question-bank content
-- Added `docs/ops/trainup-pilot-plan.md`
-- Added Trainup branding support
-- Shifted product framing from **revision** to **study**
-- Rewrote about 10 topics into fuller NCDC-aligned study modules
+### P7 Mathematics completion state
+Maths is now materially complete for the current founder goal.
 
-### Strongest current study-ready topics
-- Venn diagrams
-- Fractions
-- Decimals
-- Proportion and percentages
-- Perimeter
-- Area
-- Volume
-- Equations
-- Mean, median, mode and range
-- Money
+Important points:
+- `app/lib/topics.ts` now carries **38 published maths topics**
+- the final high-value maths gap wave was already built into the content layer
+- the maths landing page was restructured in `app/app/math/p7/page.tsx`
+- maths closeout and diagram strategy docs now exist in-repo
 
-### Published but still lighter than the new standard
-These are live but still need standardisation:
-- Roman numerals
-- Substitution
-- 12-hour and 24-hour clocks
+Relevant files:
+- `app/lib/topics.ts`
+- `app/lib/question-bank.ts`
+- `app/app/math/p7/page.tsx`
+- `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
+- `docs/ops/p7-maths-diagram-visual-plan-2026-07-01.md`
 
 ---
 
-## Current curriculum truth
+## Documentation policy going forward
 
-A proper coverage audit has now been done.
+The founder explicitly wants docs to be safer inside the repo.
 
-See:
-- `docs/ops/ncdc-p7-math-coverage-audit-2026-06-30.md`
+That means:
+- prefer in-repo docs over external workspace-only notes
+- keep root tracking docs current
+- keep documentation strong enough that a future session does not need archaeology to know the real state
 
-Important takeaways:
-- **13** topics are currently published
-- about **10** are at or near the new study-ready standard
-- several more are only placeholders
-- some NCDC sub-topics are not yet represented cleanly in the app
-
-Do not assume the app is fully curriculum-complete.
-It is not.
+If a useful operational doc exists outside the repo and still matters, move or recreate it inside `tendo-ug/docs/ops/`.
 
 ---
 
 ## What still needs work
 
-### 1. Practice/question alignment
-The topic-note rewrites were only the first pass.
-The next major quality task is to audit:
-- topic quizzes in `app/lib/topics.ts`
-- practice / worksheet bank in `app/lib/question-bank.ts`
+### 1. Final repo-doc consistency
+Before broad new work sprawls again, keep these files aligned with reality:
+- `STATUS.md`
+- `HANDOFF.md`
+- `CHECKLIST.md`
+- `DECISIONS.md`
+- `CHANGELOG.md`
 
-We need to classify:
-- what is strong
-- what is mathematically okay but too demo-like
-- what is too weak for real study use
-- which topics need practice rewritten first
+### 2. Social Studies subject start
+The best next substantive move is to start Social Studies deliberately.
 
-### 2. Curriculum structure in the UI
-The current layout is still too loose for a real study product.
-Likely future improvements:
-- group by **term**
-- group by topic / sub-topic more clearly
-- mark published vs coming soon vs study-ready more clearly
-
-### 3. Remaining NCDC topic coverage
-After standardising current content, likely next high-priority builds are:
-- Integers
-- Four basic operations
-- Pie charts and travel graphs
-- Timetables
-- Algebraic expressions
-
----
-
-## What was just done in this sweep
-
-This session started the **documentation cleanup**.
-The goal is to remove merge-conflict leftovers and restore a reliable project narrative before deeper content work continues.
-
-The process/reporting workflow is now formalised in:
-- `docs/ops/update-handoff-protocol.md`
-
-This matters because the founder applies changes manually by downloading the workspace and overwriting local files.
-So future sessions must always clearly report:
-- what changed
-- why it changed
-- which files changed
-- whether to overwrite or add them
+That should begin with:
+- current repo-state audit
+- curriculum and product-scope check
+- identifying what already exists versus what is thin, missing, or misleading
+- planning the first grouped implementation wave
 
 ---
 
 ## Watch-outs
 
-- The founder has **not** asked for broad sensitive-file changes. Avoid touching `.gitignore`, env files, or unrelated config unless necessary.
+- The founder uses a **manual overwrite workflow**. Keep file instructions explicit.
 - Pushes to `main` auto-promote to production.
-- Production is currently healthy, so prioritise **clarity and quality alignment**, not emergency fixes.
-- The docs used to contain mixed historical states. Do not trust older phase language blindly without checking current repo reality.
-- The app is still **Math only** in code, despite earlier multi-subject ambitions.
-- Fractions video is live. Other video placeholders exist, but video is not the main current priority.
+- Avoid touching unrelated sensitive/config files unless necessary.
+- Do not reopen maths scope casually. Treat it as complete unless a clearly material issue is discovered.
+- Repo docs are now the preferred canonical record.
 
 ---
 
-## Best next move after the doc sweep
+## Best next move
 
-1. Finish cleaning the remaining core docs:
-   - `CHECKLIST.md`
-   - `DECISIONS.md`
-   - `CHANGELOG.md`
-2. Then run a **practice-layer audit**
-3. Then standardise the 3 lighter published topics
-4. Then continue filling missing high-priority NCDC topics
-
-If you need to choose only one next content task after the docs, the best choice is:
-
-**Audit the practice/question layer first.**
-
-That is the biggest quality gap between “demo-ready” and “study-ready”.
+1. Finish any last repo-doc cleanup needed for consistency.
+2. Audit Social Studies in the actual repo.
+3. Define the first Social Studies milestone.
+4. Start building with the same intentionality used to finish Mathematics.
