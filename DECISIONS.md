@@ -237,3 +237,30 @@
 **Decision:** Treat P7 Mathematics as done for current product scope, with any further maths work considered enhancement unless a materially missing curriculum issue is discovered.
 **Reasoning:** Maths now has broad coverage, aligned practice, improved structure, and explicit visual planning; remaining issues are polish and enrichment rather than core subject-completion blockers.
 **Tracked across:** `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`, `app/lib/topics.ts`, `app/app/math/p7/page.tsx`, root tracking docs.
+
+---
+
+## SUBJECT-002 · 2026-07-01 · P7 Integrated Science became the second active subject before Social Studies
+
+**Context:** After Mathematics was completed, the working docs expected Social Studies next. The founder redirected the next-subject push to Science instead.
+**Decision:** Build **P7 Integrated Science** as the next active subject before Social Studies.
+**Reasoning:** The founder chose Science as the immediate next pressure subject, and the NCDC P7 Integrated Science syllabus has a clear 8-topic structure suitable for a grouped build.
+**Tracked across:** `app/lib/science-topics.ts`, `content/curriculum/p7-science.json`, Science routes, `docs/ops/p7-science-quality-audit-2026-07-01.md`, root tracking docs.
+
+---
+
+## DEV-019 · 2026-07-01 · Worksheet generator supports subject filtering
+
+**Context:** Adding Science to the central question bank made the teacher worksheet topic list crowded and potentially confusing.
+**Decision:** Add subject filters for **Maths only**, **Science only**, and **Mixed** worksheets.
+**Reasoning:** Teachers need control over worksheet scope now that Tendo is multi-subject. Filtering keeps the UI usable while still allowing mixed revision worksheets.
+**Tracked across:** `app/lib/question-bank.ts`, `app/components/WorksheetGenerator.tsx`, `app/app/teacher/worksheet/page.tsx`.
+
+---
+
+## CONTENT-001 · 2026-07-01 · Sensitive Science health wording must be safety-focused and age-appropriate
+
+**Context:** The NCDC P7 Integrated Science `Population and Health` topic includes outdated/sensitive wording around social problems among young people.
+**Decision:** Do not reproduce harmful or explicit wording directly in learner-facing content. Use respectful, safety-focused, adult-guided language while preserving curriculum intent around community health and safe behaviour.
+**Reasoning:** P7 learners need protection, clarity and respect. The app should support teachers and pupils without normalising stigma or unsafe phrasing.
+**Tracked across:** `app/lib/science-topics.ts`, `docs/ops/p7-science-quality-audit-2026-07-01.md`.

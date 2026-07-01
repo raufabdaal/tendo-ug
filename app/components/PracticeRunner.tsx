@@ -13,9 +13,11 @@ type Phase = "answering" | "feedback";
 export default function PracticeRunner({
   topicId,
   topicTitle,
+  backHref,
 }: {
   topicId: string;
   topicTitle: string;
+  backHref?: string;
 }) {
   const [questions, setQuestions] = useState<BankQuestion[]>([]);
   const [index, setIndex] = useState(0);
@@ -155,7 +157,7 @@ export default function PracticeRunner({
 
       <div className="practice-actions">
         <Link
-          href={`/math/p7/${topicId}`}
+          href={backHref ?? `/math/p7/${topicId}`}
           className="btn btn-secondary"
           onClick={endSession}
         >

@@ -5,21 +5,22 @@
 ## Read this first
 
 1. `STATUS.md`
-2. `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
-3. `docs/ops/update-handoff-protocol.md`
+2. `docs/ops/p7-science-quality-audit-2026-07-01.md`
+3. `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
 4. `DECISIONS.md`
 5. `CHECKLIST.md`
+6. `docs/ops/update-handoff-protocol.md`
 
 ---
 
 ## Where the project really is
 
-The project has just completed the main P7 Mathematics push.
+The project has now completed two major subject pushes:
 
-This is the key thing to understand now:
-- Mathematics should no longer be treated as the primary unfinished pressure area.
-- The repo docs are being consolidated so the GitHub repo itself becomes the operating source of truth.
-- The next major execution target is **Social Studies**.
+1. **P7 Mathematics** — founder-safe complete for current scope.
+2. **P7 Integrated Science** — active second subject build, now strong enough to demo and continue from.
+
+Earlier root docs said Social Studies was next. That became stale after the founder redirected: “let's do science.” Science has now been built instead.
 
 ---
 
@@ -34,24 +35,58 @@ Already built and usable:
 - teacher dashboard
 - practice mode
 - worksheet generator
+- worksheet subject filters: Maths only / Science only / Mixed
 - Watch / Read structure with in-read speech support
 - Trainup branding layer and `/trainup` route
 
 ### P7 Mathematics completion state
-Maths is now materially complete for the current founder goal.
+Maths is materially complete for the current founder goal.
 
 Important points:
-- `app/lib/topics.ts` now carries **38 published maths topics**
-- the final high-value maths gap wave was already built into the content layer
+- `app/lib/topics.ts` carries **38 published maths topics**
+- maths route: `/math/p7`
+- maths practice routes: `/math/p7/[topic]/practice`
 - the maths landing page was restructured in `app/app/math/p7/page.tsx`
-- maths closeout and diagram strategy docs now exist in-repo
+- selected maths diagrams exist through `app/components/TopicDiagram.tsx`
+- maths closeout docs exist in repo
 
 Relevant files:
 - `app/lib/topics.ts`
 - `app/lib/question-bank.ts`
 - `app/app/math/p7/page.tsx`
+- `app/components/TopicDiagram.tsx`
 - `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
 - `docs/ops/p7-maths-diagram-visual-plan-2026-07-01.md`
+
+### P7 Integrated Science state
+Science now includes all 8 NCDC P7 Integrated Science topics:
+
+1. Muscular-skeletal system
+2. Electricity and magnetism
+3. Energy resources in the environment
+4. Simple machines and friction
+5. Excretory system
+6. Light energy
+7. Interdependence of things in the environment
+8. Population and health
+
+Science files/routes:
+- `app/lib/science-topics.ts`
+- `content/curriculum/p7-science.json`
+- `app/app/science/p7/page.tsx`
+- `app/app/science/p7/[topic]/page.tsx`
+- `app/app/science/p7/[topic]/practice/page.tsx`
+
+Science supports:
+- subject landing page
+- topic pages
+- diagrams for all 8 topics
+- quizzes
+- practice mode
+- worksheet generator inclusion
+- 15-question practice bank per Science topic
+- sensitive wording pass for Population and Health
+- audit note at `docs/ops/p7-science-quality-audit-2026-07-01.md`
 
 ---
 
@@ -70,22 +105,24 @@ If a useful operational doc exists outside the repo and still matters, move or r
 
 ## What still needs work
 
-### 1. Final repo-doc consistency
-Before broad new work sprawls again, keep these files aligned with reality:
-- `STATUS.md`
-- `HANDOFF.md`
-- `CHECKLIST.md`
-- `DECISIONS.md`
-- `CHANGELOG.md`
+### 1. Science milestone decision
+Science is strong enough to be considered a meaningful grouped milestone.
 
-### 2. Social Studies subject start
-The best next substantive move is to start Social Studies deliberately.
+Open question for the next session/founder:
+- accept this as “P7 Science done enough to move on,” or
+- do one more teacher-style depth pass before making that claim.
 
-That should begin with:
-- current repo-state audit
-- curriculum and product-scope check
-- identifying what already exists versus what is thin, missing, or misleading
-- planning the first grouped implementation wave
+Do not overclaim. Current honest phrasing:
+> P7 Integrated Science is live, structured, diagrammed, practice-enabled, worksheet-enabled, quality-audited and deepened. It is strong enough to demo and continue from.
+
+### 2. Next subject after Science
+If Science is accepted, the likely next target is **Social Studies**.
+
+Start Social Studies deliberately:
+- check curriculum/source material
+- inspect whether any Social Studies files already exist
+- map expected topics
+- build first grouped implementation wave
 
 ---
 
@@ -95,13 +132,14 @@ That should begin with:
 - Pushes to `main` auto-promote to production.
 - Avoid touching unrelated sensitive/config files unless necessary.
 - Do not reopen maths scope casually. Treat it as complete unless a clearly material issue is discovered.
+- Population and Health contains sensitive curriculum wording. Keep learner-facing wording respectful, safety-focused and adult-guided.
 - Repo docs are now the preferred canonical record.
+- Run build from `app/`, not repo root.
 
 ---
 
 ## Best next move
 
-1. Finish any last repo-doc cleanup needed for consistency.
-2. Audit Social Studies in the actual repo.
-3. Define the first Social Studies milestone.
-4. Start building with the same intentionality used to finish Mathematics.
+1. Verify build one last time after docs updates.
+2. If founder approves, package this as a grouped Science milestone.
+3. Either push, or continue into Social Studies if intentionally stretching pushes further.

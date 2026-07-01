@@ -9,19 +9,27 @@
 // feedback via the Report-a-problem flow.
 
 import type { QuizQuestion } from "./topics";
+import { SCIENCE_TOPICS } from "./science-topics";
 
 export type BankQuestion = QuizQuestion & {
   difficulty: "easy" | "medium" | "hard";
 };
 
+export type SubjectId = "mathematics" | "science";
+export type SubjectName = "Mathematics" | "Integrated Science";
+
 export interface TopicBank {
   topicId: string;
   topicTitle: string;
   themeName: string;
+  subjectId: SubjectId;
+  subjectName: SubjectName;
   questions: BankQuestion[];
 }
 
-export const BANK: TopicBank[] = [
+type TopicBankSeed = Omit<TopicBank, "subjectId" | "subjectName">;
+
+export const BANK: TopicBankSeed[] = [
   // ────────────────── SETS ──────────────────
   {
     topicId: "venn-diagrams-2-events",
@@ -339,15 +347,124 @@ export const BANK: TopicBank[] = [
 // Helpers
 // ─────────────────────────────────────────────────────────────
 
+const MATHS_BANK: TopicBank[] = BANK.map((bank) => ({
+  ...bank,
+  subjectId: "mathematics",
+  subjectName: "Mathematics",
+}));
+
+
+const SCIENCE_EXTRA_QUESTIONS: Record<string, BankQuestion[]> = {
+  "muscular-skeletal-system": [
+    { q: "Which bone protects the spinal cord?", choices: ["Backbone", "Skull", "Rib", "Femur"], correct: 0, why: "The backbone surrounds and protects the spinal cord.", difficulty: "easy" },
+    { q: "Which bones protect the heart and lungs?", choices: ["Ribs", "Tibia and fibula", "Radius and ulna", "Pelvis only"], correct: 0, why: "The ribs form a cage around the chest and protect the heart and lungs.", difficulty: "easy" },
+    { q: "Which disease is commonly linked to lack of vitamin D or calcium in children?", choices: ["Rickets", "Malaria", "Diarrhoea", "Conjunctivitis"], correct: 0, why: "Rickets affects bone development and is linked to lack of vitamin D, calcium or poor feeding.", difficulty: "medium" },
+    { q: "A dislocation happens when:", choices: ["A bone moves out of its joint", "The lungs remove carbon dioxide", "A magnet loses its poles", "Light bends in water"], correct: 0, why: "A dislocation is when a bone is forced out of its normal position at a joint.", difficulty: "medium" },
+    { q: "Which activity can help strengthen muscles and bones?", choices: ["Regular safe exercise", "Sitting badly all day", "Avoiding all protein foods", "Carrying loads on one side only"], correct: 0, why: "Safe exercise helps muscles and bones grow stronger.", difficulty: "easy" },
+    { q: "Why is correct posture important?", choices: ["It helps prevent strain and body deformities", "It forms urine", "It makes magnets stronger", "It stops all breathing"], correct: 0, why: "Correct posture helps the body stay balanced and reduces strain on bones and muscles.", difficulty: "medium" },
+    { q: "Which joint is found at the neck and allows turning of the head?", choices: ["Pivot joint", "Hinge joint", "Fixed joint", "Ball-and-socket joint"], correct: 0, why: "A pivot joint in the neck helps the head turn from side to side.", difficulty: "hard" },
+    { q: "Which pair correctly matches bone and position?", choices: ["Femur — thigh", "Humerus — lower leg", "Tibia — upper arm", "Skull — chest"], correct: 0, why: "The femur is the long bone of the thigh.", difficulty: "medium" },
+  ],
+  "electricity-and-magnetism": [
+    { q: "Which type of electricity flows through wires in a complete circuit?", choices: ["Current electricity", "Static electricity", "Magnetic electricity", "Solar eclipse"], correct: 0, why: "Current electricity is electricity that flows through a circuit.", difficulty: "easy" },
+    { q: "What is the purpose of a fuse in an electric circuit?", choices: ["To break the circuit when current is too high", "To make wires wet", "To remove magnetism", "To reflect light"], correct: 0, why: "A fuse protects a circuit by melting and breaking it when current becomes too high.", difficulty: "medium" },
+    { q: "Which material is magnetic?", choices: ["Iron nail", "Plastic spoon", "Dry wood", "Rubber band"], correct: 0, why: "Iron is attracted by magnets, so an iron nail is magnetic.", difficulty: "easy" },
+    { q: "How can a temporary magnet be made using electricity?", choices: ["By winding wire around an iron core and passing current", "By placing wood in water", "By rubbing glass with paper only", "By bending a mirror"], correct: 0, why: "Current through a coil around iron can make an electromagnet, which is a temporary magnet.", difficulty: "hard" },
+    { q: "Which action is safest when using electricity?", choices: ["Keeping water away from sockets", "Touching bare wires", "Repairing live wires with wet hands", "Overloading one socket"], correct: 0, why: "Water can conduct electricity, so it should be kept away from sockets and appliances.", difficulty: "easy" },
+    { q: "What happens in a short circuit?", choices: ["Current follows an unintended low-resistance path", "Light becomes a shadow", "Bones form urine", "A pulley becomes a wedge"], correct: 0, why: "A short circuit gives current an unintended easy path and can cause heat, fire or damage.", difficulty: "hard" },
+    { q: "A dynamo changes mainly:", choices: ["Mechanical energy into electrical energy", "Urine into sweat", "Soil into air", "Sound into bones"], correct: 0, why: "A dynamo uses movement and magnetism to generate electrical energy.", difficulty: "medium" },
+    { q: "Which statement about magnet poles is correct?", choices: ["Unlike poles attract", "Like poles attract", "Magnets have no poles", "South poles disappear in water"], correct: 0, why: "North and south poles attract, while like poles repel.", difficulty: "easy" },
+  ],
+  "energy-resources-environment": [
+    { q: "Which energy resource is obtained from moving air?", choices: ["Wind energy", "Coal", "Petroleum", "Biogas only"], correct: 0, why: "Moving air is wind, and wind can provide energy.", difficulty: "easy" },
+    { q: "Why are fossil fuels called non-renewable?", choices: ["They take a very long time to form", "They grow back every week", "They are made by pupils", "They come only from sunlight"], correct: 0, why: "Fossil fuels form over millions of years and can get finished.", difficulty: "medium" },
+    { q: "Which local example uses animal energy?", choices: ["Oxen pulling a plough", "A mirror reflecting light", "A dry cell in a torch", "A pupil writing with chalk"], correct: 0, why: "Oxen provide animal power when they pull farm tools.", difficulty: "medium" },
+    { q: "Which energy resource is commonly used in solar panels?", choices: ["Sunlight", "Coal dust", "Animal dung only", "Tidal water only"], correct: 0, why: "Solar panels use energy from sunlight.", difficulty: "easy" },
+    { q: "What environmental problem can result from burning too much fossil fuel?", choices: ["Air pollution", "Better eyesight", "More humus directly", "Stronger bones"], correct: 0, why: "Burning fossil fuels can release smoke and gases that pollute air.", difficulty: "medium" },
+    { q: "Which pair is correctly matched?", choices: ["Water — hydro-electricity", "Coal — wind turbine", "Sun — biogas", "Animal dung — petroleum"], correct: 0, why: "Hydro-electricity is generated using moving water.", difficulty: "medium" },
+    { q: "An improved stove is useful because it:", choices: ["Uses fuel more efficiently", "Wastes more firewood", "Makes smoke compulsory", "Cuts all trees"], correct: 0, why: "Improved stoves save fuel and can reduce smoke and tree cutting.", difficulty: "medium" },
+    { q: "Which energy resource can come from plant residues and animal waste?", choices: ["Biogas", "Coal only", "Petrol", "Kerosene"], correct: 0, why: "Biogas can be made from decomposing plant residues and animal waste.", difficulty: "easy" },
+  ],
+  "simple-machines-friction": [
+    { q: "What is the fixed point on which a lever turns called?", choices: ["Fulcrum", "Load only", "Effort only", "Friction"], correct: 0, why: "A lever turns about a fixed point called a fulcrum.", difficulty: "easy" },
+    { q: "Which simple machine is found in a bottle top with spiral threads?", choices: ["Screw", "Pulley", "Wedge only", "Mirror"], correct: 0, why: "A screw is an inclined plane wound around a cylinder, like the thread on a bottle top.", difficulty: "medium" },
+    { q: "Which is a wheel and axle?", choices: ["Bicycle wheel", "Knife edge", "Pencil in water", "Rib cage"], correct: 0, why: "A bicycle wheel turns around an axle.", difficulty: "easy" },
+    { q: "How can friction in a door hinge be reduced?", choices: ["Apply oil", "Add sand", "Make it rougher", "Remove the hinge"], correct: 0, why: "Oil lubricates moving parts and reduces friction.", difficulty: "easy" },
+    { q: "Why are tyres given treads?", choices: ["To increase grip", "To reduce all weight", "To make them transparent", "To form urine"], correct: 0, why: "Treads increase friction between tyres and the road, improving grip.", difficulty: "medium" },
+    { q: "Which simple machine is a staircase most like?", choices: ["Inclined plane", "Magnet", "Circuit", "Lens"], correct: 0, why: "A staircase helps people move up gradually, like an inclined plane.", difficulty: "medium" },
+    { q: "Mechanical advantage compares:", choices: ["Load and effort", "Light and shadow", "Urine and sweat", "North and south only"], correct: 0, why: "Mechanical advantage shows how much a machine multiplies effort to move a load.", difficulty: "hard" },
+    { q: "Which is a nuisance effect of friction in machines?", choices: ["Wearing away moving parts", "Helping shoes grip", "Writing with a pencil", "Braking a bicycle"], correct: 0, why: "In machines, friction can wear parts and waste energy as heat.", difficulty: "medium" },
+  ],
+  "excretory-system": [
+    { q: "Which organ changes excess amino acids into urea?", choices: ["Liver", "Rib", "Lens", "Magnet"], correct: 0, why: "The liver helps process harmful substances and changes excess amino acids into urea.", difficulty: "hard" },
+    { q: "Which excretory product is removed by the lungs?", choices: ["Carbon dioxide", "Undigested food", "Saliva", "Tears only"], correct: 0, why: "The lungs remove carbon dioxide and water vapour during breathing out.", difficulty: "easy" },
+    { q: "What is the difference between excretion and egestion?", choices: ["Excretion removes body wastes; egestion removes undigested food", "They are exactly the same", "Egestion forms urine", "Excretion means chewing"], correct: 0, why: "Excretion removes wastes made by body processes, while egestion removes undigested food.", difficulty: "hard" },
+    { q: "Which part stores urine before it leaves the body?", choices: ["Urinary bladder", "Ureter", "Kidney", "Lung"], correct: 0, why: "The urinary bladder stores urine temporarily.", difficulty: "easy" },
+    { q: "Which habit can harm the excretory system?", choices: ["Taking unknown drugs", "Bathing regularly", "Drinking safe water", "Using toilets properly"], correct: 0, why: "Unknown or abused drugs can damage organs such as the kidneys and liver.", difficulty: "medium" },
+    { q: "Sweat contains mainly:", choices: ["Water and salts", "Plastic and glass", "Oxygen only", "Food remains"], correct: 0, why: "Sweat contains mostly water and salts, with small amounts of urea.", difficulty: "easy" },
+    { q: "Which skin problem is caused by fungi?", choices: ["Ringworm", "Fracture", "Short circuit", "Long sight"], correct: 0, why: "Ringworm is a fungal infection of the skin.", difficulty: "medium" },
+    { q: "What should a pupil do if there is blood in urine?", choices: ["Report and seek medical help", "Ignore it", "Drink unsafe water", "Hide from adults"], correct: 0, why: "Blood in urine can show a serious problem and should be reported to a trusted adult or health worker.", difficulty: "medium" },
+  ],
+  "light-energy": [
+    { q: "Which material allows most light to pass through?", choices: ["Transparent material", "Opaque material", "Magnetic material", "Rough material only"], correct: 0, why: "Transparent materials allow most light to pass through.", difficulty: "easy" },
+    { q: "Which material allows some light but does not allow clear seeing through it?", choices: ["Translucent material", "Transparent glass", "Opaque wood", "Iron"], correct: 0, why: "Translucent materials allow some light through but objects are not seen clearly.", difficulty: "medium" },
+    { q: "What is lateral inversion in a plane mirror?", choices: ["Left and right appear reversed", "The image becomes urine", "Light stops travelling", "The mirror becomes a magnet"], correct: 0, why: "A plane mirror makes left and right appear reversed; this is lateral inversion.", difficulty: "hard" },
+    { q: "Which device uses a lens to make small objects look larger?", choices: ["Magnifying glass", "Dynamo", "Pulley", "Fuse"], correct: 0, why: "A magnifying glass uses a lens to enlarge the image of small objects.", difficulty: "easy" },
+    { q: "What causes a rainbow?", choices: ["Dispersion of light", "Excretion", "Friction only", "A short circuit"], correct: 0, why: "A rainbow forms when white light is dispersed into different colours by water droplets.", difficulty: "medium" },
+    { q: "Which eye defect makes near objects clear but far objects blurred?", choices: ["Short sight", "Long sight", "Ringworm", "Rickets"], correct: 0, why: "In short sight, a person sees near objects more clearly than distant objects.", difficulty: "medium" },
+    { q: "Which part of a camera is most similar to the retina of the eye?", choices: ["Film or sensor", "Shutter button", "Camera strap", "Outer case"], correct: 0, why: "The retina receives the image in the eye, like film or a sensor receives the image in a camera.", difficulty: "hard" },
+    { q: "Which practice helps care for the eyes?", choices: ["Avoiding sharp objects near the eyes", "Reading in very dim light every night", "Sharing dirty towels", "Looking at bright welding light"], correct: 0, why: "Keeping sharp objects away helps prevent eye injury.", difficulty: "easy" },
+  ],
+  "interdependence-environment": [
+    { q: "Which living thing can depend on another plant for support?", choices: ["Climbing bean plant", "Rock", "River", "Sunlight"], correct: 0, why: "Some climbing plants use other plants for support.", difficulty: "medium" },
+    { q: "How do bees help flowering plants?", choices: ["Pollination", "Breaking mirrors", "Making coal", "Stopping sunlight"], correct: 0, why: "Bees transfer pollen between flowers and help pollination.", difficulty: "easy" },
+    { q: "Which non-living thing do plants need for photosynthesis?", choices: ["Sunlight", "Plastic", "Glass", "Petroleum only"], correct: 0, why: "Plants need sunlight to make food.", difficulty: "easy" },
+    { q: "What is coppicing?", choices: ["Cutting a tree near the base so new shoots grow", "Burning all seedlings", "Removing all roots from soil", "Throwing waste in water"], correct: 0, why: "Coppicing is cutting near the base to allow new shoots to grow.", difficulty: "hard" },
+    { q: "What is pollarding?", choices: ["Cutting upper branches to allow regrowth", "Killing all trees", "Planting crops without soil", "Making a short circuit"], correct: 0, why: "Pollarding cuts upper branches while leaving the tree to regrow.", difficulty: "hard" },
+    { q: "Which practice protects soil in agroforestry?", choices: ["Growing trees with crops", "Leaving soil bare", "Burning every tree", "Overgrazing"], correct: 0, why: "Trees can reduce erosion, add organic matter and protect soil.", difficulty: "medium" },
+    { q: "Which example shows animals depending on other animals?", choices: ["A lion feeding on an antelope", "A stone in sunlight", "A mirror reflecting a face", "A dry cell in a torch"], correct: 0, why: "Some animals depend on other animals for food.", difficulty: "medium" },
+    { q: "How can non-living soil benefit from living things?", choices: ["Dead plants add humus", "Rocks eat grass", "Air becomes a goat", "Water turns into a bone"], correct: 0, why: "Dead plants and animals decompose and add humus to soil.", difficulty: "easy" },
+  ],
+  "population-and-health": [
+    { q: "Which action helps control malaria in a community?", choices: ["Sleeping under treated mosquito nets", "Leaving stagnant water", "Refusing treatment", "Keeping bushes around homes"], correct: 0, why: "Treated mosquito nets help prevent mosquito bites that spread malaria.", difficulty: "easy" },
+    { q: "Which is a good survey question about sanitation?", choices: ["Does the home have and use a latrine?", "What is the colour of the moon?", "How many magnets are in a mirror?", "Can a rib form a circuit?"], correct: 0, why: "Latrine availability and use is important health survey information.", difficulty: "medium" },
+    { q: "Which information is part of demography?", choices: ["Number of people in a home", "Type of mirror in a periscope", "Length of a femur only", "Kind of pulley at a flagpole"], correct: 0, why: "Demography studies human population, including number of people.", difficulty: "easy" },
+    { q: "Which behaviour can harm a young person's health and education?", choices: ["Drug abuse", "Hand washing", "Reporting danger", "Joining a health club"], correct: 0, why: "Drug abuse can damage health, learning and community life.", difficulty: "medium" },
+    { q: "What should learners do when discussing sensitive health problems?", choices: ["Use respectful language and seek guidance from trusted adults", "Insult affected people", "Spread rumours", "Hide serious danger"], correct: 0, why: "Sensitive health issues should be handled respectfully and with guidance from trusted adults or health workers.", difficulty: "medium" },
+    { q: "Which activity can a health club organise?", choices: ["Cleaning campaign", "Throwing rubbish in wells", "Encouraging dirty hands", "Hiding sickness records"], correct: 0, why: "Health clubs can organise cleaning and health education activities.", difficulty: "easy" },
+    { q: "Which condition can spread quickly in overcrowded homes?", choices: ["Cough infections", "Fracture from a fall only", "Lateral inversion", "A short circuit"], correct: 0, why: "Overcrowding can help respiratory infections spread from person to person.", difficulty: "medium" },
+    { q: "Why should health survey information be organised after collection?", choices: ["So problems can be understood and addressed", "So it can be hidden forever", "So sickness increases", "So pupils stop learning"], correct: 0, why: "Organising survey data helps people identify common problems and plan action.", difficulty: "hard" },
+  ],
+};
+
+const SCIENCE_BANK: TopicBank[] = SCIENCE_TOPICS.map((topic) => ({
+  topicId: topic.id,
+  topicTitle: topic.title,
+  themeName: topic.themeName,
+  subjectId: "science",
+  subjectName: "Integrated Science",
+  questions: [
+    ...topic.quiz.map((question, index) => ({
+      ...question,
+      difficulty: (index < 2 ? "easy" : index < 5 ? "medium" : "hard") as BankQuestion["difficulty"],
+    })),
+    ...(SCIENCE_EXTRA_QUESTIONS[topic.id] ?? []),
+  ],
+}));
+
+export const ALL_BANKS: TopicBank[] = [...MATHS_BANK, ...SCIENCE_BANK];
+
 export function getBank(topicId: string): TopicBank | undefined {
-  return BANK.find((b) => b.topicId === topicId);
+  return ALL_BANKS.find((b) => b.topicId === topicId);
 }
 
-export function listBankTopics(): Array<{ topicId: string; topicTitle: string; themeName: string; count: number }> {
-  return BANK.map((b) => ({
+export function listBankTopics(): Array<{ topicId: string; topicTitle: string; themeName: string; subjectId: SubjectId; subjectName: SubjectName; count: number }> {
+  return ALL_BANKS.map((b) => ({
     topicId: b.topicId,
     topicTitle: b.topicTitle,
     themeName: b.themeName,
+    subjectId: b.subjectId,
+    subjectName: b.subjectName,
     count: b.questions.length,
   }));
 }
@@ -370,18 +487,18 @@ export function sampleFromTopic(topicId: string, n: number): BankQuestion[] {
 }
 
 /** Sample N questions across multiple topics, mixed and randomised. */
-export function sampleAcrossTopics(topicIds: string[], n: number): Array<BankQuestion & { topicTitle: string; topicId: string }> {
-  const pool: Array<BankQuestion & { topicTitle: string; topicId: string }> = [];
+export function sampleAcrossTopics(topicIds: string[], n: number): Array<BankQuestion & { topicTitle: string; topicId: string; subjectName: SubjectName }> {
+  const pool: Array<BankQuestion & { topicTitle: string; topicId: string; subjectName: SubjectName }> = [];
   for (const tid of topicIds) {
     const b = getBank(tid);
     if (!b) continue;
     for (const q of b.questions) {
-      pool.push({ ...q, topicId: b.topicId, topicTitle: b.topicTitle });
+      pool.push({ ...q, topicId: b.topicId, topicTitle: b.topicTitle, subjectName: b.subjectName });
     }
   }
   return shuffle(pool).slice(0, Math.min(n, pool.length));
 }
 
 export function totalBankQuestions(): number {
-  return BANK.reduce((sum, b) => sum + b.questions.length, 0);
+  return ALL_BANKS.reduce((sum, b) => sum + b.questions.length, 0);
 }

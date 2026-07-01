@@ -2,6 +2,55 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
+## v0.5.6 — 2026-07-01 — P7 Integrated Science built, diagrammed, practiced, audited, and added to worksheets
+
+**Session theme:** After finishing Mathematics, the founder redirected the next-subject push from Social Studies to **P7 Integrated Science**. This milestone turns Science from unavailable/coming-soon into a serious active subject build.
+
+**Added:**
+- `app/lib/science-topics.ts` — P7 Integrated Science content data layer with all 8 NCDC-aligned topics.
+- `app/app/science/p7/page.tsx` — Science strand/topic landing page.
+- `app/app/science/p7/[topic]/page.tsx` — Science topic detail route.
+- `app/app/science/p7/[topic]/practice/page.tsx` — Science practice route.
+- `content/curriculum/p7-science.json` — P7 Science curriculum map based on the NCDC Primary Seven Set One Integrated Science outline.
+- `docs/ops/p7-science-quality-audit-2026-07-01.md` — Science quality and closeout audit note.
+
+**Changed:**
+- `app/app/page.tsx` — Integrated Science is now an active subject card linking to `/science/p7`.
+- `app/components/TopicDiagram.tsx` — added diagrams for all 8 Science topics and retained maths diagrams.
+- `app/components/TopicTabs.tsx` — renders topic diagrams inside the Read flow.
+- `app/components/PracticeRunner.tsx` — supports subject-specific back links so Science practice returns to Science, not Maths.
+- `app/lib/question-bank.ts` — added subject metadata, Science banks, and 64 additional Science practice questions.
+- `app/components/WorksheetGenerator.tsx` — added subject filters: Maths only, Science only, Mixed.
+- `app/app/teacher/worksheet/page.tsx` — updated worksheet page copy/metadata to include Science.
+- `app/app/globals.css` — added styles for Science/Maths landing diagrams and worksheet subject filters; removed stale merge-conflict markers.
+- `app/lib/science-topics.ts` — deepened the heavy Science topics: Electricity and Magnetism, Simple Machines and Friction, Light Energy, and Population and Health.
+- `STATUS.md`, `HANDOFF.md`, `CHECKLIST.md`, `DECISIONS.md`, `CHANGELOG.md` — updated root docs so they no longer incorrectly say Social Studies is the current next subject.
+
+**Science coverage now live:**
+1. Muscular-skeletal system
+2. Electricity and magnetism
+3. Energy resources in the environment
+4. Simple machines and friction
+5. Excretory system
+6. Light energy
+7. Interdependence of things in the environment
+8. Population and health
+
+**Quality notes:**
+- Population and Health was handled with respectful, safety-focused wording instead of directly reproducing outdated/sensitive curriculum phrasing in learner-facing content.
+- Science practice now has 15 questions per topic: 7 quiz questions plus 8 additional practice-bank questions.
+- Worksheet generator can now cleanly generate Maths-only, Science-only, or mixed worksheets.
+
+**Verified locally:**
+- TypeScript check passed from `app/`.
+- Production build passed with `✓ Generating static pages (111/111)`.
+
+**Result:**
+- P7 Integrated Science is live, structured, diagrammed, practice-enabled, worksheet-enabled, quality-audited and deepened.
+- Honest status: Science is strong enough to demo and continue from. The founder can decide whether to accept this as “done enough” before moving to Social Studies.
+
+---
+
 ## v0.5.5 — 2026-07-01 — P7 Mathematics completed, docs consolidated into repo, and handoff reset for Social Studies next
 
 **Session theme:** Finish P7 Mathematics properly, close the documentation gap, and make the repo itself the single source of truth before moving to the next subject.

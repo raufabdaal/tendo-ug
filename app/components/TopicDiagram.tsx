@@ -32,6 +32,14 @@ export const TOPIC_DIAGRAM_IDS = [
   "simple-polygons",
   "regular-polygons",
   "integers-core",
+  "muscular-skeletal-system",
+  "electricity-and-magnetism",
+  "energy-resources-environment",
+  "simple-machines-friction",
+  "excretory-system",
+  "light-energy",
+  "interdependence-environment",
+  "population-and-health",
 ] as const;
 
 export function hasTopicDiagram(topicId: string): boolean {
@@ -254,6 +262,185 @@ function getDiagram(topicId: string): DiagramSpec | null {
             })}
             <text x="130" y="72" fill={diagramText.indigo} fontWeight="700" fontSize="17">negative</text>
             <text x="420" y="72" fill={diagramText.success} fontWeight="700" fontSize="17">positive</text>
+          </svg>
+        ),
+      };
+    case "muscular-skeletal-system":
+      return {
+        title: "Bones, joints and muscles work together",
+        caption: "The skeleton supports and protects the body. Muscles pull on bones at joints to cause movement.",
+        svg: (
+          <svg viewBox="0 0 620 300" role="img" aria-label="Simple human skeleton showing skull ribs backbone arm and leg bones">
+            <rect x="34" y="24" width="552" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <circle cx="160" cy="72" r="28" fill="#fffaf3" stroke={diagramText.fill} strokeWidth="4" />
+            <line x1="160" y1="100" x2="160" y2="178" stroke={diagramText.fill} strokeWidth="5" strokeLinecap="round" />
+            <ellipse cx="160" cy="126" rx="54" ry="32" fill="none" stroke={diagramText.indigo} strokeWidth="4" />
+            <line x1="106" y1="126" x2="214" y2="126" stroke={diagramText.indigo} strokeWidth="3" />
+            <line x1="130" y1="150" x2="84" y2="194" stroke={diagramText.terracotta} strokeWidth="5" strokeLinecap="round" />
+            <line x1="190" y1="150" x2="236" y2="194" stroke={diagramText.terracotta} strokeWidth="5" strokeLinecap="round" />
+            <line x1="150" y1="178" x2="118" y2="236" stroke={diagramText.success} strokeWidth="6" strokeLinecap="round" />
+            <line x1="170" y1="178" x2="204" y2="236" stroke={diagramText.success} strokeWidth="6" strokeLinecap="round" />
+            <text x="300" y="82" fill={diagramText.fill} fontWeight="700" fontSize="20">Skull protects the brain</text>
+            <text x="300" y="124" fill={diagramText.indigo} fontWeight="700" fontSize="20">Ribs protect heart and lungs</text>
+            <text x="300" y="166" fill={diagramText.terracotta} fontWeight="700" fontSize="20">Joints allow movement</text>
+            <text x="300" y="208" fill={diagramText.success} fontWeight="700" fontSize="20">Muscles pull bones</text>
+          </svg>
+        ),
+      };
+    case "electricity-and-magnetism":
+      return {
+        title: "A complete circuit lets current flow",
+        caption: "The bulb lights only when the dry cell, wires, switch and bulb make a complete path.",
+        svg: (
+          <svg viewBox="0 0 620 300" role="img" aria-label="Simple electric circuit and bar magnet">
+            <rect x="34" y="24" width="552" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <rect x="96" y="86" width="42" height="86" rx="6" fill="#fffaf3" stroke={diagramText.fill} strokeWidth="4" />
+            <line x1="107" y1="72" x2="127" y2="72" stroke={diagramText.fill} strokeWidth="4" />
+            <line x1="117" y1="62" x2="117" y2="82" stroke={diagramText.fill} strokeWidth="4" />
+            <line x1="252" y1="126" x2="320" y2="126" stroke={diagramText.fill} strokeWidth="5" strokeLinecap="round" />
+            <circle cx="394" cy="126" r="32" fill="#fffaf3" stroke={diagramText.terracotta} strokeWidth="4" />
+            <path d="M386 139 q8 -24 16 0" fill="none" stroke={diagramText.terracotta} strokeWidth="4" />
+            <path d="M138 126 H252 M320 126 H362 M426 126 H496 V210 H117 V172" fill="none" stroke={diagramText.indigo} strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
+            <text x="86" y="206" fill={diagramText.fill} fontWeight="700" fontSize="17">dry cell</text>
+            <text x="260" y="104" fill={diagramText.fill} fontWeight="700" fontSize="17">switch</text>
+            <text x="376" y="82" fill={diagramText.fill} fontWeight="700" fontSize="17">bulb</text>
+            <g transform="translate(248 222)">
+              <rect x="0" y="0" width="128" height="34" rx="8" fill={diagramText.terracotta} />
+              <rect x="128" y="0" width="128" height="34" rx="8" fill={diagramText.indigo} />
+              <text x="58" y="23" fill="white" fontWeight="800" fontSize="17">N</text>
+              <text x="194" y="23" fill="white" fontWeight="800" fontSize="17">S</text>
+            </g>
+          </svg>
+        ),
+      };
+    case "energy-resources-environment":
+      return {
+        title: "Energy comes from different resources",
+        caption: "Some resources renew naturally, while fossil fuels can get finished and may pollute the environment.",
+        svg: (
+          <svg viewBox="0 0 620 300" role="img" aria-label="Energy resources from sun water wind plants animals and fossil fuels">
+            <rect x="34" y="24" width="552" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <circle cx="122" cy="88" r="34" fill="#F4B942" />
+            <text x="86" y="142" fill={diagramText.fill} fontWeight="700" fontSize="17">Sun</text>
+            <path d="M238 112 q28 -44 56 0 t56 0" fill="none" stroke={diagramText.indigo} strokeWidth="7" strokeLinecap="round" />
+            <text x="252" y="150" fill={diagramText.fill} fontWeight="700" fontSize="17">Water</text>
+            <g transform="translate(444 76)">
+              <line x1="44" y1="36" x2="44" y2="88" stroke={diagramText.fill} strokeWidth="5" />
+              <line x1="44" y1="36" x2="16" y2="12" stroke={diagramText.success} strokeWidth="5" strokeLinecap="round" />
+              <line x1="44" y1="36" x2="78" y2="20" stroke={diagramText.success} strokeWidth="5" strokeLinecap="round" />
+              <line x1="44" y1="36" x2="34" y2="2" stroke={diagramText.success} strokeWidth="5" strokeLinecap="round" />
+              <text x="16" y="116" fill={diagramText.fill} fontWeight="700" fontSize="17">Wind</text>
+            </g>
+            <text x="84" y="220" fill={diagramText.success} fontWeight="700" fontSize="18">Plants</text>
+            <text x="232" y="220" fill={diagramText.success} fontWeight="700" fontSize="18">Animals</text>
+            <text x="390" y="220" fill={diagramText.terracotta} fontWeight="700" fontSize="18">Fossil fuels</text>
+            <text x="380" y="248" fill={diagramText.muted} fontWeight="700" fontSize="15">coal / petroleum</text>
+          </svg>
+        ),
+      };
+    case "simple-machines-friction":
+      return {
+        title: "Simple machines make work easier",
+        caption: "Ramps, levers and pulleys help move loads. Friction can help grip or cause wear.",
+        svg: (
+          <svg viewBox="0 0 620 300" role="img" aria-label="Ramp lever pulley and friction examples">
+            <rect x="34" y="24" width="552" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <polygon points="82,202 236,202 236,112" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <rect x="170" y="130" width="42" height="34" rx="5" fill={diagramText.terracotta} />
+            <text x="112" y="236" fill={diagramText.fill} fontWeight="700" fontSize="17">Inclined plane</text>
+            <line x1="300" y1="172" x2="438" y2="126" stroke={diagramText.terracotta} strokeWidth="8" strokeLinecap="round" />
+            <polygon points="358,174 378,174 368,144" fill={diagramText.fill} />
+            <text x="330" y="214" fill={diagramText.fill} fontWeight="700" fontSize="17">Lever</text>
+            <circle cx="510" cy="96" r="30" fill="#fffaf3" stroke={diagramText.indigo} strokeWidth="5" />
+            <path d="M510 126 V202" stroke={diagramText.indigo} strokeWidth="5" />
+            <rect x="486" y="202" width="48" height="30" rx="5" fill={diagramText.terracotta} />
+            <text x="478" y="260" fill={diagramText.fill} fontWeight="700" fontSize="17">Pulley</text>
+            <path d="M272 248 h112" stroke={diagramText.muted} strokeWidth="6" strokeLinecap="round" />
+            <text x="246" y="276" fill={diagramText.muted} fontWeight="700" fontSize="15">rough surface = more friction</text>
+          </svg>
+        ),
+      };
+    case "excretory-system":
+      return {
+        title: "Urine follows a clear path out of the body",
+        caption: "The kidneys filter blood, ureters carry urine, the bladder stores it, and the urethra takes it out.",
+        svg: (
+          <svg viewBox="0 0 620 300" role="img" aria-label="Urinary system showing kidneys ureters bladder and urethra">
+            <rect x="34" y="24" width="552" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <ellipse cx="230" cy="92" rx="34" ry="50" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" transform="rotate(-18 230 92)" />
+            <ellipse cx="390" cy="92" rx="34" ry="50" fill="#F5E1DB" stroke={diagramText.terracotta} strokeWidth="4" transform="rotate(18 390 92)" />
+            <path d="M242 136 C250 176 286 184 300 216" fill="none" stroke={diagramText.indigo} strokeWidth="5" strokeLinecap="round" />
+            <path d="M378 136 C370 176 334 184 320 216" fill="none" stroke={diagramText.indigo} strokeWidth="5" strokeLinecap="round" />
+            <ellipse cx="310" cy="226" rx="46" ry="30" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" />
+            <line x1="310" y1="256" x2="310" y2="274" stroke={diagramText.indigo} strokeWidth="5" strokeLinecap="round" />
+            <text x="182" y="42" fill={diagramText.fill} fontWeight="700" fontSize="18">kidneys</text>
+            <text x="404" y="172" fill={diagramText.fill} fontWeight="700" fontSize="18">ureters</text>
+            <text x="352" y="234" fill={diagramText.fill} fontWeight="700" fontSize="18">bladder</text>
+            <text x="224" y="278" fill={diagramText.fill} fontWeight="700" fontSize="18">urethra</text>
+          </svg>
+        ),
+      };
+    case "light-energy":
+      return {
+        title: "Light travels, reflects and refracts",
+        caption: "Light travels in straight lines, bounces from mirrors, and bends when it passes between materials.",
+        svg: (
+          <svg viewBox="0 0 620 300" role="img" aria-label="Light rays showing shadow reflection and refraction">
+            <rect x="34" y="24" width="552" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <circle cx="104" cy="88" r="26" fill="#F4B942" />
+            <line x1="136" y1="88" x2="232" y2="88" stroke={diagramText.terracotta} strokeWidth="5" strokeLinecap="round" />
+            <rect x="240" y="58" width="28" height="70" rx="5" fill={diagramText.fill} />
+            <polygon points="268,58 366,28 366,148 268,128" fill="#7A7065" opacity="0.24" />
+            <text x="190" y="150" fill={diagramText.fill} fontWeight="700" fontSize="17">shadow</text>
+            <line x1="410" y1="64" x2="500" y2="64" stroke={diagramText.indigo} strokeWidth="5" />
+            <line x1="455" y1="38" x2="455" y2="90" stroke={diagramText.fill} strokeWidth="4" />
+            <path d="M390 118 L452 160 L520 128" fill="none" stroke={diagramText.terracotta} strokeWidth="5" strokeLinecap="round" />
+            <line x1="452" y1="104" x2="452" y2="184" stroke={diagramText.indigo} strokeWidth="4" strokeDasharray="8 6" />
+            <text x="392" y="214" fill={diagramText.fill} fontWeight="700" fontSize="17">reflection + refraction</text>
+          </svg>
+        ),
+      };
+    case "interdependence-environment":
+      return {
+        title: "Living and non-living things depend on each other",
+        caption: "Plants, animals, water, air, soil and sunlight form connected relationships in the environment.",
+        svg: (
+          <svg viewBox="0 0 620 300" role="img" aria-label="Interdependence cycle among plants animals and non-living things">
+            <rect x="34" y="24" width="552" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            <circle cx="310" cy="146" r="92" fill="none" stroke={diagramText.border} strokeWidth="5" />
+            <text x="286" y="58" fill={diagramText.success} fontWeight="800" fontSize="20">Plants</text>
+            <text x="438" y="154" fill={diagramText.terracotta} fontWeight="800" fontSize="20">Animals</text>
+            <text x="170" y="154" fill={diagramText.indigo} fontWeight="800" fontSize="20">Air / water / soil</text>
+            <path d="M336 72 C410 86 454 114 462 140" fill="none" stroke={diagramText.success} strokeWidth="5" markerEnd="url(#arrowScience)" />
+            <path d="M438 174 C374 242 260 244 204 178" fill="none" stroke={diagramText.terracotta} strokeWidth="5" markerEnd="url(#arrowScience)" />
+            <path d="M202 126 C220 78 252 58 288 56" fill="none" stroke={diagramText.indigo} strokeWidth="5" markerEnd="url(#arrowScience)" />
+            <defs><marker id="arrowScience" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+            <text x="250" y="150" fill={diagramText.fill} fontWeight="700" fontSize="18">interdependence</text>
+          </svg>
+        ),
+      };
+    case "population-and-health":
+      return {
+        title: "Health surveys help communities act",
+        caption: "Learners collect information, identify health problems, and plan prevention activities.",
+        svg: (
+          <svg viewBox="0 0 620 300" role="img" aria-label="Health survey flow from collect data to plan action">
+            <rect x="34" y="24" width="552" height="246" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+            {[
+              { x: 80, label: "Ask", sub: "questions" },
+              { x: 220, label: "Record", sub: "data" },
+              { x: 370, label: "Find", sub: "problems" },
+              { x: 500, label: "Act", sub: "prevent" },
+            ].map((item, i) => (
+              <g key={item.label}>
+                <circle cx={item.x} cy="138" r="46" fill={i % 2 === 0 ? "#E5E8F2" : "#F5E1DB"} stroke={i % 2 === 0 ? diagramText.indigo : diagramText.terracotta} strokeWidth="4" />
+                <text x={item.x} y="134" textAnchor="middle" fill={diagramText.fill} fontWeight="800" fontSize="17">{item.label}</text>
+                <text x={item.x} y="156" textAnchor="middle" fill={diagramText.muted} fontWeight="700" fontSize="14">{item.sub}</text>
+                {i < 3 && <path d={`M ${item.x + 50} 138 H ${item.x + 90}`} stroke={diagramText.fill} strokeWidth="4" markerEnd="url(#arrowHealth)" />}
+              </g>
+            ))}
+            <defs><marker id="arrowHealth" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+            <text x="140" y="230" fill={diagramText.fill} fontWeight="700" fontSize="18">Survey → organise → report → health action</text>
           </svg>
         ),
       };

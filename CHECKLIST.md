@@ -7,10 +7,21 @@
 - [x] Maths landing page structure cleaned up
 - [x] Maths final coverage audit written
 - [x] Maths diagram/visual plan written and stored in repo
-- [x] Repo-docs consolidation direction agreed: repo is the source of truth
-- [ ] Root project docs fully refreshed for the post-maths state
-- [ ] Social Studies audited and scoped for the next build push
-- [ ] First Social Studies implementation wave defined
+- [x] Repo chosen as the source of truth for active docs
+- [x] P7 Integrated Science NCDC topic map created
+- [x] P7 Integrated Science route `/science/p7` created
+- [x] All 8 P7 Integrated Science topics created
+- [x] Science topic pages created
+- [x] Science practice routes created
+- [x] Science diagrams added for all 8 topics
+- [x] Science added to central question bank
+- [x] Worksheet generator subject filters added
+- [x] Science practice banks deepened to 15 questions per topic
+- [x] Heavy Science topics deepened: Electricity, Simple Machines, Light, Population and Health
+- [x] Science quality audit written in repo
+- [x] Root docs refreshed to reflect Science instead of stale Social Studies-next state
+- [ ] Founder decides whether Science is accepted as “done enough to move on”
+- [ ] Next subject, likely Social Studies, audited and scoped
 
 ---
 
@@ -77,13 +88,20 @@
 - [x] Major missing high-priority P7 maths topics built
 - [x] P7 Mathematics final completion audit written
 
-## Phase 6 — Documentation consolidation + next-subject transition
+## Phase 6 — Documentation consolidation + Science subject expansion
 - [x] Repo chosen as the source of truth for active docs
 - [x] Maths completion docs moved/created inside repo
-- [ ] Root tracking docs fully harmonised
+- [x] P7 Science curriculum map added in `content/curriculum/p7-science.json`
+- [x] Science data layer added in `app/lib/science-topics.ts`
+- [x] Science landing and topic pages added
+- [x] Science practice mode added
+- [x] Science diagrams added
+- [x] Science integrated into question bank and worksheet generator
+- [x] Worksheet subject filters added
+- [x] Science quality audit created in repo
+- [x] Root tracking docs harmonised after Science work
 - [ ] External workspace-only docs reviewed for either migration or retirement
-- [ ] Social Studies state audited in repo
-- [ ] Social Studies first milestone planned
+- [ ] Founder accepts Science milestone or requests one final depth pass
 
 ---
 
@@ -94,7 +112,20 @@
 - [x] Landing structure is improved
 - [x] Practice layer is aligned enough for current scope
 - [x] Completion can be stated honestly
-- [ ] First-wave diagram implementation (optional enhancement only)
+- [x] First-wave diagrams implemented for selected visual topics
+
+### P7 Integrated Science
+- [x] All 8 NCDC P7 Integrated Science topics mapped
+- [x] All 8 topics built in app
+- [x] Science landing page built
+- [x] Science topic pages built
+- [x] Science practice pages built
+- [x] Diagrams included for all Science topics
+- [x] 15-question practice bank per topic
+- [x] Worksheet generator subject filtering supports Science
+- [x] Sensitive Population and Health wording handled cautiously
+- [x] Heavy topic depth pass completed
+- [ ] Founder acceptance as “done enough”
 
 ### Social Studies
 - [ ] Current repo state audited
@@ -106,8 +137,10 @@
 
 ## Totals (current reality)
 - **Published P7 Mathematics topics:** 38
+- **Published P7 Integrated Science topics:** 8
+- **Science practice questions:** 120 total across 8 topics
 - **Visible maths coming-soon backlog:** 0
-- **Current subject just completed:** P7 Mathematics
-- **Next subject target:** Social Studies
+- **Current subject just strengthened:** P7 Integrated Science
+- **Likely next subject target:** Social Studies, after Science milestone acceptance
 - **Pilot school:** Trainup a Child Uganda
 - **Monthly recurring cost:** UGX 0

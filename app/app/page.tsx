@@ -31,15 +31,15 @@ export default function HomePage() {
         </div>
       </div>
 
-      <div className="card card-disabled">
+      <Link href="/science/p7" className="card">
         <div className="card-row">
           <div>
             <div className="card-title">Integrated Science</div>
-            <div className="card-sub">Health, environment, agriculture</div>
+            <div className="card-sub">P7 · Human body, energy, environment, health</div>
           </div>
-          <span className="badge badge-phase">Coming, Phase 2</span>
+          <span className="badge badge-math">Active</span>
         </div>
-      </div>
+      </Link>
 
       <div className="card card-disabled">
         <div className="card-row">

@@ -2,117 +2,128 @@
 
 *Updated: 2026-07-01*
 
-> **Current state:** P7 Mathematics is now complete enough to stop being the main pressure subject. The repo documentation is being consolidated so GitHub becomes the single source of truth, and the next major execution target is Social Studies.
+> **Current state:** P7 Mathematics is founder-safe complete, and P7 Integrated Science has now become the active second subject build. Science is live, structured, diagrammed, practice-enabled, worksheet-enabled, quality-audited, and deepened across the heavy topics. Root docs now reflect Science instead of the earlier Social Studies next-target assumption.
 
 ## Current focus
 
-### 1. P7 Mathematics closeout is complete
-The maths subject has now reached a founder-safe “done” state.
+### 1. P7 Mathematics is complete enough to stop being the pressure subject
+Mathematics has reached a founder-safe “done” state for current product scope.
 
 That means:
-- broad curriculum-shaped coverage exists in the app
-- the practice layer is no longer the obvious weak link
-- the maths landing page has been restructured to feel more study-first and less flat
-- the remaining maths work is now enhancement work, not core completion work
+- 38 published P7 Mathematics topics exist
+- visible maths coming-soon backlog is clear
+- practice mode and worksheet generation support the subject
+- the maths landing page is structured by strand
+- diagrams exist for selected visual topics
+- closeout docs live inside the repo
 
-### 2. Repo documentation consolidation
-The founder correctly wants the working project docs to live inside the repo, not split between repo files and external workspace notes.
+Further maths work should be treated as enhancement unless a materially missing curriculum issue is discovered.
 
-The documentation direction is now:
-- **repo first**
-- **one strong source of truth**
-- root tracking docs kept current
-- high-value operational notes stored inside `tendo-ug/docs/ops/`
+### 2. P7 Integrated Science is now active and strong
+The project switched from the planned Social Studies start to **P7 Integrated Science**.
 
-### 3. Next subject: Social Studies
-With maths now out of the critical path, the next major subject push should be **Social Studies**.
+Science now has:
+- 8 NCDC-aligned P7 Integrated Science topics across the official themes
+- `/science/p7` subject landing page
+- `/science/p7/[topic]` topic pages
+- `/science/p7/[topic]/practice` practice routes
+- diagrams for all 8 Science topics
+- central question-bank integration
+- worksheet generator support with subject filters
+- 15 practice questions per topic: 7 quiz questions + 8 additional bank questions
+- a quality audit note in `docs/ops/p7-science-quality-audit-2026-07-01.md`
 
-The goal is to carry over the same standard used for maths:
-1. curriculum-first
-2. study-ready, not just demo-ready
-3. honest documentation
-4. meaningful milestone pushes
+Science is no longer a shell. It is a serious active subject build. The honest status is: **done enough to demo and continue from, but not yet a permanent final closeout unless the founder accepts this milestone as sufficient.**
 
----
+### 3. Repo documentation is the source of truth
+The founder chose the repo as the safest place for live documentation.
 
-## What is already in strong shape
-
-### Product features already built
-- Next.js subject app shell
-- Topic pages with notes + quizzes
-- Past papers
-- Teacher dashboard
-- Practice mode
-- Worksheet generator
-- Watch / Read topic structure with in-read audio support
-- Trainup branding layer and `/trainup` route
-
-### P7 Mathematics is now substantially built out
-The app now has **38 published P7 Mathematics topics** and no active visible maths backlog in `COMING_SOON`.
-
-Major strand coverage now includes:
-- Sets
-- Numeracy
-- Algebra
-- Interpretation of graphs and data
-- Measurement
-- Geometry / construction
-
-### Maths completion support now exists in-docs
-Maths now has explicit closeout documentation in-repo:
-- `docs/ops/p7-maths-final-completion-audit-2026-07-01.md`
-- `docs/ops/p7-maths-diagram-visual-plan-2026-07-01.md`
-
----
-
-## What is no longer the main blocker
-
-### Mathematics
-Maths should no longer be treated as the unfinished emergency subject.
-
-Possible later maths enhancements still exist, such as:
-- first-wave diagrams for the most visual topics
-- small wording refinements
-- later confirmation of ambiguous curriculum edge labels
-
-But these are now enhancement tasks, not reasons to delay moving on.
-
----
-
-## What still needs work right now
-
-### 1. Documentation layer needs final tidying
-The docs are much better than before, but they must now reflect the real project state cleanly and consistently inside the repo.
-
-This includes keeping these root docs honest and current:
+Root docs must stay current:
 - `STATUS.md`
 - `HANDOFF.md`
 - `CHECKLIST.md`
 - `DECISIONS.md`
 - `CHANGELOG.md`
 
-### 2. Social Studies needs to start intentionally
-We should not drift into Social Studies casually.
+Operational notes should live under `docs/ops/` where useful.
 
-The next subject pass should begin with:
+---
+
+## What is already in strong shape
+
+### Product features already built
+- Next.js app shell
+- Topic pages with notes + quizzes
+- Subject landing pages for Maths and Science
+- Past papers
+- Teacher dashboard
+- Practice mode
+- Worksheet generator
+- Worksheet subject filters: Maths only / Science only / Mixed
+- Watch / Read topic structure with in-read audio support
+- Trainup branding layer and `/trainup` route
+
+### P7 Mathematics
+- 38 published topics
+- strand-first landing page
+- topic diagrams for selected maths topics
+- practice and worksheet support
+- final completion audit in repo
+
+### P7 Integrated Science
+NCDC topic coverage currently includes:
+1. Muscular-skeletal system
+2. Electricity and magnetism
+3. Energy resources in the environment
+4. Simple machines and friction
+5. Excretory system
+6. Light energy
+7. Interdependence of things in the environment
+8. Population and health
+
+Each topic has:
+- learner notes
+- learning objectives
+- worked example
+- common mistakes
+- try-this activity
+- recap
+- quiz
+- diagram
+- practice mode
+
+---
+
+## What still needs work right now
+
+### 1. Decide whether Science is accepted as “done enough”
+Science has crossed from first-wave to strong active subject. The remaining question is product standard, not basic functionality.
+
+Possible final Science enhancements:
+- teacher feedback pass
+- second question-bank layer for the heaviest topics
+- optional subtopic cards if teachers want more classroom segmentation
+- additional diagrams or worksheet-specific exam drills
+
+### 2. Next subject after Science
+The earlier docs said Social Studies was next. That was true before the founder redirected the next subject to Science.
+
+After accepting the Science milestone, the likely next subject target can again become **Social Studies**, but it should start intentionally:
 - curriculum/source check
-- current repo state audit
-- content and structure gap identification
-- then a deliberate first build wave
+- route/data audit
+- content and structure gap map
+- first grouped implementation wave
 
 ---
 
 ## Immediate next steps
 
-### Documentation cleanup milestone
-Complete the repo-docs consolidation and make sure the root tracking docs are aligned to the post-maths reality.
-
-### Then start Social Studies
-Recommended next move after docs cleanup:
-1. audit current Social Studies state in the repo
-2. map coverage against the intended Uganda primary scope
-3. identify the first high-value gaps
-4. begin the first meaningful Social Studies build wave
+Recommended next move:
+1. Run final build verification after documentation updates.
+2. If the founder agrees, treat this as a meaningful Science milestone.
+3. Then either:
+   - push this grouped milestone, or
+   - continue straight into Social Studies audit/build if intentionally stretching pushes further.
 
 ---
 
@@ -125,7 +136,9 @@ Recommended next move after docs cleanup:
   - why it changed
   - which files changed
   - whether to overwrite or add each file
-- Repo docs should be treated as the safe canonical record going forward.
+- Repo docs should be treated as the canonical record going forward.
+- Build command should run from `app/`, not repo root:
+  - `cd app && npm run build`
 
 See:
 - `docs/ops/update-handoff-protocol.md`
