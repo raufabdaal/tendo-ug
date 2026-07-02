@@ -122,19 +122,81 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
             </div>
           )}
 
-          {topic.note.learningObjectives && (
+          {topic.note.study ? (
             <>
-              <h2>What you will learn</h2>
-              <ul>
-                {topic.note.learningObjectives.map((obj, i) => <li key={i}>{obj}</li>)}
-              </ul>
+              <section className="study-big-idea">
+                <div className="study-label">Big idea</div>
+                <p>{topic.note.study.bigIdea}</p>
+              </section>
+
+              {topic.note.learningObjectives && (
+                <section className="study-card">
+                  <h2>What you will learn</h2>
+                  <ul>
+                    {topic.note.learningObjectives.map((obj, i) => <li key={i}>{obj}</li>)}
+                  </ul>
+                </section>
+              )}
+
+              {topic.note.study.keyVocabulary && topic.note.study.keyVocabulary.length > 0 && (
+                <section className="study-card">
+                  <h2>Key words</h2>
+                  <div className="vocab-grid">
+                    {topic.note.study.keyVocabulary.map((item, i) => (
+                      <div key={i} className="vocab-card">
+                        <strong>{item.term}</strong>
+                        <span>{item.meaning}</span>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {topic.note.study.sections && topic.note.study.sections.length > 0 && (
+                <section className="study-card">
+                  <h2>Learn it in parts</h2>
+                  <div className="lesson-section-list">
+                    {topic.note.study.sections.map((section, i) => (
+                      <div key={i} className="lesson-section-card">
+                        <h3>{section.title}</h3>
+                        <ul>
+                          {section.points.map((point, j) => <li key={j}>{point}</li>)}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {topic.note.study.visual && (
+                <StudyVisualBrief visual={topic.note.study.visual} />
+              )}
+
+              <TopicDiagram topicId={topic.id} />
+
+              {topic.note.study.examTip && (
+                <section className="exam-tip">
+                  <strong>PLE tip:</strong> {topic.note.study.examTip}
+                </section>
+              )}
+            </>
+          ) : (
+            <>
+              {topic.note.learningObjectives && (
+                <>
+                  <h2>What you will learn</h2>
+                  <ul>
+                    {topic.note.learningObjectives.map((obj, i) => <li key={i}>{obj}</li>)}
+                  </ul>
+                </>
+              )}
+
+              <TopicDiagram topicId={topic.id} />
+
+              <h2>What you need to know</h2>
+              {topic.note.whatYouNeedToKnow.map((p, i) => <p key={i}>{p}</p>)}
             </>
           )}
-
-          <TopicDiagram topicId={topic.id} />
-
-          <h2>What you need to know</h2>
-          {topic.note.whatYouNeedToKnow.map((p, i) => <p key={i}>{p}</p>)}
 
           <h2>Worked example</h2>
           <div className="worked">
@@ -210,16 +272,77 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
   );
 }
 
+function StudyVisualBrief({ visual }: { visual: NonNullable<Topic["note"]["study"]>["visual"] }) {
+  if (!visual) return null;
+  const kind = visual.kind ?? "diagram";
+  const steps = visual.description
+    .split(/\.\s+/)
+    .map((part) => part.trim().replace(/\.$/, ""))
+    .filter(Boolean)
+    .slice(0, 3);
+
+  return (
+    <section className={`visual-brief visual-brief-${kind}`}>
+      <div className="visual-preview" aria-hidden="true">
+        <VisualPreview kind={kind} />
+      </div>
+      <div className="visual-brief-copy">
+        <div className="visual-kind">{kind}</div>
+        <h2>{visual.title}</h2>
+        <p>{visual.description}</p>
+        {steps.length > 0 && (
+          <ol className="visual-checklist">
+            {steps.map((step, i) => <li key={i}>{step}</li>)}
+          </ol>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function VisualPreview({ kind }: { kind: NonNullable<NonNullable<Topic["note"]["study"]>["visual"]>["kind"] | "diagram" }) {
+  if (kind === "timeline") {
+    return <svg viewBox="0 0 160 110" role="img"><line x1="20" y1="55" x2="140" y2="55" /><circle cx="32" cy="55" r="8" /><circle cx="80" cy="55" r="8" /><circle cx="128" cy="55" r="8" /><text x="26" y="88">1</text><text x="74" y="88">2</text><text x="122" y="88">3</text></svg>;
+  }
+  if (kind === "flow") {
+    return <svg viewBox="0 0 160 110" role="img"><rect x="12" y="34" width="36" height="34" rx="8" /><path d="M52 51 H72" /><rect x="76" y="34" width="36" height="34" rx="8" /><path d="M116 51 H136" /><circle cx="144" cy="51" r="12" /></svg>;
+  }
+  if (kind === "comparison") {
+    return <svg viewBox="0 0 160 110" role="img"><rect x="16" y="24" width="54" height="62" rx="10" /><rect x="90" y="24" width="54" height="62" rx="10" /><line x1="80" y1="20" x2="80" y2="90" /></svg>;
+  }
+  if (kind === "map") {
+    return <svg viewBox="0 0 160 110" role="img"><path d="M64 18 C100 24 118 48 108 76 C98 94 72 98 56 76 C42 58 48 34 64 18 Z" /><line x1="18" y1="56" x2="142" y2="56" /><line x1="80" y1="12" x2="80" y2="98" /></svg>;
+  }
+  if (kind === "cards") {
+    return <svg viewBox="0 0 160 110" role="img"><rect x="16" y="22" width="38" height="50" rx="8" /><rect x="61" y="32" width="38" height="50" rx="8" /><rect x="106" y="22" width="38" height="50" rx="8" /></svg>;
+  }
+  return <svg viewBox="0 0 160 110" role="img"><rect x="18" y="18" width="124" height="74" rx="12" /><circle cx="58" cy="55" r="24" /><path d="M92 34 L124 76" /><line x1="92" y1="76" x2="124" y2="34" /></svg>;
+}
+
 function buildScript(topic: Topic): string {
   const parts: string[] = [];
   parts.push(topic.title + ".");
   parts.push(topic.note.intro);
-  if (topic.note.learningObjectives) {
-    parts.push("What you will learn.");
-    parts.push(topic.note.learningObjectives.join(" "));
+  if (topic.note.study) {
+    parts.push("Big idea.");
+    parts.push(topic.note.study.bigIdea);
+    if (topic.note.study.keyVocabulary) {
+      parts.push("Key words.");
+      parts.push(topic.note.study.keyVocabulary.map((item) => `${item.term}: ${item.meaning}`).join(" "));
+    }
+    if (topic.note.study.sections) {
+      parts.push("Learn it in parts.");
+      parts.push(topic.note.study.sections.map((section) => `${section.title}. ${section.points.join(" ")}`).join(" "));
+    }
+    if (topic.note.study.examTip) parts.push(topic.note.study.examTip);
+  } else {
+    if (topic.note.learningObjectives) {
+      parts.push("What you will learn.");
+      parts.push(topic.note.learningObjectives.join(" "));
+    }
+    parts.push("What you need to know.");
+    parts.push(topic.note.whatYouNeedToKnow.join(" "));
   }
-  parts.push("What you need to know.");
-  parts.push(topic.note.whatYouNeedToKnow.join(" "));
   parts.push("Here is a worked example.");
   parts.push(topic.note.worked.problem);
   parts.push(topic.note.worked.steps.join(" "));

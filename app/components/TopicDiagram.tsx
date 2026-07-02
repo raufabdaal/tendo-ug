@@ -23,15 +23,43 @@ const diagramText = {
 
 export const TOPIC_DIAGRAM_IDS = [
   "venn-diagrams-2-events",
-  "subsets",
-  "line-segments-angles",
-  "coordinates",
-  "data-handling",
-  "bearing-scale-drawing",
-  "parallel-skew-lines",
-  "simple-polygons",
-  "regular-polygons",
+  "roman-numerals-mm",
+  "fractions-core",
+  "decimals",
+  "proportion-percentages",
+  "perimeter",
+  "area",
+  "volume",
+  "equations",
+  "substitution",
+  "central-tendency-range",
+  "12-24-hour-clocks",
+  "money",
+  "four-basic-operations",
   "integers-core",
+  "data-handling",
+  "timetables",
+  "algebraic-expressions",
+  "tests-of-divisibility",
+  "prime-factorisation",
+  "length",
+  "mass",
+  "capacity",
+  "numbers-up-to-99-999-999",
+  "line-segments-angles",
+  "simple-polygons",
+  "coordinates",
+  "parallel-skew-lines",
+  "bearing-scale-drawing",
+  "subsets",
+  "finite-infinite-sets",
+  "probability-intro",
+  "inequalities",
+  "bases",
+  "number-patterns",
+  "probability-of-numbers",
+  "regular-polygons",
+  "algebra-real-life",
   "muscular-skeletal-system",
   "electricity-and-magnetism",
   "energy-resources-environment",
@@ -79,7 +107,104 @@ export default function TopicDiagram({ topicId }: DiagramProps) {
   );
 }
 
+
+function getAdditionalMathDiagram(topicId: string): DiagramSpec | null {
+  const specs: Record<string, { title: string; caption: string; kind: "flow" | "cards" | "ladder" | "numberline" | "formula" | "chart" | "comparison"; labels: string[] }> = {
+    "roman-numerals-mm": { title: "Roman numeral rules", caption: "Letter order decides whether you add or subtract values.", kind: "cards", labels: ["I=1", "V=5", "X=10", "IV = 4"] },
+    "fractions-core": { title: "Fractions need equal parts", caption: "Use common denominators before adding, subtracting or comparing unlike fractions.", kind: "formula", labels: ["1/2", "1/3", "= sixths", "compare"] },
+    "decimals": { title: "Line up decimal points", caption: "Compare and calculate decimals by place value: tenths, hundredths and thousandths.", kind: "chart", labels: ["ones", ".", "tenths", "hundredths"] },
+    "proportion-percentages": { title: "Part, whole and percent", caption: "Percent means out of 100. Always identify the whole before calculating.", kind: "formula", labels: ["part", "whole", "×100", "%"] },
+    "perimeter": { title: "Perimeter goes around", caption: "Add only the outside edges of the shape.", kind: "formula", labels: ["outside", "+", "all sides", "unit"] },
+    "area": { title: "Area formula cards", caption: "Choose the formula that matches the shape and answer in square units.", kind: "cards", labels: ["rectangle", "triangle", "base", "height"] },
+    "volume": { title: "Volume uses three dimensions", caption: "Length × width × height gives the space inside a cuboid.", kind: "formula", labels: ["length", "width", "height", "cm³"] },
+    "equations": { title: "Equation balance", caption: "Whatever you do to one side, do to the other side.", kind: "flow", labels: ["x + 3", "= 11", "−3 both", "x = 8"] },
+    "substitution": { title: "Substitute then simplify", caption: "Replace the letter with its value before calculating.", kind: "flow", labels: ["3x+2", "x=4", "3(4)+2", "14"] },
+    "central-tendency-range": { title: "Data summary methods", caption: "Mean, median, mode and range each have a different method.", kind: "cards", labels: ["mean", "median", "mode", "range"] },
+    "12-24-hour-clocks": { title: "Clock conversion timeline", caption: "Use a.m., p.m., noon and midnight carefully when converting time.", kind: "numberline", labels: ["0000", "1200", "1800", "2400"] },
+    "money": { title: "Money problem decision flow", caption: "Label cost price, selling price, discount and interest before calculating.", kind: "flow", labels: ["CP", "SP", "profit/loss", "discount"] },
+    "four-basic-operations": { title: "Choose the operation", caption: "Decide whether the story asks for a total, difference, equal groups or sharing.", kind: "cards", labels: ["+ total", "− difference", "× groups", "÷ share"] },
+    "timetables": { title: "Read rows and columns", caption: "Use the headings first, then follow the correct row to find time or duration.", kind: "chart", labels: ["day", "start", "end", "duration"] },
+    "algebraic-expressions": { title: "Translate words into algebra", caption: "Expressions use letters without an equals sign.", kind: "flow", labels: ["words", "variable", "operation", "expression"] },
+    "tests-of-divisibility": { title: "Divisibility tests", caption: "Quick rules help you know if a number divides exactly.", kind: "cards", labels: ["2: even", "3: digit sum", "5: 0/5", "10: 0"] },
+    "prime-factorisation": { title: "Factor tree", caption: "Keep splitting until every branch ends in a prime number.", kind: "flow", labels: ["number", "factors", "prime", "check"] },
+    "length": { title: "Length conversion ladder", caption: "Convert to one unit before adding or comparing lengths.", kind: "ladder", labels: ["km", "m", "cm", "mm"] },
+    "mass": { title: "Mass unit scale", caption: "Use grams, kilograms and tonnes for different sizes of loads.", kind: "ladder", labels: ["tonne", "kg", "g", "convert"] },
+    "capacity": { title: "Capacity containers", caption: "Capacity uses litres and millilitres to show how much a container holds.", kind: "cards", labels: ["cup", "bottle", "jerrycan", "tank"] },
+    "numbers-up-to-99-999-999": { title: "Large-number place value", caption: "Group digits into millions, thousands and ones before reading.", kind: "chart", labels: ["millions", "thousands", "ones", "expand"] },
+    "finite-infinite-sets": { title: "Finite versus infinite", caption: "Finite sets can be counted completely; infinite sets have no last member.", kind: "comparison", labels: ["finite", "count", "infinite", "..."] },
+    "probability-intro": { title: "Probability scale", caption: "Probability moves from impossible to certain and can be written as a fraction.", kind: "numberline", labels: ["0", "unlikely", "likely", "1"] },
+    "inequalities": { title: "Inequality number line", caption: "Use open and closed points to show whether an endpoint is included.", kind: "numberline", labels: ["<", "≤", ">", "≥"] },
+    "bases": { title: "Base place-value table", caption: "Different bases use different place values and allowed digits.", kind: "chart", labels: ["8", "4", "2", "1"] },
+    "number-patterns": { title: "Find the pattern rule", caption: "Compare neighbouring terms to discover the operation.", kind: "flow", labels: ["term", "+3", "+3", "next"] },
+    "probability-of-numbers": { title: "Number-card probability", caption: "List all numbers, circle favourable numbers, then write favourable over total.", kind: "cards", labels: ["1", "2", "3", "prime"] },
+    "algebra-real-life": { title: "Story to equation", caption: "Define the unknown, translate the words, solve and answer in words.", kind: "flow", labels: ["story", "let x", "equation", "answer"] },
+  };
+  const spec = specs[topicId];
+  if (!spec) return null;
+  return { title: spec.title, caption: spec.caption, svg: <MathInstructionSvg kind={spec.kind} labels={spec.labels} /> };
+}
+
+function MathInstructionSvg({ kind, labels }: { kind: "flow" | "cards" | "ladder" | "numberline" | "formula" | "chart" | "comparison"; labels: string[] }) {
+  if (kind === "flow") {
+    return (
+      <svg viewBox="0 0 640 260" role="img" aria-label="Instructional flow diagram">
+        <rect x="34" y="34" width="572" height="184" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+        {labels.map((label, i) => {
+          const x = 70 + i * 138;
+          return <g key={label}><rect x={x} y="92" width="104" height="56" rx="14" fill={i % 2 ? "#F5E1DB" : "#E5E8F2"} stroke={i % 2 ? diagramText.terracotta : diagramText.indigo} strokeWidth="4" /><text x={x + 52} y="126" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="15">{label}</text>{i < labels.length - 1 && <path d={`M ${x + 112} 120 H ${x + 132}`} stroke={diagramText.fill} strokeWidth="5" markerEnd="url(#arrowMathFlow)" />}</g>;
+        })}
+        <defs><marker id="arrowMathFlow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L0,6 L7,3 z" fill={diagramText.fill} /></marker></defs>
+      </svg>
+    );
+  }
+  if (kind === "cards" || kind === "comparison") {
+    return (
+      <svg viewBox="0 0 640 260" role="img" aria-label="Instructional cards diagram">
+        <rect x="34" y="34" width="572" height="184" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+        {labels.map((label, i) => <g key={label}><rect x={68 + i * 136} y="78" width="112" height="92" rx="16" fill={i % 2 ? "#F5E1DB" : "#E5E8F2"} stroke={i % 2 ? diagramText.terracotta : diagramText.indigo} strokeWidth="4" /><text x={124 + i * 136} y="130" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="15">{label}</text></g>)}
+      </svg>
+    );
+  }
+  if (kind === "ladder") {
+    return (
+      <svg viewBox="0 0 640 260" role="img" aria-label="Conversion ladder diagram">
+        <rect x="34" y="34" width="572" height="184" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+        <line x1="120" y1="70" x2="120" y2="190" stroke={diagramText.fill} strokeWidth="5" />
+        {labels.map((label, i) => <g key={label}><rect x={170 + i * 96} y={62 + i * 28} width="84" height="40" rx="12" fill="#E5E8F2" stroke={diagramText.indigo} strokeWidth="4" /><text x={212 + i * 96} y={88 + i * 28} textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="15">{label}</text></g>)}
+        <text x="92" y="78" fill={diagramText.terracotta} fontWeight="900" fontSize="16">× down</text><text x="82" y="196" fill={diagramText.indigo} fontWeight="900" fontSize="16">÷ up</text>
+      </svg>
+    );
+  }
+  if (kind === "numberline") {
+    return (
+      <svg viewBox="0 0 640 240" role="img" aria-label="Number line diagram">
+        <rect x="34" y="34" width="572" height="154" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+        <line x1="90" y1="112" x2="548" y2="112" stroke={diagramText.fill} strokeWidth="5" />
+        {labels.map((label, i) => { const x = 104 + i * 140; return <g key={label}><circle cx={x} cy="112" r="14" fill={i % 2 ? "#F5E1DB" : "#E5E8F2"} stroke={i % 2 ? diagramText.terracotta : diagramText.indigo} strokeWidth="4" /><text x={x} y="154" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="15">{label}</text></g>; })}
+      </svg>
+    );
+  }
+  if (kind === "chart") {
+    return (
+      <svg viewBox="0 0 640 260" role="img" aria-label="Table or chart diagram">
+        <rect x="74" y="58" width="492" height="140" rx="14" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="4" />
+        {labels.map((label, i) => <g key={label}><rect x={74 + i * 123} y="58" width="123" height="140" fill={i % 2 ? "#F5E1DB" : "#E5E8F2"} opacity="0.85" stroke={diagramText.border} strokeWidth="2" /><text x={135 + i * 123} y="132" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="15">{label}</text></g>)}
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="0 0 640 260" role="img" aria-label="Formula diagram">
+      <rect x="34" y="34" width="572" height="184" rx="18" fill={diagramText.cream} stroke={diagramText.border} strokeWidth="3" />
+      <text x="320" y="120" textAnchor="middle" fill={diagramText.fill} fontWeight="900" fontSize="28">{labels.join("  ")}</text>
+      <text x="320" y="164" textAnchor="middle" fill={diagramText.terracotta} fontWeight="800" fontSize="18">choose formula → substitute → answer with units</text>
+    </svg>
+  );
+}
+
 function getDiagram(topicId: string): DiagramSpec | null {
+  const additionalMathDiagram = getAdditionalMathDiagram(topicId);
+  if (additionalMathDiagram) return additionalMathDiagram;
+
   switch (topicId) {
     case "venn-diagrams-2-events":
       return {

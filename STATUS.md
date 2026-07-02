@@ -1,6 +1,6 @@
 # STATUS — Tendo
 
-*Updated: 2026-07-01*
+*Updated: 2026-07-02*
 
 > **Current state:** P7 Mathematics, P7 Integrated Science, P7 Social Studies and P7 English are now complete enough for current product scope. The Social Studies + English grouped work has now been pushed successfully and is working in production.
 
@@ -115,6 +115,23 @@ Operational notes should live under `docs/ops/` where useful.
 - Total central question-bank pool: 695 questions across 38 bank topics
 
 ---
+
+## Lesson Structure v2 restructuring has started
+
+A new child-friendly study-page structure has been introduced after founder/partner feedback that the current study content can feel insufficiently structured.
+
+Lesson Structure v2 is now live in workspace for all 10 Social Studies topics, all 8 Integrated Science topics, all 7 English topics and all 38 Mathematics topics.
+
+The new structure adds:
+- Big idea
+- Key words
+- Learn it in parts
+- Visual brief
+- PLE tip
+
+See: `docs/spec/tendo-lesson-structure-v2.md`
+
+No push is recommended yet until the founder is ready for the grouped restructuring milestone. Maths has now been fully converted to Lesson Structure v2 across all 38 topics, all four active P7 subjects use the new study flow, and the visual layer has been aligned so visual briefs and Maths diagrams act more like instructional teaching aids.
 
 ## What still needs work right now
 

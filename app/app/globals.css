@@ -1411,3 +1411,149 @@ p { margin-bottom: 14px; color: var(--charcoal-soft); }
 @media (max-width: 720px) {
   .writing-task-grid { grid-template-columns: 1fr; }
 }
+
+/* ============================================
+   Lesson Structure v2 — child-friendly study flow
+   ============================================ */
+.study-big-idea {
+  background: linear-gradient(135deg, var(--cream-deep), rgba(255,255,255,0.7));
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  margin: 12px 0 16px;
+}
+.study-big-idea p {
+  margin: 6px 0 0;
+  font-size: 17px;
+  line-height: 1.55;
+  color: var(--charcoal);
+}
+.study-label,
+.visual-kind {
+  color: var(--terracotta);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.study-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin: 14px 0;
+  background: rgba(255,255,255,0.45);
+}
+.study-card h2,
+.visual-brief h2 {
+  margin-top: 0;
+}
+.vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+.vocab-card {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 10px 12px;
+}
+.vocab-card strong {
+  display: block;
+  color: var(--charcoal);
+  margin-bottom: 4px;
+}
+.vocab-card span {
+  color: var(--charcoal-soft);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.lesson-section-list {
+  display: grid;
+  gap: 12px;
+}
+.lesson-section-card {
+  background: var(--cream-deep);
+  border-left: 4px solid var(--terracotta);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+}
+.lesson-section-card h3 {
+  margin: 0 0 8px;
+  color: var(--charcoal);
+  font-size: 17px;
+}
+.lesson-section-card ul {
+  margin-bottom: 0;
+}
+.visual-brief {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 16px;
+  align-items: stretch;
+  border: 1px solid rgba(46, 64, 112, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 14px;
+  background: linear-gradient(135deg, rgba(250,246,240,0.96), rgba(238,226,211,0.55));
+  margin: 14px 0;
+  box-shadow: 0 10px 24px rgba(31, 27, 23, 0.05);
+}
+.visual-preview {
+  min-height: 124px;
+  border-radius: var(--radius);
+  background: var(--cream);
+  border: 1px solid var(--border);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+}
+.visual-preview svg {
+  width: 100%;
+  max-width: 142px;
+  height: auto;
+}
+.visual-preview svg rect,
+.visual-preview svg circle,
+.visual-preview svg path,
+.visual-preview svg line {
+  fill: none;
+  stroke: var(--indigo);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.visual-preview svg circle,
+.visual-preview svg rect {
+  fill: rgba(59, 74, 138, 0.08);
+}
+.visual-preview svg text {
+  fill: var(--terracotta);
+  font-size: 18px;
+  font-weight: 900;
+}
+.visual-brief-copy p {
+  margin-bottom: 10px;
+}
+.visual-checklist {
+  display: grid;
+  gap: 7px;
+  margin: 10px 0 0;
+  padding-left: 22px;
+}
+.visual-checklist li {
+  color: var(--charcoal-soft);
+  font-size: 14px;
+  line-height: 1.45;
+}
+.exam-tip {
+  background: var(--indigo-soft);
+  color: var(--charcoal);
+  border-radius: var(--radius-lg);
+  padding: 12px 14px;
+  margin: 14px 0;
+  border: 1px solid rgba(46, 64, 112, 0.16);
+}
+@media (max-width: 640px) {
+  .visual-brief { grid-template-columns: 1fr; }
+  .visual-preview { min-height: 96px; }
+}

@@ -345,3 +345,15 @@
 **Reasoning:** The app now has four active subjects, guided practice for English/Science/SST, strong central question-bank totals, worksheet generation for all four subjects, audit documentation and a passing production build. Remaining work is enhancement, teacher feedback and future exam-paper/marking-rubric sophistication rather than core subject completion.
 
 **Tracked across:** `docs/ops/four-subject-core-closeout-audit-2026-07-01.md`, `STATUS.md`, `HANDOFF.md`, `CHECKLIST.md`, `CHANGELOG.md`.
+
+---
+
+## CONTENT-005 · 2026-07-02 · Study pages should use Lesson Structure v2
+
+**Context:** Founder/partner feedback identified that study pages can feel insufficiently structured for children and that many visuals/images feel off.
+
+**Decision:** Introduce Lesson Structure v2 as the standard for study pages: Big idea, key words, learn-it-in-parts sections, instructional visual brief, PLE tip, worked example, mistakes, try-this, guided practice and recap.
+
+**Reasoning:** P7 learners need concise, scaffolded lessons rather than long note blocks. Visuals should be instructional diagrams/maps/flows, not decorative images. The `note.study` field now powers the standard study flow across all four active P7 subjects.
+
+**Tracked across:** `docs/spec/tendo-lesson-structure-v2.md`, `app/lib/topics.ts`, `app/lib/english-topics.ts`, `app/lib/science-topics.ts`, `app/lib/social-topics.ts`, `app/components/TopicTabs.tsx`, `app/components/TopicDiagram.tsx`, `app/app/globals.css`.

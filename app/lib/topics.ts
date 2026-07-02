@@ -18,6 +18,13 @@ export interface QuizQuestion {
 
 export interface TopicNote {
   intro: string; // "Why this matters" callout
+  study?: {
+    bigIdea: string;
+    keyVocabulary?: Array<{ term: string; meaning: string }>;
+    sections?: Array<{ title: string; points: string[] }>;
+    visual?: { title: string; description: string; kind?: "map" | "diagram" | "timeline" | "comparison" | "flow" | "cards" };
+    examTip?: string;
+  };
   learningObjectives?: string[]; // what the student will be able to do after this topic
   whatYouNeedToKnow: string[]; // core concept explanations
   worked: {
@@ -67,6 +74,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "A Venn diagram sorts items into groups so you can see only A, only B, both groups and neither group clearly.",
+        keyVocabulary: [
+          { term: "Set", meaning: "A group of objects or people with something in common." },
+          { term: "Overlap", meaning: "The middle part showing items that belong to both sets." },
+          { term: "Only A", meaning: "Items in set A but not in set B." },
+          { term: "Only B", meaning: "Items in set B but not in set A." },
+          { term: "Neither", meaning: "Items outside both circles." },
+        ],
+        sections: [
+          { title: "Read the four regions", points: ["The left-only part is for items in A only.", "The right-only part is for items in B only.", "The overlap is for items in both A and B, and outside the circles is neither."] },
+          { title: "Fill in the right order", points: ["Put the overlap first when it is given.", "Subtract the overlap to find only A and only B.", "Add the inside parts, then subtract from the total to find neither."] },
+          { title: "Avoid double counting", points: ["The total in A includes the overlap.", "The total in B also includes the overlap.", "When using n(A) + n(B), subtract the overlap once."] },
+        ],
+        visual: { title: "Four-part Venn diagram", description: "Show two overlapping circles labelled A and B with clear labels: only A, both, only B and neither. Add arrows showing fill overlap first, then only parts, then neither.", kind: "diagram" },
+        examTip: "In word problems, fill the overlap first and remember that totals for each set already include the overlap.",
+      },
       intro:
         "Why this matters: Venn diagrams are common in PLE, and once you understand the four parts of the diagram, many of these questions become much easier. This is one of those topics where good arrangement helps you get the answer quickly.",
       learningObjectives: [
@@ -140,6 +164,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Roman numerals use letters to write numbers, so learners need the letter values and the add/subtract rules.",
+        keyVocabulary: [
+          { term: "Roman numeral", meaning: "A number written using Roman letters such as I, V, X, L, C, D and M." },
+          { term: "Value", meaning: "The number represented by a Roman letter." },
+          { term: "Addition rule", meaning: "When a smaller or equal value comes after a bigger value, add it." },
+          { term: "Subtraction rule", meaning: "When a smaller value comes before a bigger value, subtract it." },
+          { term: "MM", meaning: "Roman numeral for 2000." },
+        ],
+        sections: [
+          { title: "Know the letter values", points: ["I = 1, V = 5, X = 10, L = 50, C = 100, D = 500 and M = 1000.", "Build numbers by combining these letters.", "MM means 1000 + 1000 = 2000."] },
+          { title: "Use addition and subtraction", points: ["VI means 5 + 1 = 6.", "IV means 5 - 1 = 4 because I comes before V.", "IX means 10 - 1 = 9, while XI means 10 + 1 = 11."] },
+          { title: "Convert carefully", points: ["Break long Roman numerals into parts.", "Work from left to right and check for subtraction pairs.", "Write ordinary numbers first if the question asks you to compare values."] },
+        ],
+        visual: { title: "Roman numeral value ladder", description: "Show a ladder from I to M with values, then two comparison cards: VI as addition and IV as subtraction.", kind: "cards" },
+        examTip: "Watch the order of letters. IV is 4, but VI is 6.",
+      },
       intro:
         "Why this matters: Roman numerals still appear in PLE, especially in quick conversion questions. If you know the letter values and the two main rules, these marks are some of the easiest to collect.",
       learningObjectives: [
@@ -204,6 +245,23 @@ export const TOPICS: Topic[] = [
     reviewStatus: "verified",
     videoUrl: "https://youtu.be/HuitLoh1Q9g",
     note: {
+      study: {
+        bigIdea: "Fractions show parts of a whole, and most fraction questions become easier when you compare denominators or use a common denominator.",
+        keyVocabulary: [
+          { term: "Numerator", meaning: "The top number of a fraction." },
+          { term: "Denominator", meaning: "The bottom number showing equal parts." },
+          { term: "Equivalent fractions", meaning: "Fractions with the same value but different numbers." },
+          { term: "Common denominator", meaning: "A shared bottom number used to compare or operate on fractions." },
+          { term: "Simplify", meaning: "Write a fraction in its lowest terms." },
+        ],
+        sections: [
+          { title: "Understand the fraction", points: ["The denominator tells how many equal parts the whole has.", "The numerator tells how many parts are being used.", "A bigger denominator does not always mean a bigger fraction."] },
+          { title: "Compare and order", points: ["If denominators are the same, compare numerators.", "If denominators differ, change to equivalent fractions with a common denominator.", "Use number lines or fraction bars for visual comparison."] },
+          { title: "Operations", points: ["For addition and subtraction, use a common denominator first.", "For multiplication, multiply numerators and denominators, then simplify.", "For division, multiply by the reciprocal where appropriate."] },
+        ],
+        visual: { title: "Fraction bars and common denominator", description: "Show fraction bars for halves, thirds, quarters and sixths, then a small example changing 1/2 and 1/3 to sixths before adding or comparing.", kind: "diagram" },
+        examTip: "Do not add denominators. For addition and subtraction, first make the denominators the same.",
+      },
       intro: "Why this matters: Fractions are one of the most important topics in P7 Mathematics. They appear in many PLE questions, and they also help you understand decimals, percentages, money, and several word problems.",
       learningObjectives: [
         "Explain what a fraction means.",
@@ -271,6 +329,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Decimals are another way of writing fractions with tenths, hundredths and thousandths.",
+        keyVocabulary: [
+          { term: "Decimal", meaning: "A number with a decimal point showing parts smaller than one." },
+          { term: "Decimal point", meaning: "The dot that separates whole numbers from decimal parts." },
+          { term: "Tenths", meaning: "The first place after the decimal point." },
+          { term: "Hundredths", meaning: "The second place after the decimal point." },
+          { term: "Place value", meaning: "The value of a digit because of its position." },
+        ],
+        sections: [
+          { title: "Read decimal places", points: ["The first digit after the point is tenths.", "The second digit after the point is hundredths.", "The third digit after the point is thousandths."] },
+          { title: "Compare decimals", points: ["Line up decimal points before comparing.", "Compare whole numbers first, then tenths, hundredths and thousandths.", "Add zeros to the right if it helps, because 0.5 = 0.50."] },
+          { title: "Calculate with decimals", points: ["For addition and subtraction, line up decimal points.", "For multiplication, multiply normally then place the decimal carefully.", "Estimate first to check if the answer is reasonable."] },
+        ],
+        visual: { title: "Decimal place-value chart", description: "Show columns for ones, decimal point, tenths, hundredths and thousandths with example numbers lined up for comparison and addition.", kind: "diagram" },
+        examTip: "Line up decimal points. Do not line up the last digits only.",
+      },
       intro: "Why this matters: Decimals are used in money, measurement, and percentages. If you understand place value and the basic rules for working with decimals, many PLE questions become much easier.",
       learningObjectives: [
         "Read and write decimals correctly.",
@@ -335,6 +410,23 @@ export const TOPICS: Topic[] = [
     reviewStatus: "verified",
     // videoUrl: "https://www.youtube.com/embed/...", // TODO: paste NotebookLM video URL after upload
     note: {
+      study: {
+        bigIdea: "Proportion, ratios and percentages compare quantities, often by turning a part into a fraction of the whole.",
+        keyVocabulary: [
+          { term: "Ratio", meaning: "A comparison between two or more quantities." },
+          { term: "Proportion", meaning: "A statement showing that two ratios are equal or related." },
+          { term: "Percentage", meaning: "A fraction out of 100." },
+          { term: "Discount", meaning: "Money reduced from the marked price." },
+          { term: "Whole", meaning: "The total amount being compared against." },
+        ],
+        sections: [
+          { title: "Ratios and parts", points: ["Read ratios in the order given in the question.", "Add ratio parts to find the total number of parts.", "Find one part first, then multiply for the required share."] },
+          { title: "Percentages", points: ["Percent means out of 100.", "To find a percentage of a quantity, change the percentage to a fraction or decimal and multiply.", "To express a part as a percentage, use part divided by whole times 100."] },
+          { title: "Real-life uses", points: ["Percentages are used in discounts, profit, loss, interest and exam marks.", "Always identify the original whole before calculating.", "Check whether the answer should increase or decrease the original amount."] },
+        ],
+        visual: { title: "Part-whole percentage card", description: "Show a bar split into ratio parts and a 100-square percentage grid, with arrows from part/whole to percentage.", kind: "comparison" },
+        examTip: "For percentage questions, underline the whole first. Many mistakes come from using the wrong total.",
+      },
       intro: "Why this matters: Percentages are used in marks, shopping, savings, discounts, profit, and many everyday situations. If you understand what percent means, the rest of the topic becomes easier to follow.",
       learningObjectives: [
         "Explain what a percentage means.",
@@ -399,6 +491,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Perimeter is the total distance around a shape, found by adding the outside lengths.",
+        keyVocabulary: [
+          { term: "Perimeter", meaning: "The total distance around a closed shape." },
+          { term: "Length", meaning: "A measured side of a shape." },
+          { term: "Width", meaning: "The shorter side of a rectangle." },
+          { term: "Regular polygon", meaning: "A polygon with all sides equal and all angles equal." },
+          { term: "Unit", meaning: "The measurement label such as cm, m or km." },
+        ],
+        sections: [
+          { title: "Add the outside", points: ["Perimeter means going around the boundary.", "Add all outside sides of the shape.", "Do not include inside lines unless they are part of the boundary."] },
+          { title: "Use shortcuts", points: ["Rectangle perimeter = 2 × (length + width).", "Square perimeter = 4 × side.", "Regular polygon perimeter = number of sides × one side." ] },
+          { title: "Find missing sides", points: ["Use equal sides in rectangles, squares and regular polygons.", "For composite shapes, label missing outside lengths before adding.", "Keep all measurements in the same unit."] },
+        ],
+        visual: { title: "Walk around the boundary", description: "Show a rectangle and an L-shaped compound shape with only the outside edges highlighted and arrows moving around the perimeter.", kind: "diagram" },
+        examTip: "Perimeter uses ordinary length units such as cm or m, not square units.",
+      },
       intro: "Why this matters: Perimeter questions are common in PLE, and they are some of the easiest marks to collect when you know what the question is asking. Once you understand that perimeter means the distance all the way round, most of the work becomes simple addition or one short formula.",
       learningObjectives: [
         "Explain what perimeter means.",
@@ -462,6 +571,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Area measures the space inside a shape, so choose the formula that matches the shape and use square units.",
+        keyVocabulary: [
+          { term: "Area", meaning: "The amount of surface inside a flat shape." },
+          { term: "Square unit", meaning: "A unit for area, such as cm² or m²." },
+          { term: "Base", meaning: "The bottom or chosen side used in an area formula." },
+          { term: "Height", meaning: "The perpendicular distance from base to opposite side or vertex." },
+          { term: "Composite shape", meaning: "A shape made by joining simpler shapes." },
+        ],
+        sections: [
+          { title: "Choose the correct formula", points: ["Rectangle area = length × width.", "Triangle area = 1/2 × base × height.", "Parallelogram area = base × height."] },
+          { title: "Use correct units", points: ["Area is measured in square units such as cm², m² or km².", "Convert units first if lengths are given in different units.", "Do not write perimeter units for area answers."] },
+          { title: "Composite shapes", points: ["Break the shape into rectangles, triangles or other known shapes.", "Find each small area separately.", "Add or subtract areas depending on the diagram."] },
+        ],
+        visual: { title: "Area formula cards", description: "Show labelled rectangle, triangle and parallelogram cards with base, height, length and width marked, plus a composite shape split into rectangles.", kind: "cards" },
+        examTip: "If the shape is unusual, split it into shapes you know. Label each missing length before calculating.",
+      },
       intro: "Why this matters: Area questions are common in PLE, especially in rectangles, triangles, circles, and compound shapes. If you understand that area means the space inside a shape, the formulas begin to make sense instead of feeling like things to cram.",
       learningObjectives: [
         "Explain what area means.",
@@ -527,6 +653,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Volume measures the space inside a solid, while capacity tells how much a container can hold.",
+        keyVocabulary: [
+          { term: "Volume", meaning: "The amount of space occupied by a solid." },
+          { term: "Capacity", meaning: "The amount a container can hold." },
+          { term: "Cuboid", meaning: "A box-shaped solid with rectangular faces." },
+          { term: "Cubic unit", meaning: "A unit for volume, such as cm³ or m³." },
+          { term: "Conversion", meaning: "Changing from one unit to another." },
+        ],
+        sections: [
+          { title: "Cuboids and cubes", points: ["Cuboid volume = length × width × height.", "A cube has equal edges, so volume = side × side × side.", "Label all three dimensions before multiplying."] },
+          { title: "Units", points: ["Volume uses cubic units such as cm³ and m³.", "Capacity often uses millilitres and litres.", "1 litre = 1000 millilitres, and 1 cm³ = 1 millilitre for water capacity questions."] },
+          { title: "Word problems", points: ["Identify whether the question asks for volume, capacity or missing dimension.", "Convert units before calculating if needed.", "Check if the answer is reasonable for the container size."] },
+        ],
+        visual: { title: "Cuboid volume blocks", description: "Show a cuboid made of small cubes with length, width and height labelled, plus a litre-to-millilitre conversion card.", kind: "diagram" },
+        examTip: "Volume needs three dimensions. If only two dimensions are used, you may have calculated area instead.",
+      },
       intro: "Why this matters: Volume questions are common in PLE, especially in tanks, boxes, cubes, and capacity problems. If you understand that volume means the space inside a solid shape, the formulas become easier to remember and use.",
       learningObjectives: [
         "Explain what volume means.",
@@ -593,6 +736,23 @@ export const TOPICS: Topic[] = [
     reviewStatus: "verified",
     // videoUrl: "https://www.youtube.com/embed/...", // TODO: paste NotebookLM video URL after upload
     note: {
+      study: {
+        bigIdea: "An equation is like a balanced scale: whatever you do to one side, you must do to the other side.",
+        keyVocabulary: [
+          { term: "Equation", meaning: "A mathematical statement with an equals sign." },
+          { term: "Variable", meaning: "A letter that stands for an unknown number." },
+          { term: "Solve", meaning: "Find the value of the unknown." },
+          { term: "Balance", meaning: "Keeping both sides of an equation equal." },
+          { term: "Inverse operation", meaning: "The opposite operation used to undo a step." },
+        ],
+        sections: [
+          { title: "Understand the balance", points: ["The left side and right side of an equation must remain equal.", "Use inverse operations to isolate the unknown.", "Show each step clearly instead of guessing."] },
+          { title: "Solving steps", points: ["Remove addition or subtraction around the variable first.", "Then remove multiplication or division.", "Check by substituting the answer back into the original equation."] },
+          { title: "Word equations", points: ["Translate words into operations carefully.", "Let a letter stand for the unknown number.", "Solve and write the answer in a sentence if the question is a word problem."] },
+        ],
+        visual: { title: "Balanced scale equation", description: "Show a scale with x + 3 on one side and 11 on the other, then arrows subtracting 3 from both sides to leave x = 8.", kind: "flow" },
+        examTip: "Use the opposite operation and do it to both sides. Always check your answer in the original equation.",
+      },
       intro: "Why this matters: Equations are one of the main algebra topics in PLE. Once you understand that an equation must stay balanced, many questions become easier because you know exactly what to do next.",
       learningObjectives: [
         "Explain what an equation is.",
@@ -656,6 +816,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Substitution means replacing a letter with its given number, then calculating carefully.",
+        keyVocabulary: [
+          { term: "Substitution", meaning: "Replacing a variable with a given value." },
+          { term: "Variable", meaning: "A letter that stands for a number." },
+          { term: "Expression", meaning: "A mathematical phrase without an equals sign." },
+          { term: "Value", meaning: "The number a variable represents." },
+          { term: "Order of operations", meaning: "The correct order for calculating an expression." },
+        ],
+        sections: [
+          { title: "Replace the letter", points: ["Write the expression again with the number in place of the letter.", "Use brackets when replacing a letter that is multiplied or has a negative value.", "Keep all operation signs visible."] },
+          { title: "Calculate in order", points: ["Do brackets first where they appear.", "Then multiplication or division.", "Then addition or subtraction." ] },
+          { title: "Check the answer", points: ["Make sure every variable has been replaced.", "Check signs, especially negative signs.", "Read whether the question asks for one expression or a final equation solution."] },
+        ],
+        visual: { title: "Substitution replacement flow", description: "Show an expression such as 3x + 2, then x = 4, then 3(4) + 2, then 12 + 2 = 14.", kind: "flow" },
+        examTip: "First substitute, then simplify. Do not change the expression before replacing the letter.",
+      },
       intro: "Why this matters: Substitution is one of the easiest algebra marks in PLE if you stay calm and replace each letter carefully. It also helps you later when you solve equations and word problems.",
       learningObjectives: [
         "Replace letters with the correct numbers.",
@@ -718,6 +895,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Mean, median, mode and range are different ways of describing a set of data, so each one has a different method.",
+        keyVocabulary: [
+          { term: "Mean", meaning: "The average found by adding values and dividing by how many values there are." },
+          { term: "Median", meaning: "The middle value after arranging data in order." },
+          { term: "Mode", meaning: "The value that appears most often." },
+          { term: "Range", meaning: "The difference between the highest and lowest values." },
+          { term: "Data", meaning: "Collected numbers or information." },
+        ],
+        sections: [
+          { title: "Find the mean", points: ["Add all the values.", "Count how many values there are.", "Divide the total by the number of values."] },
+          { title: "Find median and mode", points: ["Arrange values from smallest to largest before finding the median.", "If there are two middle values, find their average.", "The mode is the value that appears most often; there may be no mode or more than one mode."] },
+          { title: "Find the range", points: ["Identify the highest value and lowest value.", "Subtract lowest from highest.", "Use range to describe how spread out the data is."] },
+        ],
+        visual: { title: "Data method cards", description: "Show one ordered list of numbers with four colour labels: add/divide for mean, middle for median, most repeated for mode, highest-minus-lowest for range.", kind: "cards" },
+        examTip: "Arrange the data first. This prevents mistakes in median, mode and range questions.",
+      },
       intro: "Why this matters: Questions on mean, median, mode, and range are common in PLE. If you know what each word means and when to use it, these marks become much easier to earn.",
       learningObjectives: [
         "Find the mean of a set of numbers.",
@@ -784,6 +978,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "12-hour and 24-hour clocks show the same time in different formats, so conversion depends on morning, afternoon or night.",
+        keyVocabulary: [
+          { term: "12-hour clock", meaning: "Time written with a.m. or p.m." },
+          { term: "24-hour clock", meaning: "Time written from 0000 to 2359 hours." },
+          { term: "a.m.", meaning: "Time from midnight to before midday." },
+          { term: "p.m.", meaning: "Time from midday to before midnight." },
+          { term: "Duration", meaning: "How long something lasts." },
+        ],
+        sections: [
+          { title: "Convert to 24-hour time", points: ["Morning a.m. times mostly stay the same, with four digits.", "For p.m. times after 12 noon, add 12 to the hour.", "12 midnight is 0000 hours and 12 noon is 1200 hours."] },
+          { title: "Convert to 12-hour time", points: ["If the hour is less than 12, it is a.m.", "If the hour is more than 12, subtract 12 and write p.m.", "Keep minutes unchanged during conversion."] },
+          { title: "Find duration", points: ["Use a timeline when times cross midday or midnight.", "Count hours and minutes separately if needed.", "Check whether the answer should be in hours, minutes or both."] },
+        ],
+        visual: { title: "Clock conversion timeline", description: "Show a 24-hour timeline from 0000 to 2400 with midnight, noon, a.m. and p.m. regions labelled, plus examples 0730 and 1930.", kind: "timeline" },
+        examTip: "For p.m. times, add 12 except at 12 noon. For 24-hour times above 1200, subtract 12 and write p.m.",
+      },
       intro: "Why this matters: Time questions are very common in PLE. If you can change between 12-hour and 24-hour time and work out how long something takes, you can collect these marks with confidence.",
       learningObjectives: [
         "Change time from 12-hour clock to 24-hour clock.",
@@ -848,6 +1059,24 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Money questions use the same careful steps: identify cost or selling price, then calculate profit, loss, discount or interest.",
+        keyVocabulary: [
+          { term: "Cost price", meaning: "The price paid to buy an item." },
+          { term: "Selling price", meaning: "The price received after selling an item." },
+          { term: "Profit", meaning: "Money gained when selling price is more than cost price." },
+          { term: "Loss", meaning: "Money lost when selling price is less than cost price." },
+          { term: "Discount", meaning: "Money reduced from the marked price." },
+          { term: "Interest", meaning: "Extra money paid or earned for using money over time." },
+        ],
+        sections: [
+          { title: "Profit and loss", points: ["Profit = selling price − cost price.", "Loss = cost price − selling price.", "If selling price is higher, it is profit; if lower, it is loss."] },
+          { title: "Discount", points: ["Discount is taken away from the marked price.", "Selling price after discount = marked price − discount.", "Percentage discount means finding a percentage of the marked price first."] },
+          { title: "Interest", points: ["Simple interest depends on principal, rate and time.", "Use the correct time unit asked in the question.", "Read whether the question asks for interest only or total amount."] },
+        ],
+        visual: { title: "Money decision flow", description: "Show a flow chart: compare selling price with cost price for profit/loss, subtract discount from marked price, and principal-rate-time for interest.", kind: "flow" },
+        examTip: "Always label CP, SP, discount and interest before calculating. This stops you from subtracting in the wrong order.",
+      },
       intro: "Why this matters: Money questions are very common in PLE and in daily life. They often involve buying, selling, saving, borrowing, discounts, profit, and loss, so understanding the starting amount is very important.",
       learningObjectives: [
         "Explain cost price, selling price, profit, and loss.",
@@ -912,6 +1141,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "The four basic operations are the tools for most Maths questions: addition, subtraction, multiplication and division.",
+        keyVocabulary: [
+          { term: "Addition", meaning: "Combining numbers to find a total." },
+          { term: "Subtraction", meaning: "Finding what remains or the difference." },
+          { term: "Multiplication", meaning: "Repeated addition or scaling." },
+          { term: "Division", meaning: "Sharing or grouping equally." },
+          { term: "Remainder", meaning: "What is left after division." },
+        ],
+        sections: [
+          { title: "Choose the operation", points: ["Use addition for totals and joining quantities.", "Use subtraction for difference, change or what is left.", "Use multiplication for equal groups and division for sharing or grouping." ] },
+          { title: "Calculate accurately", points: ["Align digits by place value for addition and subtraction.", "Know multiplication facts and use neat working.", "Check division by multiplying quotient by divisor and adding the remainder." ] },
+          { title: "Word problems", points: ["Underline important numbers and action words.", "Decide whether the answer should be bigger or smaller.", "Write a final answer with the correct unit where needed." ] },
+        ],
+        visual: { title: "Operation choice cards", description: "Show four cards: total for addition, difference for subtraction, equal groups for multiplication, sharing for division, each with a small example.", kind: "cards" },
+        examTip: "Before calculating, ask: am I finding a total, a difference, equal groups or sharing?", 
+      },
       intro:
         "Why this matters: Addition, subtraction, multiplication and division are used in almost every part of P7 Mathematics. If a learner is weak here, many other topics become difficult. If a learner is strong here, money, fractions, measurement and word problems become much easier.",
       learningObjectives: [
@@ -979,6 +1225,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Integers include positive numbers, negative numbers and zero, and a number line helps you compare and calculate them.",
+        keyVocabulary: [
+          { term: "Integer", meaning: "A whole number that can be positive, negative or zero." },
+          { term: "Positive number", meaning: "A number greater than zero." },
+          { term: "Negative number", meaning: "A number less than zero." },
+          { term: "Zero", meaning: "The number between positive and negative numbers." },
+          { term: "Number line", meaning: "A line used to show numbers in order." },
+        ],
+        sections: [
+          { title: "Read the number line", points: ["Numbers increase as you move right.", "Numbers decrease as you move left.", "A negative number with a bigger digit is actually smaller, for example -8 is less than -3." ] },
+          { title: "Compare integers", points: ["Positive numbers are greater than zero.", "Zero is greater than negative numbers but less than positive numbers.", "Use the number line to order integers from least to greatest." ] },
+          { title: "Add and subtract", points: ["Adding a positive number moves right.", "Subtracting a positive number moves left.", "Real-life examples include temperature, debts and movement below sea level." ] },
+        ],
+        visual: { title: "Integer number line", description: "Show a number line from -10 to +10 with arrows for adding and subtracting, and labels for negative, zero and positive regions.", kind: "diagram" },
+        examTip: "On a number line, the number farther to the right is greater.",
+      },
       intro:
         "Why this matters: Integers help learners understand numbers above and below zero. They are useful in temperature, floors of buildings, debts, direction on a number line, and they also prepare learners for later algebra and inequalities.",
       learningObjectives: [
@@ -1043,6 +1306,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Graphs organise data visually, so read the title, scale, labels and key before answering questions.",
+        keyVocabulary: [
+          { term: "Data", meaning: "Collected facts or numbers." },
+          { term: "Scale", meaning: "The value represented by each interval on a graph." },
+          { term: "Pie chart", meaning: "A circle graph divided into sectors." },
+          { term: "Travel graph", meaning: "A graph showing distance against time." },
+          { term: "Key", meaning: "A guide explaining symbols or colours on a graph." },
+        ],
+        sections: [
+          { title: "Read graphs carefully", points: ["Start with the title to know what the graph is about.", "Check the scale before reading values.", "Use labels and the key to avoid mixing categories."] },
+          { title: "Pie charts", points: ["A full pie chart is 360 degrees.", "Sectors show parts of the total.", "Use fractions or angles to find missing values."] },
+          { title: "Travel graphs", points: ["A rising line usually means movement away from the starting point.", "A flat line usually means stopping or resting.", "Speed can be compared by looking at how steep the line is."] },
+        ],
+        visual: { title: "Graph-reading checklist", description: "Show a sample pie chart and travel graph with callouts for title, scale, labels, key, sector and flat/rising line.", kind: "diagram" },
+        examTip: "Before calculating from a graph, check the scale. Many wrong answers come from reading each box as 1 when the scale is different.",
+      },
       intro:
         "Why this matters: Pie charts and travel graphs help learners read information from pictures instead of only from words. These questions are common because they test whether a learner can understand data, compare parts, and explain movement over time.",
       learningObjectives: [
@@ -1107,6 +1387,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Timetables organise activities by time, so careful reading helps you find start times, end times and duration.",
+        keyVocabulary: [
+          { term: "Timetable", meaning: "A table showing activities and their times." },
+          { term: "Schedule", meaning: "A planned order of activities." },
+          { term: "Departure", meaning: "The time something leaves." },
+          { term: "Arrival", meaning: "The time something reaches a place." },
+          { term: "Duration", meaning: "How long an activity or journey takes." },
+        ],
+        sections: [
+          { title: "Read rows and columns", points: ["Use headings to know what each column means.", "Follow the correct row for the day, subject, bus or event.", "Do not mix information from different rows." ] },
+          { title: "Find duration", points: ["Duration = finishing time minus starting time.", "Use a timeline when times cross midday or midnight.", "Convert to minutes if subtraction is difficult." ] },
+          { title: "Answer timetable questions", points: ["Look for earliest, latest, before, after and between.", "Check whether the answer asks for time or length of time.", "Use the same time format as the question where possible." ] },
+        ],
+        visual: { title: "Timetable reading guide", description: "Show a small timetable with a highlighted row and column, plus a timeline from departure to arrival to show duration.", kind: "diagram" },
+        examTip: "Read the headings first. Many timetable errors come from using the right number in the wrong row or column.",
+      },
       intro:
         "Why this matters: Timetable questions show mathematics in real life. Learners use them to read departure times, arrival times, waiting time, lesson schedules, and journey duration. This topic grows naturally from clock work and helps learners use time meaningfully.",
       learningObjectives: [
@@ -1173,6 +1470,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Algebraic expressions use letters and numbers to describe mathematical situations without an equals sign.",
+        keyVocabulary: [
+          { term: "Expression", meaning: "A mathematical phrase using numbers, letters and operation signs." },
+          { term: "Variable", meaning: "A letter that stands for a number." },
+          { term: "Term", meaning: "A part of an expression separated by plus or minus signs." },
+          { term: "Coefficient", meaning: "The number multiplying a variable." },
+          { term: "Like terms", meaning: "Terms with the same variable part." },
+        ],
+        sections: [
+          { title: "Read expressions", points: ["A letter can stand for an unknown or changing number.", "2x means 2 multiplied by x.", "An expression has no equals sign, unlike an equation." ] },
+          { title: "Simplify expressions", points: ["Collect like terms only.", "Add or subtract coefficients of like terms.", "Do not combine unlike terms such as x and y." ] },
+          { title: "Write expressions from words", points: ["More than means addition.", "Less than or difference often means subtraction.", "Twice a number means 2 multiplied by the variable." ] },
+        ],
+        visual: { title: "Algebra language translator", description: "Show word phrases on the left and expressions on the right: a number plus 5, twice a number, 3 less than x, with arrows translating words to symbols.", kind: "comparison" },
+        examTip: "Do not put an equals sign unless the question gives a full equation or asks you to form one.",
+      },
       intro:
         "Why this matters: Algebraic expressions are one of the first steps from ordinary arithmetic into algebra. Learners begin to use letters to stand for numbers, and this helps them prepare for substitution, equations, and real-life problem solving.",
       learningObjectives: [
@@ -1237,6 +1551,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Divisibility tests help you quickly know whether one number divides another without long division.",
+        keyVocabulary: [
+          { term: "Divisible", meaning: "Can be divided exactly with no remainder." },
+          { term: "Factor", meaning: "A number that divides another number exactly." },
+          { term: "Multiple", meaning: "A number made by multiplying another number by a whole number." },
+          { term: "Remainder", meaning: "What is left after division." },
+          { term: "Digit sum", meaning: "The sum of the digits of a number." },
+        ],
+        sections: [
+          { title: "Common tests", points: ["A number is divisible by 2 if it ends in 0, 2, 4, 6 or 8.", "It is divisible by 5 if it ends in 0 or 5.", "It is divisible by 10 if it ends in 0." ] },
+          { title: "Tests using digit sums", points: ["A number is divisible by 3 if the sum of its digits is divisible by 3.", "A number is divisible by 9 if the sum of its digits is divisible by 9.", "For 6, the number must be divisible by both 2 and 3." ] },
+          { title: "Use tests in bigger questions", points: ["Use divisibility to find factors quickly.", "Use it to simplify fractions.", "Use it before prime factorisation or LCM/HCF questions." ] },
+        ],
+        visual: { title: "Divisibility test table", description: "Show a quick table for divisibility by 2, 3, 5, 6, 9 and 10 with one example for each rule.", kind: "cards" },
+        examTip: "For divisibility by 6, check both 2 and 3. Passing only one test is not enough.",
+      },
       intro:
         "Why this matters: Tests of divisibility help learners decide quickly whether one number can divide another exactly. This saves time in factor work, fractions, prime factorisation, and many written calculations.",
       learningObjectives: [
@@ -1304,6 +1635,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Prime factorisation breaks a number into prime numbers that multiply to make it.",
+        keyVocabulary: [
+          { term: "Prime number", meaning: "A number greater than 1 with exactly two factors: 1 and itself." },
+          { term: "Composite number", meaning: "A number with more than two factors." },
+          { term: "Prime factor", meaning: "A prime number that divides a given number exactly." },
+          { term: "Factor tree", meaning: "A diagram used to split a number into factors until primes remain." },
+          { term: "Index form", meaning: "Writing repeated factors using powers." },
+        ],
+        sections: [
+          { title: "Know primes", points: ["2 is the only even prime number.", "Prime numbers have only two factors.", "Examples include 2, 3, 5, 7, 11 and 13." ] },
+          { title: "Break into prime factors", points: ["Start by dividing by small primes such as 2, 3 and 5.", "Continue until all factors are prime.", "Check by multiplying the prime factors back." ] },
+          { title: "Use prime factors", points: ["Prime factorisation helps find HCF and LCM.", "It helps simplify fractions.", "Write repeated factors in index form when asked." ] },
+        ],
+        visual: { title: "Factor tree", description: "Show a number splitting into branches until only prime factors remain, then rewrite the factors in multiplication and index form.", kind: "flow" },
+        examTip: "Do not stop at composite factors. Continue until every branch ends in a prime number.",
+      },
       intro:
         "Why this matters: Prime factorisation helps learners break numbers into smaller exact factors. It is useful in divisibility work, simplifying fractions, and later ideas like HCF and LCM.",
       learningObjectives: [
@@ -1370,6 +1718,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Length measures distance, height or how long something is, and many questions require correct unit conversion.",
+        keyVocabulary: [
+          { term: "Length", meaning: "The measurement of how long something is." },
+          { term: "Distance", meaning: "How far apart two points are." },
+          { term: "Millimetre", meaning: "A small unit of length." },
+          { term: "Centimetre", meaning: "A unit of length equal to 10 millimetres." },
+          { term: "Kilometre", meaning: "A unit of length equal to 1000 metres." },
+        ],
+        sections: [
+          { title: "Choose units", points: ["Use millimetres or centimetres for small objects.", "Use metres for rooms, fields and short distances.", "Use kilometres for long distances between places." ] },
+          { title: "Convert units", points: ["10 mm = 1 cm.", "100 cm = 1 m.", "1000 m = 1 km." ] },
+          { title: "Solve length problems", points: ["Convert all measurements to the same unit first.", "Estimate before calculating to check the answer.", "Include the correct unit in the final answer." ] },
+        ],
+        visual: { title: "Length conversion ladder", description: "Show a ladder from km to m to cm to mm with multiply/divide arrows and example conversions.", kind: "flow" },
+        examTip: "Convert to one unit before adding or subtracting lengths.",
+      },
       intro:
         "Why this matters: Length is used in everyday life when measuring distance, height, width, rope, cloth, roads, and classroom objects. Learners also need it for perimeter, area, scale work, and word problems.",
       learningObjectives: [
@@ -1435,6 +1800,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Mass tells how heavy something is, while weight is the force due to gravity; P7 questions mostly focus on measuring and converting mass.",
+        keyVocabulary: [
+          { term: "Mass", meaning: "The amount of matter in an object." },
+          { term: "Weight", meaning: "The force with which gravity pulls an object." },
+          { term: "Gram", meaning: "A small unit of mass." },
+          { term: "Kilogram", meaning: "A unit equal to 1000 grams." },
+          { term: "Tonne", meaning: "A large unit equal to 1000 kilograms." },
+        ],
+        sections: [
+          { title: "Units of mass", points: ["Use grams for light items.", "Use kilograms for people, bags and common goods.", "Use tonnes for very heavy loads such as trucks or harvests." ] },
+          { title: "Convert mass", points: ["1000 g = 1 kg.", "1000 kg = 1 tonne.", "Convert before adding, subtracting or comparing." ] },
+          { title: "Word problems", points: ["Read whether items are being added, shared or compared.", "Watch mixed units such as kg and g in the same question.", "Write the final unit clearly." ] },
+        ],
+        visual: { title: "Mass unit scale", description: "Show grams, kilograms and tonnes with examples: sugar packet, pupil, truck load, plus conversion arrows.", kind: "comparison" },
+        examTip: "Do not add kilograms and grams directly. Convert first.",
+      },
       intro:
         "Why this matters: Mass and weight are used in markets, homes, shops, transport, and health work. Learners need these ideas when measuring goods, comparing quantities, and solving practical everyday maths questions.",
       learningObjectives: [
@@ -1500,6 +1882,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Capacity measures how much a container can hold, usually in litres and millilitres.",
+        keyVocabulary: [
+          { term: "Capacity", meaning: "The amount a container can hold." },
+          { term: "Litre", meaning: "A common unit for measuring liquids." },
+          { term: "Millilitre", meaning: "A small unit of capacity." },
+          { term: "Container", meaning: "An object that can hold something." },
+          { term: "Volume", meaning: "The amount of space occupied or contained." },
+        ],
+        sections: [
+          { title: "Units", points: ["Use millilitres for small amounts such as medicine or a cup.", "Use litres for jerrycans, bottles, tanks and buckets.", "1 litre = 1000 millilitres." ] },
+          { title: "Convert capacity", points: ["Multiply litres by 1000 to get millilitres.", "Divide millilitres by 1000 to get litres.", "Convert mixed units before calculating." ] },
+          { title: "Solve container problems", points: ["Find the capacity of one container if the total is shared equally.", "Multiply when several equal containers are filled.", "Subtract to find how much is left or how much more is needed." ] },
+        ],
+        visual: { title: "Capacity containers", description: "Show a cup, bottle, jerrycan and tank with likely units, plus a 1 litre equals 1000 millilitres card.", kind: "cards" },
+        examTip: "Capacity answers often need litres, millilitres or both. Check the unit requested in the question.",
+      },
       intro:
         "Why this matters: Capacity helps learners measure how much liquid a container can hold. It is used in homes, shops, farming, cooking, and science-related activities.",
       learningObjectives: [
@@ -1565,6 +1964,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Large numbers are easier to read and write when grouped by place value: ones, thousands and millions.",
+        keyVocabulary: [
+          { term: "Place value", meaning: "The value of a digit because of its position in a number." },
+          { term: "Digit", meaning: "A symbol from 0 to 9 used to write numbers." },
+          { term: "Millions", meaning: "The place-value group for numbers of one million and above." },
+          { term: "Expanded form", meaning: "Writing a number as the sum of its place values." },
+          { term: "Rounding off", meaning: "Writing a number to a nearby required place value." },
+        ],
+        sections: [
+          { title: "Read large numbers", points: ["Group digits in threes from the right.", "Read millions, thousands and ones groups in order.", "Use commas or spaces to avoid losing place value." ] },
+          { title: "Write and expand", points: ["Write each digit in its correct place-value column.", "Expanded form shows the value of each non-zero digit.", "Zero holds a place even when it has no added value." ] },
+          { title: "Compare and round", points: ["Compare from the leftmost digit first.", "For rounding, look at the digit to the right of the required place.", "If it is 5 or more, round up; if less than 5, keep the digit." ] },
+        ],
+        visual: { title: "Millions place-value chart", description: "Show a place-value chart grouped into millions, thousands and ones, with an example number expanded below it.", kind: "diagram" },
+        examTip: "Group digits in threes from the right before reading or writing large numbers.",
+      },
       intro:
         "Why this matters: Large whole numbers appear in population, money, distances, school enrolment, national statistics, and word problems. Learners need to read them, write them, compare them, and understand their place value correctly.",
       learningObjectives: [
@@ -1630,6 +2046,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Line segments and angles describe shapes accurately, and angle size is measured in degrees.",
+        keyVocabulary: [
+          { term: "Line segment", meaning: "A straight path with two end points." },
+          { term: "Angle", meaning: "The amount of turn between two lines meeting at a point." },
+          { term: "Right angle", meaning: "An angle of 90 degrees." },
+          { term: "Acute angle", meaning: "An angle less than 90 degrees." },
+          { term: "Obtuse angle", meaning: "An angle greater than 90 degrees but less than 180 degrees." },
+        ],
+        sections: [
+          { title: "Line segments", points: ["A line segment has two end points.", "Use a ruler to draw and measure line segments.", "Label end points clearly, such as AB." ] },
+          { title: "Types of angles", points: ["Acute angles are less than 90 degrees.", "Right angles are exactly 90 degrees.", "Obtuse angles are between 90 degrees and 180 degrees." ] },
+          { title: "Measuring angles", points: ["Place the protractor centre on the vertex.", "Align the zero line with one arm of the angle.", "Read the correct scale from the other arm." ] },
+        ],
+        visual: { title: "Angle types and protractor", description: "Show acute, right and obtuse angles, plus a protractor aligned with a labelled angle at the vertex.", kind: "diagram" },
+        examTip: "When using a protractor, choose the scale that starts at zero on the arm of the angle.",
+      },
       intro:
         "Why this matters: Line segments and angles are basic ideas in geometry. Learners need them for drawing, measuring, naming shapes, and understanding many later topics such as polygons, bearings, and construction.",
       learningObjectives: [
@@ -1694,6 +2127,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Polygons are closed shapes made of straight sides, and they are named by the number of sides.",
+        keyVocabulary: [
+          { term: "Polygon", meaning: "A closed flat shape made of straight sides." },
+          { term: "Side", meaning: "A straight edge of a polygon." },
+          { term: "Vertex", meaning: "A corner where two sides meet." },
+          { term: "Triangle", meaning: "A polygon with three sides." },
+          { term: "Quadrilateral", meaning: "A polygon with four sides." },
+        ],
+        sections: [
+          { title: "Identify polygons", points: ["A polygon must be closed.", "All its sides must be straight.", "Circles and shapes with curved sides are not polygons." ] },
+          { title: "Name by sides", points: ["Triangle has 3 sides.", "Quadrilateral has 4 sides.", "Pentagon has 5 sides, hexagon has 6, heptagon has 7 and octagon has 8." ] },
+          { title: "Describe features", points: ["Count sides, vertices and angles.", "Look for equal sides or parallel sides where needed.", "Use correct mathematical names." ] },
+        ],
+        visual: { title: "Polygon naming cards", description: "Show shape cards from triangle to octagon with number of sides, vertices and names labelled.", kind: "cards" },
+        examTip: "If a shape is not closed or has a curved side, it is not a polygon.",
+      },
       intro:
         "Why this matters: Simple polygons are common shapes in geometry. Learners need to recognise them, name them, count their sides and angles, and connect them to perimeter, area, and construction work.",
       learningObjectives: [
@@ -1758,6 +2208,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Coordinates locate points on a grid by moving across first, then up or down.",
+        keyVocabulary: [
+          { term: "Coordinate", meaning: "An ordered pair that gives the position of a point." },
+          { term: "x-axis", meaning: "The horizontal axis on a coordinate grid." },
+          { term: "y-axis", meaning: "The vertical axis on a coordinate grid." },
+          { term: "Ordered pair", meaning: "Two numbers written in order, such as (3, 4)." },
+          { term: "Origin", meaning: "The point where the x-axis and y-axis meet." },
+        ],
+        sections: [
+          { title: "Read ordered pairs", points: ["The first number is the x-coordinate.", "The second number is the y-coordinate.", "Move across first, then up or down."] },
+          { title: "Plot points", points: ["Start at the origin.", "Move along the x-axis, then move parallel to the y-axis.", "Mark and label the point clearly."] },
+          { title: "Use coordinates in shapes", points: ["Coordinates can show vertices of a shape.", "Joining plotted points can form triangles, rectangles or other polygons.", "Check the order of points before joining them."] },
+        ],
+        visual: { title: "Coordinate grid path", description: "Show a grid with x-axis and y-axis labelled, then arrows plotting point (3, 4): across 3, up 4.", kind: "diagram" },
+        examTip: "Remember: x comes before y. Read or plot across first, then up or down.",
+      },
       intro:
         "Why this matters: Coordinates help learners show position on a grid. They are useful in maps, graphs, geometry, and later mathematics where location matters.",
       learningObjectives: [
@@ -1823,6 +2290,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Lines can be parallel, intersecting, perpendicular or skew depending on how they are positioned.",
+        keyVocabulary: [
+          { term: "Parallel lines", meaning: "Lines in the same plane that never meet." },
+          { term: "Intersecting lines", meaning: "Lines that cross or meet." },
+          { term: "Perpendicular lines", meaning: "Lines that meet at a right angle." },
+          { term: "Skew lines", meaning: "Lines in different planes that do not meet and are not parallel." },
+          { term: "Plane", meaning: "A flat surface extending in all directions." },
+        ],
+        sections: [
+          { title: "Lines on a flat surface", points: ["Parallel lines stay the same distance apart.", "Intersecting lines meet at a point.", "Perpendicular lines meet at 90 degrees." ] },
+          { title: "Skew lines", points: ["Skew lines are found in three-dimensional situations.", "They do not meet, but they are not parallel because they are in different planes.", "Edges of a box can show skew lines." ] },
+          { title: "Use examples", points: ["Railway lines are a common model for parallel lines.", "A crossroad can show intersecting or perpendicular lines.", "A cuboid helps show skew lines." ] },
+        ],
+        visual: { title: "Line relationship comparison", description: "Show four labelled mini-diagrams: parallel, intersecting, perpendicular and skew lines on a cuboid edge model.", kind: "comparison" },
+        examTip: "Skew lines are a 3D idea. If two lines are on the same flat surface and never meet, they are parallel, not skew.",
+      },
       intro:
         "Why this matters: Learners need to recognise how lines are related in space and on flat surfaces. Parallel and skew lines appear in diagrams, construction work, solids, and everyday objects such as desks, windows, boxes, and buildings.",
       learningObjectives: [
@@ -1887,6 +2371,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Bearing and scale drawing help you show real directions and distances accurately on paper.",
+        keyVocabulary: [
+          { term: "Bearing", meaning: "A direction measured clockwise from north in degrees." },
+          { term: "Scale", meaning: "A ratio showing how drawing distance represents real distance." },
+          { term: "North line", meaning: "A line showing the north direction on a diagram or map." },
+          { term: "Clockwise", meaning: "The direction in which the hands of a clock move." },
+          { term: "Scale drawing", meaning: "A smaller or larger accurate drawing of a real object or place." },
+        ],
+        sections: [
+          { title: "Bearings", points: ["Bearings are measured clockwise from north.", "Write bearings using three digits, such as 045° or 120°.", "Draw or identify the north line before measuring."] },
+          { title: "Scale drawings", points: ["Read the scale before converting distances.", "Use a ruler for distance and a protractor for angles.", "Label points and directions clearly."] },
+          { title: "Common exam tasks", points: ["Find the bearing of one place from another.", "Convert map distance to real distance using the scale.", "Draw a route using given bearings and distances."] },
+        ],
+        visual: { title: "Bearing compass and scale ruler", description: "Show a north line with an angle measured clockwise to a point, plus a scale bar converting 1 cm on paper to a real distance.", kind: "diagram" },
+        examTip: "For bearings, always start from north at the starting point and measure clockwise. Use three digits in the answer.",
+      },
       intro:
         "Why this matters: Bearing and scale drawing help learners describe direction and represent real distances using smaller drawings. These ideas are useful in maps, journeys, plans, and practical geometry.",
       learningObjectives: [
@@ -1952,6 +2453,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "A subset is a smaller set whose members all belong to another set.",
+        keyVocabulary: [
+          { term: "Set", meaning: "A group of objects or numbers." },
+          { term: "Subset", meaning: "A set whose members all belong to another set." },
+          { term: "Universal set", meaning: "The set containing all items being considered." },
+          { term: "Element", meaning: "A member of a set." },
+          { term: "Proper subset", meaning: "A subset that is not equal to the whole set." },
+        ],
+        sections: [
+          { title: "Understand subsets", points: ["If every member of A is in B, then A is a subset of B.", "A set is also a subset of itself.", "An empty set is a subset of every set." ] },
+          { title: "Use Venn diagrams", points: ["A subset can be shown as one circle completely inside another circle.", "The bigger circle represents the set containing all members of the smaller set.", "Members outside the smaller circle may still belong to the bigger set." ] },
+          { title: "List subsets", points: ["Start with the empty set.", "List one-member subsets, then larger subsets.", "Check that every listed subset uses only members from the original set." ] },
+        ],
+        visual: { title: "Subset circle inside a circle", description: "Show set A completely inside set B, with examples of elements and a small list of subsets for a two-element set.", kind: "diagram" },
+        examTip: "For subset diagrams, the smaller set must be completely inside the larger set.",
+      },
       intro:
         "Why this matters: Subsets help learners understand how one group can belong completely inside another group. This idea connects directly to Venn diagrams, classification, and later probability language.",
       learningObjectives: [
@@ -2016,6 +2534,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Finite sets can be counted completely, while infinite sets continue without an end.",
+        keyVocabulary: [
+          { term: "Finite set", meaning: "A set with a countable number of elements." },
+          { term: "Infinite set", meaning: "A set that has no last element." },
+          { term: "Element", meaning: "A member of a set." },
+          { term: "Empty set", meaning: "A set with no elements." },
+          { term: "Cardinality", meaning: "The number of elements in a set." },
+        ],
+        sections: [
+          { title: "Finite sets", points: ["A finite set has a clear number of members.", "Examples include days of the week or vowels in English.", "You can count all elements and stop." ] },
+          { title: "Infinite sets", points: ["An infinite set continues without ending.", "Examples include counting numbers 1, 2, 3, ...", "Dots show that the pattern continues." ] },
+          { title: "Set notation", points: ["Use braces to list set members.", "Use three dots to show a continuing pattern.", "The empty set has no elements." ] },
+        ],
+        visual: { title: "Finite vs infinite set cards", description: "Show one closed list of vowels as finite and one number pattern 1, 2, 3, ... as infinite, with a count/no last member label.", kind: "comparison" },
+        examTip: "If the set has three dots and no final member, check whether it is infinite.",
+      },
       intro:
         "Why this matters: Learners need to know whether a set has a limited number of members or goes on without end. This helps them describe sets correctly and reason clearly in later set work.",
       learningObjectives: [
@@ -2080,6 +2615,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Probability tells how likely an event is, from impossible to certain, and can be written as a fraction.",
+        keyVocabulary: [
+          { term: "Probability", meaning: "The chance that an event will happen." },
+          { term: "Event", meaning: "Something that may happen in an experiment or situation." },
+          { term: "Outcome", meaning: "A possible result." },
+          { term: "Impossible", meaning: "An event that cannot happen." },
+          { term: "Certain", meaning: "An event that must happen." },
+        ],
+        sections: [
+          { title: "Probability words", points: ["Impossible means no chance.", "Likely means the event has a good chance of happening.", "Certain means the event must happen."] },
+          { title: "Probability as a fraction", points: ["Probability = favourable outcomes ÷ total possible outcomes.", "The denominator is the total number of equally likely outcomes.", "The numerator is the number of outcomes you want."] },
+          { title: "Simple experiments", points: ["Coins, dice, spinners and number cards are common examples.", "List all possible outcomes before calculating.", "Check that outcomes are equally likely if using a simple fraction."] },
+        ],
+        visual: { title: "Probability scale", description: "Show a horizontal scale from impossible through unlikely, even chance and likely to certain, plus a spinner example showing favourable outcomes over total outcomes.", kind: "diagram" },
+        examTip: "List the outcomes first. Then write favourable outcomes over total outcomes and simplify if possible.",
+      },
       intro:
         "Why this matters: Probability helps learners describe how likely an event is to happen. It connects naturally with sets, counting, and everyday prediction, such as weather, games, and choosing objects.",
       learningObjectives: [
@@ -2145,6 +2697,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Inequalities compare values using greater than, less than, at least or at most, and their answers can be shown on a number line.",
+        keyVocabulary: [
+          { term: "Inequality", meaning: "A mathematical statement comparing values that may not be equal." },
+          { term: "Greater than", meaning: "More than, shown by >." },
+          { term: "Less than", meaning: "Smaller than, shown by <." },
+          { term: "At least", meaning: "Equal to or greater than." },
+          { term: "Solution set", meaning: "All values that make an inequality true." },
+        ],
+        sections: [
+          { title: "Read symbols", points: ["> means greater than.", "< means less than.", "≥ means greater than or equal to, and ≤ means less than or equal to." ] },
+          { title: "Solve inequalities", points: ["Use inverse operations as in equations.", "Keep the inequality sign facing the correct way.", "For P7-level questions, test values if unsure." ] },
+          { title: "Show solution sets", points: ["List whole-number answers when requested.", "Use a number line to show ranges.", "Check whether the endpoint is included when the sign has equal to." ] },
+        ],
+        visual: { title: "Inequality number line", description: "Show number-line examples for x > 3 and x ≤ 5, using open and closed points with arrows.", kind: "diagram" },
+        examTip: "Words matter: at least includes the number; more than does not include it.",
+      },
       intro:
         "Why this matters: Inequalities help learners compare quantities that are not equal. They connect naturally with integers, number lines, algebraic expressions, and equations, and they help learners describe ranges of values instead of one exact answer.",
       learningObjectives: [
@@ -2210,6 +2779,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Number bases use different place values, so converting depends on powers of the base.",
+        keyVocabulary: [
+          { term: "Base", meaning: "The number that tells how place values grow in a number system." },
+          { term: "Binary", meaning: "Base two, using only digits 0 and 1." },
+          { term: "Place value", meaning: "The value of a digit because of its position." },
+          { term: "Decimal system", meaning: "Base ten, the usual number system." },
+          { term: "Conversion", meaning: "Changing a number from one base to another." },
+        ],
+        sections: [
+          { title: "Understand bases", points: ["Base ten uses powers of 10.", "Base two uses powers of 2 and only digits 0 and 1.", "No digit in a base can be equal to or greater than the base." ] },
+          { title: "Convert to base ten", points: ["Write the place values from right to left.", "Multiply each digit by its place value.", "Add the results." ] },
+          { title: "Convert from base ten", points: ["Repeated division by the base can be used.", "Record remainders carefully.", "Read remainders from bottom to top." ] },
+        ],
+        visual: { title: "Base conversion table", description: "Show a place-value table for base two with columns 8, 4, 2, 1 and an example converting 1011₂ to base ten.", kind: "diagram" },
+        examTip: "In base two, only 0 and 1 are allowed. A digit like 2 cannot appear in a base-two number.",
+      },
       intro:
         "Why this matters: Bases help learners understand that numbers can be written using different place-value systems, not only base ten. This topic strengthens place value and careful number reading.",
       learningObjectives: [
@@ -2274,6 +2860,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Number patterns follow a rule, and finding the rule helps you continue or describe the sequence.",
+        keyVocabulary: [
+          { term: "Pattern", meaning: "A repeated or regular arrangement." },
+          { term: "Sequence", meaning: "Numbers written in order following a rule." },
+          { term: "Term", meaning: "One number in a sequence." },
+          { term: "Rule", meaning: "The instruction that tells how the pattern changes." },
+          { term: "Difference", meaning: "The amount between two numbers." },
+        ],
+        sections: [
+          { title: "Find the rule", points: ["Compare neighbouring terms.", "Check if the pattern adds, subtracts, multiplies or divides.", "Look for alternating patterns if one rule does not fit all terms." ] },
+          { title: "Continue the pattern", points: ["Apply the same rule to get the next term.", "Check your new term against the previous terms.", "Write enough terms only as requested." ] },
+          { title: "Missing terms", points: ["Use terms before and after the gap.", "Work forwards and backwards to check.", "For table patterns, compare input and output values." ] },
+        ],
+        visual: { title: "Pattern rule detective", description: "Show a sequence with arrows between terms labelled +3 or ×2, plus a missing-term box solved from both sides.", kind: "flow" },
+        examTip: "Test your rule on more than one step. A rule that works once may not fit the whole pattern.",
+      },
       intro:
         "Why this matters: Number patterns help learners notice order and predict what comes next. This builds careful thinking in numeracy and prepares learners for algebraic reasoning.",
       learningObjectives: [
@@ -2339,6 +2942,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Probability of numbers uses the same chance rule, but the favourable outcomes are numbers with the required property.",
+        keyVocabulary: [
+          { term: "Outcome", meaning: "A possible result." },
+          { term: "Favourable outcome", meaning: "A result that matches what the question asks for." },
+          { term: "Even number", meaning: "A number divisible by 2." },
+          { term: "Odd number", meaning: "A number not divisible by 2." },
+          { term: "Prime number", meaning: "A number greater than 1 with exactly two factors." },
+        ],
+        sections: [
+          { title: "List the sample space", points: ["Write all possible numbers first.", "Count the total outcomes.", "Make sure each outcome is equally likely." ] },
+          { title: "Find favourable numbers", points: ["Circle the numbers that match the condition, such as even, odd, prime or multiple of 3.", "Count them carefully.", "Probability = favourable outcomes over total outcomes." ] },
+          { title: "Simplify and explain", points: ["Simplify the probability fraction if possible.", "Check that probability is not greater than 1.", "Write a short explanation if the question asks why." ] },
+        ],
+        visual: { title: "Number-card probability", description: "Show number cards 1 to 10, with prime or even cards highlighted and the fraction favourable/total written below.", kind: "cards" },
+        examTip: "List the numbers before counting. Mental counting can easily miss primes or multiples.",
+      },
       intro:
         "Why this matters: After learning basic probability words, learners need to apply probability to numbers and simple events. This helps them reason clearly about chance in games, number cards, counters, and everyday situations.",
       learningObjectives: [
@@ -2405,6 +3025,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Regular polygons have equal sides and equal angles, so their angle and perimeter questions follow clear rules.",
+        keyVocabulary: [
+          { term: "Regular polygon", meaning: "A polygon with all sides equal and all angles equal." },
+          { term: "Interior angle", meaning: "An angle inside a polygon." },
+          { term: "Exterior angle", meaning: "An angle outside a polygon formed by extending a side." },
+          { term: "Perimeter", meaning: "The total distance around a shape." },
+          { term: "Vertex", meaning: "A corner of a polygon." },
+        ],
+        sections: [
+          { title: "Recognise regular polygons", points: ["All sides are equal.", "All angles are equal.", "Examples include equilateral triangle, square and regular hexagon." ] },
+          { title: "Perimeter", points: ["Perimeter = number of sides × length of one side.", "If perimeter is given, divide by number of sides to get one side.", "Use the correct length units." ] },
+          { title: "Angles", points: ["Exterior angles of a regular polygon add to 360 degrees.", "Each exterior angle = 360 ÷ number of sides.", "Interior and exterior angle on a straight line add to 180 degrees." ] },
+        ],
+        visual: { title: "Regular polygon angle card", description: "Show a regular hexagon with equal side marks, one exterior angle, one interior angle and the 360-degree exterior-angle rule.", kind: "diagram" },
+        examTip: "For a regular polygon, each exterior angle is 360 divided by the number of sides.",
+      },
       intro:
         "Why this matters: Regular polygons help learners understand equal sides, equal angles, and shape families more clearly. This topic strengthens geometry language and supports later work in perimeter, construction, and shape recognition.",
       learningObjectives: [
@@ -2469,6 +3106,23 @@ export const TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Algebra in real life turns everyday unknowns into letters so problems can be written and solved clearly.",
+        keyVocabulary: [
+          { term: "Unknown", meaning: "A value that is not yet known." },
+          { term: "Variable", meaning: "A letter used to represent an unknown or changing value." },
+          { term: "Expression", meaning: "A mathematical phrase using numbers, variables and operations." },
+          { term: "Equation", meaning: "A statement showing two expressions are equal." },
+          { term: "Translate", meaning: "Change words into mathematical symbols." },
+        ],
+        sections: [
+          { title: "Choose a variable", points: ["Let a letter stand for the unknown number.", "Define the letter clearly, for example let x be the number of goats.", "Use the same letter consistently." ] },
+          { title: "Translate words", points: ["More than usually means add.", "Less than or difference can mean subtract.", "Times, twice and product mean multiply." ] },
+          { title: "Solve real-life questions", points: ["Form an expression or equation from the story.", "Solve step by step if an equation is formed.", "Write the final answer in words with the correct unit or object." ] },
+        ],
+        visual: { title: "Word problem to algebra flow", description: "Show a real-life sentence, underline the unknown, define x, write an equation, solve, then answer in words.", kind: "flow" },
+        examTip: "Always define your variable. A clear let statement makes the rest of the solution easier to follow.",
+      },
       intro:
         "Why this matters: Learners should not see algebra as only letters on paper. Algebra helps describe real-life situations such as age, cost, distance, and sharing. It turns everyday statements into mathematical language.",
       learningObjectives: [

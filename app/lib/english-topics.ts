@@ -10,6 +10,49 @@ export const ENGLISH_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Holiday topics help you speak and write clearly about plans, activities and experiences using the correct tense.",
+        keyVocabulary: [
+          { term: "Holiday plan", meaning: "Something a person intends to do during the holiday." },
+          { term: "Holiday activity", meaning: "Something a person does or did during the holiday." },
+          { term: "Future tense", meaning: "A verb form used for actions that will happen later." },
+          { term: "Past tense", meaning: "A verb form used for actions that already happened." },
+          { term: "Sequence words", meaning: "Words such as first, then and finally that show order." },
+          { term: "Topic sentence", meaning: "A sentence that introduces the main idea of a paragraph." },
+        ],
+        sections: [
+          {
+            title: "Plans and activities",
+            points: [
+              "Use future expressions such as will, going to, intend to and hope to for holiday plans.",
+              "Use past tense for completed holiday activities, such as visited, helped, read or travelled.",
+              "Choose useful local examples: helping at home, visiting relatives, farming, reading, travelling or playing games.",
+            ],
+          },
+          {
+            title: "Writing about holidays",
+            points: [
+              "Begin with a clear topic sentence that tells what the paragraph or composition is about.",
+              "Add details in time order using first, then, later, afterwards and finally.",
+              "End by saying what you learnt, enjoyed or plan to improve next time.",
+            ],
+          },
+          {
+            title: "Reading holiday passages",
+            points: [
+              "Read the questions, then read the passage carefully.",
+              "Underline names, places, dates, activities and tense clues.",
+              "Answer using information from the passage, not guesses from outside it.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Holiday writing planner",
+          description: "Show a simple three-box writing template: Beginning with where/when, Middle with three activities in order, Ending with lesson learnt or feeling. Add tense labels: future plans and past activities.",
+          kind: "flow",
+        },
+        examTip: "Before writing, decide whether the task asks for a future plan or a past experience. Keep the tense consistent.",
+      },
       intro: "Why this matters: Holiday topics help learners practise speaking, reading and writing about plans, activities and experiences using correct tenses and clear vocabulary.",
       learningObjectives: [
         "Talk and write about holiday plans and holiday activities.",
@@ -90,6 +133,49 @@ export const ENGLISH_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "A good letter matches the receiver, purpose and format: friendly for people you know, formal for official matters.",
+        keyVocabulary: [
+          { term: "Informal letter", meaning: "A friendly letter written to someone you know well." },
+          { term: "Formal letter", meaning: "An official letter written for a serious or public purpose." },
+          { term: "Receiver", meaning: "The person who gets or reads the letter." },
+          { term: "Heading", meaning: "A short line in a formal letter that states the purpose." },
+          { term: "Tone", meaning: "The feeling or level of politeness in writing." },
+          { term: "Complimentary close", meaning: "The polite ending of a letter, such as Yours faithfully." },
+        ],
+        sections: [
+          {
+            title: "Choose the right letter type",
+            points: [
+              "Write an informal letter to a friend, cousin, parent or relative.",
+              "Write a formal letter to a head teacher, manager, chairperson, editor or organisation.",
+              "Look at the receiver and purpose before choosing the format.",
+            ],
+          },
+          {
+            title: "Informal letter format",
+            points: [
+              "Include the writer's address, date, greeting, body, friendly closing and name.",
+              "Use a warm tone but keep grammar, spelling and punctuation correct.",
+              "Ask about the receiver, give your news or message, and close warmly.",
+            ],
+          },
+          {
+            title: "Formal letter format",
+            points: [
+              "Include writer's address, date, receiver's address, greeting, heading, body, close, signature and name.",
+              "Use polite, respectful and direct language; avoid slang.",
+              "Organise the body into purpose, details or reasons, and polite request or conclusion.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Formal vs informal letter template",
+          description: "Use a side-by-side template comparing informal and formal letters, with labels for address, date, greeting, heading, body and closing so learners see what changes.",
+          kind: "comparison",
+        },
+        examTip: "In PLE letter questions, mark the receiver and purpose first. Format mistakes can cost marks even when the message is good.",
+      },
       intro: "Why this matters: Letters are common in English exams and real life. Learners need to know the difference between informal and formal letters and use the correct format.",
       learningObjectives: [
         "Identify parts of informal and formal letters.",
@@ -195,6 +281,49 @@ export const ENGLISH_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Examination English helps you talk and write about preparation, exam rules, revision and confidence using clear polite language.",
+        keyVocabulary: [
+          { term: "Candidate", meaning: "A learner who sits an examination." },
+          { term: "Invigilator", meaning: "A person who supervises candidates during an examination." },
+          { term: "Revision", meaning: "Reading and practising work again to prepare for a test." },
+          { term: "Instructions", meaning: "Directions that tell candidates what to do." },
+          { term: "Timetable", meaning: "A plan showing subjects and times for revision or exams." },
+          { term: "Confidence", meaning: "Calm belief that you can try your best." },
+        ],
+        sections: [
+          {
+            title: "Preparing for examinations",
+            points: [
+              "Make a revision timetable and practise past questions.",
+              "Ask for help where you do not understand, sleep enough and eat well.",
+              "Prepare pens, pencils and other allowed materials early.",
+            ],
+          },
+          {
+            title: "Sitting examinations",
+            points: [
+              "Read instructions carefully before answering.",
+              "Write your name or index number correctly and manage time well.",
+              "Avoid cheating and answer the required number of questions.",
+            ],
+          },
+          {
+            title: "Writing exam answers",
+            points: [
+              "Use polite and correct language when rewriting rude or careless sentences.",
+              "For compositions, plan before writing and check punctuation afterwards.",
+              "For comprehension, answer from the passage and use full sentences when required.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Exam preparation checklist",
+          description: "Show a timeline/checklist: Before exam—revise and prepare materials; During exam—read instructions and manage time; After exam—check answers and stay calm.",
+          kind: "timeline",
+        },
+        examTip: "Do not rush. Read instructions first, plan long answers, then check spelling, punctuation and tense before submitting.",
+      },
       intro: "Why this matters: P7 learners prepare for PLE. They need language for preparing for examinations, sitting examinations and talking about exam rules, revision and confidence.",
       learningObjectives: [
         "Use vocabulary related to examinations and revision.",
@@ -275,6 +404,49 @@ export const ENGLISH_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Electronic media helps people receive and share information through radio, television, phones, computers and the internet.",
+        keyVocabulary: [
+          { term: "Electronic media", meaning: "Media that uses electronic devices to send or receive information." },
+          { term: "Broadcast", meaning: "To send a radio or television programme to many people." },
+          { term: "Announcement", meaning: "A spoken or written message that gives information to the public." },
+          { term: "Advertisement", meaning: "A message that promotes a product, service or event." },
+          { term: "Interview", meaning: "A conversation where one person asks questions and another answers." },
+          { term: "Audience", meaning: "The people who listen to, watch or read a message." },
+        ],
+        sections: [
+          {
+            title: "Types of electronic media",
+            points: [
+              "Radio uses sound, so messages must be clear and easy to listen to.",
+              "Television uses sound and pictures, so actions and visuals also matter.",
+              "Phones, computers and the internet can send messages quickly but must be used responsibly.",
+            ],
+          },
+          {
+            title: "Language used in media",
+            points: [
+              "Announcements should be short, clear and include who, what, where and when.",
+              "Advertisements use persuasive but truthful words to attract attention.",
+              "Interviews use polite questions and clear answers.",
+            ],
+          },
+          {
+            title: "Responsible media use",
+            points: [
+              "Check whether information is true before sharing it.",
+              "Use polite language and avoid harmful rumours.",
+              "Choose messages that suit the audience and purpose.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Message planning card",
+          description: "Show a media-message template with boxes for audience, purpose, key facts, channel and call to action. Add small radio, television and phone icons as examples.",
+          kind: "cards",
+        },
+        examTip: "For announcements and adverts, include the important facts first: who, what, where, when and why.",
+      },
       intro: "Why this matters: Learners receive information from radio, television, phones and other electronic media. They need vocabulary, comprehension and safe communication habits.",
       learningObjectives: [
         "Name types of electronic media.",
@@ -355,6 +527,49 @@ export const ENGLISH_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Rights, responsibilities and freedom go together: people and animals should be treated well, and everyone must act responsibly.",
+        keyVocabulary: [
+          { term: "Right", meaning: "Something a child or person should be allowed to have or enjoy." },
+          { term: "Responsibility", meaning: "A duty or action someone is expected to do." },
+          { term: "Freedom", meaning: "The chance to act or live without unfair control, while respecting others." },
+          { term: "Need", meaning: "Something necessary for health, safety or growth." },
+          { term: "Opinion", meaning: "What someone thinks or believes about an issue." },
+          { term: "Balanced paragraph", meaning: "A paragraph that connects both sides of an idea fairly." },
+        ],
+        sections: [
+          {
+            title: "Children's rights and responsibilities",
+            points: [
+              "Children have rights such as education, protection, food, health care and guidance.",
+              "Rights come with responsibilities such as respecting others, attending school and caring for property.",
+              "Freedom should not be used to harm oneself, other people or the community.",
+            ],
+          },
+          {
+            title: "Animal needs and freedom",
+            points: [
+              "Animals need food, water, shelter, treatment when sick and protection from cruelty.",
+              "People who keep animals have a responsibility to care for them properly.",
+              "A good answer uses kind, respectful language and practical examples.",
+            ],
+          },
+          {
+            title: "Writing balanced answers",
+            points: [
+              "State the right or freedom clearly.",
+              "Explain the matching responsibility.",
+              "Give an example from home, school or the community.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Rights matched to responsibilities",
+          description: "Use matching cards: right to education matched with attending school and doing homework; right to protection matched with reporting danger; animal need for water matched with giving clean water.",
+          kind: "cards",
+        },
+        examTip: "Do not list rights only. Add the matching responsibility and one example to make the answer complete.",
+      },
       intro: "Why this matters: Learners need language for discussing children's rights, freedoms, responsibilities and animal needs respectfully and clearly.",
       learningObjectives: [
         "Explain children's rights and responsibilities using clear English.",
@@ -457,6 +672,49 @@ export const ENGLISH_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Environmental protection means using clear language to explain why nature matters and what people can do to care for it.",
+        keyVocabulary: [
+          { term: "Environment", meaning: "The surroundings in which people, plants and animals live." },
+          { term: "Protection", meaning: "Keeping something safe from harm or damage." },
+          { term: "Pollution", meaning: "Making air, water or land dirty or harmful." },
+          { term: "Conservation", meaning: "Using resources carefully so they are not destroyed." },
+          { term: "Slogan", meaning: "A short memorable phrase used in a poster or campaign." },
+          { term: "Speech", meaning: "A prepared talk given to an audience." },
+        ],
+        sections: [
+          {
+            title: "Importance of environmental protection",
+            points: [
+              "A clean environment protects health, water sources, soil, plants and animals.",
+              "Environmental protection helps prevent diseases, floods, soil erosion and loss of resources.",
+              "Good English answers explain both the problem and why it matters.",
+            ],
+          },
+          {
+            title: "Ways to protect the environment",
+            points: [
+              "Plant trees, dispose of rubbish properly and keep water sources clean.",
+              "Avoid bush burning, overcutting trees and careless use of plastics.",
+              "Work together through school clubs, community cleaning and awareness messages.",
+            ],
+          },
+          {
+            title: "Writing speeches and posters",
+            points: [
+              "A speech needs a greeting, clear points and a strong conclusion.",
+              "A poster needs a short headline, useful message and clear call to action.",
+              "Use persuasive but truthful language.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Problem-solution writing frame",
+          description: "Show a two-column frame: environmental problem on the left and protection action on the right, ending with a slogan or speech conclusion box.",
+          kind: "comparison",
+        },
+        examTip: "When writing a speech, include greeting, purpose, three clear points and a closing sentence that calls people to act.",
+      },
       intro: "Why this matters: Learners need English for explaining why the environment matters and how people can protect it through clear messages, stories, talks and writing.",
       learningObjectives: [
         "Explain the importance of environmental protection.",
@@ -560,6 +818,49 @@ export const ENGLISH_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Ceremony topics teach polite, respectful English for invitations, speeches, messages and descriptions of important community events.",
+        keyVocabulary: [
+          { term: "Ceremony", meaning: "A formal or traditional event held for an important occasion." },
+          { term: "Invitation", meaning: "A message asking someone to attend an event." },
+          { term: "Marriage", meaning: "A ceremony or relationship where two people become husband and wife according to law, religion or custom." },
+          { term: "Funeral", meaning: "A ceremony held when a person has died." },
+          { term: "Condolence", meaning: "Words that show sympathy to someone who is bereaved." },
+          { term: "Programme", meaning: "The order of activities at an event." },
+        ],
+        sections: [
+          {
+            title: "Marriage ceremonies",
+            points: [
+              "Use joyful, respectful and clear language when describing a marriage ceremony.",
+              "An invitation should include who, what, where, when and sometimes dress code or contact person.",
+              "A programme shows the order of activities at the ceremony.",
+            ],
+          },
+          {
+            title: "Funeral ceremonies",
+            points: [
+              "Use gentle and respectful language when writing about a funeral.",
+              "A condolence message should show sympathy and avoid careless jokes or harsh words.",
+              "Descriptions should mention important details without sounding disrespectful.",
+            ],
+          },
+          {
+            title: "Writing for ceremonies",
+            points: [
+              "Match your tone to the event: joyful for marriage, sympathetic for funeral.",
+              "Include important details such as date, time, venue and purpose.",
+              "Organise descriptions in time order, from arrival to closing activities.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Ceremony writing toolkit",
+          description: "Show three templates: invitation card with key details, programme timeline, and condolence message frame with respectful opening, sympathy sentence and closing.",
+          kind: "cards",
+        },
+        examTip: "Tone is key in ceremony writing. Use joyful words for marriage and respectful sympathetic words for funeral tasks.",
+      },
       intro: "Why this matters: Ceremonies are part of family and community life. Learners practise respectful language for marriage and funeral ceremonies, invitations, speeches, descriptions and condolences.",
       learningObjectives: [
         "Use vocabulary related to marriage and funeral ceremonies.",

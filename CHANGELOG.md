@@ -2,6 +2,174 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
+## v0.5.21 — 2026-07-02 — Final Lesson Structure v2 release review completed
+
+**Session theme:** Review all subjects and prepare the grouped restructuring milestone for founder push.
+
+**Added:**
+- `docs/ops/lesson-structure-v2-release-review-2026-07-02.md` — final release-review audit for the Lesson Structure v2 and visual alignment milestone.
+
+**Verified:**
+- Mathematics: 38/38 topics have `note.study`, visual brief and PLE tip.
+- English: 7/7 topics have `note.study`, visual brief and PLE tip.
+- Integrated Science: 8/8 topics have `note.study`, visual brief and PLE tip.
+- Social Studies: 10/10 topics have `note.study`, visual brief and PLE tip.
+- TopicDiagram coverage: 63 active topic IDs / 63 diagram IDs, with no missing or extra diagram IDs.
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- The grouped restructuring milestone is ready for founder review and push prep.
+
+---
+
+## v0.5.20 — 2026-07-02 — Visual brief and diagram alignment pass
+
+**Session theme:** Address founder/partner concern that visuals/images can feel off by making visuals more instructional and less decorative.
+
+**Changed:**
+- `app/components/TopicTabs.tsx` — upgraded v2 Visual brief rendering into a more useful instructional visual card with a preview icon and extracted checklist-style reading steps.
+- `app/app/globals.css` — restyled visual briefs to look like learning aids rather than dashed placeholder notes.
+- `app/components/TopicDiagram.tsx` — expanded Maths diagram coverage so all 38 Maths topics now have rendered instructional diagrams or reusable diagram cards, not only visual text briefs.
+
+**Visual direction now:**
+- Maths: formula cards, conversion ladders, number lines, process flows and table/chart helpers.
+- English: writing templates, message checklists and tone/purpose cards.
+- Science: labelled/process diagrams and prevention/action flows.
+- Social Studies: maps, timelines, cause/effect and comparison visuals.
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- The visual layer now better matches Lesson Structure v2. Visuals are presented as teaching tools, not decorative images.
+
+---
+
+## v0.5.19 — 2026-07-02 — Full Maths Lesson Structure v2 conversion completed
+
+**Session theme:** Respond to founder concern that Maths is a big subject and also needs the clearer structure, not only a targeted sample.
+
+**Changed:**
+- `app/lib/topics.ts` — all 38 published P7 Mathematics topics now include `note.study` with Big idea, Key words, Learn it in parts, Visual brief and PLE tip.
+- Root docs/spec updated to show Lesson Structure v2 now covers all four active P7 subjects.
+
+**Maths v2 emphasis:**
+- clearer method steps for multi-step topics
+- formula selection and unit warnings
+- visual briefs for diagrams, conversion ladders, number lines, formula cards and process flows
+- PLE tips focused on common traps such as wrong units, wrong operation, double-counting, decimal alignment and unclear variables
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- The study-page restructuring is now consistent across Mathematics, English, Integrated Science and Social Studies. This is a stronger grouped milestone than pushing after only SST/Science/English.
+
+---
+
+## v0.5.18 — 2026-07-02 — Targeted Maths Lesson Structure v2 upgrade completed
+
+**Session theme:** Finish the grouped restructuring pass by upgrading the most visual and word-problem-heavy Maths topics instead of forcing all 38 Maths pages into v2 at once.
+
+**Changed:**
+- `app/lib/topics.ts` — added `note.study` to 12 high-impact Maths topics: Venn diagrams, Fractions, Proportion and percentages, Area, Volume, Equations, Mean/Median/Mode/Range, Money, Data handling, Bearing/Scale drawing, Coordinates and Probability introduction.
+- Root docs/spec updated to mark the Lesson Structure v2 restructuring milestone as ready for founder review/push prep.
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- SST, Science and English are fully converted to v2, and Maths now has targeted v2 support on the topics most likely to benefit from diagrams, formula cards, process flows and PLE trap warnings.
+
+---
+
+## v0.5.17 — 2026-07-02 — English converted to Lesson Structure v2
+
+**Session theme:** Continue grouped study-page restructuring after Science, keeping pace high without pushing small batches.
+
+**Changed:**
+- `app/lib/english-topics.ts` — all 7 official P7 English topics now include `note.study` with Big idea, Key words, Learn it in parts, Visual brief and PLE tip.
+- `docs/spec/tendo-lesson-structure-v2.md` — updated rollout status to include English.
+- Root docs updated to show SST, Science and English are now converted.
+
+**English v2 emphasis:**
+- clearer writing-format guidance
+- vocabulary for compositions, letters, announcements, speeches, posters and ceremony messages
+- visual briefs as templates/checklists instead of decorative images
+- practical PLE tips around tone, audience, purpose, tense and format
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- English now uses the same child-friendly study flow as Social Studies and Science, with stronger support for writing tasks.
+
+---
+
+## v0.5.16 — 2026-07-02 — Integrated Science converted to Lesson Structure v2
+
+**Session theme:** Continue the fast grouped study-page restructuring after full Social Studies v2 conversion.
+
+**Changed:**
+- `app/lib/science-topics.ts` — all 8 P7 Integrated Science topics now include `note.study` with Big idea, Key words, Learn it in parts, Visual brief and PLE tip.
+- `docs/spec/tendo-lesson-structure-v2.md` — updated rollout status to include Science.
+- Root docs updated to show Science v2 is complete and English is next.
+
+**Science v2 emphasis:**
+- clearer key vocabulary
+- smaller process/application sections
+- instructional visual briefs such as labelled diagrams, flows, comparison cards and prevention cards
+- safety-focused PLE tips for electricity, body systems and Population and Health
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- Integrated Science no longer depends on the old paragraph-heavy Read flow. All official Science topics now have a clearer P7-friendly study structure.
+
+---
+
+## v0.5.15 — 2026-07-02 — Social Studies fully converted to Lesson Structure v2
+
+**Session theme:** Continue the study-page restructuring quickly without pushing every small change.
+
+**Changed:**
+- `app/lib/social-topics.ts` — all 10 P7 Social Studies topics now include `note.study` with Big idea, Key words, Learn it in parts, Visual brief and PLE tip.
+- `docs/spec/tendo-lesson-structure-v2.md` — updated from pilot status to full Social Studies rollout status.
+- Root docs updated to reflect full SST v2 conversion and next direction.
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- Social Studies no longer uses the old paragraph-heavy study flow. It now has a clearer, child-friendly structure across all official topics.
+
+---
+
+## v0.5.14 — 2026-07-02 — Lesson Structure v2 pilot started for child-friendly study pages
+
+**Session theme:** Respond to founder/partner feedback that study content needs a clearer, more child-friendly structure and that visuals should be instructional rather than decorative.
+
+**Added:**
+- `docs/spec/tendo-lesson-structure-v2.md` — new study-page structure standard.
+
+**Changed:**
+- `app/lib/topics.ts` — added optional `note.study` structure for Big idea, Key words, Learn it in parts, Visual brief and PLE tip.
+- `app/components/TopicTabs.tsx` — Read tab now renders the new v2 structure when a topic provides it, while old topics remain compatible.
+- `app/app/globals.css` — added v2 study-card, vocabulary, section, visual-brief and exam-tip styles.
+- `app/lib/social-topics.ts` — piloted v2 structure on Location of Africa, Climate of Africa and Economic developments in Africa.
+- Root docs updated to track the restructuring direction.
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- The restructuring path is now in place. Next step is to roll Lesson Structure v2 across remaining SST topics before pushing a grouped restructuring milestone.
+
+---
+
 ## v0.5.13 — 2026-07-01 — Four-subject P7 core closeout audit completed
 
 **Session theme:** Close out the post-push verification, teacher usefulness and non-maths subject-deepening sequence with a full four-subject audit.

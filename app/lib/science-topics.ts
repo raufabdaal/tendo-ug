@@ -10,6 +10,49 @@ export const SCIENCE_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Bones, joints and muscles work together to support the body, protect organs and make movement possible.",
+        keyVocabulary: [
+          { term: "Skeleton", meaning: "The framework of bones that gives the body shape and support." },
+          { term: "Joint", meaning: "A place where two or more bones meet." },
+          { term: "Muscle", meaning: "Body tissue that contracts and relaxes to cause movement." },
+          { term: "Tendon", meaning: "A strong tissue that attaches muscle to bone." },
+          { term: "Ligament", meaning: "A strong tissue that holds bones together at a joint." },
+          { term: "Fracture", meaning: "A break or crack in a bone." },
+        ],
+        sections: [
+          {
+            title: "Parts and functions",
+            points: [
+              "The skeleton gives the body shape, support and protection.",
+              "The skull protects the brain, ribs protect the heart and lungs, and the backbone protects the spinal cord.",
+              "Muscles pull on bones when they contract, helping the body walk, write, bend and lift.",
+            ],
+          },
+          {
+            title: "Movement at joints",
+            points: [
+              "A joint is where bones meet. Some joints allow movement while fixed joints do not move.",
+              "Hinge joints, such as the elbow and knee, move mainly backwards and forwards.",
+              "Ball-and-socket joints, such as the shoulder and hip, allow movement in many directions.",
+            ],
+          },
+          {
+            title: "Care and common injuries",
+            points: [
+              "Eat foods rich in calcium and proteins, exercise safely, and keep good posture.",
+              "Avoid dangerous play and carrying heavy loads badly.",
+              "For fractures, sprains, dislocations or severe pain, report to an adult and seek medical help.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Labelled body support diagram",
+          description: "Show a simple child-friendly skeleton with skull, ribs, backbone, pelvis, arm and leg bones labelled, plus a small joint card showing muscle pulling a bone across a hinge joint.",
+          kind: "diagram",
+        },
+        examTip: "When a question asks for a part, function and care, answer in that order: name the part, state what it does, then give a safe health habit.",
+      },
       intro: "Why this matters: The muscular-skeletal system helps the body stand, move, bend, lift and keep its shape. P7 learners need to name important bones, joints and muscles, and know how to care for them.",
       learningObjectives: [
         "Name important bones and muscles in the human body.",
@@ -93,6 +136,49 @@ export const SCIENCE_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Electricity needs a complete safe path to flow, and magnetism can attract materials or be made using electricity.",
+        keyVocabulary: [
+          { term: "Circuit", meaning: "A complete path through which electric current can flow." },
+          { term: "Current", meaning: "The flow of electric charge through a circuit." },
+          { term: "Conductor", meaning: "A material that allows electricity to pass through easily." },
+          { term: "Insulator", meaning: "A material that does not allow electricity to pass through easily." },
+          { term: "Magnet", meaning: "An object that attracts magnetic materials such as iron and steel." },
+          { term: "Electromagnet", meaning: "A temporary magnet made using electricity." },
+        ],
+        sections: [
+          {
+            title: "Simple electric circuits",
+            points: [
+              "A simple circuit needs a source, wires, a switch and a device such as a bulb.",
+              "The circuit must be complete for current to flow and the bulb to light.",
+              "An open switch, weak cell, loose wire or damaged bulb can stop the bulb from lighting.",
+            ],
+          },
+          {
+            title: "Conductors, insulators and safety",
+            points: [
+              "Metals such as copper conduct electricity; rubber and plastic are common insulators.",
+              "Insulators cover wires and handles to reduce electric shock.",
+              "Do not touch damaged wires, overloaded sockets or electrical appliances with wet hands.",
+            ],
+          },
+          {
+            title: "Magnets and electromagnets",
+            points: [
+              "Magnets have north and south poles. Like poles repel and unlike poles attract.",
+              "Magnetic force is strongest near the poles of a magnet.",
+              "An electromagnet is made by winding insulated wire around soft iron and passing current through it.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Circuit and electromagnet setup",
+          description: "Use a labelled split diagram: on one side a dry cell, switch, wires and bulb in a complete circuit; on the other side insulated wire coiled around an iron nail attracting paper clips.",
+          kind: "diagram",
+        },
+        examTip: "For circuit questions, first check whether the path is complete; for magnet questions, remember poles and magnetic materials.",
+      },
       intro: "Why this matters: Electricity and magnetism are used in homes, schools, hospitals, transport and communication. P7 learners need to understand simple circuits, magnets, safety, and how electricity and magnetism are connected.",
       learningObjectives: [
         "Identify sources and types of electricity.",
@@ -181,6 +267,49 @@ export const SCIENCE_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "People use energy from the environment every day, so they must know which resources can be replaced and how to use them responsibly.",
+        keyVocabulary: [
+          { term: "Energy", meaning: "The ability to do work, give heat, produce light or cause movement." },
+          { term: "Renewable resource", meaning: "An energy resource that can be replaced naturally or continues to be available." },
+          { term: "Non-renewable resource", meaning: "An energy resource that can get finished because it takes a very long time to form." },
+          { term: "Fossil fuel", meaning: "Fuel such as coal or petroleum formed from ancient living things." },
+          { term: "Biogas", meaning: "A gas fuel made from decomposing animal waste or plant remains." },
+          { term: "Conservation", meaning: "Using resources carefully so they remain useful in the future." },
+        ],
+        sections: [
+          {
+            title: "Main energy resources",
+            points: [
+              "The sun is a major source of energy because it gives heat and light.",
+              "Water, wind, plants, animals and fossil fuels also provide energy for homes and industries.",
+              "Local examples include firewood, charcoal, biogas, solar panels and hydro-electricity.",
+            ],
+          },
+          {
+            title: "Renewable and non-renewable",
+            points: [
+              "Solar, wind, water and biogas are renewable when used carefully.",
+              "Coal, petroleum and kerosene are non-renewable fossil fuels.",
+              "Non-renewable fuels can pollute the environment and may get finished.",
+            ],
+          },
+          {
+            title: "Using energy wisely",
+            points: [
+              "Use improved stoves, avoid wasting fuel and switch off lights when not needed.",
+              "Plant trees after cutting them for firewood or charcoal.",
+              "Choose cleaner energy such as solar or biogas where possible.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Renewable versus non-renewable cards",
+          description: "Show two columns of picture cards: sun, wind, water and biogas under renewable; coal, petroleum and kerosene under non-renewable, with one effect and one careful-use habit under each side.",
+          kind: "comparison",
+        },
+        examTip: "Do not only name an energy resource. Also say whether it is renewable or non-renewable and give one environmental effect or safe-use habit.",
+      },
       intro: "Why this matters: People use energy every day for cooking, lighting, transport, farming and industry. Learners need to know different energy resources, their sources, and how to use them safely and sustainably.",
       learningObjectives: [
         "Name different energy resources and their sources.",
@@ -263,6 +392,49 @@ export const SCIENCE_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Simple machines make work easier, while friction can either help movement or make machines waste energy.",
+        keyVocabulary: [
+          { term: "Simple machine", meaning: "A device that makes work easier." },
+          { term: "Lever", meaning: "A rigid bar that turns about a fixed point called a fulcrum." },
+          { term: "Fulcrum", meaning: "The fixed point on which a lever turns." },
+          { term: "Load", meaning: "The object or weight being moved by a machine." },
+          { term: "Effort", meaning: "The force applied to move a load." },
+          { term: "Friction", meaning: "A force that opposes motion between surfaces in contact." },
+        ],
+        sections: [
+          {
+            title: "Types of simple machines",
+            points: [
+              "Levers, inclined planes, wedges, screws, pulleys, and wheels and axles are simple machines.",
+              "Everyday examples include scissors, ramps, knives, bottle tops, flagpoles and bicycles.",
+              "Machines do not remove work; they make it easier by reducing effort or changing direction.",
+            ],
+          },
+          {
+            title: "Levers and mechanical advantage",
+            points: [
+              "A lever has a load, effort and fulcrum.",
+              "A small effort can move a bigger load when it acts farther from the fulcrum.",
+              "Mechanical advantage compares the load moved with the effort used.",
+            ],
+          },
+          {
+            title: "Friction in daily life",
+            points: [
+              "Useful friction helps us walk, write, brake and light a match.",
+              "Nuisance friction causes wear, heat, noise and wasted energy.",
+              "Oil, rollers and ball bearings reduce friction; rough surfaces and treads increase friction.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Lever plus friction comparison",
+          description: "Show a labelled lever with fulcrum, load and effort, then two small cards: useful friction for walking/braking and nuisance friction for worn machine parts.",
+          kind: "diagram",
+        },
+        examTip: "In lever questions, label load, effort and fulcrum before explaining. In friction questions, state whether friction is useful or a nuisance.",
+      },
       intro: "Why this matters: Simple machines help people do work more easily. Friction can be useful or troublesome, so learners need to know when to increase it and when to reduce it.",
       learningObjectives: [
         "Identify common simple machines used in daily life.",
@@ -348,6 +520,49 @@ export const SCIENCE_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "The body stays healthy by removing wastes through organs such as the kidneys, skin, lungs and liver.",
+        keyVocabulary: [
+          { term: "Excretion", meaning: "Removal of waste products made by body activities." },
+          { term: "Egestion", meaning: "Removal of undigested food from the alimentary canal." },
+          { term: "Kidney", meaning: "An organ that filters blood and forms urine." },
+          { term: "Ureter", meaning: "A tube that carries urine from a kidney to the bladder." },
+          { term: "Urinary bladder", meaning: "A sac that stores urine before it leaves the body." },
+          { term: "Urethra", meaning: "A tube that carries urine from the bladder out of the body." },
+        ],
+        sections: [
+          {
+            title: "Excretory organs and wastes",
+            points: [
+              "Kidneys remove urea, excess water and salts in urine.",
+              "Skin removes sweat and helps control body temperature.",
+              "Lungs remove carbon dioxide and water vapour when we breathe out.",
+            ],
+          },
+          {
+            title: "Urine pathway",
+            points: [
+              "Urine is formed in the kidneys after blood is filtered.",
+              "Ureters carry urine from the kidneys to the urinary bladder.",
+              "The bladder stores urine, and the urethra carries it out of the body.",
+            ],
+          },
+          {
+            title: "Healthy habits",
+            points: [
+              "Drink enough safe water and eat a balanced diet.",
+              "Bathe regularly and use toilets properly to reduce infections.",
+              "Report pain, blood in urine or serious skin problems to an adult and health worker.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Urinary system flow",
+          description: "Use a clean labelled flow diagram: kidneys filter blood, ureters carry urine, bladder stores urine, urethra removes urine. Add small side icons for lungs and skin as other excretory organs.",
+          kind: "flow",
+        },
+        examTip: "Do not confuse ureter and urethra: ureters come from the kidneys; the urethra leaves the bladder.",
+      },
       intro: "Why this matters: The body produces waste materials that must be removed to stay healthy. P7 learners need to know the excretory organs, what each removes, and how to care for them.",
       learningObjectives: [
         "Name the main excretory organs of the body.",
@@ -431,6 +646,49 @@ export const SCIENCE_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Light travels in straight lines, forms shadows, and can change direction by reflection or refraction.",
+        keyVocabulary: [
+          { term: "Light source", meaning: "An object that produces its own light." },
+          { term: "Ray", meaning: "A straight line used to show the path of light." },
+          { term: "Opaque", meaning: "A material that does not allow light to pass through." },
+          { term: "Transparent", meaning: "A material that allows most light to pass through." },
+          { term: "Reflection", meaning: "The bouncing back of light from a surface." },
+          { term: "Refraction", meaning: "The bending of light as it passes from one material to another." },
+        ],
+        sections: [
+          {
+            title: "How light travels",
+            points: [
+              "Light travels in straight lines from a source.",
+              "We see objects when light from them enters our eyes.",
+              "Ray diagrams use arrows to show the direction light travels.",
+            ],
+          },
+          {
+            title: "Shadows and materials",
+            points: [
+              "Opaque objects block light and form shadows.",
+              "Transparent materials let most light through, while translucent materials let some light through.",
+              "A shadow changes size when the distance between the light source, object and screen changes.",
+            ],
+          },
+          {
+            title: "Reflection and refraction",
+            points: [
+              "Mirrors reflect light and are used in periscopes and other devices.",
+              "Refraction makes a pencil in water appear bent because light changes direction between water and air.",
+              "Lenses use refraction to help focus light in spectacles, cameras and the eye.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Ray and shadow setup",
+          description: "Show arrows from a torch to an opaque object and a screen forming a shadow, plus a small mirror reflection diagram with incoming and reflected rays labelled.",
+          kind: "diagram",
+        },
+        examTip: "For light diagrams, always draw straight rays with arrows and label the source, object, screen, mirror or lens clearly.",
+      },
       intro: "Why this matters: Light helps us see and understand many natural phenomena. P7 learners need to know sources of light, how light travels, shadows, reflection, refraction, lenses, cameras and the human eye.",
       learningObjectives: [
         "Name natural and artificial sources of light.",
@@ -520,6 +778,49 @@ export const SCIENCE_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Living and non-living things depend on one another, so changing one part of the environment affects other parts.",
+        keyVocabulary: [
+          { term: "Environment", meaning: "All living and non-living things around us." },
+          { term: "Producer", meaning: "A green plant that makes its own food." },
+          { term: "Consumer", meaning: "A living thing that feeds on plants or other animals." },
+          { term: "Decomposer", meaning: "A living thing that breaks down dead plants and animals." },
+          { term: "Food chain", meaning: "A feeding relationship showing how energy moves from one organism to another." },
+          { term: "Agroforestry", meaning: "Growing trees together with crops or rearing animals on the same land." },
+        ],
+        sections: [
+          {
+            title: "Components of the environment",
+            points: [
+              "Living components include plants, animals and microorganisms.",
+              "Non-living components include air, water, soil, rocks and sunlight.",
+              "Both living and non-living components are needed for a healthy environment.",
+            ],
+          },
+          {
+            title: "How living things depend on each other",
+            points: [
+              "Animals depend on plants for food, oxygen, shelter and materials.",
+              "Plants may depend on animals for pollination, seed dispersal, manure and carbon dioxide.",
+              "Food chains show energy flow, usually starting with a green plant.",
+            ],
+          },
+          {
+            title: "Caring for the environment",
+            points: [
+              "Agroforestry helps conserve soil, provide shade, improve fertility and supply firewood.",
+              "Trees can be cared for by watering, protecting seedlings, pruning and harvesting responsibly.",
+              "Removing one organism from a food chain can affect the others.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Food chain and dependency web",
+          description: "Show a simple food chain such as grass to grasshopper to chicken to human, with arrows for energy flow, then side labels for sunlight, water and soil supporting the producer.",
+          kind: "flow",
+        },
+        examTip: "Food-chain arrows show the direction of energy flow, not just who eats who. Start with a green plant when possible.",
+      },
       intro: "Why this matters: Living and non-living things in the environment depend on one another. Understanding interdependence helps learners protect the environment and use resources responsibly.",
       learningObjectives: [
         "Name components of the environment.",
@@ -602,6 +903,49 @@ export const SCIENCE_TOPICS: Topic[] = [
     status: "published",
     reviewStatus: "verified",
     note: {
+      study: {
+        bigIdea: "Healthy communities prevent sickness by using clean habits, safe behaviour, health services and useful health information.",
+        keyVocabulary: [
+          { term: "Community health", meaning: "The wellbeing of people living together in a home, school or community." },
+          { term: "Sanitation", meaning: "Clean conditions that help prevent disease, such as proper latrine use and waste disposal." },
+          { term: "Immunisation", meaning: "Giving vaccines to help the body prevent certain diseases." },
+          { term: "Communicable disease", meaning: "A disease that can spread from one person to another." },
+          { term: "Health survey", meaning: "A planned way of collecting information about health needs or problems." },
+          { term: "Prevention", meaning: "Actions taken to stop sickness or danger before it happens." },
+        ],
+        sections: [
+          {
+            title: "Common sicknesses and causes",
+            points: [
+              "Common sicknesses include malaria, diarrhoea, coughs, measles, worms, skin infections and eye infections.",
+              "Causes may include germs, mosquitoes, unsafe water, poor sanitation, overcrowding and lack of immunisation.",
+              "Different diseases need different control measures, so identify the cause first.",
+            ],
+          },
+          {
+            title: "Prevention and safe behaviour",
+            points: [
+              "Use safe water, hand washing, latrines, mosquito nets, proper waste disposal and immunisation.",
+              "Young people should avoid drug abuse, violence, bad peer pressure and unsafe behaviour.",
+              "Learners should report danger, pressure, abuse or serious sickness to trusted adults or health workers.",
+            ],
+          },
+          {
+            title: "Health surveys and clubs",
+            points: [
+              "A health survey collects respectful information about sickness, sanitation, services and community needs.",
+              "Survey results can be shown using tally charts, tables, bar graphs or short reports.",
+              "Health clubs promote hygiene, first aid, clean compounds, safe-water messages and disease prevention with teacher guidance.",
+            ],
+          },
+        ],
+        visual: {
+          title: "Prevention cause-and-effect cards",
+          description: "Use cards linking a problem to a cause and prevention: malaria to mosquitoes and nets, diarrhoea to unsafe water and hand washing, worms to dirty hands/bare feet and hygiene/deworming guidance.",
+          kind: "cards",
+        },
+        examTip: "Use respectful, safety-focused words. For health-risk questions, give prevention steps and mention trusted adults or health workers when help is needed.",
+      },
       intro: "Why this matters: Health problems affect homes, schools and communities. P7 learners need to identify common sicknesses, understand social problems, collect simple health information, and take part in health activities.",
       learningObjectives: [
         "Name common sicknesses in homes and communities.",

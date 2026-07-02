@@ -1,6 +1,6 @@
 # HANDOFF — for the next session
 
-*Written: 2026-07-01*
+*Written: 2026-07-02*
 
 ## Read this first
 
@@ -203,6 +203,45 @@ Important honest note:
 - Mathematics has 38 live topic pages and 195 central-bank practice questions across 13 banked topics.
 - English, Science and Social Studies now have 100% central-bank coverage across their official topic lists.
 - Full Maths bank parity across all 38 topic pages is a future enhancement if the founder wants that as the next quality bar.
+
+---
+
+## Lesson Structure v2 restructuring
+
+Founder/partner feedback: current study content can feel like notes and some visuals/images feel off. A new optional `note.study` structure has been added to make pages more child-friendly and structured.
+
+New learner flow:
+- Big idea
+- What you will learn
+- Key words
+- Learn it in parts
+- Visual brief
+- PLE tip
+- Worked example
+- Common mistakes
+- Try this
+- Guided practice
+- Quick recap
+
+Conversion status:
+- all 10 P7 Social Studies topics now use Lesson Structure v2
+- all 8 P7 Integrated Science topics now use Lesson Structure v2
+- all 7 P7 English topics now use Lesson Structure v2
+- all 38 P7 Mathematics topics now use Lesson Structure v2
+- visual brief UI has been upgraded into an instructional visual card
+- all 38 Maths topics now have rendered diagram support through `TopicDiagram.tsx`
+
+Relevant files:
+- `app/lib/topics.ts`
+- `app/components/TopicTabs.tsx`
+- `app/app/globals.css`
+- `app/lib/social-topics.ts`
+- `app/lib/science-topics.ts`
+- `app/lib/english-topics.ts`
+- `docs/spec/tendo-lesson-structure-v2.md`
+- `docs/ops/lesson-structure-v2-release-review-2026-07-02.md`
+
+Push strategy: this is now a meaningful grouped restructuring milestone across all four active subjects, including a visual alignment pass. If the founder is ready, prepare/copy the grouped app-critical and documentation files for one push.
 
 ---
 

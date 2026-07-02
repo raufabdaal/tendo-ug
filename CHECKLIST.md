@@ -1,6 +1,6 @@
 # CHECKLIST — Tendo execution tracker
 
-*Updated: 2026-07-01*
+*Updated: 2026-07-02*
 
 ## Immediate milestone — post-push verification + cleanup
 - [x] P7 Social Studies completed enough for current scope
@@ -136,6 +136,27 @@
 
 ---
 
+## Phase 11 — Lesson Structure v2 restructuring
+- [x] Lesson Structure v2 standard documented
+- [x] Topic data model supports optional `note.study` field
+- [x] Read tab renders v2 study flow when available
+- [x] v2 styles added
+- [x] SST pilot topic: Location of Africa
+- [x] SST pilot topic: Climate of Africa
+- [x] SST pilot topic: Economic developments in Africa
+- [x] Build passed after v2 pilot
+- [x] Build passed after full SST v2 conversion
+- [x] Roll v2 across all SST topics
+- [x] Build passed after full Science v2 conversion
+- [x] Roll v2 across Science topics
+- [x] Build passed after full English v2 conversion
+- [x] Roll v2 across English topics
+- [x] Review Maths for targeted v2 upgrades where needed
+- [x] Roll v2 across all Maths topics
+- [ ] Founder pushes grouped restructuring batch
+
+---
+
 ## Current subject status
 
 ### P7 Mathematics
@@ -185,7 +206,7 @@
 - **Published P7 English topics:** 7
 - **Visible maths coming-soon backlog:** 0
 - **Latest grouped push completed:** Social Studies + English + shared docs/app support
-- **Current improvement pass:** Four-subject core closeout audit completed
+- **Current improvement pass:** Lesson Structure v2 + visual alignment complete across all four active P7 subjects; grouped push prep next when founder is ready
 - **Religious Education:** intentionally paused
 - **Pilot school:** Trainup a Child Uganda
 - **Monthly recurring cost:** UGX 0

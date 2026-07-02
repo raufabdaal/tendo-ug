@@ -11,6 +11,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: P7 Social Studies begins by placing Africa correctly on the world map. Learners need to use latitudes, longitudes, continents, surrounding water bodies, regions, countries and capitals.",
+      study: {
+        bigIdea: "Africa is a continent on the world map. To locate it well, use nearby oceans, neighbouring continents, compass directions and important imaginary lines such as the Equator and Prime Meridian.",
+        keyVocabulary: [
+          { term: "Continent", meaning: "A very large land mass, such as Africa, Asia or Europe." },
+          { term: "Latitude", meaning: "An imaginary line that helps locate places north or south of the Equator." },
+          { term: "Longitude", meaning: "An imaginary line that helps locate places east or west of the Prime Meridian." },
+          { term: "Equator", meaning: "The 0° latitude line that divides the earth into northern and southern hemispheres." },
+          { term: "Prime Meridian", meaning: "The 0° longitude line used to locate places east or west." },
+          { term: "Capital city", meaning: "The main administrative city of a country." },
+        ],
+        sections: [
+          { title: "Where Africa is found", points: ["Africa is the second largest continent after Asia.", "Europe is north of Africa, while Asia is to the north-east/east of Africa.", "Uganda is found in East Africa."] },
+          { title: "Water bodies around Africa", points: ["The Atlantic Ocean is west of Africa.", "The Indian Ocean is east of Africa.", "The Mediterranean Sea is north of Africa.", "The Red Sea lies between north-eastern Africa and the Arabian Peninsula."] },
+          { title: "Imaginary lines to remember", points: ["The Equator crosses Africa near the middle.", "The Prime Meridian also crosses Africa.", "The Tropic of Cancer and Tropic of Capricorn help show Africa's position in the tropics."] },
+        ],
+        visual: { kind: "map", title: "Map idea: Africa in the world", description: "Show Africa in the centre with labels for Atlantic Ocean, Indian Ocean, Mediterranean Sea, Europe, Asia, Equator and Prime Meridian. This should be a simple learning map, not a decorative image." },
+        examTip: "When asked to locate Africa, do not give only one fact. Mention direction, nearby continents, surrounding water bodies or imaginary lines.",
+      },
       learningObjectives: [
         "Locate Africa on a world map using latitudes and longitudes.",
         "Name the continents of the world and compare their sizes.",
@@ -91,6 +109,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: Africa's mountains, rivers, lakes, plateaus, rift valleys and coastal plains influence settlement, transport, farming, climate and tourism.",
+      study: {
+        bigIdea: "Physical features are natural things found on the earth's surface. In Africa, mountains, rivers, lakes, plateaus, rift valleys and deserts affect farming, transport, settlement, tourism and power generation.",
+        keyVocabulary: [
+          { term: "Physical feature", meaning: "A natural feature on the earth's surface, such as a mountain, river or lake." },
+          { term: "Mountain", meaning: "A high raised part of land." },
+          { term: "Plateau", meaning: "A raised area of land that is fairly flat on top." },
+          { term: "Rift valley", meaning: "A long depression formed by earth movements such as faulting." },
+          { term: "Hydro-electric power", meaning: "Electricity generated using moving water." },
+          { term: "Tourism", meaning: "Travelling to places for interest, leisure or study." },
+        ],
+        sections: [
+          { title: "Main physical features", points: ["Africa has mountains such as Kilimanjaro, Kenya, Rwenzori and Atlas.", "It has rivers such as the Nile, Congo, Niger and Zambezi.", "It has lakes such as Victoria, Tanganyika, Malawi and Chad.", "It also has plateaus, rift valleys, deserts and coastal plains."] },
+          { title: "How they help people", points: ["Rivers and lakes provide water, fish, transport and irrigation.", "Waterfalls and fast rivers can generate hydro-electric power.", "Mountains and wildlife areas attract tourists.", "Some highlands and plateaus have minerals and fertile soils."] },
+          { title: "Challenges", points: ["Mountains and rift valleys can make road construction difficult.", "Some rivers and lakes may flood nearby areas.", "Deserts have little water and sparse settlement.", "Poor use of physical features can cause pollution or erosion."] },
+        ],
+        visual: { kind: "map", title: "Visual idea: Physical features map", description: "Use a labelled Africa map showing major mountains, rivers, lakes, rift valley and deserts. Keep labels large and simple." },
+        examTip: "When asked about a physical feature, name it, locate it if possible, then explain both its use and challenge.",
+      },
       learningObjectives: [
         "Name and locate major physical features of Africa.",
         "Explain how some physical features are formed.",
@@ -169,6 +205,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: Climate affects farming, settlement, vegetation, animals, transport and daily life. P7 learners need to know Africa's climatic regions and the factors that influence climate.",
+      study: {
+        bigIdea: "Climate is the usual weather pattern of a place over a long time. In Africa, climate affects where people live, what they grow, the animals kept and the vegetation found in different regions.",
+        keyVocabulary: [
+          { term: "Weather", meaning: "The condition of the atmosphere at a short time, such as today or this week." },
+          { term: "Climate", meaning: "The average weather condition of a place over a long period." },
+          { term: "Rainfall", meaning: "Water that falls from clouds as rain." },
+          { term: "Temperature", meaning: "How hot or cold a place is." },
+          { term: "Altitude", meaning: "Height above sea level." },
+          { term: "Rain shadow", meaning: "A dry area on the leeward side of a mountain." },
+        ],
+        sections: [
+          { title: "Main climate regions", points: ["Equatorial climate is hot and wet for most of the year.", "Savanna climate has wet and dry seasons.", "Desert climate is very dry with little rainfall.", "Mediterranean climate has hot dry summers and cool wet winters."] },
+          { title: "What affects climate", points: ["Latitude affects temperature because places near the Equator are generally hotter.", "Altitude affects temperature because highland areas are cooler than lowlands.", "Distance from the sea affects temperature and rainfall.", "Relief affects rainfall when mountains force moist winds to rise."] },
+          { title: "How climate affects people", points: ["Wet areas often support crop farming and dense settlement.", "Dry areas may support pastoralism, irrigation farming or sparse settlement.", "Climate affects clothing, housing, transport and tourism."] },
+        ],
+        visual: { kind: "comparison", title: "Visual idea: Climate cards", description: "Use four cards for equatorial, savanna, desert and Mediterranean climate. Each card should show rainfall, temperature, vegetation and human activity." },
+        examTip: "For climate questions, always connect the climate type to an effect: farming, settlement, vegetation, animals or transport.",
+      },
       learningObjectives: [
         "Name major climatic regions of Africa.",
         "Describe characteristics of different climatic regions.",
@@ -249,6 +303,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: Vegetation affects animals, population distribution, farming, tourism and environmental protection across Africa.",
+      study: {
+        bigIdea: "Vegetation means the plant cover of an area. Africa has different vegetation zones because rainfall, temperature, altitude, soils and human activities differ from place to place.",
+        keyVocabulary: [
+          { term: "Vegetation", meaning: "The natural plant cover of an area." },
+          { term: "Equatorial forest", meaning: "Thick evergreen forest found in hot wet areas." },
+          { term: "Savanna", meaning: "Grassland with scattered trees." },
+          { term: "Desert vegetation", meaning: "Sparse plants adapted to very little rainfall." },
+          { term: "Mangrove", meaning: "Trees found in coastal swampy or tidal areas." },
+          { term: "Afforestation", meaning: "Planting trees where there were few or none." },
+        ],
+        sections: [
+          { title: "Main vegetation zones", points: ["Equatorial forests are thick and evergreen because rainfall is high.", "Savanna vegetation has grasses and scattered trees and supports many wild animals.", "Desert vegetation is sparse and adapted to little rainfall.", "Mangroves grow in coastal swampy areas."] },
+          { title: "What affects vegetation", points: ["Rainfall affects how thick vegetation becomes.", "Temperature and altitude affect the type of plants that grow.", "Soils affect farming and natural plant growth.", "Human activities such as deforestation, bush burning and overgrazing can destroy vegetation."] },
+          { title: "Importance of vegetation", points: ["Vegetation provides timber, medicine, fruits, pasture and habitats.", "Forests protect soil and support rainfall.", "Savanna supports grazing animals and tourism.", "Vegetation should be conserved through tree planting and careful land use."] },
+        ],
+        visual: { kind: "comparison", title: "Visual idea: Vegetation comparison cards", description: "Show cards for equatorial forest, savanna, desert and mangrove. Each card should show rainfall, plant features, animals and human uses." },
+        examTip: "For vegetation questions, connect plant type to climate, animal life and human use.",
+      },
       learningObjectives: [
         "Name and locate major vegetation types of Africa.",
         "Explain factors that influence vegetation distribution.",
@@ -330,6 +402,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: African societies have different origins, migrations, languages and settlement patterns. The topic helps learners appreciate unity in diversity.",
+      study: {
+        bigIdea: "People settle where they can find water, fertile land, security, jobs and services. Africa has many ethnic groups, and learners should study them with respect and without stereotypes.",
+        keyVocabulary: [
+          { term: "Ethnic group", meaning: "A group of people who share culture, language or origin." },
+          { term: "Settlement", meaning: "A place where people live." },
+          { term: "Settlement pattern", meaning: "The way homes are arranged in an area." },
+          { term: "Migration", meaning: "Movement of people from one place to another." },
+          { term: "Push factor", meaning: "A problem that forces people to leave a place." },
+          { term: "Pull factor", meaning: "An advantage that attracts people to a place." },
+        ],
+        sections: [
+          { title: "Why people settle in some places", points: ["People often settle near water, fertile soils and good climate.", "Towns attract people because of jobs, schools, hospitals and trade.", "Transport routes can create linear settlements along roads or rivers.", "Security and peace encourage settlement."] },
+          { title: "Why people migrate", points: ["Push factors include drought, conflict, famine, disease and shortage of land.", "Pull factors include fertile land, jobs, education, health services and trade.", "Migration can lead to cultural exchange and urban growth.", "Rapid migration can also cause overcrowding and slums."] },
+          { title: "Respect for different groups", points: ["Africa has many ethnic groups and languages.", "Social Studies should promote respect, tolerance and peaceful living.", "Avoid mocking or ranking cultures.", "Different cultures contribute to national and African identity."] },
+        ],
+        visual: { kind: "flow", title: "Visual idea: Migration push-pull chart", description: "Show two columns: Push factors that force people out and Pull factors that attract people in. Add arrows toward a new settlement." },
+        examTip: "When explaining migration, separate push factors from pull factors and give examples for each.",
+      },
       learningObjectives: [
         "Describe origins and movements of different ethnic groups in Africa.",
         "Identify settlement patterns of ethnic groups.",
@@ -410,6 +500,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: Foreign traders, explorers, missionaries, colonialists and settlers affected Africa politically, economically and socially. P7 learners need to understand causes, methods and effects.",
+      study: {
+        bigIdea: "Foreign influence in Africa came through traders, explorers, missionaries, settlers and colonialists. Their coming changed African societies in both positive and negative ways.",
+        keyVocabulary: [
+          { term: "Explorer", meaning: "A person who travels to find out more about places." },
+          { term: "Missionary", meaning: "A person who spreads religion, often linked with schools and hospitals." },
+          { term: "Settler", meaning: "A foreigner who comes to live permanently in another land." },
+          { term: "Colonialism", meaning: "Control of one country by another." },
+          { term: "Partition", meaning: "Dividing land into parts for control." },
+          { term: "Indirect rule", meaning: "A colonial system that used local leaders under colonial supervision." },
+        ],
+        sections: [
+          { title: "Foreign groups", points: ["Traders came to exchange goods and later some were involved in slave trade.", "Explorers came to find routes, rivers, lakes and information.", "Missionaries spread Christianity and built schools and hospitals.", "Colonialists and settlers came to control land, labour, markets and resources."] },
+          { title: "Effects", points: ["Positive effects included schools, hospitals, new crops, roads and wider trade.", "Negative effects included slave trade, land loss, forced labour, exploitation and loss of independence.", "The Berlin Conference is linked to partition of Africa among European powers.", "Africans reacted through cooperation, resistance, protest and later nationalism."] },
+          { title: "Colonial systems", points: ["Direct rule used colonial officials to govern more directly.", "Indirect rule used local chiefs under colonial authority.", "Assimilation tried to make colonised people adopt the coloniser's culture.", "Apartheid in South Africa separated people by race and denied rights to many Africans."] },
+        ],
+        visual: { kind: "timeline", title: "Visual idea: Foreign influence timeline", description: "Show a simple timeline: traders → explorers → missionaries → colonialists/settlers → African reactions/nationalism." },
+        examTip: "For foreign influence questions, avoid one-sided answers. Explain who came, why they came and the effects.",
+      },
       learningObjectives: [
         "Identify foreign groups that came to Africa.",
         "Explain reasons for the coming of explorers, traders, missionaries and colonialists.",
@@ -492,6 +600,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: Learners need to understand how African people organised to regain independence and why patriotism, nationalism and Pan-Africanism mattered.",
+      study: {
+        bigIdea: "Nationalism helped Africans demand self-rule and independence. It grew because many Africans wanted freedom, fair treatment, land rights and control of their own countries.",
+        keyVocabulary: [
+          { term: "Nationalism", meaning: "Love for one's nation and the desire for self-rule." },
+          { term: "Nationalist", meaning: "A person who works for the interests or independence of a nation." },
+          { term: "Patriotism", meaning: "Love for one's country and willingness to serve it responsibly." },
+          { term: "Pan-Africanism", meaning: "The idea that African people should unite and support one another." },
+          { term: "Independence", meaning: "Freedom of a country to govern itself." },
+          { term: "Multiparty system", meaning: "A system where more than one political party can compete for power." },
+        ],
+        sections: [
+          { title: "Why nationalism grew", points: ["Africans wanted self-rule and freedom from colonial control.", "People opposed forced labour, land alienation, heavy taxes and discrimination.", "Education, newspapers, trade unions and world events helped spread nationalist ideas.", "Pan-Africanism encouraged African unity and pride."] },
+          { title: "Methods used", points: ["Nationalists formed political parties and trade unions.", "They used newspapers, petitions, boycotts, strikes, demonstrations and negotiations.", "Some countries used armed struggle where peaceful methods failed.", "International pressure also helped some independence movements."] },
+          { title: "Leaders and challenges", points: ["Important leaders included Kwame Nkrumah, Jomo Kenyatta, Julius Nyerere, Patrice Lumumba and Nelson Mandela.", "Nationalists faced arrest, imprisonment, exile, censorship and lack of funds.", "Some countries faced ethnic divisions and strong colonial armies.", "Independence required organisation, sacrifice and unity."] },
+        ],
+        visual: { kind: "timeline", title: "Visual idea: Road to independence", description: "Show a timeline from colonial problems to nationalist organisation, protests/negotiations and independence." },
+        examTip: "When writing about a nationalist, name the country, the method used and one challenge faced.",
+      },
       learningObjectives: [
         "Explain nationalism, patriotism and Pan-Africanism.",
         "Identify leading Pan-Africanists and nationalists.",
@@ -574,6 +700,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: After independence, African countries formed organisations to promote unity, peace, development and cooperation. Learners need to know OAU, AU and regional economic groupings.",
+      study: {
+        bigIdea: "After independence, African countries had to build unity, peace and development. They formed organisations such as OAU, AU and regional groupings to work together.",
+        keyVocabulary: [
+          { term: "Post-independence", meaning: "The period after a country gains independence." },
+          { term: "OAU", meaning: "Organisation of African Unity, formed in 1963 to promote African unity." },
+          { term: "AU", meaning: "African Union, the organisation that replaced the OAU in 2002." },
+          { term: "Regional grouping", meaning: "An organisation of nearby countries working together." },
+          { term: "Cooperation", meaning: "Working together to achieve common goals." },
+          { term: "Political instability", meaning: "Lack of stable government or peace." },
+        ],
+        sections: [
+          { title: "Why African countries cooperated", points: ["They wanted unity, peace, trade and development.", "They wanted to support countries still under colonial or minority rule.", "They needed stronger bargaining power in world affairs.", "They wanted to solve shared problems such as conflict, poverty and poor transport."] },
+          { title: "OAU and AU", points: ["The OAU was formed in Addis Ababa in 1963.", "It promoted unity and supported liberation movements.", "The AU replaced the OAU in 2002.", "The AU works for peace, democracy, human rights, development and cooperation."] },
+          { title: "Challenges after independence", points: ["Some countries faced civil wars, coups, corruption and poverty.", "Poor transport and weak industries slowed development.", "Regional organisations can help through peace efforts, trade and shared infrastructure.", "Responsible citizens and leaders are important for progress."] },
+        ],
+        visual: { kind: "comparison", title: "Visual idea: OAU vs AU comparison", description: "Use a simple comparison card showing formation dates, headquarters/meeting context, aims and examples of work." },
+        examTip: "For post-independence questions, give both the problem and a practical solution or organisation involved.",
+      },
       learningObjectives: [
         "Explain why the OAU was formed and what it achieved.",
         "Describe the formation and objectives of the AU.",
@@ -653,6 +797,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: Africa's resources and economic activities shape development. P7 learners compare case studies such as Nigeria, Sudan, Libya, South Africa, DRC and Uganda.",
+      study: {
+        bigIdea: "Economic development means improving people's standards of living by using resources well. African countries develop through farming, mining, industries, trade, tourism, transport, energy and good management.",
+        keyVocabulary: [
+          { term: "Economic activity", meaning: "Work people do to earn income or produce goods and services." },
+          { term: "Natural resources", meaning: "Useful things found in nature, such as land, minerals, water, forests and wildlife." },
+          { term: "Value addition", meaning: "Processing a raw material to make it more useful and valuable." },
+          { term: "Infrastructure", meaning: "Basic facilities such as roads, railways, electricity, schools and hospitals." },
+          { term: "Foreign exchange", meaning: "Money earned from other countries through exports or tourism." },
+          { term: "Industrialisation", meaning: "Development of factories and processing industries." },
+        ],
+        sections: [
+          { title: "Main economic activities", points: ["Agriculture provides food, jobs and exports such as coffee, cotton, tea and cocoa.", "Mining provides minerals such as gold, copper, cobalt, diamonds and petroleum.", "Tourism earns income through wildlife, scenery, culture and historical sites.", "Industries process raw materials and create jobs."] },
+          { title: "Country examples", points: ["Nigeria is known for petroleum, farming, trade and a large market.", "South Africa is known for minerals, industries, tourism and advanced infrastructure.", "DRC is rich in minerals and forests but faces challenges in transport, conflict and management.", "Uganda depends on agriculture, tourism, minerals, trade and growing oil development."] },
+          { title: "Problems and solutions", points: ["Poor transport, limited electricity, conflict, corruption and low value addition can slow development.", "Solutions include better roads, reliable power, peace, skills training, industrialisation and responsible resource use."] },
+        ],
+        visual: { kind: "flow", title: "Visual idea: Resource to development flow", description: "Show a simple chain: resource → processing/value addition → jobs → income → better services. Use examples like cotton to cloth or crude oil to fuel products." },
+        examTip: "For development questions, do not only list resources. Explain how the resource creates jobs, trade, income or better services.",
+      },
       learningObjectives: [
         "Name major economic resources of Africa.",
         "Explain problems faced in using resources.",
@@ -734,6 +896,24 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: African countries relate with global organisations such as the United Nations and the Commonwealth. Learners need to know their origin, aims, organs, agencies, functions and challenges.",
+      study: {
+        bigIdea: "Major world organisations help countries work together on peace, health, education, children, refugees, food, development and human rights.",
+        keyVocabulary: [
+          { term: "United Nations", meaning: "A world organisation formed to promote peace, cooperation and human rights." },
+          { term: "Agency", meaning: "A specialised body that does a particular job." },
+          { term: "UNICEF", meaning: "A UN agency that supports children's welfare." },
+          { term: "WHO", meaning: "World Health Organization, a UN agency for health." },
+          { term: "UNHCR", meaning: "A UN agency that supports refugees." },
+          { term: "Commonwealth", meaning: "An association of countries, many of which were formerly under British rule." },
+        ],
+        sections: [
+          { title: "United Nations", points: ["The UN promotes peace, security, cooperation and human rights.", "Its headquarters is in New York.", "The Security Council helps handle threats to peace.", "UN agencies support health, education, refugees, food and children."] },
+          { title: "Important agencies", points: ["UNICEF supports children.", "WHO supports health.", "UNHCR supports refugees.", "FAO supports food and agriculture.", "UNESCO supports education, science and culture."] },
+          { title: "Other organisations and challenges", points: ["The Commonwealth promotes cooperation among member states.", "World organisations may face limited funds, wars, disasters and disagreements among member countries.", "They help through relief, peacekeeping, advice, education and development programmes."] },
+        ],
+        visual: { kind: "cards", title: "Visual idea: Organisation-function matching", description: "Use matching cards: UNICEF → children, WHO → health, UNHCR → refugees, FAO → food/agriculture, UNESCO → education/culture." },
+        examTip: "For organisation questions, match the organisation to its function. Do not only write the abbreviation.",
+      },
       learningObjectives: [
         "Explain the origin, objectives and organs of the United Nations.",
         "Name UN agencies and their functions.",
