@@ -2,11 +2,25 @@
 
 *Updated: 2026-07-02*
 
-> **Current state:** P7 Mathematics, P7 Integrated Science, P7 Social Studies and P7 English are complete enough for current product scope. The Lesson Structure v2 + visual alignment grouped milestone has been pushed and verified live. Pilot Readiness Pack v1 has started, and key-word definitions were polished into more teacher-like sentence phrasing before pilot use.
+> **Current state:** P7 Mathematics, P7 Integrated Science, P7 Social Studies and P7 English are complete enough for current product scope. The Lesson Structure v2 + visual alignment grouped milestone has been pushed and verified live. A Lesson Structure v3 modular architecture spike has started for Social Studies to solve the "summary trap" — content becomes shallow when a whole NCDC topic is generated or displayed as one page.
 
 ## Current focus
 
-### 1. P7 Mathematics is complete enough
+### 1. Lesson Structure v3 modular spike (Social Studies → Location of Africa)
+The first modular topic is live in workspace: **Location of Africa on the Map of the World**.
+
+What changed:
+- `Topic` data model now supports an optional `subtopics` array.
+- Each `Subtopic` maps to one NCDC sub-competency from `content/curriculum/p7-social-studies.json`.
+- Each `Subtopic` contains small, paginated `Module` steps.
+- The Read tab now renders a subtopic directory; clicking a subtopic opens a module viewer with Previous/Next pagination.
+- Content for the spike was sourced from the NCDC P7 Set One PDF (`tmp/p7-set-one.pdf`) pages 294–296 and the existing verified v2 content.
+
+Scope rule: only `location-of-africa` uses v3. All other SST topics and all other subjects remain on v2.
+
+See: `docs/spec/tendo-lesson-structure-v3-modular.md`
+
+### 2. P7 Mathematics is complete enough
 Mathematics has reached a founder-safe “done enough” state for current product scope.
 
 That means:
@@ -138,14 +152,7 @@ The grouped Lesson Structure v2 milestone has been pushed and verified live. Mat
 ### 1. Post-push verification and cleanup
 The grouped Social Studies + English milestone is now live. The immediate next task is to verify live behaviour, clean stale documentation wording and tighten any teacher-facing rough edges.
 
-### 2. Curriculum alignment and content expansion
-The content gaps and accuracy issues identified in the curriculum review have been addressed:
-- **Maths**: Fixed math bugs (correct indices misalignment) in Venn diagrams in `topics.ts`.
-- **Social Studies**: Expanded specific topic facts to match curriculum tested content (e.g., Lake Victoria borders).
-- All 4 active subjects (Maths, SST, Science, English) have been audited against their curriculum JSON specifications. 
-- Future content work should focus on formatting any extensive topic notes into structured sections to ensure depth while maintaining clarity.
-
-### 3. Later enrichment for completed subjects
+### 2. Later enrichment for completed subjects
 Possible future enhancements:
 - richer exam-style banks for heaviest Science, SST and English topics
 - more English composition/comprehension rubrics
@@ -158,10 +165,11 @@ Possible future enhancements:
 ## Immediate next steps
 
 Recommended next move:
-1. Use Pilot Readiness Pack v1 in the first teacher/school conversation.
-2. Collect structured teacher and learner feedback.
-3. Prioritise fixes based on real classroom blockers.
-4. Decide whether the next build milestone is P6 expansion, teacher workflow, or deeper subject-specific practice.
+1. Review the v3 modular spike on `/social-studies/p7/location-of-africa`.
+2. Decide whether to convert the remaining 9 Social Studies topics to v3 before pilot, or to keep v3 as a spike and return to pilot readiness.
+3. Use Pilot Readiness Pack v1 in the first teacher/school conversation.
+4. Collect structured teacher and learner feedback — especially on whether modular steps feel easier to follow than the single-page v2 flow.
+5. Prioritise fixes based on real classroom blockers.
 
 ---
 

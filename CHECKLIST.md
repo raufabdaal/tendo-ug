@@ -132,7 +132,7 @@
 - [x] Stale current-doc wording cleaned
 - [x] Four-subject closeout audit created
 - [x] Final build passed
-- [ ] Founder copies/pushes grouped improvement batch
+- [x] Founder copies/pushes grouped improvement batch
 
 ---
 
@@ -166,9 +166,22 @@
 - [x] Founder demo script v1 created
 - [x] Teacher feedback loop v1 created
 - [x] Key-word definitions teacher-voice phrasing pass completed
-- [ ] Founder copies/pushes pilot readiness cleanup batch
+- [x] Founder copies/pushes pilot readiness cleanup batch
 - [ ] First teacher/school pilot conversation completed
 - [ ] Feedback summarised into product priorities
+
+## Phase 13 — Modular topic architecture (v3)
+- [x] v3 architecture problem and data model documented
+- [x] Modular types added to `app/lib/topics.ts`
+- [x] `TopicTabs.tsx` renders modular directory + module viewer when `subtopics` exists
+- [x] Modular styles added to `app/app/globals.css`
+- [x] First modular topic built: Social Studies → Location of Africa
+- [x] Subtopics mapped directly to NCDC `subTopics` in `content/curriculum/p7-social-studies.json`
+- [x] Module content sourced from NCDC P7 Set One PDF pages 294–296
+- [x] Build passed after modular spike
+- [ ] Convert remaining 9 Social Studies topics to v3
+- [ ] Founder review of modular spike on `/social-studies/p7/location-of-africa`
+- [ ] Decide whether to roll v3 to other subjects or stay on Social Studies until pilot feedback
 
 ---
 

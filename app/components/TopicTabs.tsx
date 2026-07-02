@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Topic } from "@/lib/topics";
+import type { Topic, TopicVisual } from "@/lib/topics";
 import TopicDiagram from "@/components/TopicDiagram";
 
 type Tab = "watch" | "read";
@@ -11,6 +11,8 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
   const [speechSupported, setSpeechSupported] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const [paused, setPaused] = useState(false);
+  const [selectedSubtopicId, setSelectedSubtopicId] = useState<string | null>(null);
+  const [activeModuleIndex, setActiveModuleIndex] = useState(0);
 
   // Detect Web Speech API support on client (DEV-014: TTS moved from tab into Read view)
   useEffect(() => {
@@ -122,7 +124,15 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
             </div>
           )}
 
-          {topic.note.study ? (
+          {topic.subtopics ? (
+            <ModularTopicView
+              topic={topic}
+              selectedSubtopicId={selectedSubtopicId}
+              setSelectedSubtopicId={setSelectedSubtopicId}
+              activeModuleIndex={activeModuleIndex}
+              setActiveModuleIndex={setActiveModuleIndex}
+            />
+          ) : topic.note.study ? (
             <>
               <section className="study-big-idea">
                 <div className="study-label">Big idea</div>
@@ -272,7 +282,168 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
   );
 }
 
-function StudyVisualBrief({ visual }: { visual: NonNullable<Topic["note"]["study"]>["visual"] }) {
+function ModularTopicView({
+  topic,
+  selectedSubtopicId,
+  setSelectedSubtopicId,
+  activeModuleIndex,
+  setActiveModuleIndex,
+}: {
+  topic: Topic;
+  selectedSubtopicId: string | null;
+  setSelectedSubtopicId: (id: string | null) => void;
+  activeModuleIndex: number;
+  setActiveModuleIndex: (index: number) => void;
+}) {
+  const subtopics = topic.subtopics!;
+
+  if (!selectedSubtopicId) {
+    return (
+      <section className="modular-directory">
+        <h2>Study this topic in parts</h2>
+        <p className="modular-directory-intro">Choose one part to start. Each part has small steps you can finish one at a time.</p>
+        <div className="subtopic-grid">
+          {subtopics.map((subtopic) => (
+            <button
+              key={subtopic.subtopicId}
+              className="subtopic-card"
+              onClick={() => {
+                setSelectedSubtopicId(subtopic.subtopicId);
+                setActiveModuleIndex(0);
+              }}
+            >
+              <div className="subtopic-number">{subtopics.indexOf(subtopic) + 1}</div>
+              <div className="subtopic-card-body">
+                <div className="subtopic-card-title">{subtopic.title}</div>
+                <div className="subtopic-card-meta">{subtopic.modules.length} modules</div>
+              </div>
+              <div className="subtopic-card-arrow" aria-hidden="true">→</div>
+            </button>
+          ))}
+        </div>
+      </section>
+    );
+  }
+
+  const subtopic = subtopics.find((s) => s.subtopicId === selectedSubtopicId);
+  if (!subtopic) return null;
+
+  const module = subtopic.modules[activeModuleIndex];
+  const totalModules = subtopic.modules.length;
+
+  return (
+    <section className="modular-viewer">
+      <button
+        type="button"
+        className="modular-back"
+        onClick={() => {
+          setSelectedSubtopicId(null);
+          setActiveModuleIndex(0);
+        }}
+      >
+        ← Back to all parts
+      </button>
+
+      <div className="modular-subtopic-header">
+        <div className="modular-subtopic-title">{subtopic.title}</div>
+        <div className="modular-module-counter">Module {activeModuleIndex + 1} of {totalModules}</div>
+      </div>
+
+      <div className="modular-module">
+        <h3 className="modular-module-title">{module.title}</h3>
+
+        <div className="study-big-idea modular-big-idea">
+          <div className="study-label">Big idea</div>
+          <p>{module.bigIdea}</p>
+        </div>
+
+        <div className="modular-learn-it">
+          <h4>Learn it</h4>
+          <ul>
+            {module.learnIt.map((point, i) => (
+              <li key={i}>{point}</li>
+            ))}
+          </ul>
+        </div>
+
+        {module.visual && <StudyVisualBrief visual={module.visual} />}
+
+        {module.workedExample && (
+          <div className="modular-worked">
+            <h4>Worked example</h4>
+            <p><strong>Question:</strong> {module.workedExample.question}</p>
+            {module.workedExample.steps.map((step, i) => (
+              <div key={i} className="step">{step}</div>
+            ))}
+            <div className="answer">{module.workedExample.answer}</div>
+          </div>
+        )}
+
+        {module.tryThis && (
+          <div className="try-this">
+            <h4>Try this</h4>
+            <p>{module.tryThis.question}</p>
+            <div className="quiz-choices">
+              {module.tryThis.choices.map((choice, i) => (
+                <button key={i} className="choice" disabled>
+                  <span className="choice-letter">{String.fromCharCode(65 + i)}</span>
+                  {choice}
+                </button>
+              ))}
+            </div>
+            <p className="try-this-hint"><strong>Answer:</strong> {module.tryThis.explanation}</p>
+          </div>
+        )}
+
+        {module.examTip && (
+          <section className="exam-tip">
+            <strong>PLE tip:</strong> {module.examTip}
+          </section>
+        )}
+      </div>
+
+      <div className="modular-pagination">
+        <button
+          type="button"
+          className="btn btn-secondary"
+          disabled={activeModuleIndex === 0}
+          onClick={() => setActiveModuleIndex(activeModuleIndex - 1)}
+        >
+          ← Previous
+        </button>
+
+        <div className="modular-progress" aria-hidden="true">
+          {subtopic.modules.map((_, i) => (
+            <span key={i} className={"modular-progress-dot" + (i === activeModuleIndex ? " active" : "")} />
+          ))}
+        </div>
+
+        {activeModuleIndex < totalModules - 1 ? (
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => setActiveModuleIndex(activeModuleIndex + 1)}
+          >
+            Next →
+          </button>
+        ) : (
+          <button
+            type="button"
+            className="btn btn-primary"
+            onClick={() => {
+              setSelectedSubtopicId(null);
+              setActiveModuleIndex(0);
+            }}
+          >
+            Finish part
+          </button>
+        )}
+      </div>
+    </section>
+  );
+}
+
+function StudyVisualBrief({ visual }: { visual: TopicVisual }) {
   if (!visual) return null;
   const kind = visual.kind ?? "diagram";
   const steps = visual.description
@@ -323,6 +494,25 @@ function buildScript(topic: Topic): string {
   const parts: string[] = [];
   parts.push(topic.title + ".");
   parts.push(topic.note.intro);
+  if (topic.subtopics) {
+    parts.push("This topic is studied in parts.");
+    for (const subtopic of topic.subtopics) {
+      parts.push(subtopic.title + ".");
+      for (const mod of subtopic.modules) {
+        parts.push(mod.title + ".");
+        parts.push(mod.bigIdea);
+        parts.push(mod.learnIt.join(" "));
+        if (mod.workedExample) {
+          parts.push("Worked example.");
+          parts.push(mod.workedExample.question);
+          parts.push(mod.workedExample.steps.join(" "));
+          parts.push(mod.workedExample.answer);
+        }
+        if (mod.examTip) parts.push(mod.examTip);
+      }
+    }
+    return parts.join(" ");
+  }
   if (topic.note.study) {
     parts.push("Big idea.");
     parts.push(topic.note.study.bigIdea);

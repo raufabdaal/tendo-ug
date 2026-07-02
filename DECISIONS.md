@@ -357,3 +357,21 @@
 **Reasoning:** P7 learners need concise, scaffolded lessons rather than long note blocks. Visuals should be instructional diagrams/maps/flows, not decorative images. The `note.study` field now powers the standard study flow across all four active P7 subjects.
 
 **Tracked across:** `docs/spec/tendo-lesson-structure-v2.md`, `app/lib/topics.ts`, `app/lib/english-topics.ts`, `app/lib/science-topics.ts`, `app/lib/social-topics.ts`, `app/components/TopicTabs.tsx`, `app/components/TopicDiagram.tsx`, `app/app/globals.css`.
+
+---
+
+## CONTENT-006 · 2026-07-02 · Lesson Structure v3: move from flat topics to hierarchical modules
+
+**Context:** The founder observed that AI-generated topic pages still compress content because the generation target (one whole topic) and the UI (one scrolling page) silently negotiate down to a summary. This is the "summary trap": a full NCDC topic is too broad for one generation or one page view.
+
+**Decision:** Introduce Lesson Structure v3, a hierarchical module architecture. A `Topic` becomes a directory of `Subtopic`s; each `Subtopic` maps to one NCDC sub-competency and contains small, paginated `Module`s. Content is generated one module at a time.
+
+**Reasoning:**
+- Smaller generation targets allow deeper explanations, more local context, fuller worked examples and step-by-step scaffolding.
+- The UI stops scrolling forever; learners see a subtopic directory and then focus on one module at a time.
+- The data model is backward-compatible: `subtopics` is optional, and topics without it keep rendering v2 or legacy content.
+- Migration is subject-by-subject, topic-by-topic, so the rest of the app stays stable.
+
+**Scope rule for the spike:** Only `location-of-africa` in Social Studies uses v3. All other SST topics and all other subjects remain on v2 until the modular flow is reviewed.
+
+**Tracked across:** `docs/spec/tendo-lesson-structure-v3-modular.md`, `app/lib/topics.ts`, `app/lib/social-topics.ts`, `app/components/TopicTabs.tsx`, `app/app/globals.css`.

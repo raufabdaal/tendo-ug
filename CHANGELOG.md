@@ -2,20 +2,30 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
-## v0.5.24 — 2026-07-02 — Curriculum alignment, content expansion and bug fixes
+## v0.6.0 — 2026-07-02 — Lesson Structure v3 modular architecture spike
 
-**Session theme:** Address feedback that content wasn't fully aligned to the Ugandan Primary curriculum and there were bugs in Maths questions.
+**Session theme:** Address founder insight that AI-generated topic pages compress content because the generation target (one whole topic) and the UI (one scrolling page) both force summarisation. Move from a flat topic page to a hierarchical module structure.
+
+**Added:**
+- `docs/spec/tendo-lesson-structure-v3-modular.md` — v3 architecture spec: topics as directories, subtopics matching NCDC sub-competencies, modules as atomic paginated learning steps.
+- `app/lib/topics.ts` — new modular types: `TopicVisual`, `SubtopicModule`, `Subtopic`, and optional `subtopics` field on `Topic`.
+- `app/components/TopicTabs.tsx` — modular topic directory + module viewer rendered when `topic.subtopics` exists. Includes Previous/Next pagination, progress dots, per-module big idea, learn-it content, worked example, try-this, visual brief and exam tip.
+- `app/app/globals.css` — styles for `.modular-directory`, `.subtopic-grid`, `.subtopic-card`, `.modular-viewer`, `.modular-module`, `.modular-pagination` and responsive rules.
+- `app/lib/social-topics.ts` — added `subtopics` to `location-of-africa` only, with 5 NCDC-aligned subtopics and 14 modules sourced from the NCDC P7 Set One PDF.
 
 **Changed:**
-- `app/lib/social-topics.ts` — expanded "Physical features of Africa" to explicitly cover Lake Victoria's shared borders (Uganda, Kenya, Tanzania) which was missing but tested in the curriculum.
-- `app/lib/topics.ts` — fixed multiple math bugs in the Sets (Venn Diagrams) topic where `correct` index choices incorrectly pointed to the wrong options in the quiz array (lines 141-155).
-- Audited `science-topics.ts` against `p7-science.json` to ensure coverage of all 8 major themes.
-- Audited `english-topics.ts` against `p7-english.json` to ensure coverage of all 7 major themes.
-- Audited `social-topics.ts` against `p7-social-studies.json` and `topics.ts` against `p7-math.json` to ensure proper mapping and alignment.
+- `app/components/TopicTabs.tsx` — Read tab now checks `topic.subtopics` first and falls back to v2 `note.study` or legacy content safely.
+- `app/components/TopicTabs.tsx` — `buildScript()` now builds the listen-aloud script from modular content when `subtopics` is present.
+
+**Not changed (intentionally):**
+- The other 9 Social Studies topics still use Lesson Structure v2.
+- Mathematics, Integrated Science and English are untouched.
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
 
 **Result:**
-- Quiz math bugs in Venn Diagrams are fixed so students will not get marked wrong for the correct answer.
-- Social studies content expanded to fully align with Ugandan NCDC curriculum requirements on key tested facts (e.g., Lake Victoria borders).
+- The modular architecture is proven end-to-end on one topic. It breaks the summary trap by giving each learning step its own focused screen and generation target.
 
 ---
 
