@@ -14,12 +14,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "Africa is a continent on the world map. To locate it well, use nearby oceans, neighbouring continents, compass directions and important imaginary lines such as the Equator and Prime Meridian.",
         keyVocabulary: [
-          { term: "Continent", meaning: "A very large land mass, such as Africa, Asia or Europe." },
-          { term: "Latitude", meaning: "An imaginary line that helps locate places north or south of the Equator." },
-          { term: "Longitude", meaning: "An imaginary line that helps locate places east or west of the Prime Meridian." },
-          { term: "Equator", meaning: "The 0° latitude line that divides the earth into northern and southern hemispheres." },
-          { term: "Prime Meridian", meaning: "The 0° longitude line used to locate places east or west." },
-          { term: "Capital city", meaning: "The main administrative city of a country." },
+          { term: "Continent", meaning: "A continent is a very large land mass, such as Africa, Asia or Europe." },
+          { term: "Latitude", meaning: "Latitude is an imaginary line that helps locate places north or south of the Equator." },
+          { term: "Longitude", meaning: "Longitude is an imaginary line that helps locate places east or west of the Prime Meridian." },
+          { term: "Equator", meaning: "The Equator is the 0° latitude line that divides the earth into northern and southern hemispheres." },
+          { term: "Prime Meridian", meaning: "The Prime Meridian is the 0° longitude line used to locate places east or west." },
+          { term: "Capital city", meaning: "A capital city is the main administrative city of a country." },
         ],
         sections: [
           { title: "Where Africa is found", points: ["Africa is the second largest continent after Asia.", "Europe is north of Africa, while Asia is to the north-east/east of Africa.", "Uganda is found in East Africa."] },
@@ -112,12 +112,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "Physical features are natural things found on the earth's surface. In Africa, mountains, rivers, lakes, plateaus, rift valleys and deserts affect farming, transport, settlement, tourism and power generation.",
         keyVocabulary: [
-          { term: "Physical feature", meaning: "A natural feature on the earth's surface, such as a mountain, river or lake." },
-          { term: "Mountain", meaning: "A high raised part of land." },
-          { term: "Plateau", meaning: "A raised area of land that is fairly flat on top." },
-          { term: "Rift valley", meaning: "A long depression formed by earth movements such as faulting." },
-          { term: "Hydro-electric power", meaning: "Electricity generated using moving water." },
-          { term: "Tourism", meaning: "Travelling to places for interest, leisure or study." },
+          { term: "Physical feature", meaning: "A physical feature is a natural feature on the earth's surface, such as a mountain, river or lake." },
+          { term: "Mountain", meaning: "A mountain is a high raised part of land." },
+          { term: "Plateau", meaning: "A plateau is a raised area of land that is fairly flat on top." },
+          { term: "Rift valley", meaning: "A rift valley is a long depression formed by earth movements such as faulting." },
+          { term: "Hydro-electric power", meaning: "Hydro-electric power is electricity generated using moving water." },
+          { term: "Tourism", meaning: "Tourism is travelling to places for interest, leisure or study." },
         ],
         sections: [
           { title: "Main physical features", points: ["Africa has mountains such as Kilimanjaro, Kenya, Rwenzori and Atlas.", "It has rivers such as the Nile, Congo, Niger and Zambezi.", "It has lakes such as Victoria, Tanganyika, Malawi and Chad.", "It also has plateaus, rift valleys, deserts and coastal plains."] },
@@ -208,12 +208,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "Climate is the usual weather pattern of a place over a long time. In Africa, climate affects where people live, what they grow, the animals kept and the vegetation found in different regions.",
         keyVocabulary: [
-          { term: "Weather", meaning: "The condition of the atmosphere at a short time, such as today or this week." },
-          { term: "Climate", meaning: "The average weather condition of a place over a long period." },
-          { term: "Rainfall", meaning: "Water that falls from clouds as rain." },
-          { term: "Temperature", meaning: "How hot or cold a place is." },
-          { term: "Altitude", meaning: "Height above sea level." },
-          { term: "Rain shadow", meaning: "A dry area on the leeward side of a mountain." },
+          { term: "Weather", meaning: "Weather is the condition of the atmosphere at a short time, such as today or this week." },
+          { term: "Climate", meaning: "Climate is the average weather condition of a place over a long period." },
+          { term: "Rainfall", meaning: "Rainfall is water that falls from clouds as rain." },
+          { term: "Temperature", meaning: "Temperature is how hot or cold a place is." },
+          { term: "Altitude", meaning: "Altitude is height above sea level." },
+          { term: "Rain shadow", meaning: "The rain shadow is a dry area on the leeward side of a mountain." },
         ],
         sections: [
           { title: "Main climate regions", points: ["Equatorial climate is hot and wet for most of the year.", "Savanna climate has wet and dry seasons.", "Desert climate is very dry with little rainfall.", "Mediterranean climate has hot dry summers and cool wet winters."] },
@@ -306,12 +306,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "Vegetation means the plant cover of an area. Africa has different vegetation zones because rainfall, temperature, altitude, soils and human activities differ from place to place.",
         keyVocabulary: [
-          { term: "Vegetation", meaning: "The natural plant cover of an area." },
-          { term: "Equatorial forest", meaning: "Thick evergreen forest found in hot wet areas." },
-          { term: "Savanna", meaning: "Grassland with scattered trees." },
-          { term: "Desert vegetation", meaning: "Sparse plants adapted to very little rainfall." },
-          { term: "Mangrove", meaning: "Trees found in coastal swampy or tidal areas." },
-          { term: "Afforestation", meaning: "Planting trees where there were few or none." },
+          { term: "Vegetation", meaning: "Vegetation is the natural plant cover of an area." },
+          { term: "Equatorial forest", meaning: "An equatorial forest is thick evergreen forest found in hot wet areas." },
+          { term: "Savanna", meaning: "A savanna is grassland with scattered trees." },
+          { term: "Desert vegetation", meaning: "A desert vegetation is sparse plants adapted to very little rainfall." },
+          { term: "Mangrove", meaning: "A mangrove is trees found in coastal swampy or tidal areas." },
+          { term: "Afforestation", meaning: "Afforestation is planting trees where there were few or none." },
         ],
         sections: [
           { title: "Main vegetation zones", points: ["Equatorial forests are thick and evergreen because rainfall is high.", "Savanna vegetation has grasses and scattered trees and supports many wild animals.", "Desert vegetation is sparse and adapted to little rainfall.", "Mangroves grow in coastal swampy areas."] },
@@ -405,12 +405,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "People settle where they can find water, fertile land, security, jobs and services. Africa has many ethnic groups, and learners should study them with respect and without stereotypes.",
         keyVocabulary: [
-          { term: "Ethnic group", meaning: "A group of people who share culture, language or origin." },
-          { term: "Settlement", meaning: "A place where people live." },
-          { term: "Settlement pattern", meaning: "The way homes are arranged in an area." },
-          { term: "Migration", meaning: "Movement of people from one place to another." },
-          { term: "Push factor", meaning: "A problem that forces people to leave a place." },
-          { term: "Pull factor", meaning: "An advantage that attracts people to a place." },
+          { term: "Ethnic group", meaning: "An ethnic group is a group of people who share culture, language or origin." },
+          { term: "Settlement", meaning: "Settlement is a place where people live." },
+          { term: "Settlement pattern", meaning: "A settlement pattern is the way homes are arranged in an area." },
+          { term: "Migration", meaning: "Migration is movement of people from one place to another." },
+          { term: "Push factor", meaning: "A push factor is a problem that forces people to leave a place." },
+          { term: "Pull factor", meaning: "A pull factor is an advantage that attracts people to a place." },
         ],
         sections: [
           { title: "Why people settle in some places", points: ["People often settle near water, fertile soils and good climate.", "Towns attract people because of jobs, schools, hospitals and trade.", "Transport routes can create linear settlements along roads or rivers.", "Security and peace encourage settlement."] },
@@ -503,12 +503,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "Foreign influence in Africa came through traders, explorers, missionaries, settlers and colonialists. Their coming changed African societies in both positive and negative ways.",
         keyVocabulary: [
-          { term: "Explorer", meaning: "A person who travels to find out more about places." },
-          { term: "Missionary", meaning: "A person who spreads religion, often linked with schools and hospitals." },
-          { term: "Settler", meaning: "A foreigner who comes to live permanently in another land." },
-          { term: "Colonialism", meaning: "Control of one country by another." },
-          { term: "Partition", meaning: "Dividing land into parts for control." },
-          { term: "Indirect rule", meaning: "A colonial system that used local leaders under colonial supervision." },
+          { term: "Explorer", meaning: "An explorer is a person who travels to find out more about places." },
+          { term: "Missionary", meaning: "A missionary is a person who spreads religion, often linked with schools and hospitals." },
+          { term: "Settler", meaning: "A settler is a foreigner who comes to live permanently in another land." },
+          { term: "Colonialism", meaning: "Colonialism is control of one country by another." },
+          { term: "Partition", meaning: "Partition is dividing land into parts for control." },
+          { term: "Indirect rule", meaning: "Indirect rule is a colonial system that used local leaders under colonial supervision." },
         ],
         sections: [
           { title: "Foreign groups", points: ["Traders came to exchange goods and later some were involved in slave trade.", "Explorers came to find routes, rivers, lakes and information.", "Missionaries spread Christianity and built schools and hospitals.", "Colonialists and settlers came to control land, labour, markets and resources."] },
@@ -603,12 +603,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "Nationalism helped Africans demand self-rule and independence. It grew because many Africans wanted freedom, fair treatment, land rights and control of their own countries.",
         keyVocabulary: [
-          { term: "Nationalism", meaning: "Love for one's nation and the desire for self-rule." },
-          { term: "Nationalist", meaning: "A person who works for the interests or independence of a nation." },
-          { term: "Patriotism", meaning: "Love for one's country and willingness to serve it responsibly." },
-          { term: "Pan-Africanism", meaning: "The idea that African people should unite and support one another." },
-          { term: "Independence", meaning: "Freedom of a country to govern itself." },
-          { term: "Multiparty system", meaning: "A system where more than one political party can compete for power." },
+          { term: "Nationalism", meaning: "Nationalism is love for one's nation and the desire for self-rule." },
+          { term: "Nationalist", meaning: "A nationalist is a person who works for the interests or independence of a nation." },
+          { term: "Patriotism", meaning: "Patriotism is love for one's country and willingness to serve it responsibly." },
+          { term: "Pan-Africanism", meaning: "Pan-Africanism is the idea that African people should unite and support one another." },
+          { term: "Independence", meaning: "Independence is freedom of a country to govern itself." },
+          { term: "Multiparty system", meaning: "A multiparty system is a system where more than one political party can compete for power." },
         ],
         sections: [
           { title: "Why nationalism grew", points: ["Africans wanted self-rule and freedom from colonial control.", "People opposed forced labour, land alienation, heavy taxes and discrimination.", "Education, newspapers, trade unions and world events helped spread nationalist ideas.", "Pan-Africanism encouraged African unity and pride."] },
@@ -703,12 +703,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "After independence, African countries had to build unity, peace and development. They formed organisations such as OAU, AU and regional groupings to work together.",
         keyVocabulary: [
-          { term: "Post-independence", meaning: "The period after a country gains independence." },
-          { term: "OAU", meaning: "Organisation of African Unity, formed in 1963 to promote African unity." },
-          { term: "AU", meaning: "African Union, the organisation that replaced the OAU in 2002." },
-          { term: "Regional grouping", meaning: "An organisation of nearby countries working together." },
-          { term: "Cooperation", meaning: "Working together to achieve common goals." },
-          { term: "Political instability", meaning: "Lack of stable government or peace." },
+          { term: "Post-independence", meaning: "Post-independence is the period after a country gains independence." },
+          { term: "OAU", meaning: "OAU means organisation of African Unity, formed in 1963 to promote African unity." },
+          { term: "AU", meaning: "AU means african Union, the organisation that replaced the OAU in 2002." },
+          { term: "Regional grouping", meaning: "A regional grouping is an organisation of nearby countries working together." },
+          { term: "Cooperation", meaning: "Cooperation is working together to achieve common goals." },
+          { term: "Political instability", meaning: "Political instability is lack of stable government or peace." },
         ],
         sections: [
           { title: "Why African countries cooperated", points: ["They wanted unity, peace, trade and development.", "They wanted to support countries still under colonial or minority rule.", "They needed stronger bargaining power in world affairs.", "They wanted to solve shared problems such as conflict, poverty and poor transport."] },
@@ -800,12 +800,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "Economic development means improving people's standards of living by using resources well. African countries develop through farming, mining, industries, trade, tourism, transport, energy and good management.",
         keyVocabulary: [
-          { term: "Economic activity", meaning: "Work people do to earn income or produce goods and services." },
-          { term: "Natural resources", meaning: "Useful things found in nature, such as land, minerals, water, forests and wildlife." },
-          { term: "Value addition", meaning: "Processing a raw material to make it more useful and valuable." },
-          { term: "Infrastructure", meaning: "Basic facilities such as roads, railways, electricity, schools and hospitals." },
-          { term: "Foreign exchange", meaning: "Money earned from other countries through exports or tourism." },
-          { term: "Industrialisation", meaning: "Development of factories and processing industries." },
+          { term: "Economic activity", meaning: "An economic activity is work people do to earn income or produce goods and services." },
+          { term: "Natural resources", meaning: "Natural resources are useful things found in nature, such as land, minerals, water, forests and wildlife." },
+          { term: "Value addition", meaning: "Value addition is processing a raw material to make it more useful and valuable." },
+          { term: "Infrastructure", meaning: "Infrastructure is basic facilities such as roads, railways, electricity, schools and hospitals." },
+          { term: "Foreign exchange", meaning: "Foreign exchange is money earned from other countries through exports or tourism." },
+          { term: "Industrialisation", meaning: "Industrialisation is development of factories and processing industries." },
         ],
         sections: [
           { title: "Main economic activities", points: ["Agriculture provides food, jobs and exports such as coffee, cotton, tea and cocoa.", "Mining provides minerals such as gold, copper, cobalt, diamonds and petroleum.", "Tourism earns income through wildlife, scenery, culture and historical sites.", "Industries process raw materials and create jobs."] },
@@ -899,12 +899,12 @@ export const SOCIAL_TOPICS: Topic[] = [
       study: {
         bigIdea: "Major world organisations help countries work together on peace, health, education, children, refugees, food, development and human rights.",
         keyVocabulary: [
-          { term: "United Nations", meaning: "A world organisation formed to promote peace, cooperation and human rights." },
-          { term: "Agency", meaning: "A specialised body that does a particular job." },
-          { term: "UNICEF", meaning: "A UN agency that supports children's welfare." },
-          { term: "WHO", meaning: "World Health Organization, a UN agency for health." },
-          { term: "UNHCR", meaning: "A UN agency that supports refugees." },
-          { term: "Commonwealth", meaning: "An association of countries, many of which were formerly under British rule." },
+          { term: "United Nations", meaning: "United Nations are a world organisation formed to promote peace, cooperation and human rights." },
+          { term: "Agency", meaning: "An agency is a specialised body that does a particular job." },
+          { term: "UNICEF", meaning: "UNICEF means a UN agency that supports children's welfare." },
+          { term: "WHO", meaning: "WHO means World Health Organization, a UN agency for health." },
+          { term: "UNHCR", meaning: "UNHCR means a UN agency that supports refugees." },
+          { term: "Commonwealth", meaning: "The Commonwealth is an association of countries, many of which were formerly under British rule." },
         ],
         sections: [
           { title: "United Nations", points: ["The UN promotes peace, security, cooperation and human rights.", "Its headquarters is in New York.", "The Security Council helps handle threats to peace.", "UN agencies support health, education, refugees, food and children."] },

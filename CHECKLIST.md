@@ -157,6 +157,21 @@
 
 ---
 
+## Phase 12 — Pilot readiness
+- [x] Lesson Structure v2 grouped push verified live
+- [x] Stale Maths home-card wording cleaned
+- [x] Post-push verification note created
+- [x] Teacher classroom guide v1 created
+- [x] Pilot checklist v1 created
+- [x] Founder demo script v1 created
+- [x] Teacher feedback loop v1 created
+- [x] Key-word definitions teacher-voice phrasing pass completed
+- [ ] Founder copies/pushes pilot readiness cleanup batch
+- [ ] First teacher/school pilot conversation completed
+- [ ] Feedback summarised into product priorities
+
+---
+
 ## Current subject status
 
 ### P7 Mathematics
@@ -206,7 +221,7 @@
 - **Published P7 English topics:** 7
 - **Visible maths coming-soon backlog:** 0
 - **Latest grouped push completed:** Social Studies + English + shared docs/app support
-- **Current improvement pass:** Lesson Structure v2 + visual alignment complete across all four active P7 subjects; grouped push prep next when founder is ready
+- **Current improvement pass:** Pilot Readiness Pack v1 created after Lesson Structure v2 push verification
 - **Religious Education:** intentionally paused
 - **Pilot school:** Trainup a Child Uganda
 - **Monthly recurring cost:** UGX 0

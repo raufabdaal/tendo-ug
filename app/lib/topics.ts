@@ -77,11 +77,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "A Venn diagram sorts items into groups so you can see only A, only B, both groups and neither group clearly.",
         keyVocabulary: [
-          { term: "Set", meaning: "A group of objects or people with something in common." },
-          { term: "Overlap", meaning: "The middle part showing items that belong to both sets." },
-          { term: "Only A", meaning: "Items in set A but not in set B." },
-          { term: "Only B", meaning: "Items in set B but not in set A." },
-          { term: "Neither", meaning: "Items outside both circles." },
+          { term: "Set", meaning: "A set is a group of objects or people with something in common." },
+          { term: "Overlap", meaning: "Overlap is the middle part showing items that belong to both sets." },
+          { term: "Only A", meaning: "Only A means items in set A but not in set B." },
+          { term: "Only B", meaning: "Only B means items in set B but not in set A." },
+          { term: "Neither", meaning: "Neither means items outside both circles." },
         ],
         sections: [
           { title: "Read the four regions", points: ["The left-only part is for items in A only.", "The right-only part is for items in B only.", "The overlap is for items in both A and B, and outside the circles is neither."] },
@@ -167,11 +167,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Roman numerals use letters to write numbers, so learners need the letter values and the add/subtract rules.",
         keyVocabulary: [
-          { term: "Roman numeral", meaning: "A number written using Roman letters such as I, V, X, L, C, D and M." },
-          { term: "Value", meaning: "The number represented by a Roman letter." },
-          { term: "Addition rule", meaning: "When a smaller or equal value comes after a bigger value, add it." },
-          { term: "Subtraction rule", meaning: "When a smaller value comes before a bigger value, subtract it." },
-          { term: "MM", meaning: "Roman numeral for 2000." },
+          { term: "Roman numeral", meaning: "A Roman numeral is a number written using Roman letters such as I, V, X, L, C, D and M." },
+          { term: "Value", meaning: "Value is the number represented by a Roman letter." },
+          { term: "Addition rule", meaning: "The addition rule is when a smaller or equal value comes after a bigger value, add it." },
+          { term: "Subtraction rule", meaning: "The subtraction rule is when a smaller value comes before a bigger value, subtract it." },
+          { term: "MM", meaning: "MM means the Roman numeral for 2000." },
         ],
         sections: [
           { title: "Know the letter values", points: ["I = 1, V = 5, X = 10, L = 50, C = 100, D = 500 and M = 1000.", "Build numbers by combining these letters.", "MM means 1000 + 1000 = 2000."] },
@@ -248,11 +248,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Fractions show parts of a whole, and most fraction questions become easier when you compare denominators or use a common denominator.",
         keyVocabulary: [
-          { term: "Numerator", meaning: "The top number of a fraction." },
-          { term: "Denominator", meaning: "The bottom number showing equal parts." },
-          { term: "Equivalent fractions", meaning: "Fractions with the same value but different numbers." },
-          { term: "Common denominator", meaning: "A shared bottom number used to compare or operate on fractions." },
-          { term: "Simplify", meaning: "Write a fraction in its lowest terms." },
+          { term: "Numerator", meaning: "A numerator is the top number of a fraction." },
+          { term: "Denominator", meaning: "A denominator is the bottom number showing equal parts." },
+          { term: "Equivalent fractions", meaning: "Equivalent fractions are fractions with the same value but different numbers." },
+          { term: "Common denominator", meaning: "The common denominator is a shared bottom number used to compare or operate on fractions." },
+          { term: "Simplify", meaning: "To simplify means to write a fraction in its lowest terms." },
         ],
         sections: [
           { title: "Understand the fraction", points: ["The denominator tells how many equal parts the whole has.", "The numerator tells how many parts are being used.", "A bigger denominator does not always mean a bigger fraction."] },
@@ -332,11 +332,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Decimals are another way of writing fractions with tenths, hundredths and thousandths.",
         keyVocabulary: [
-          { term: "Decimal", meaning: "A number with a decimal point showing parts smaller than one." },
-          { term: "Decimal point", meaning: "The dot that separates whole numbers from decimal parts." },
-          { term: "Tenths", meaning: "The first place after the decimal point." },
-          { term: "Hundredths", meaning: "The second place after the decimal point." },
-          { term: "Place value", meaning: "The value of a digit because of its position." },
+          { term: "Decimal", meaning: "A decimal is a number with a decimal point showing parts smaller than one." },
+          { term: "Decimal point", meaning: "The decimal point is the dot that separates whole numbers from decimal parts." },
+          { term: "Tenths", meaning: "Tenths are the first place after the decimal point." },
+          { term: "Hundredths", meaning: "Hundredths are the second place after the decimal point." },
+          { term: "Place value", meaning: "Place value is the value of a digit because of its position." },
         ],
         sections: [
           { title: "Read decimal places", points: ["The first digit after the point is tenths.", "The second digit after the point is hundredths.", "The third digit after the point is thousandths."] },
@@ -413,11 +413,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Proportion, ratios and percentages compare quantities, often by turning a part into a fraction of the whole.",
         keyVocabulary: [
-          { term: "Ratio", meaning: "A comparison between two or more quantities." },
-          { term: "Proportion", meaning: "A statement showing that two ratios are equal or related." },
-          { term: "Percentage", meaning: "A fraction out of 100." },
-          { term: "Discount", meaning: "Money reduced from the marked price." },
-          { term: "Whole", meaning: "The total amount being compared against." },
+          { term: "Ratio", meaning: "A ratio is a comparison between two or more quantities." },
+          { term: "Proportion", meaning: "Proportion is a statement showing that two ratios are equal or related." },
+          { term: "Percentage", meaning: "A percentage is a fraction out of 100." },
+          { term: "Discount", meaning: "Discount is money reduced from the marked price." },
+          { term: "Whole", meaning: "The whole is the total amount being compared against." },
         ],
         sections: [
           { title: "Ratios and parts", points: ["Read ratios in the order given in the question.", "Add ratio parts to find the total number of parts.", "Find one part first, then multiply for the required share."] },
@@ -494,11 +494,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Perimeter is the total distance around a shape, found by adding the outside lengths.",
         keyVocabulary: [
-          { term: "Perimeter", meaning: "The total distance around a closed shape." },
-          { term: "Length", meaning: "A measured side of a shape." },
-          { term: "Width", meaning: "The shorter side of a rectangle." },
-          { term: "Regular polygon", meaning: "A polygon with all sides equal and all angles equal." },
-          { term: "Unit", meaning: "The measurement label such as cm, m or km." },
+          { term: "Perimeter", meaning: "A perimeter is the total distance around a closed shape." },
+          { term: "Length", meaning: "Length is a measured side of a shape." },
+          { term: "Width", meaning: "A width is the shorter side of a rectangle." },
+          { term: "Regular polygon", meaning: "A regular polygon is a polygon with all sides equal and all angles equal." },
+          { term: "Unit", meaning: "An unit is the measurement label such as cm, m or km." },
         ],
         sections: [
           { title: "Add the outside", points: ["Perimeter means going around the boundary.", "Add all outside sides of the shape.", "Do not include inside lines unless they are part of the boundary."] },
@@ -574,11 +574,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Area measures the space inside a shape, so choose the formula that matches the shape and use square units.",
         keyVocabulary: [
-          { term: "Area", meaning: "The amount of surface inside a flat shape." },
-          { term: "Square unit", meaning: "A unit for area, such as cm² or m²." },
-          { term: "Base", meaning: "The bottom or chosen side used in an area formula." },
-          { term: "Height", meaning: "The perpendicular distance from base to opposite side or vertex." },
-          { term: "Composite shape", meaning: "A shape made by joining simpler shapes." },
+          { term: "Area", meaning: "Area is the amount of surface inside a flat shape." },
+          { term: "Square unit", meaning: "A square unit is a unit for area, such as cm² or m²." },
+          { term: "Base", meaning: "A base is the bottom or chosen side used in an area formula." },
+          { term: "Height", meaning: "A height is the perpendicular distance from base to opposite side or vertex." },
+          { term: "Composite shape", meaning: "A composite shape is a shape made by joining simpler shapes." },
         ],
         sections: [
           { title: "Choose the correct formula", points: ["Rectangle area = length × width.", "Triangle area = 1/2 × base × height.", "Parallelogram area = base × height."] },
@@ -656,11 +656,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Volume measures the space inside a solid, while capacity tells how much a container can hold.",
         keyVocabulary: [
-          { term: "Volume", meaning: "The amount of space occupied by a solid." },
-          { term: "Capacity", meaning: "The amount a container can hold." },
-          { term: "Cuboid", meaning: "A box-shaped solid with rectangular faces." },
-          { term: "Cubic unit", meaning: "A unit for volume, such as cm³ or m³." },
-          { term: "Conversion", meaning: "Changing from one unit to another." },
+          { term: "Volume", meaning: "Volume is the amount of space occupied by a solid." },
+          { term: "Capacity", meaning: "Capacity is the amount a container can hold." },
+          { term: "Cuboid", meaning: "A cuboid is a box-shaped solid with rectangular faces." },
+          { term: "Cubic unit", meaning: "A cubic unit is a unit for volume, such as cm³ or m³." },
+          { term: "Conversion", meaning: "Conversion is changing from one unit to another." },
         ],
         sections: [
           { title: "Cuboids and cubes", points: ["Cuboid volume = length × width × height.", "A cube has equal edges, so volume = side × side × side.", "Label all three dimensions before multiplying."] },
@@ -739,11 +739,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "An equation is like a balanced scale: whatever you do to one side, you must do to the other side.",
         keyVocabulary: [
-          { term: "Equation", meaning: "A mathematical statement with an equals sign." },
-          { term: "Variable", meaning: "A letter that stands for an unknown number." },
-          { term: "Solve", meaning: "Find the value of the unknown." },
-          { term: "Balance", meaning: "Keeping both sides of an equation equal." },
-          { term: "Inverse operation", meaning: "The opposite operation used to undo a step." },
+          { term: "Equation", meaning: "An equation is a mathematical statement with an equals sign." },
+          { term: "Variable", meaning: "A variable is a letter that stands for an unknown number." },
+          { term: "Solve", meaning: "A solve is find the value of the unknown." },
+          { term: "Balance", meaning: "Balance is keeping both sides of an equation equal." },
+          { term: "Inverse operation", meaning: "An inverse operation is the opposite operation used to undo a step." },
         ],
         sections: [
           { title: "Understand the balance", points: ["The left side and right side of an equation must remain equal.", "Use inverse operations to isolate the unknown.", "Show each step clearly instead of guessing."] },
@@ -819,11 +819,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Substitution means replacing a letter with its given number, then calculating carefully.",
         keyVocabulary: [
-          { term: "Substitution", meaning: "Replacing a variable with a given value." },
-          { term: "Variable", meaning: "A letter that stands for a number." },
-          { term: "Expression", meaning: "A mathematical phrase without an equals sign." },
-          { term: "Value", meaning: "The number a variable represents." },
-          { term: "Order of operations", meaning: "The correct order for calculating an expression." },
+          { term: "Substitution", meaning: "Substitution is replacing a variable with a given value." },
+          { term: "Variable", meaning: "A variable is a letter that stands for a number." },
+          { term: "Expression", meaning: "An expression is a mathematical phrase without an equals sign." },
+          { term: "Value", meaning: "Value is the number a variable represents." },
+          { term: "Order of operations", meaning: "Order of operations are the correct order for calculating an expression." },
         ],
         sections: [
           { title: "Replace the letter", points: ["Write the expression again with the number in place of the letter.", "Use brackets when replacing a letter that is multiplied or has a negative value.", "Keep all operation signs visible."] },
@@ -898,11 +898,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Mean, median, mode and range are different ways of describing a set of data, so each one has a different method.",
         keyVocabulary: [
-          { term: "Mean", meaning: "The average found by adding values and dividing by how many values there are." },
-          { term: "Median", meaning: "The middle value after arranging data in order." },
-          { term: "Mode", meaning: "The value that appears most often." },
-          { term: "Range", meaning: "The difference between the highest and lowest values." },
-          { term: "Data", meaning: "Collected numbers or information." },
+          { term: "Mean", meaning: "Mean is the average found by adding values and dividing by how many values there are." },
+          { term: "Median", meaning: "Median is the middle value after arranging data in order." },
+          { term: "Mode", meaning: "Mode is the value that appears most often." },
+          { term: "Range", meaning: "Range is the difference between the highest and lowest values." },
+          { term: "Data", meaning: "Data is collected numbers or information." },
         ],
         sections: [
           { title: "Find the mean", points: ["Add all the values.", "Count how many values there are.", "Divide the total by the number of values."] },
@@ -981,11 +981,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "12-hour and 24-hour clocks show the same time in different formats, so conversion depends on morning, afternoon or night.",
         keyVocabulary: [
-          { term: "12-hour clock", meaning: "Time written with a.m. or p.m." },
-          { term: "24-hour clock", meaning: "Time written from 0000 to 2359 hours." },
-          { term: "a.m.", meaning: "Time from midnight to before midday." },
-          { term: "p.m.", meaning: "Time from midday to before midnight." },
-          { term: "Duration", meaning: "How long something lasts." },
+          { term: "12-hour clock", meaning: "The 12-hour clock is time written with a.m. or p.m." },
+          { term: "24-hour clock", meaning: "The 24-hour clock is time written from 0000 to 2359 hours." },
+          { term: "a.m.", meaning: "a.m. means the time from midnight to before midday." },
+          { term: "p.m.", meaning: "p.m. means the time from midday to before midnight." },
+          { term: "Duration", meaning: "Duration is how long something lasts." },
         ],
         sections: [
           { title: "Convert to 24-hour time", points: ["Morning a.m. times mostly stay the same, with four digits.", "For p.m. times after 12 noon, add 12 to the hour.", "12 midnight is 0000 hours and 12 noon is 1200 hours."] },
@@ -1062,12 +1062,12 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Money questions use the same careful steps: identify cost or selling price, then calculate profit, loss, discount or interest.",
         keyVocabulary: [
-          { term: "Cost price", meaning: "The price paid to buy an item." },
-          { term: "Selling price", meaning: "The price received after selling an item." },
-          { term: "Profit", meaning: "Money gained when selling price is more than cost price." },
-          { term: "Loss", meaning: "Money lost when selling price is less than cost price." },
-          { term: "Discount", meaning: "Money reduced from the marked price." },
-          { term: "Interest", meaning: "Extra money paid or earned for using money over time." },
+          { term: "Cost price", meaning: "The cost price is the price paid to buy an item." },
+          { term: "Selling price", meaning: "The selling price is the price received after selling an item." },
+          { term: "Profit", meaning: "Profit is money gained when selling price is more than cost price." },
+          { term: "Loss", meaning: "Loss is money lost when selling price is less than cost price." },
+          { term: "Discount", meaning: "Discount is money reduced from the marked price." },
+          { term: "Interest", meaning: "Interest is extra money paid or earned for using money over time." },
         ],
         sections: [
           { title: "Profit and loss", points: ["Profit = selling price − cost price.", "Loss = cost price − selling price.", "If selling price is higher, it is profit; if lower, it is loss."] },
@@ -1144,11 +1144,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "The four basic operations are the tools for most Maths questions: addition, subtraction, multiplication and division.",
         keyVocabulary: [
-          { term: "Addition", meaning: "Combining numbers to find a total." },
-          { term: "Subtraction", meaning: "Finding what remains or the difference." },
-          { term: "Multiplication", meaning: "Repeated addition or scaling." },
-          { term: "Division", meaning: "Sharing or grouping equally." },
-          { term: "Remainder", meaning: "What is left after division." },
+          { term: "Addition", meaning: "Addition is combining numbers to find a total." },
+          { term: "Subtraction", meaning: "Subtraction is finding what remains or the difference." },
+          { term: "Multiplication", meaning: "Multiplication is repeated addition or scaling." },
+          { term: "Division", meaning: "Division is sharing or grouping equally." },
+          { term: "Remainder", meaning: "A remainder is what is left after division." },
         ],
         sections: [
           { title: "Choose the operation", points: ["Use addition for totals and joining quantities.", "Use subtraction for difference, change or what is left.", "Use multiplication for equal groups and division for sharing or grouping." ] },
@@ -1228,11 +1228,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Integers include positive numbers, negative numbers and zero, and a number line helps you compare and calculate them.",
         keyVocabulary: [
-          { term: "Integer", meaning: "A whole number that can be positive, negative or zero." },
-          { term: "Positive number", meaning: "A number greater than zero." },
-          { term: "Negative number", meaning: "A number less than zero." },
-          { term: "Zero", meaning: "The number between positive and negative numbers." },
-          { term: "Number line", meaning: "A line used to show numbers in order." },
+          { term: "Integer", meaning: "An integer is a whole number that can be positive, negative or zero." },
+          { term: "Positive number", meaning: "A positive number is a number greater than zero." },
+          { term: "Negative number", meaning: "A negative number is a number less than zero." },
+          { term: "Zero", meaning: "Zero is the number between positive and negative numbers." },
+          { term: "Number line", meaning: "The number line is a line used to show numbers in order." },
         ],
         sections: [
           { title: "Read the number line", points: ["Numbers increase as you move right.", "Numbers decrease as you move left.", "A negative number with a bigger digit is actually smaller, for example -8 is less than -3." ] },
@@ -1309,11 +1309,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Graphs organise data visually, so read the title, scale, labels and key before answering questions.",
         keyVocabulary: [
-          { term: "Data", meaning: "Collected facts or numbers." },
-          { term: "Scale", meaning: "The value represented by each interval on a graph." },
-          { term: "Pie chart", meaning: "A circle graph divided into sectors." },
-          { term: "Travel graph", meaning: "A graph showing distance against time." },
-          { term: "Key", meaning: "A guide explaining symbols or colours on a graph." },
+          { term: "Data", meaning: "Data is collected facts or numbers." },
+          { term: "Scale", meaning: "Scale is the value represented by each interval on a graph." },
+          { term: "Pie chart", meaning: "A pie chart is a circle graph divided into sectors." },
+          { term: "Travel graph", meaning: "A travel graph is a graph showing distance against time." },
+          { term: "Key", meaning: "A key is a guide explaining symbols or colours on a graph." },
         ],
         sections: [
           { title: "Read graphs carefully", points: ["Start with the title to know what the graph is about.", "Check the scale before reading values.", "Use labels and the key to avoid mixing categories."] },
@@ -1390,11 +1390,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Timetables organise activities by time, so careful reading helps you find start times, end times and duration.",
         keyVocabulary: [
-          { term: "Timetable", meaning: "A table showing activities and their times." },
-          { term: "Schedule", meaning: "A planned order of activities." },
-          { term: "Departure", meaning: "The time something leaves." },
-          { term: "Arrival", meaning: "The time something reaches a place." },
-          { term: "Duration", meaning: "How long an activity or journey takes." },
+          { term: "Timetable", meaning: "A timetable is a table showing activities and their times." },
+          { term: "Schedule", meaning: "A schedule is a planned order of activities." },
+          { term: "Departure", meaning: "Departure is the time something leaves." },
+          { term: "Arrival", meaning: "Arrival is the time something reaches a place." },
+          { term: "Duration", meaning: "Duration is how long an activity or journey takes." },
         ],
         sections: [
           { title: "Read rows and columns", points: ["Use headings to know what each column means.", "Follow the correct row for the day, subject, bus or event.", "Do not mix information from different rows." ] },
@@ -1473,11 +1473,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Algebraic expressions use letters and numbers to describe mathematical situations without an equals sign.",
         keyVocabulary: [
-          { term: "Expression", meaning: "A mathematical phrase using numbers, letters and operation signs." },
-          { term: "Variable", meaning: "A letter that stands for a number." },
-          { term: "Term", meaning: "A part of an expression separated by plus or minus signs." },
-          { term: "Coefficient", meaning: "The number multiplying a variable." },
-          { term: "Like terms", meaning: "Terms with the same variable part." },
+          { term: "Expression", meaning: "An expression is a mathematical phrase using numbers, letters and operation signs." },
+          { term: "Variable", meaning: "A variable is a letter that stands for a number." },
+          { term: "Term", meaning: "A term is a part of an expression separated by plus or minus signs." },
+          { term: "Coefficient", meaning: "Coefficient is the number multiplying a variable." },
+          { term: "Like terms", meaning: "Like terms are terms with the same variable part." },
         ],
         sections: [
           { title: "Read expressions", points: ["A letter can stand for an unknown or changing number.", "2x means 2 multiplied by x.", "An expression has no equals sign, unlike an equation." ] },
@@ -1554,11 +1554,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Divisibility tests help you quickly know whether one number divides another without long division.",
         keyVocabulary: [
-          { term: "Divisible", meaning: "Can be divided exactly with no remainder." },
-          { term: "Factor", meaning: "A number that divides another number exactly." },
-          { term: "Multiple", meaning: "A number made by multiplying another number by a whole number." },
-          { term: "Remainder", meaning: "What is left after division." },
-          { term: "Digit sum", meaning: "The sum of the digits of a number." },
+          { term: "Divisible", meaning: "Divisible is can be divided exactly with no remainder." },
+          { term: "Factor", meaning: "A factor is a number that divides another number exactly." },
+          { term: "Multiple", meaning: "A multiple is a number made by multiplying another number by a whole number." },
+          { term: "Remainder", meaning: "A remainder is what is left after division." },
+          { term: "Digit sum", meaning: "A digit sum is the sum of the digits of a number." },
         ],
         sections: [
           { title: "Common tests", points: ["A number is divisible by 2 if it ends in 0, 2, 4, 6 or 8.", "It is divisible by 5 if it ends in 0 or 5.", "It is divisible by 10 if it ends in 0." ] },
@@ -1638,11 +1638,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Prime factorisation breaks a number into prime numbers that multiply to make it.",
         keyVocabulary: [
-          { term: "Prime number", meaning: "A number greater than 1 with exactly two factors: 1 and itself." },
-          { term: "Composite number", meaning: "A number with more than two factors." },
-          { term: "Prime factor", meaning: "A prime number that divides a given number exactly." },
-          { term: "Factor tree", meaning: "A diagram used to split a number into factors until primes remain." },
-          { term: "Index form", meaning: "Writing repeated factors using powers." },
+          { term: "Prime number", meaning: "A prime number is a number greater than 1 with exactly two factors: 1 and itself." },
+          { term: "Composite number", meaning: "A composite number is a number with more than two factors." },
+          { term: "Prime factor", meaning: "A prime factor is a prime number that divides a given number exactly." },
+          { term: "Factor tree", meaning: "A factor tree is a diagram used to split a number into factors until primes remain." },
+          { term: "Index form", meaning: "An index form is writing repeated factors using powers." },
         ],
         sections: [
           { title: "Know primes", points: ["2 is the only even prime number.", "Prime numbers have only two factors.", "Examples include 2, 3, 5, 7, 11 and 13." ] },
@@ -1721,11 +1721,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Length measures distance, height or how long something is, and many questions require correct unit conversion.",
         keyVocabulary: [
-          { term: "Length", meaning: "The measurement of how long something is." },
-          { term: "Distance", meaning: "How far apart two points are." },
-          { term: "Millimetre", meaning: "A small unit of length." },
-          { term: "Centimetre", meaning: "A unit of length equal to 10 millimetres." },
-          { term: "Kilometre", meaning: "A unit of length equal to 1000 metres." },
+          { term: "Length", meaning: "Length is the measurement of how long something is." },
+          { term: "Distance", meaning: "Distance is how far apart two points are." },
+          { term: "Millimetre", meaning: "A millimetre is a small unit of length." },
+          { term: "Centimetre", meaning: "A centimetre is a unit of length equal to 10 millimetres." },
+          { term: "Kilometre", meaning: "A kilometre is a unit of length equal to 1000 metres." },
         ],
         sections: [
           { title: "Choose units", points: ["Use millimetres or centimetres for small objects.", "Use metres for rooms, fields and short distances.", "Use kilometres for long distances between places." ] },
@@ -1803,11 +1803,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Mass tells how heavy something is, while weight is the force due to gravity; P7 questions mostly focus on measuring and converting mass.",
         keyVocabulary: [
-          { term: "Mass", meaning: "The amount of matter in an object." },
-          { term: "Weight", meaning: "The force with which gravity pulls an object." },
-          { term: "Gram", meaning: "A small unit of mass." },
-          { term: "Kilogram", meaning: "A unit equal to 1000 grams." },
-          { term: "Tonne", meaning: "A large unit equal to 1000 kilograms." },
+          { term: "Mass", meaning: "Mass is the amount of matter in an object." },
+          { term: "Weight", meaning: "Weight is the force with which gravity pulls an object." },
+          { term: "Gram", meaning: "A gram is a small unit of mass." },
+          { term: "Kilogram", meaning: "A kilogram is a unit equal to 1000 grams." },
+          { term: "Tonne", meaning: "A tonne is a large unit equal to 1000 kilograms." },
         ],
         sections: [
           { title: "Units of mass", points: ["Use grams for light items.", "Use kilograms for people, bags and common goods.", "Use tonnes for very heavy loads such as trucks or harvests." ] },
@@ -1885,11 +1885,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Capacity measures how much a container can hold, usually in litres and millilitres.",
         keyVocabulary: [
-          { term: "Capacity", meaning: "The amount a container can hold." },
-          { term: "Litre", meaning: "A common unit for measuring liquids." },
-          { term: "Millilitre", meaning: "A small unit of capacity." },
-          { term: "Container", meaning: "An object that can hold something." },
-          { term: "Volume", meaning: "The amount of space occupied or contained." },
+          { term: "Capacity", meaning: "Capacity is the amount a container can hold." },
+          { term: "Litre", meaning: "A litre is a common unit for measuring liquids." },
+          { term: "Millilitre", meaning: "A millilitre is a small unit of capacity." },
+          { term: "Container", meaning: "A container is an object that can hold something." },
+          { term: "Volume", meaning: "Volume is the amount of space occupied or contained." },
         ],
         sections: [
           { title: "Units", points: ["Use millilitres for small amounts such as medicine or a cup.", "Use litres for jerrycans, bottles, tanks and buckets.", "1 litre = 1000 millilitres." ] },
@@ -1967,11 +1967,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Large numbers are easier to read and write when grouped by place value: ones, thousands and millions.",
         keyVocabulary: [
-          { term: "Place value", meaning: "The value of a digit because of its position in a number." },
-          { term: "Digit", meaning: "A symbol from 0 to 9 used to write numbers." },
-          { term: "Millions", meaning: "The place-value group for numbers of one million and above." },
-          { term: "Expanded form", meaning: "Writing a number as the sum of its place values." },
-          { term: "Rounding off", meaning: "Writing a number to a nearby required place value." },
+          { term: "Place value", meaning: "Place value is the value of a digit because of its position in a number." },
+          { term: "Digit", meaning: "A digit is a symbol from 0 to 9 used to write numbers." },
+          { term: "Millions", meaning: "Millions are the place-value group for numbers of one million and above." },
+          { term: "Expanded form", meaning: "An expanded form is writing a number as the sum of its place values." },
+          { term: "Rounding off", meaning: "A rounding off is writing a number to a nearby required place value." },
         ],
         sections: [
           { title: "Read large numbers", points: ["Group digits in threes from the right.", "Read millions, thousands and ones groups in order.", "Use commas or spaces to avoid losing place value." ] },
@@ -2049,11 +2049,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Line segments and angles describe shapes accurately, and angle size is measured in degrees.",
         keyVocabulary: [
-          { term: "Line segment", meaning: "A straight path with two end points." },
-          { term: "Angle", meaning: "The amount of turn between two lines meeting at a point." },
-          { term: "Right angle", meaning: "An angle of 90 degrees." },
-          { term: "Acute angle", meaning: "An angle less than 90 degrees." },
-          { term: "Obtuse angle", meaning: "An angle greater than 90 degrees but less than 180 degrees." },
+          { term: "Line segment", meaning: "A line segment is a straight path with two end points." },
+          { term: "Angle", meaning: "An angle is the amount of turn between two lines meeting at a point." },
+          { term: "Right angle", meaning: "A right angle is an angle of 90 degrees." },
+          { term: "Acute angle", meaning: "An acute angle is an angle less than 90 degrees." },
+          { term: "Obtuse angle", meaning: "An obtuse angle is an angle greater than 90 degrees but less than 180 degrees." },
         ],
         sections: [
           { title: "Line segments", points: ["A line segment has two end points.", "Use a ruler to draw and measure line segments.", "Label end points clearly, such as AB." ] },
@@ -2130,11 +2130,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Polygons are closed shapes made of straight sides, and they are named by the number of sides.",
         keyVocabulary: [
-          { term: "Polygon", meaning: "A closed flat shape made of straight sides." },
-          { term: "Side", meaning: "A straight edge of a polygon." },
-          { term: "Vertex", meaning: "A corner where two sides meet." },
-          { term: "Triangle", meaning: "A polygon with three sides." },
-          { term: "Quadrilateral", meaning: "A polygon with four sides." },
+          { term: "Polygon", meaning: "A polygon is a closed flat shape made of straight sides." },
+          { term: "Side", meaning: "A side is a straight edge of a polygon." },
+          { term: "Vertex", meaning: "A vertex is a corner where two sides meet." },
+          { term: "Triangle", meaning: "A triangle is a polygon with three sides." },
+          { term: "Quadrilateral", meaning: "A quadrilateral is a polygon with four sides." },
         ],
         sections: [
           { title: "Identify polygons", points: ["A polygon must be closed.", "All its sides must be straight.", "Circles and shapes with curved sides are not polygons." ] },
@@ -2211,11 +2211,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Coordinates locate points on a grid by moving across first, then up or down.",
         keyVocabulary: [
-          { term: "Coordinate", meaning: "An ordered pair that gives the position of a point." },
-          { term: "x-axis", meaning: "The horizontal axis on a coordinate grid." },
-          { term: "y-axis", meaning: "The vertical axis on a coordinate grid." },
-          { term: "Ordered pair", meaning: "Two numbers written in order, such as (3, 4)." },
-          { term: "Origin", meaning: "The point where the x-axis and y-axis meet." },
+          { term: "Coordinate", meaning: "A coordinate is an ordered pair that gives the position of a point." },
+          { term: "x-axis", meaning: "x-axis are the horizontal axis on a coordinate grid." },
+          { term: "y-axis", meaning: "y-axis are the vertical axis on a coordinate grid." },
+          { term: "Ordered pair", meaning: "An ordered pair is two numbers written in order, such as (3, 4)." },
+          { term: "Origin", meaning: "An origin is the point where the x-axis and y-axis meet." },
         ],
         sections: [
           { title: "Read ordered pairs", points: ["The first number is the x-coordinate.", "The second number is the y-coordinate.", "Move across first, then up or down."] },
@@ -2293,11 +2293,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Lines can be parallel, intersecting, perpendicular or skew depending on how they are positioned.",
         keyVocabulary: [
-          { term: "Parallel lines", meaning: "Lines in the same plane that never meet." },
-          { term: "Intersecting lines", meaning: "Lines that cross or meet." },
-          { term: "Perpendicular lines", meaning: "Lines that meet at a right angle." },
-          { term: "Skew lines", meaning: "Lines in different planes that do not meet and are not parallel." },
-          { term: "Plane", meaning: "A flat surface extending in all directions." },
+          { term: "Parallel lines", meaning: "Parallel lines are lines in the same plane that never meet." },
+          { term: "Intersecting lines", meaning: "Intersecting lines are lines that cross or meet." },
+          { term: "Perpendicular lines", meaning: "Perpendicular lines are lines that meet at a right angle." },
+          { term: "Skew lines", meaning: "Skew lines are lines in different planes that do not meet and are not parallel." },
+          { term: "Plane", meaning: "A plane is a flat surface extending in all directions." },
         ],
         sections: [
           { title: "Lines on a flat surface", points: ["Parallel lines stay the same distance apart.", "Intersecting lines meet at a point.", "Perpendicular lines meet at 90 degrees." ] },
@@ -2374,11 +2374,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Bearing and scale drawing help you show real directions and distances accurately on paper.",
         keyVocabulary: [
-          { term: "Bearing", meaning: "A direction measured clockwise from north in degrees." },
-          { term: "Scale", meaning: "A ratio showing how drawing distance represents real distance." },
-          { term: "North line", meaning: "A line showing the north direction on a diagram or map." },
-          { term: "Clockwise", meaning: "The direction in which the hands of a clock move." },
-          { term: "Scale drawing", meaning: "A smaller or larger accurate drawing of a real object or place." },
+          { term: "Bearing", meaning: "Bearing is a direction measured clockwise from north in degrees." },
+          { term: "Scale", meaning: "Scale is a ratio showing how drawing distance represents real distance." },
+          { term: "North line", meaning: "The north line is a line showing the north direction on a diagram or map." },
+          { term: "Clockwise", meaning: "Clockwise is the direction in which the hands of a clock move." },
+          { term: "Scale drawing", meaning: "A scale drawing is a smaller or larger accurate drawing of a real object or place." },
         ],
         sections: [
           { title: "Bearings", points: ["Bearings are measured clockwise from north.", "Write bearings using three digits, such as 045° or 120°.", "Draw or identify the north line before measuring."] },
@@ -2456,11 +2456,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "A subset is a smaller set whose members all belong to another set.",
         keyVocabulary: [
-          { term: "Set", meaning: "A group of objects or numbers." },
-          { term: "Subset", meaning: "A set whose members all belong to another set." },
-          { term: "Universal set", meaning: "The set containing all items being considered." },
-          { term: "Element", meaning: "A member of a set." },
-          { term: "Proper subset", meaning: "A subset that is not equal to the whole set." },
+          { term: "Set", meaning: "A set is a group of objects or numbers." },
+          { term: "Subset", meaning: "A subset is a set whose members all belong to another set." },
+          { term: "Universal set", meaning: "An universal set is the set containing all items being considered." },
+          { term: "Element", meaning: "An element is a member of a set." },
+          { term: "Proper subset", meaning: "A proper subset is a subset that is not equal to the whole set." },
         ],
         sections: [
           { title: "Understand subsets", points: ["If every member of A is in B, then A is a subset of B.", "A set is also a subset of itself.", "An empty set is a subset of every set." ] },
@@ -2537,11 +2537,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Finite sets can be counted completely, while infinite sets continue without an end.",
         keyVocabulary: [
-          { term: "Finite set", meaning: "A set with a countable number of elements." },
-          { term: "Infinite set", meaning: "A set that has no last element." },
-          { term: "Element", meaning: "A member of a set." },
-          { term: "Empty set", meaning: "A set with no elements." },
-          { term: "Cardinality", meaning: "The number of elements in a set." },
+          { term: "Finite set", meaning: "A finite set is a set with a countable number of elements." },
+          { term: "Infinite set", meaning: "An infinite set is a set that has no last element." },
+          { term: "Element", meaning: "An element is a member of a set." },
+          { term: "Empty set", meaning: "An empty set is a set with no elements." },
+          { term: "Cardinality", meaning: "A cardinality is the number of elements in a set." },
         ],
         sections: [
           { title: "Finite sets", points: ["A finite set has a clear number of members.", "Examples include days of the week or vowels in English.", "You can count all elements and stop." ] },
@@ -2618,11 +2618,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Probability tells how likely an event is, from impossible to certain, and can be written as a fraction.",
         keyVocabulary: [
-          { term: "Probability", meaning: "The chance that an event will happen." },
-          { term: "Event", meaning: "Something that may happen in an experiment or situation." },
-          { term: "Outcome", meaning: "A possible result." },
-          { term: "Impossible", meaning: "An event that cannot happen." },
-          { term: "Certain", meaning: "An event that must happen." },
+          { term: "Probability", meaning: "Probability is the chance that an event will happen." },
+          { term: "Event", meaning: "An event is something that may happen in an experiment or situation." },
+          { term: "Outcome", meaning: "An outcome is a possible result." },
+          { term: "Impossible", meaning: "Impossible is an event that cannot happen." },
+          { term: "Certain", meaning: "Certain is an event that must happen." },
         ],
         sections: [
           { title: "Probability words", points: ["Impossible means no chance.", "Likely means the event has a good chance of happening.", "Certain means the event must happen."] },
@@ -2700,11 +2700,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Inequalities compare values using greater than, less than, at least or at most, and their answers can be shown on a number line.",
         keyVocabulary: [
-          { term: "Inequality", meaning: "A mathematical statement comparing values that may not be equal." },
-          { term: "Greater than", meaning: "More than, shown by >." },
-          { term: "Less than", meaning: "Smaller than, shown by <." },
-          { term: "At least", meaning: "Equal to or greater than." },
-          { term: "Solution set", meaning: "All values that make an inequality true." },
+          { term: "Inequality", meaning: "An inequality is a mathematical statement comparing values that may not be equal." },
+          { term: "Greater than", meaning: "A greater than is more than, shown by >." },
+          { term: "Less than", meaning: "A less than is smaller than, shown by <." },
+          { term: "At least", meaning: "An at least is equal to or greater than." },
+          { term: "Solution set", meaning: "A solution set is all values that make an inequality true." },
         ],
         sections: [
           { title: "Read symbols", points: ["> means greater than.", "< means less than.", "≥ means greater than or equal to, and ≤ means less than or equal to." ] },
@@ -2782,11 +2782,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Number bases use different place values, so converting depends on powers of the base.",
         keyVocabulary: [
-          { term: "Base", meaning: "The number that tells how place values grow in a number system." },
-          { term: "Binary", meaning: "Base two, using only digits 0 and 1." },
-          { term: "Place value", meaning: "The value of a digit because of its position." },
-          { term: "Decimal system", meaning: "Base ten, the usual number system." },
-          { term: "Conversion", meaning: "Changing a number from one base to another." },
+          { term: "Base", meaning: "A base is the number that tells how place values grow in a number system." },
+          { term: "Binary", meaning: "Binary is base two, using only digits 0 and 1." },
+          { term: "Place value", meaning: "Place value is the value of a digit because of its position." },
+          { term: "Decimal system", meaning: "The decimal system is base ten, the usual number system." },
+          { term: "Conversion", meaning: "Conversion is changing a number from one base to another." },
         ],
         sections: [
           { title: "Understand bases", points: ["Base ten uses powers of 10.", "Base two uses powers of 2 and only digits 0 and 1.", "No digit in a base can be equal to or greater than the base." ] },
@@ -2863,11 +2863,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Number patterns follow a rule, and finding the rule helps you continue or describe the sequence.",
         keyVocabulary: [
-          { term: "Pattern", meaning: "A repeated or regular arrangement." },
-          { term: "Sequence", meaning: "Numbers written in order following a rule." },
-          { term: "Term", meaning: "One number in a sequence." },
-          { term: "Rule", meaning: "The instruction that tells how the pattern changes." },
-          { term: "Difference", meaning: "The amount between two numbers." },
+          { term: "Pattern", meaning: "A pattern is a repeated or regular arrangement." },
+          { term: "Sequence", meaning: "A sequence is numbers written in order following a rule." },
+          { term: "Term", meaning: "A term is one number in a sequence." },
+          { term: "Rule", meaning: "A rule is the instruction that tells how the pattern changes." },
+          { term: "Difference", meaning: "A difference is the amount between two numbers." },
         ],
         sections: [
           { title: "Find the rule", points: ["Compare neighbouring terms.", "Check if the pattern adds, subtracts, multiplies or divides.", "Look for alternating patterns if one rule does not fit all terms." ] },
@@ -2945,11 +2945,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Probability of numbers uses the same chance rule, but the favourable outcomes are numbers with the required property.",
         keyVocabulary: [
-          { term: "Outcome", meaning: "A possible result." },
-          { term: "Favourable outcome", meaning: "A result that matches what the question asks for." },
-          { term: "Even number", meaning: "A number divisible by 2." },
-          { term: "Odd number", meaning: "A number not divisible by 2." },
-          { term: "Prime number", meaning: "A number greater than 1 with exactly two factors." },
+          { term: "Outcome", meaning: "An outcome is a possible result." },
+          { term: "Favourable outcome", meaning: "A favourable outcome is a result that matches what the question asks for." },
+          { term: "Even number", meaning: "An even number is a number divisible by 2." },
+          { term: "Odd number", meaning: "An odd number is a number not divisible by 2." },
+          { term: "Prime number", meaning: "A prime number is a number greater than 1 with exactly two factors." },
         ],
         sections: [
           { title: "List the sample space", points: ["Write all possible numbers first.", "Count the total outcomes.", "Make sure each outcome is equally likely." ] },
@@ -3028,11 +3028,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Regular polygons have equal sides and equal angles, so their angle and perimeter questions follow clear rules.",
         keyVocabulary: [
-          { term: "Regular polygon", meaning: "A polygon with all sides equal and all angles equal." },
-          { term: "Interior angle", meaning: "An angle inside a polygon." },
-          { term: "Exterior angle", meaning: "An angle outside a polygon formed by extending a side." },
-          { term: "Perimeter", meaning: "The total distance around a shape." },
-          { term: "Vertex", meaning: "A corner of a polygon." },
+          { term: "Regular polygon", meaning: "A regular polygon is a polygon with all sides equal and all angles equal." },
+          { term: "Interior angle", meaning: "An interior angle is an angle inside a polygon." },
+          { term: "Exterior angle", meaning: "An exterior angle is an angle outside a polygon formed by extending a side." },
+          { term: "Perimeter", meaning: "A perimeter is the total distance around a shape." },
+          { term: "Vertex", meaning: "A vertex is a corner of a polygon." },
         ],
         sections: [
           { title: "Recognise regular polygons", points: ["All sides are equal.", "All angles are equal.", "Examples include equilateral triangle, square and regular hexagon." ] },
@@ -3109,11 +3109,11 @@ export const TOPICS: Topic[] = [
       study: {
         bigIdea: "Algebra in real life turns everyday unknowns into letters so problems can be written and solved clearly.",
         keyVocabulary: [
-          { term: "Unknown", meaning: "A value that is not yet known." },
-          { term: "Variable", meaning: "A letter used to represent an unknown or changing value." },
-          { term: "Expression", meaning: "A mathematical phrase using numbers, variables and operations." },
-          { term: "Equation", meaning: "A statement showing two expressions are equal." },
-          { term: "Translate", meaning: "Change words into mathematical symbols." },
+          { term: "Unknown", meaning: "Unknown is a value that is not yet known." },
+          { term: "Variable", meaning: "A variable is a letter used to represent an unknown or changing value." },
+          { term: "Expression", meaning: "An expression is a mathematical phrase using numbers, variables and operations." },
+          { term: "Equation", meaning: "An equation is a statement showing two expressions are equal." },
+          { term: "Translate", meaning: "To translate means to change words into mathematical symbols." },
         ],
         sections: [
           { title: "Choose a variable", points: ["Let a letter stand for the unknown number.", "Define the letter clearly, for example let x be the number of goats.", "Use the same letter consistently." ] },

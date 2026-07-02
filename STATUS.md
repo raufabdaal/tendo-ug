@@ -2,7 +2,7 @@
 
 *Updated: 2026-07-02*
 
-> **Current state:** P7 Mathematics, P7 Integrated Science, P7 Social Studies and P7 English are now complete enough for current product scope. The Social Studies + English grouped work has now been pushed successfully and is working in production.
+> **Current state:** P7 Mathematics, P7 Integrated Science, P7 Social Studies and P7 English are complete enough for current product scope. The Lesson Structure v2 + visual alignment grouped milestone has been pushed and verified live. Pilot Readiness Pack v1 has started, and key-word definitions were polished into more teacher-like sentence phrasing before pilot use.
 
 ## Current focus
 
@@ -131,7 +131,7 @@ The new structure adds:
 
 See: `docs/spec/tendo-lesson-structure-v2.md`
 
-No push is recommended yet until the founder is ready for the grouped restructuring milestone. Maths has now been fully converted to Lesson Structure v2 across all 38 topics, all four active P7 subjects use the new study flow, and the visual layer has been aligned so visual briefs and Maths diagrams act more like instructional teaching aids.
+The grouped Lesson Structure v2 milestone has been pushed and verified live. Maths is fully converted across all 38 topics, all four active P7 subjects use the new study flow, and the visual layer has been aligned so visual briefs and diagrams act more like instructional teaching aids.
 
 ## What still needs work right now
 
@@ -151,10 +151,10 @@ Possible future enhancements:
 ## Immediate next steps
 
 Recommended next move:
-1. Verify key live routes and teacher flows.
-2. Remove any stale docs that still talk about Social Studies + English as unpushed.
-3. Tighten teacher-facing usefulness next.
-4. Then deepen English, Science and Social Studies to the same fully-finished standard the founder wants.
+1. Use Pilot Readiness Pack v1 in the first teacher/school conversation.
+2. Collect structured teacher and learner feedback.
+3. Prioritise fixes based on real classroom blockers.
+4. Decide whether the next build milestone is P6 expansion, teacher workflow, or deeper subject-specific practice.
 
 ---
 

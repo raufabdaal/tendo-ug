@@ -15,7 +15,7 @@ export default function HomePage() {
         <div className="card-row">
           <div>
             <div className="card-title">Mathematics</div>
-            <div className="card-sub">P7 · 6 themes · 40 sub-topics</div>
+            <div className="card-sub">P7 · 6 themes · 38 study topics</div>
           </div>
           <span className="badge badge-math">Active</span>
         </div>

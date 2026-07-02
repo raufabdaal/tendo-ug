@@ -13,12 +13,12 @@ export const SCIENCE_TOPICS: Topic[] = [
       study: {
         bigIdea: "Bones, joints and muscles work together to support the body, protect organs and make movement possible.",
         keyVocabulary: [
-          { term: "Skeleton", meaning: "The framework of bones that gives the body shape and support." },
-          { term: "Joint", meaning: "A place where two or more bones meet." },
-          { term: "Muscle", meaning: "Body tissue that contracts and relaxes to cause movement." },
-          { term: "Tendon", meaning: "A strong tissue that attaches muscle to bone." },
-          { term: "Ligament", meaning: "A strong tissue that holds bones together at a joint." },
-          { term: "Fracture", meaning: "A break or crack in a bone." },
+          { term: "Skeleton", meaning: "The skeleton is the framework of bones that gives the body shape and support." },
+          { term: "Joint", meaning: "A joint is a place where two or more bones meet." },
+          { term: "Muscle", meaning: "A muscle is body tissue that contracts and relaxes to cause movement." },
+          { term: "Tendon", meaning: "A tendon is a strong tissue that attaches muscle to bone." },
+          { term: "Ligament", meaning: "A ligament is a strong tissue that holds bones together at a joint." },
+          { term: "Fracture", meaning: "A fracture is a break or crack in a bone." },
         ],
         sections: [
           {
@@ -139,12 +139,12 @@ export const SCIENCE_TOPICS: Topic[] = [
       study: {
         bigIdea: "Electricity needs a complete safe path to flow, and magnetism can attract materials or be made using electricity.",
         keyVocabulary: [
-          { term: "Circuit", meaning: "A complete path through which electric current can flow." },
-          { term: "Current", meaning: "The flow of electric charge through a circuit." },
-          { term: "Conductor", meaning: "A material that allows electricity to pass through easily." },
-          { term: "Insulator", meaning: "A material that does not allow electricity to pass through easily." },
-          { term: "Magnet", meaning: "An object that attracts magnetic materials such as iron and steel." },
-          { term: "Electromagnet", meaning: "A temporary magnet made using electricity." },
+          { term: "Circuit", meaning: "A circuit is a complete path through which electric current can flow." },
+          { term: "Current", meaning: "Current is the flow of electric charge through a circuit." },
+          { term: "Conductor", meaning: "A conductor is a material that allows electricity to pass through easily." },
+          { term: "Insulator", meaning: "An insulator is a material that does not allow electricity to pass through easily." },
+          { term: "Magnet", meaning: "A magnet is an object that attracts magnetic materials such as iron and steel." },
+          { term: "Electromagnet", meaning: "An electromagnet is a temporary magnet made using electricity." },
         ],
         sections: [
           {
@@ -270,12 +270,12 @@ export const SCIENCE_TOPICS: Topic[] = [
       study: {
         bigIdea: "People use energy from the environment every day, so they must know which resources can be replaced and how to use them responsibly.",
         keyVocabulary: [
-          { term: "Energy", meaning: "The ability to do work, give heat, produce light or cause movement." },
-          { term: "Renewable resource", meaning: "An energy resource that can be replaced naturally or continues to be available." },
-          { term: "Non-renewable resource", meaning: "An energy resource that can get finished because it takes a very long time to form." },
-          { term: "Fossil fuel", meaning: "Fuel such as coal or petroleum formed from ancient living things." },
-          { term: "Biogas", meaning: "A gas fuel made from decomposing animal waste or plant remains." },
-          { term: "Conservation", meaning: "Using resources carefully so they remain useful in the future." },
+          { term: "Energy", meaning: "Energy is the ability to do work, give heat, produce light or cause movement." },
+          { term: "Renewable resource", meaning: "A renewable resource is an energy resource that can be replaced naturally or continues to be available." },
+          { term: "Non-renewable resource", meaning: "A non-renewable resource is an energy resource that can get finished because it takes a very long time to form." },
+          { term: "Fossil fuel", meaning: "A fossil fuel is fuel such as coal or petroleum formed from ancient living things." },
+          { term: "Biogas", meaning: "Biogas are a gas fuel made from decomposing animal waste or plant remains." },
+          { term: "Conservation", meaning: "Conservation is using resources carefully so they remain useful in the future." },
         ],
         sections: [
           {
@@ -395,12 +395,12 @@ export const SCIENCE_TOPICS: Topic[] = [
       study: {
         bigIdea: "Simple machines make work easier, while friction can either help movement or make machines waste energy.",
         keyVocabulary: [
-          { term: "Simple machine", meaning: "A device that makes work easier." },
-          { term: "Lever", meaning: "A rigid bar that turns about a fixed point called a fulcrum." },
-          { term: "Fulcrum", meaning: "The fixed point on which a lever turns." },
-          { term: "Load", meaning: "The object or weight being moved by a machine." },
-          { term: "Effort", meaning: "The force applied to move a load." },
-          { term: "Friction", meaning: "A force that opposes motion between surfaces in contact." },
+          { term: "Simple machine", meaning: "A simple machine is a device that makes work easier." },
+          { term: "Lever", meaning: "A lever is a rigid bar that turns about a fixed point called a fulcrum." },
+          { term: "Fulcrum", meaning: "A fulcrum is the fixed point on which a lever turns." },
+          { term: "Load", meaning: "A load is the object or weight being moved by a machine." },
+          { term: "Effort", meaning: "An effort is the force applied to move a load." },
+          { term: "Friction", meaning: "Friction is a force that opposes motion between surfaces in contact." },
         ],
         sections: [
           {
@@ -523,12 +523,12 @@ export const SCIENCE_TOPICS: Topic[] = [
       study: {
         bigIdea: "The body stays healthy by removing wastes through organs such as the kidneys, skin, lungs and liver.",
         keyVocabulary: [
-          { term: "Excretion", meaning: "Removal of waste products made by body activities." },
-          { term: "Egestion", meaning: "Removal of undigested food from the alimentary canal." },
-          { term: "Kidney", meaning: "An organ that filters blood and forms urine." },
-          { term: "Ureter", meaning: "A tube that carries urine from a kidney to the bladder." },
-          { term: "Urinary bladder", meaning: "A sac that stores urine before it leaves the body." },
-          { term: "Urethra", meaning: "A tube that carries urine from the bladder out of the body." },
+          { term: "Excretion", meaning: "Excretion is the removal of waste products made by body activities." },
+          { term: "Egestion", meaning: "Egestion is the removal of undigested food from the alimentary canal." },
+          { term: "Kidney", meaning: "A kidney is an organ that filters blood and forms urine." },
+          { term: "Ureter", meaning: "An ureter is a tube that carries urine from a kidney to the bladder." },
+          { term: "Urinary bladder", meaning: "An urinary bladder is a sac that stores urine before it leaves the body." },
+          { term: "Urethra", meaning: "An urethra is a tube that carries urine from the bladder out of the body." },
         ],
         sections: [
           {
@@ -649,12 +649,12 @@ export const SCIENCE_TOPICS: Topic[] = [
       study: {
         bigIdea: "Light travels in straight lines, forms shadows, and can change direction by reflection or refraction.",
         keyVocabulary: [
-          { term: "Light source", meaning: "An object that produces its own light." },
-          { term: "Ray", meaning: "A straight line used to show the path of light." },
-          { term: "Opaque", meaning: "A material that does not allow light to pass through." },
-          { term: "Transparent", meaning: "A material that allows most light to pass through." },
-          { term: "Reflection", meaning: "The bouncing back of light from a surface." },
-          { term: "Refraction", meaning: "The bending of light as it passes from one material to another." },
+          { term: "Light source", meaning: "A light source is an object that produces its own light." },
+          { term: "Ray", meaning: "A ray is a straight line used to show the path of light." },
+          { term: "Opaque", meaning: "An opaque material does not allow light to pass through." },
+          { term: "Transparent", meaning: "A transparent material allows most light to pass through." },
+          { term: "Reflection", meaning: "Reflection is the bouncing back of light from a surface." },
+          { term: "Refraction", meaning: "Refraction is the bending of light as it passes from one material to another." },
         ],
         sections: [
           {
@@ -781,12 +781,12 @@ export const SCIENCE_TOPICS: Topic[] = [
       study: {
         bigIdea: "Living and non-living things depend on one another, so changing one part of the environment affects other parts.",
         keyVocabulary: [
-          { term: "Environment", meaning: "All living and non-living things around us." },
-          { term: "Producer", meaning: "A green plant that makes its own food." },
-          { term: "Consumer", meaning: "A living thing that feeds on plants or other animals." },
-          { term: "Decomposer", meaning: "A living thing that breaks down dead plants and animals." },
-          { term: "Food chain", meaning: "A feeding relationship showing how energy moves from one organism to another." },
-          { term: "Agroforestry", meaning: "Growing trees together with crops or rearing animals on the same land." },
+          { term: "Environment", meaning: "Environment is all living and non-living things around us." },
+          { term: "Producer", meaning: "A producer is a green plant that makes its own food." },
+          { term: "Consumer", meaning: "A consumer is a living thing that feeds on plants or other animals." },
+          { term: "Decomposer", meaning: "A decomposer is a living thing that breaks down dead plants and animals." },
+          { term: "Food chain", meaning: "A food chain is a feeding relationship showing how energy moves from one organism to another." },
+          { term: "Agroforestry", meaning: "Agroforestry is growing trees together with crops or rearing animals on the same land." },
         ],
         sections: [
           {
@@ -906,12 +906,12 @@ export const SCIENCE_TOPICS: Topic[] = [
       study: {
         bigIdea: "Healthy communities prevent sickness by using clean habits, safe behaviour, health services and useful health information.",
         keyVocabulary: [
-          { term: "Community health", meaning: "The wellbeing of people living together in a home, school or community." },
-          { term: "Sanitation", meaning: "Clean conditions that help prevent disease, such as proper latrine use and waste disposal." },
-          { term: "Immunisation", meaning: "Giving vaccines to help the body prevent certain diseases." },
-          { term: "Communicable disease", meaning: "A disease that can spread from one person to another." },
-          { term: "Health survey", meaning: "A planned way of collecting information about health needs or problems." },
-          { term: "Prevention", meaning: "Actions taken to stop sickness or danger before it happens." },
+          { term: "Community health", meaning: "Community health is the wellbeing of people living together in a home, school or community." },
+          { term: "Sanitation", meaning: "Sanitation is clean conditions that help prevent disease, such as proper latrine use and waste disposal." },
+          { term: "Immunisation", meaning: "Immunisation is giving vaccines to help the body prevent certain diseases." },
+          { term: "Communicable disease", meaning: "A communicable disease is a disease that can spread from one person to another." },
+          { term: "Health survey", meaning: "A health survey is a planned way of collecting information about health needs or problems." },
+          { term: "Prevention", meaning: "Prevention means actions taken to stop sickness or danger before it happens." },
         ],
         sections: [
           {

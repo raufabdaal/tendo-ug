@@ -241,7 +241,7 @@ Relevant files:
 - `docs/spec/tendo-lesson-structure-v2.md`
 - `docs/ops/lesson-structure-v2-release-review-2026-07-02.md`
 
-Push strategy: this is now a meaningful grouped restructuring milestone across all four active subjects, including a visual alignment pass. If the founder is ready, prepare/copy the grouped app-critical and documentation files for one push.
+Latest workflow truth: the Lesson Structure v2 + visual alignment grouped milestone was pushed and verified live. The current batch is post-push cleanup plus Pilot Readiness Pack v1.
 
 ---
 
@@ -310,3 +310,23 @@ Use the final assistant response/checklist as the practical source, but broadly:
 - `app/.next/`
 - `app/node_modules/`
 - generated/cache/build folders
+
+
+---
+
+## Pilot Readiness Pack v1
+
+Created after the Lesson Structure v2 grouped push was verified live.
+
+Files:
+- `docs/ops/post-push-verification-lesson-structure-v2-2026-07-02.md`
+- `docs/pilot/teacher-classroom-guide-v1.md`
+- `docs/pilot/pilot-checklist-v1.md`
+- `docs/pilot/founder-demo-script-v1.md`
+- `docs/pilot/teacher-feedback-loop-v1.md`
+
+Purpose:
+- help the founder demo Tendo clearly to teachers/school leaders
+- guide classroom use
+- collect useful teacher and learner feedback
+- decide the next product milestone based on real pilot signals

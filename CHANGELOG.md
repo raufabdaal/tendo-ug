@@ -2,6 +2,52 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
+## v0.5.23 — 2026-07-02 — Key-word definitions teacher-voice phrasing pass
+
+**Session theme:** Address founder/partner feedback that some key-word definitions still sounded like machine/database labels rather than Ugandan classroom explanations.
+
+**Changed:**
+- `app/lib/topics.ts` — revised Maths key-word definitions into sentence-style teacher phrasing.
+- `app/lib/english-topics.ts` — revised English key-word definitions into sentence-style teacher phrasing.
+- `app/lib/science-topics.ts` — revised Science key-word definitions into sentence-style teacher phrasing.
+- `app/lib/social-topics.ts` — revised Social Studies key-word definitions into sentence-style teacher phrasing.
+
+**Example direction:**
+- Before: `Independence: Freedom of a country`
+- After: `Independence is freedom of a country to govern itself.`
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- Key words now read more like a teacher explaining to P7 learners, not a dictionary/database export.
+
+---
+
+## v0.5.22 — 2026-07-02 — Post-push cleanup and Pilot Readiness Pack v1
+
+**Session theme:** After the Lesson Structure v2 grouped push was confirmed live, prepare the next practical milestone: pilot readiness.
+
+**Added:**
+- `docs/ops/post-push-verification-lesson-structure-v2-2026-07-02.md` — live-route verification after the grouped restructuring push.
+- `docs/pilot/teacher-classroom-guide-v1.md` — teacher-facing classroom use guide.
+- `docs/pilot/pilot-checklist-v1.md` — before/during/after pilot checklist.
+- `docs/pilot/founder-demo-script-v1.md` — 5–10 minute founder demo script.
+- `docs/pilot/teacher-feedback-loop-v1.md` — structured teacher feedback collection loop.
+
+**Changed:**
+- `app/app/page.tsx` — updated stale Maths home-card wording from `40 sub-topics` to `38 study topics`.
+- Root docs updated to show the Lesson Structure v2 milestone has been pushed and verified live.
+
+**Verified live before cleanup:**
+- Home page, one topic from each subject, and worksheet generator loaded successfully in production.
+- Lesson Structure v2 was visible live across sampled Maths, Science, English and Social Studies topics.
+
+**Result:**
+- The app is no longer only content-ready; it now has practical pilot materials for teacher/school conversations.
+
+---
+
 ## v0.5.21 — 2026-07-02 — Final Lesson Structure v2 release review completed
 
 **Session theme:** Review all subjects and prepare the grouped restructuring milestone for founder push.

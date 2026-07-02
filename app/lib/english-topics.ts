@@ -13,12 +13,12 @@ export const ENGLISH_TOPICS: Topic[] = [
       study: {
         bigIdea: "Holiday topics help you speak and write clearly about plans, activities and experiences using the correct tense.",
         keyVocabulary: [
-          { term: "Holiday plan", meaning: "Something a person intends to do during the holiday." },
-          { term: "Holiday activity", meaning: "Something a person does or did during the holiday." },
-          { term: "Future tense", meaning: "A verb form used for actions that will happen later." },
-          { term: "Past tense", meaning: "A verb form used for actions that already happened." },
-          { term: "Sequence words", meaning: "Words such as first, then and finally that show order." },
-          { term: "Topic sentence", meaning: "A sentence that introduces the main idea of a paragraph." },
+          { term: "Holiday plan", meaning: "A holiday plan is something a person intends to do during the holiday." },
+          { term: "Holiday activity", meaning: "A holiday activity is something a person does or did during the holiday." },
+          { term: "Future tense", meaning: "Future tense is a verb form used for actions that will happen later." },
+          { term: "Past tense", meaning: "Past tense is a verb form used for actions that already happened." },
+          { term: "Sequence words", meaning: "Sequence words are words such as first, then and finally that show order." },
+          { term: "Topic sentence", meaning: "A topic sentence is a sentence that introduces the main idea of a paragraph." },
         ],
         sections: [
           {
@@ -136,12 +136,12 @@ export const ENGLISH_TOPICS: Topic[] = [
       study: {
         bigIdea: "A good letter matches the receiver, purpose and format: friendly for people you know, formal for official matters.",
         keyVocabulary: [
-          { term: "Informal letter", meaning: "A friendly letter written to someone you know well." },
-          { term: "Formal letter", meaning: "An official letter written for a serious or public purpose." },
-          { term: "Receiver", meaning: "The person who gets or reads the letter." },
-          { term: "Heading", meaning: "A short line in a formal letter that states the purpose." },
-          { term: "Tone", meaning: "The feeling or level of politeness in writing." },
-          { term: "Complimentary close", meaning: "The polite ending of a letter, such as Yours faithfully." },
+          { term: "Informal letter", meaning: "An informal letter is a friendly letter written to someone you know well." },
+          { term: "Formal letter", meaning: "A formal letter is an official letter written for a serious or public purpose." },
+          { term: "Receiver", meaning: "A receiver is the person who gets or reads the letter." },
+          { term: "Heading", meaning: "A heading is a short line in a formal letter that states the purpose." },
+          { term: "Tone", meaning: "Tone is the feeling or level of politeness in writing." },
+          { term: "Complimentary close", meaning: "A complimentary close is the polite ending of a letter, such as Yours faithfully." },
         ],
         sections: [
           {
@@ -284,12 +284,12 @@ export const ENGLISH_TOPICS: Topic[] = [
       study: {
         bigIdea: "Examination English helps you talk and write about preparation, exam rules, revision and confidence using clear polite language.",
         keyVocabulary: [
-          { term: "Candidate", meaning: "A learner who sits an examination." },
-          { term: "Invigilator", meaning: "A person who supervises candidates during an examination." },
-          { term: "Revision", meaning: "Reading and practising work again to prepare for a test." },
-          { term: "Instructions", meaning: "Directions that tell candidates what to do." },
-          { term: "Timetable", meaning: "A plan showing subjects and times for revision or exams." },
-          { term: "Confidence", meaning: "Calm belief that you can try your best." },
+          { term: "Candidate", meaning: "A candidate is a learner who sits an examination." },
+          { term: "Invigilator", meaning: "An invigilator is a person who supervises candidates during an examination." },
+          { term: "Revision", meaning: "Revision is reading and practising work again to prepare for a test." },
+          { term: "Instructions", meaning: "Instructions are directions that tell candidates what to do." },
+          { term: "Timetable", meaning: "A timetable is a plan showing subjects and times for revision or exams." },
+          { term: "Confidence", meaning: "Confidence is calm belief that you can try your best." },
         ],
         sections: [
           {
@@ -407,12 +407,12 @@ export const ENGLISH_TOPICS: Topic[] = [
       study: {
         bigIdea: "Electronic media helps people receive and share information through radio, television, phones, computers and the internet.",
         keyVocabulary: [
-          { term: "Electronic media", meaning: "Media that uses electronic devices to send or receive information." },
-          { term: "Broadcast", meaning: "To send a radio or television programme to many people." },
-          { term: "Announcement", meaning: "A spoken or written message that gives information to the public." },
-          { term: "Advertisement", meaning: "A message that promotes a product, service or event." },
-          { term: "Interview", meaning: "A conversation where one person asks questions and another answers." },
-          { term: "Audience", meaning: "The people who listen to, watch or read a message." },
+          { term: "Electronic media", meaning: "Electronic media is media that uses electronic devices to send or receive information." },
+          { term: "Broadcast", meaning: "Broadcast is to send a radio or television programme to many people." },
+          { term: "Announcement", meaning: "An announcement is a spoken or written message that gives information to the public." },
+          { term: "Advertisement", meaning: "An advertisement is a message that promotes a product, service or event." },
+          { term: "Interview", meaning: "An interview is a conversation where one person asks questions and another answers." },
+          { term: "Audience", meaning: "An audience is the people who listen to, watch or read a message." },
         ],
         sections: [
           {
@@ -530,12 +530,12 @@ export const ENGLISH_TOPICS: Topic[] = [
       study: {
         bigIdea: "Rights, responsibilities and freedom go together: people and animals should be treated well, and everyone must act responsibly.",
         keyVocabulary: [
-          { term: "Right", meaning: "Something a child or person should be allowed to have or enjoy." },
-          { term: "Responsibility", meaning: "A duty or action someone is expected to do." },
-          { term: "Freedom", meaning: "The chance to act or live without unfair control, while respecting others." },
-          { term: "Need", meaning: "Something necessary for health, safety or growth." },
-          { term: "Opinion", meaning: "What someone thinks or believes about an issue." },
-          { term: "Balanced paragraph", meaning: "A paragraph that connects both sides of an idea fairly." },
+          { term: "Right", meaning: "A right is something a child or person should be allowed to have or enjoy." },
+          { term: "Responsibility", meaning: "A responsibility is a duty or action someone is expected to do." },
+          { term: "Freedom", meaning: "Freedom is the chance to act or live without unfair control, while respecting others." },
+          { term: "Need", meaning: "Need is something necessary for health, safety or growth." },
+          { term: "Opinion", meaning: "Opinion is what someone thinks or believes about an issue." },
+          { term: "Balanced paragraph", meaning: "A balanced paragraph is a paragraph that connects both sides of an idea fairly." },
         ],
         sections: [
           {
@@ -675,12 +675,12 @@ export const ENGLISH_TOPICS: Topic[] = [
       study: {
         bigIdea: "Environmental protection means using clear language to explain why nature matters and what people can do to care for it.",
         keyVocabulary: [
-          { term: "Environment", meaning: "The surroundings in which people, plants and animals live." },
-          { term: "Protection", meaning: "Keeping something safe from harm or damage." },
-          { term: "Pollution", meaning: "Making air, water or land dirty or harmful." },
-          { term: "Conservation", meaning: "Using resources carefully so they are not destroyed." },
-          { term: "Slogan", meaning: "A short memorable phrase used in a poster or campaign." },
-          { term: "Speech", meaning: "A prepared talk given to an audience." },
+          { term: "Environment", meaning: "Environment is the surroundings in which people, plants and animals live." },
+          { term: "Protection", meaning: "Protection is keeping something safe from harm or damage." },
+          { term: "Pollution", meaning: "Pollution is making air, water or land dirty or harmful." },
+          { term: "Conservation", meaning: "Conservation is using resources carefully so they are not destroyed." },
+          { term: "Slogan", meaning: "A slogan is a short memorable phrase used in a poster or campaign." },
+          { term: "Speech", meaning: "A speech is a prepared talk given to an audience." },
         ],
         sections: [
           {
@@ -821,12 +821,12 @@ export const ENGLISH_TOPICS: Topic[] = [
       study: {
         bigIdea: "Ceremony topics teach polite, respectful English for invitations, speeches, messages and descriptions of important community events.",
         keyVocabulary: [
-          { term: "Ceremony", meaning: "A formal or traditional event held for an important occasion." },
-          { term: "Invitation", meaning: "A message asking someone to attend an event." },
-          { term: "Marriage", meaning: "A ceremony or relationship where two people become husband and wife according to law, religion or custom." },
-          { term: "Funeral", meaning: "A ceremony held when a person has died." },
-          { term: "Condolence", meaning: "Words that show sympathy to someone who is bereaved." },
-          { term: "Programme", meaning: "The order of activities at an event." },
+          { term: "Ceremony", meaning: "A ceremony is a formal or traditional event held for an important occasion." },
+          { term: "Invitation", meaning: "An invitation is a message asking someone to attend an event." },
+          { term: "Marriage", meaning: "Marriage is a ceremony or relationship where two people become husband and wife according to law, religion or custom." },
+          { term: "Funeral", meaning: "A funeral is a ceremony held when a person has died." },
+          { term: "Condolence", meaning: "A condolence message uses words that show sympathy to someone who is bereaved." },
+          { term: "Programme", meaning: "A programme is the order of activities at an event." },
         ],
         sections: [
           {
