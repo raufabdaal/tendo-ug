@@ -135,7 +135,7 @@ export const SOCIAL_TOPICS: Topic[] = [
       ],
       whatYouNeedToKnow: [
         "Physical features are natural features found on the earth's surface. Examples in Africa include mountains, highlands, rivers, lakes, plateaus, rift valleys, deserts and coastal plains.",
-        "Important mountains include Kilimanjaro, Kenya, Rwenzori and Atlas. Important rivers include the Nile, Congo, Niger and Zambezi. Important lakes include Victoria, Tanganyika, Malawi and Chad.",
+        "Important mountains include Kilimanjaro, Kenya, Rwenzori and Atlas. Important rivers include the Nile, Congo, Niger and Zambezi. Important lakes include Victoria (shared by Uganda, Kenya, and Tanzania), Tanganyika, Malawi and Chad.",
         "The Great Rift Valley is a long depression formed by earth movements. Rift valley lakes are often long and deep, such as Lake Tanganyika.",
         "Physical features are important for fishing, farming, transport, hydro-electric power, tourism, mining and settlement. They can also create challenges such as barriers to transport or flooding.",
       ],

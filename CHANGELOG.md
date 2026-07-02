@@ -2,6 +2,23 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
+## v0.5.24 — 2026-07-02 — Curriculum alignment, content expansion and bug fixes
+
+**Session theme:** Address feedback that content wasn't fully aligned to the Ugandan Primary curriculum and there were bugs in Maths questions.
+
+**Changed:**
+- `app/lib/social-topics.ts` — expanded "Physical features of Africa" to explicitly cover Lake Victoria's shared borders (Uganda, Kenya, Tanzania) which was missing but tested in the curriculum.
+- `app/lib/topics.ts` — fixed multiple math bugs in the Sets (Venn Diagrams) topic where `correct` index choices incorrectly pointed to the wrong options in the quiz array (lines 141-155).
+- Audited `science-topics.ts` against `p7-science.json` to ensure coverage of all 8 major themes.
+- Audited `english-topics.ts` against `p7-english.json` to ensure coverage of all 7 major themes.
+- Audited `social-topics.ts` against `p7-social-studies.json` and `topics.ts` against `p7-math.json` to ensure proper mapping and alignment.
+
+**Result:**
+- Quiz math bugs in Venn Diagrams are fixed so students will not get marked wrong for the correct answer.
+- Social studies content expanded to fully align with Ugandan NCDC curriculum requirements on key tested facts (e.g., Lake Victoria borders).
+
+---
+
 ## v0.5.23 — 2026-07-02 — Key-word definitions teacher-voice phrasing pass
 
 **Session theme:** Address founder/partner feedback that some key-word definitions still sounded like machine/database labels rather than Ugandan classroom explanations.

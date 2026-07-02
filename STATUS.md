@@ -138,7 +138,14 @@ The grouped Lesson Structure v2 milestone has been pushed and verified live. Mat
 ### 1. Post-push verification and cleanup
 The grouped Social Studies + English milestone is now live. The immediate next task is to verify live behaviour, clean stale documentation wording and tighten any teacher-facing rough edges.
 
-### 2. Later enrichment for completed subjects
+### 2. Curriculum alignment and content expansion
+The content gaps and accuracy issues identified in the curriculum review have been addressed:
+- **Maths**: Fixed math bugs (correct indices misalignment) in Venn diagrams in `topics.ts`.
+- **Social Studies**: Expanded specific topic facts to match curriculum tested content (e.g., Lake Victoria borders).
+- All 4 active subjects (Maths, SST, Science, English) have been audited against their curriculum JSON specifications. 
+- Future content work should focus on formatting any extensive topic notes into structured sections to ensure depth while maintaining clarity.
+
+### 3. Later enrichment for completed subjects
 Possible future enhancements:
 - richer exam-style banks for heaviest Science, SST and English topics
 - more English composition/comprehension rubrics
