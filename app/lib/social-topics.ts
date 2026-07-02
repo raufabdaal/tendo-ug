@@ -11,24 +11,6 @@ export const SOCIAL_TOPICS: Topic[] = [
     reviewStatus: "verified",
     note: {
       intro: "Why this matters: P7 Social Studies begins by placing Africa correctly on the world map. Learners need to use latitudes, longitudes, continents, surrounding water bodies, regions, countries and capitals.",
-      study: {
-        bigIdea: "Africa is a continent on the world map. To locate it well, use nearby oceans, neighbouring continents, compass directions and important imaginary lines such as the Equator and Prime Meridian.",
-        keyVocabulary: [
-          { term: "Continent", meaning: "A continent is a very large land mass, such as Africa, Asia or Europe." },
-          { term: "Latitude", meaning: "Latitude is an imaginary line that helps locate places north or south of the Equator." },
-          { term: "Longitude", meaning: "Longitude is an imaginary line that helps locate places east or west of the Prime Meridian." },
-          { term: "Equator", meaning: "The Equator is the 0° latitude line that divides the earth into northern and southern hemispheres." },
-          { term: "Prime Meridian", meaning: "The Prime Meridian is the 0° longitude line used to locate places east or west." },
-          { term: "Capital city", meaning: "A capital city is the main administrative city of a country." },
-        ],
-        sections: [
-          { title: "Where Africa is found", points: ["Africa is the second largest continent after Asia.", "Europe is north of Africa, while Asia is to the north-east/east of Africa.", "Uganda is found in East Africa."] },
-          { title: "Water bodies around Africa", points: ["The Atlantic Ocean is west of Africa.", "The Indian Ocean is east of Africa.", "The Mediterranean Sea is north of Africa.", "The Red Sea lies between north-eastern Africa and the Arabian Peninsula."] },
-          { title: "Imaginary lines to remember", points: ["The Equator crosses Africa near the middle.", "The Prime Meridian also crosses Africa.", "The Tropic of Cancer and Tropic of Capricorn help show Africa's position in the tropics."] },
-        ],
-        visual: { kind: "map", title: "Map idea: Africa in the world", description: "Show Africa in the centre with labels for Atlantic Ocean, Indian Ocean, Mediterranean Sea, Europe, Asia, Equator and Prime Meridian. This should be a simple learning map, not a decorative image." },
-        examTip: "When asked to locate Africa, do not give only one fact. Mention direction, nearby continents, surrounding water bodies or imaginary lines.",
-      },
       learningObjectives: [
         "Locate Africa on a world map using latitudes and longitudes.",
         "Name the continents of the world and compare their sizes.",
@@ -95,58 +77,82 @@ export const SOCIAL_TOPICS: Topic[] = [
         title: "1. Location and position of Africa using lines of latitudes and longitudes",
         modules: [
           {
-            moduleId: "latitude-and-longitude",
-            title: "Latitude and longitude",
-            bigIdea: "Latitude and longitude are imaginary lines we draw on maps and globes to locate places exactly.",
+            moduleId: "what-is-latitude",
+            title: "What is latitude?",
+            bigIdea: "Latitude is an imaginary line that runs from east to west around the earth. It helps us say how far a place is north or south of the Equator.",
             learnIt: [
-              "Latitude is an imaginary line that runs from east to west. It helps us locate places north or south of the Equator.",
-              "Longitude is an imaginary line that runs from north to south. It helps us locate places east or west of the Prime Meridian.",
-              "The Equator is the 0° latitude line. It divides the earth into the northern hemisphere and the southern hemisphere.",
-              "The Prime Meridian is the 0° longitude line. It is used to locate places east or west."
+              "Latitude lines are drawn from east to west on a map or globe.",
+              "They are also called parallels because they run parallel to the Equator.",
+              "The Equator is the most important line of latitude. It is marked 0°.",
+              "Places north of the Equator are in the northern hemisphere. Places south of the Equator are in the southern hemisphere.",
+              "The latitude of a place is written as a number of degrees north or south, for example 0°20'N."
             ],
+            visual: {
+              kind: "diagram",
+              title: "Lines of latitude",
+              description: "Show the earth as a circle with horizontal lines running east to west. Label the Equator as 0° and show lines above marked north and lines below marked south."
+            },
             tryThis: {
-              question: "Which imaginary line divides the earth into northern and southern hemispheres?",
-              choices: ["Prime Meridian", "Equator", "Tropic of Cancer", "International Date Line"],
-              correct: 1,
-              explanation: "The Equator is the 0° latitude line that divides the earth into northern and southern hemispheres."
+              question: "Lines of latitude run from east to west and help us locate places:",
+              choices: ["North or south of the Equator", "East or west of the Prime Meridian", "Only in Africa", "Only near the poles"],
+              correct: 0,
+              explanation: "Latitude helps us locate places north or south of the Equator."
             }
           },
           {
-            moduleId: "major-lines-through-africa",
-            title: "Major lines that pass through Africa",
-            bigIdea: "The Equator and the Prime Meridian both cross Africa. The Tropic of Cancer and the Tropic of Capricorn also show Africa's position in the tropics.",
+            moduleId: "what-is-longitude",
+            title: "What is longitude?",
+            bigIdea: "Longitude is an imaginary line that runs from the North Pole to the South Pole. It helps us say how far a place is east or west of the Prime Meridian.",
             learnIt: [
-              "The Equator crosses Africa near the middle. Countries such as Uganda, Kenya, Democratic Republic of Congo and Gabon are touched by the Equator.",
+              "Longitude lines are drawn from the North Pole to the South Pole on a map or globe.",
+              "They are also called meridians.",
+              "The Prime Meridian is the most important line of longitude. It is marked 0°.",
+              "Places east of the Prime Meridian are in the eastern hemisphere. Places west of the Prime Meridian are in the western hemisphere.",
+              "The longitude of a place is written as a number of degrees east or west, for example 32°E."
+            ],
+            visual: {
+              kind: "diagram",
+              title: "Lines of longitude",
+              description: "Show the earth as a circle with vertical lines running from North Pole to South Pole. Label the Prime Meridian as 0° and show lines to the right marked east and to the left marked west."
+            }
+          },
+          {
+            moduleId: "major-lines-cross-africa",
+            title: "Major lines that cross Africa",
+            bigIdea: "Africa is crossed by the Equator and the Prime Meridian. It also lies mostly between the Tropic of Cancer and the Tropic of Capricorn, so most of Africa is in the tropics.",
+            learnIt: [
+              "The Equator crosses Africa near the middle. It passes through countries such as Uganda, Kenya, Democratic Republic of Congo and Gabon.",
               "The Prime Meridian crosses Africa near the western coast. It passes through countries such as Ghana, Mali and Algeria.",
-              "The Tropic of Cancer lies north of the Equator. It passes through the northern part of Africa.",
-              "The Tropic of Capricorn lies south of the Equator. It passes through the southern part of Africa."
+              "The Tropic of Cancer is found north of the Equator at about 23½°N. It passes through the northern part of Africa.",
+              "The Tropic of Capricorn is found south of the Equator at about 23½°S. It passes through the southern part of Africa.",
+              "Because most of Africa lies between the two Tropics, it is often called a tropical continent."
             ],
             visual: {
               kind: "map",
               title: "Major lines across Africa",
-              description: "Show Africa with the Equator, Prime Meridian, Tropic of Cancer and Tropic of Capricorn drawn and labelled clearly."
-            }
+              description: "Show the outline of Africa with the Equator across the middle, the Prime Meridian through the west, the Tropic of Cancer in the north and the Tropic of Capricorn in the south."
+            },
+            examTip: "When asked to locate Africa, mention at least two of these: the Equator, the Prime Meridian, the Tropics, nearby oceans or neighbouring continents."
           },
           {
-            moduleId: "locate-places",
+            moduleId: "how-to-locate-a-place",
             title: "How to locate a place",
-            bigIdea: "To locate a place on a map, say how far it is north or south of the Equator and east or west of the Prime Meridian.",
+            bigIdea: "To locate a place on a map, give its latitude and longitude, or describe its position using compass directions and nearby land or water bodies.",
             learnIt: [
-              "Look at the lines of latitude and longitude on the map.",
-              "Find the latitude number. If it is above the Equator, say north. If it is below, say south.",
-              "Find the longitude number. If it is to the right of the Prime Meridian, say east. If it is to the left, say west.",
-              "For P7, you should also use compass directions such as north, south, east and west to describe where a place is found."
+              "First, find the line of latitude. Say whether the place is north or south of the Equator and give the degrees.",
+              "Second, find the line of longitude. Say whether the place is east or west of the Prime Meridian and give the degrees.",
+              "You can also describe position using compass directions: north, south, east, west, north-east, north-west, south-east and south-west.",
+              "Always mention nearby features such as oceans, seas, continents or regions to make your answer complete."
             ],
             workedExample: {
               question: "Describe the location of Uganda using the Equator and compass directions.",
               steps: [
-                "Step 1. Uganda lies near the Equator.",
-                "Step 2. Uganda is found in the eastern part of Africa.",
-                "Step 3. Therefore Uganda is in East Africa, near the Equator."
+                "Uganda lies almost on the Equator, so it is in the northern hemisphere and also close to the southern hemisphere.",
+                "Uganda is found in the eastern part of the African continent.",
+                "It belongs to the East African region, which lies to the west of the Indian Ocean."
               ],
-              answer: "Answer: Uganda is an East African country located near the Equator."
-            },
-            examTip: "When asked to locate a place, do not give only one fact. Mention direction, nearby land or water, or an important line of latitude or longitude."
+              answer: "Uganda is an East African country located near the Equator, in the eastern part of Africa."
+            }
           }
         ]
       },
@@ -157,34 +163,58 @@ export const SOCIAL_TOPICS: Topic[] = [
           {
             moduleId: "seven-continents",
             title: "The seven continents",
-            bigIdea: "The world has seven continents. Africa is one of them and it is the continent where Uganda is found.",
+            bigIdea: "The land on earth is divided into seven large masses called continents. Africa is one of these continents and it is the home continent of Uganda.",
             learnIt: [
-              "The seven continents of the world are Asia, Africa, North America, South America, Antarctica, Europe and Australia.",
-              "A continent is a very large land mass. Continents are separated mainly by oceans and seas.",
-              "Africa is the second largest continent in the world.",
-              "Australia is the smallest continent. Antarctica is also large but it is covered by ice."
+              "The seven continents are Asia, Africa, North America, South America, Antarctica, Europe and Australia.",
+              "A continent is a very large, continuous area of land.",
+              "Continents are separated from each other mainly by oceans and seas.",
+              "Africa is located between the Atlantic Ocean to the west and the Indian Ocean to the east.",
+              "Uganda is found in the eastern part of Africa."
             ],
             visual: {
               kind: "comparison",
-              title: "Continents by size",
-              description: "Show the seven continents in order from largest to smallest. Asia first, then Africa, then North America, South America, Antarctica, Europe and Australia."
+              title: "The seven continents",
+              description: "Show a simple world map with the seven continents labelled: Asia, Africa, North America, South America, Antarctica, Europe and Australia."
             }
           },
           {
             moduleId: "continents-by-size",
-            title: "Comparing the sizes of continents",
-            bigIdea: "Asia is the largest continent. Africa is the second largest. This means Africa is bigger than Europe, Australia and Antarctica.",
+            title: "Continents by size",
+            bigIdea: "Asia is the largest continent. Australia is the smallest. Africa is the second largest continent, which means it is bigger than Europe, Antarctica, Australia, South America and North America.",
             learnIt: [
-              "The correct order from largest to smallest is: Asia, Africa, North America, South America, Antarctica, Europe, Australia.",
-              "Do not confuse Australia with the largest continent. Australia is the smallest.",
-              "Do not confuse Europe with the second largest. Europe is much smaller than Africa.",
-              "In PLE, you may be asked to name continents in order of size or to say which is bigger than another."
+              "The continents in order from largest to smallest are: Asia, Africa, North America, South America, Antarctica, Europe and Australia.",
+              "Asia is the largest continent. It is found mainly in the eastern hemisphere.",
+              "Africa is the second largest continent. It is about three times the size of Europe.",
+              "Australia is the smallest continent. It is also a country.",
+              "Do not confuse the smallest continent, Australia, with the largest island, Greenland."
+            ],
+            workedExample: {
+              question: "Arrange the following continents from the largest to the smallest: Africa, Asia, Europe, Australia.",
+              steps: [
+                "Asia is the largest continent.",
+                "Africa is the second largest.",
+                "Europe is smaller than both Africa and Asia.",
+                "Australia is the smallest of the four."
+              ],
+              answer: "Asia, Africa, Europe, Australia."
+            }
+          },
+          {
+            moduleId: "africa-place-among-continents",
+            title: "Africa's place among continents",
+            bigIdea: "Africa is the second largest continent and it sits in a central position on the world map, touching both the northern and southern hemispheres and almost reaching both the eastern and western hemispheres.",
+            learnIt: [
+              "Africa is the second largest continent after Asia.",
+              "Africa is wider in the north and narrower in the south.",
+              "It is the only continent that has land both north and south of the Equator in a very large area.",
+              "Because of its size and position, Africa has many different climates, physical features and cultures.",
+              "Africa is connected to Asia by the narrow Isthmus of Suez in Egypt."
             ],
             tryThis: {
-              question: "Which continent is the largest, and which is the second largest?",
-              choices: ["Africa and Asia", "Asia and Africa", "Europe and Africa", "North America and South America"],
+              question: "Which statement about Africa is correct?",
+              choices: ["Africa is the largest continent", "Africa is the second largest continent", "Africa is the smallest continent", "Africa is larger than Asia"],
               correct: 1,
-              explanation: "Asia is the largest continent and Africa is the second largest."
+              explanation: "Africa is the second largest continent after Asia."
             }
           }
         ]
@@ -194,57 +224,66 @@ export const SOCIAL_TOPICS: Topic[] = [
         title: "3. Water bodies that surround Africa",
         modules: [
           {
-            moduleId: "oceans-of-the-world",
+            moduleId: "four-main-oceans",
             title: "The four main oceans",
-            bigIdea: "The world has four main oceans: the Atlantic, Pacific, Indian and Arctic Oceans. Africa is bordered by two of these.",
+            bigIdea: "The world has four main oceans: the Pacific, Atlantic, Indian and Arctic Oceans. Africa is bordered by the Atlantic and Indian Oceans.",
             learnIt: [
-              "The Atlantic Ocean is on the western side of Africa.",
-              "The Indian Ocean is on the eastern side of Africa.",
-              "The Pacific Ocean is the largest ocean but it does not border Africa.",
-              "The Arctic Ocean is found around the North Pole. It also does not border Africa."
-            ]
+              "The Pacific Ocean is the largest ocean in the world. It lies between Asia and Australia on one side and the Americas on the other.",
+              "The Atlantic Ocean is the second largest ocean. It lies between the Americas and Europe/Africa.",
+              "The Indian Ocean is the third largest ocean. It lies south of Asia, east of Africa and west of Australia.",
+              "The Arctic Ocean is the smallest ocean. It surrounds the North Pole.",
+              "Africa does not touch the Pacific or Arctic Oceans."
+            ],
+            visual: {
+              kind: "comparison",
+              title: "The four main oceans",
+              description: "Show four simple cards for Pacific, Atlantic, Indian and Arctic Oceans, each with a one-line description of its position."
+            }
           },
           {
-            moduleId: "water-bodies-near-africa",
+            moduleId: "seas-oceans-near-africa",
             title: "Seas and oceans near Africa",
-            bigIdea: "Africa is surrounded by the Atlantic Ocean, the Indian Ocean, the Mediterranean Sea and the Red Sea.",
+            bigIdea: "Africa is surrounded by the Atlantic Ocean to the west, the Indian Ocean to the east, the Mediterranean Sea to the north and the Red Sea to the north-east.",
             learnIt: [
-              "The Atlantic Ocean lies to the west of Africa.",
-              "The Indian Ocean lies to the east of Africa.",
-              "The Mediterranean Sea lies to the north of Africa. It separates Africa from Europe.",
-              "The Red Sea lies between north-eastern Africa and the Arabian Peninsula. It separates Africa from Asia."
+              "The Atlantic Ocean is found to the west of Africa.",
+              "The Indian Ocean is found to the east of Africa.",
+              "The Mediterranean Sea separates Africa from Europe. It is found to the north of Africa.",
+              "The Red Sea separates Africa from Asia. It is found between north-eastern Africa and the Arabian Peninsula.",
+              "A sea is a smaller body of salt water that is partly surrounded by land. An ocean is a very large body of salt water."
             ],
             visual: {
               kind: "map",
               title: "Water bodies around Africa",
-              description: "Show Africa in the centre with labels for the Atlantic Ocean west, Indian Ocean east, Mediterranean Sea north and Red Sea north-east."
+              description: "Show Africa in the centre with the Atlantic Ocean to the west, Indian Ocean to the east, Mediterranean Sea to the north and Red Sea to the north-east."
             },
             tryThis: {
-              question: "Which ocean lies to the east of Africa?",
-              choices: ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+              question: "Which water body lies to the east of Africa?",
+              choices: ["Atlantic Ocean", "Indian Ocean", "Mediterranean Sea", "Red Sea"],
               correct: 1,
               explanation: "The Indian Ocean lies to the east of Africa."
             }
           },
           {
-            moduleId: "directions-from-africa",
+            moduleId: "directions-water-bodies",
             title: "Directions of continents and water bodies from Africa",
-            bigIdea: "Use compass directions to describe where other continents and water bodies are found from Africa.",
+            bigIdea: "Use compass directions to describe where the continents and water bodies around Africa are found.",
             learnIt: [
               "Europe is north of Africa, across the Mediterranean Sea.",
-              "Asia is to the north-east of Africa, across the Red Sea.",
+              "Asia is north-east of Africa, across the Red Sea.",
               "The Atlantic Ocean is west of Africa.",
-              "The Indian Ocean is east of Africa."
+              "The Indian Ocean is east of Africa.",
+              "The Southern Ocean area lies to the south of Africa, beyond the Cape of Good Hope."
             ],
             workedExample: {
-              question: "A learner says the Mediterranean Sea is south of Africa. Correct the statement.",
+              question: "A learner writes that the Mediterranean Sea is south of Africa. Correct this statement.",
               steps: [
-                "Step 1. Remember that the Mediterranean Sea separates Africa from Europe.",
-                "Step 2. Europe is north of Africa.",
-                "Step 3. Therefore the Mediterranean Sea is north of Africa, not south."
+                "The Mediterranean Sea separates Africa from Europe.",
+                "Europe is found to the north of Africa.",
+                "Therefore the Mediterranean Sea is to the north of Africa, not the south."
               ],
-              answer: "Answer: The Mediterranean Sea is north of Africa."
-            }
+              answer: "The Mediterranean Sea is north of Africa."
+            },
+            examTip: "When describing the location of a water body, always use a compass direction and say which land it is near or between."
           }
         ]
       },
@@ -255,50 +294,56 @@ export const SOCIAL_TOPICS: Topic[] = [
           {
             moduleId: "six-regions",
             title: "The six regions of Africa",
-            bigIdea: "Africa is commonly divided into six regions: West Africa, East Africa, North Africa, Central Africa, Southern Africa and the Horn of Africa.",
+            bigIdea: "For study purposes, Africa is divided into six regions: West Africa, East Africa, North Africa, Central Africa, Southern Africa and the Horn of Africa.",
             learnIt: [
-              "West Africa is found in the western part of Africa. Countries include Nigeria and Ghana.",
-              "East Africa is found in the eastern part of Africa. Countries include Uganda, Kenya and Tanzania.",
-              "North Africa is found in the northern part of Africa. Countries include Egypt and Libya.",
-              "Central Africa is found in the middle of the continent. Countries include Democratic Republic of Congo and Cameroon.",
-              "Southern Africa is found in the southern part of Africa. Countries include South Africa and Zambia.",
-              "The Horn of Africa is the north-eastern corner of Africa. Countries include Somalia, Ethiopia and Eritrea."
+              "West Africa is found in the western part of Africa. Examples of countries are Nigeria, Ghana, Senegal and Ivory Coast.",
+              "East Africa is found in the eastern part of Africa. Examples of countries are Uganda, Kenya, Tanzania, Rwanda and Burundi.",
+              "North Africa is found in the northern part of Africa. Examples of countries are Egypt, Libya, Algeria and Tunisia.",
+              "Central Africa is found in the middle of the continent. Examples of countries are Democratic Republic of Congo, Cameroon and Central African Republic.",
+              "Southern Africa is found in the southern part of Africa. Examples of countries are South Africa, Zambia, Zimbabwe and Botswana.",
+              "The Horn of Africa is the north-eastern corner of Africa. Examples of countries are Somalia, Ethiopia, Eritrea and Djibouti."
             ]
           },
           {
-            moduleId: "locate-regions",
-            title: "Locate the regions on the map",
-            bigIdea: "Each region has a special position on the map of Africa. You should be able to point to each region.",
+            moduleId: "where-each-region-is",
+            title: "Where each region is found",
+            bigIdea: "Each region has a special position on the map of Africa. You should be able to point to each region and name at least one country in it.",
             learnIt: [
-              "North Africa is at the top, near the Mediterranean Sea.",
-              "West Africa is on the left side, near the Atlantic Ocean.",
-              "East Africa is on the right side, near the Indian Ocean.",
+              "North Africa is at the top of the map, along the Mediterranean Sea.",
+              "West Africa is on the left side of the map, along the Atlantic Ocean.",
+              "East Africa is on the right side of the map, along the Indian Ocean.",
               "Central Africa is in the middle, around the Equator.",
               "Southern Africa is at the bottom of the continent.",
-              "The Horn of Africa sticks out into the Indian Ocean in the north-east."
+              "The Horn of Africa sticks out into the Indian Ocean like a horn."
             ],
             visual: {
               kind: "map",
               title: "Regions of Africa",
-              description: "Show a simple map of Africa divided into six labelled regions: North, West, Central, East, Southern and the Horn of Africa."
+              description: "Show a simple outline of Africa divided into six labelled regions: North, West, Central, East, Southern and Horn of Africa."
             },
             tryThis: {
-              question: "Uganda belongs to which African region?",
+              question: "Uganda is found in which region of Africa?",
               choices: ["West Africa", "East Africa", "North Africa", "Southern Africa"],
               correct: 1,
-              explanation: "Uganda is found in the eastern part of Africa, so it belongs to East Africa."
+              explanation: "Uganda is found in East Africa."
             }
           },
           {
             moduleId: "horn-of-africa",
             title: "The Horn of Africa",
-            bigIdea: "The Horn of Africa is a special region in the north-eastern corner of Africa that points towards Asia.",
+            bigIdea: "The Horn of Africa is a special region in the north-eastern corner of Africa. It is important because it lies between the Red Sea and the Indian Ocean and is close to the Middle East.",
             learnIt: [
-              "The Horn of Africa is found in the north-eastern part of Africa.",
-              "It is called a horn because its shape looks like a horn on the map.",
-              "Countries in the Horn of Africa include Somalia, Ethiopia, Eritrea and Djibouti.",
-              "The Horn of Africa is close to the Red Sea and the Indian Ocean."
-            ]
+              "The Horn of Africa is the part of Africa that points towards the Arabian Peninsula and Asia.",
+              "It is called a horn because on the map it looks like the horn of an animal.",
+              "The countries of the Horn of Africa are Somalia, Ethiopia, Eritrea and Djibouti.",
+              "The Red Sea lies to the north of the Horn and the Indian Ocean lies to the east and south.",
+              "This region is important for trade and shipping because many ships pass through the Red Sea and the Gulf of Aden."
+            ],
+            visual: {
+              kind: "map",
+              title: "The Horn of Africa",
+              description: "Show the north-eastern corner of Africa with Somalia, Ethiopia, Eritrea and Djibouti labelled, and the Red Sea and Indian Ocean nearby."
+            }
           }
         ]
       },
@@ -307,46 +352,54 @@ export const SOCIAL_TOPICS: Topic[] = [
         title: "5. Countries in each region and their capital cities",
         modules: [
           {
-            moduleId: "east-africa-countries",
+            moduleId: "east-africa-countries-capitals",
             title: "Countries and capitals of East Africa",
-            bigIdea: "East Africa has many countries. Each country has a capital city where the government is based.",
+            bigIdea: "East Africa is the region where Uganda is found. Each country in the region has a capital city that serves as the main centre of government.",
             learnIt: [
               "Uganda — capital city is Kampala.",
               "Kenya — capital city is Nairobi.",
               "Tanzania — capital city is Dodoma.",
               "Rwanda — capital city is Kigali.",
               "Burundi — capital city is Gitega.",
-              "South Sudan — capital city is Juba."
+              "South Sudan — capital city is Juba.",
+              "A capital city is the main town where the government of a country is based."
             ],
             tryThis: {
-              question: "What is the capital city of Uganda?",
-              choices: ["Nairobi", "Kampala", "Dodoma", "Kigali"],
+              question: "What is the capital city of Kenya?",
+              choices: ["Kampala", "Nairobi", "Dodoma", "Kigali"],
               correct: 1,
-              explanation: "Kampala is the capital city of Uganda."
+              explanation: "Nairobi is the capital city of Kenya."
             }
           },
           {
-            moduleId: "other-regions-countries",
+            moduleId: "other-regions-countries-capitals",
             title: "Countries and capitals of other regions",
-            bigIdea: "Other regions of Africa also have important countries and capital cities that you should know.",
+            bigIdea: "You should be able to name at least one country and its capital city from each of the other regions of Africa.",
             learnIt: [
               "West Africa: Nigeria — Abuja, Ghana — Accra, Senegal — Dakar.",
-              "North Africa: Egypt — Cairo, Libya — Tripoli, Algeria — Algiers.",
-              "Central Africa: Democratic Republic of Congo — Kinshasa, Cameroon — Yaoundé.",
-              "Southern Africa: South Africa — Pretoria, Zambia — Lusaka, Zimbabwe — Harare.",
-              "A capital city is the main administrative city of a country."
-            ]
+              "North Africa: Egypt — Cairo, Libya — Tripoli, Algeria — Algiers, Tunisia — Tunis.",
+              "Central Africa: Democratic Republic of Congo — Kinshasa, Cameroon — Yaoundé, Chad — N'Djamena.",
+              "Southern Africa: South Africa — Pretoria, Zambia — Lusaka, Zimbabwe — Harare, Botswana — Gaborone.",
+              "Horn of Africa: Ethiopia — Addis Ababa, Somalia — Mogadishu, Eritrea — Asmara, Djibouti — Djibouti."
+            ],
+            examTip: "When asked to name countries and capitals, write the country first, then the capital. Check your spelling if you are not sure."
           },
           {
-            moduleId: "islands-of-africa",
+            moduleId: "islands-africa",
             title: "Islands which are part of Africa",
-            bigIdea: "Africa also has islands in the Indian Ocean and Atlantic Ocean. These islands are part of the African continent.",
+            bigIdea: "Africa also includes islands in the Atlantic and Indian Oceans. These islands are part of the African continent even though they are surrounded by water.",
             learnIt: [
-              "Madagascar is the largest island that belongs to Africa. It is found in the Indian Ocean.",
-              "Mauritius and Seychelles are also African islands in the Indian Ocean.",
-              "The Canary Islands and Cape Verde are African islands in the Atlantic Ocean.",
-              "Islands are pieces of land surrounded by water. They are still part of Africa."
+              "Madagascar is the largest island that belongs to Africa. It is found in the Indian Ocean off the south-east coast.",
+              "Other islands in the Indian Ocean include Mauritius, Seychelles and Comoros.",
+              "Cape Verde and the Canary Islands are African islands in the Atlantic Ocean.",
+              "Sao Tome and Principe is also an African island country in the Gulf of Guinea.",
+              "An island is a piece of land that is completely surrounded by water."
             ],
+            visual: {
+              kind: "map",
+              title: "Islands of Africa",
+              description: "Show the coast of Africa with Madagascar, Mauritius, Seychelles, Cape Verde and Canary Islands labelled in their correct ocean positions."
+            },
             tryThis: {
               question: "Which is the largest island that belongs to Africa?",
               choices: ["Mauritius", "Seychelles", "Madagascar", "Cape Verde"],

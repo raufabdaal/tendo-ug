@@ -2,6 +2,27 @@
 
 > Newest at the top. Dated, append-only. This file records what happened; `STATUS.md` explains where the project stands now.
 
+## v0.6.1 — 2026-07-02 — Modular spike review fixes: navigation, content depth and UI simplification
+
+**Session theme:** Founder review of the v3 modular spike found three issues: rigid topic-level sections were repeating under every module, browser back jumped out of the topic instead of back to the module list, and the UI felt too box-heavy compared with the content.
+
+**Fixed:**
+- `app/components/TopicTabs.tsx` — wrapped the topic-level Worked example / Common mistakes / Try this / Guided practice / Quick recap block so it only appears for non-modular topics. Modular topics now show only per-module content.
+- `app/components/TopicTabs.tsx` — modular selection is now synced to the URL hash (`#subtopic-id` or `#subtopic-id/module-index`). Browser back/forward now moves through module → subtopic list → topic page as expected.
+- `app/app/globals.css` — simplified modular styles: removed heavy borders and boxes, made subtopic cards flatter, reduced visual clutter so the text content has more room.
+
+**Changed:**
+- `app/lib/social-topics.ts` — deepened and clarified the `location-of-africa` modular content. Expanded from 14 to 16 modules, with fuller teacher-voice explanations, clearer step-by-step worked examples, and stronger alignment to the NCDC P7 Set One PDF.
+- `app/lib/social-topics.ts` — removed the duplicated v2 `note.study` from `location-of-africa`; the modular `subtopics` array is now the single source of truth for this topic.
+
+**Verified locally:**
+- Production build passed with `✓ Generating static pages (147/147)`.
+
+**Result:**
+- The modular topic now reads as one coherent lesson in small steps, without repeated rigid sections, and navigation behaves like a native multi-screen experience.
+
+---
+
 ## v0.6.0 — 2026-07-02 — Lesson Structure v3 modular architecture spike
 
 **Session theme:** Address founder insight that AI-generated topic pages compress content because the generation target (one whole topic) and the UI (one scrolling page) both force summarisation. Move from a flat topic page to a hierarchical module structure.
@@ -11,7 +32,7 @@
 - `app/lib/topics.ts` — new modular types: `TopicVisual`, `SubtopicModule`, `Subtopic`, and optional `subtopics` field on `Topic`.
 - `app/components/TopicTabs.tsx` — modular topic directory + module viewer rendered when `topic.subtopics` exists. Includes Previous/Next pagination, progress dots, per-module big idea, learn-it content, worked example, try-this, visual brief and exam tip.
 - `app/app/globals.css` — styles for `.modular-directory`, `.subtopic-grid`, `.subtopic-card`, `.modular-viewer`, `.modular-module`, `.modular-pagination` and responsive rules.
-- `app/lib/social-topics.ts` — added `subtopics` to `location-of-africa` only, with 5 NCDC-aligned subtopics and 14 modules sourced from the NCDC P7 Set One PDF.
+- `app/lib/social-topics.ts` — added `subtopics` to `location-of-africa` only, with 5 NCDC-aligned subtopics and modules sourced from the NCDC P7 Set One PDF.
 
 **Changed:**
 - `app/components/TopicTabs.tsx` — Read tab now checks `topic.subtopics` first and falls back to v2 `note.study` or legacy content safely.

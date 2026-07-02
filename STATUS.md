@@ -18,6 +18,12 @@ What changed:
 
 Scope rule: only `location-of-africa` uses v3. All other SST topics and all other subjects remain on v2.
 
+**Review fixes applied:**
+- Removed the rigid topic-level Worked example / Common mistakes / Try this / Guided practice / Recap block from modular topics; each module now carries its own checks and examples where needed.
+- Modular selection now uses URL hashes, so browser back/forward moves: module → subtopic list → topic page.
+- Simplified modular UI: fewer boxes and grids, more space for content.
+- Deepened `location-of-africa` content from 14 to 16 modules with fuller teacher-voice explanations.
+
 See: `docs/spec/tendo-lesson-structure-v3-modular.md`
 
 ### 2. P7 Mathematics is complete enough

@@ -6,6 +6,23 @@ import TopicDiagram from "@/components/TopicDiagram";
 
 type Tab = "watch" | "read";
 
+function parseHash(hash: string): { subtopicId: string | null; moduleIndex: number } {
+  const trimmed = hash.replace(/^#/, "");
+  if (!trimmed) return { subtopicId: null, moduleIndex: 0 };
+  const [subtopicId, moduleStr] = trimmed.split("/");
+  const moduleIndex = parseInt(moduleStr, 10);
+  return {
+    subtopicId: subtopicId || null,
+    moduleIndex: isNaN(moduleIndex) ? 0 : moduleIndex,
+  };
+}
+
+function buildHash(subtopicId: string | null, moduleIndex: number): string {
+  if (!subtopicId) return "";
+  if (moduleIndex === 0) return `#${subtopicId}`;
+  return `#${subtopicId}/${moduleIndex}`;
+}
+
 export default function TopicTabs({ topic }: { topic: Topic }) {
   const [tab, setTab] = useState<Tab>("read");
   const [speechSupported, setSpeechSupported] = useState(false);
@@ -13,6 +30,22 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
   const [paused, setPaused] = useState(false);
   const [selectedSubtopicId, setSelectedSubtopicId] = useState<string | null>(null);
   const [activeModuleIndex, setActiveModuleIndex] = useState(0);
+
+  // Sync modular selection with URL hash so browser back/forward works inside the topic.
+  useEffect(() => {
+    if (!topic.subtopics) return;
+    const { subtopicId, moduleIndex } = parseHash(window.location.hash);
+    setSelectedSubtopicId(subtopicId);
+    setActiveModuleIndex(moduleIndex);
+
+    const onHashChange = () => {
+      const next = parseHash(window.location.hash);
+      setSelectedSubtopicId(next.subtopicId);
+      setActiveModuleIndex(next.moduleIndex);
+    };
+    window.addEventListener("hashchange", onHashChange);
+    return () => window.removeEventListener("hashchange", onHashChange);
+  }, [topic.subtopics]);
 
   // Detect Web Speech API support on client (DEV-014: TTS moved from tab into Read view)
   useEffect(() => {
@@ -128,9 +161,13 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
             <ModularTopicView
               topic={topic}
               selectedSubtopicId={selectedSubtopicId}
-              setSelectedSubtopicId={setSelectedSubtopicId}
               activeModuleIndex={activeModuleIndex}
-              setActiveModuleIndex={setActiveModuleIndex}
+              onSelectSubtopic={(id, idx = 0) => {
+                window.location.hash = buildHash(id, idx);
+              }}
+              onExitSubtopic={() => {
+                window.location.hash = "";
+              }}
             />
           ) : topic.note.study ? (
             <>
@@ -208,74 +245,78 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
             </>
           )}
 
-          <h2>Worked example</h2>
-          <div className="worked">
-            <div><strong>Problem:</strong> {topic.note.worked.problem}</div>
-            {topic.note.worked.steps.map((s, i) => {
-              const dot = s.indexOf(".");
-              const head = dot > -1 ? s.slice(0, dot + 1) : s;
-              const rest = dot > -1 ? s.slice(dot + 1) : "";
-              return <div key={i} className="step"><strong>{head}</strong>{rest}</div>;
-            })}
-            <div className="answer">{topic.note.worked.answer}</div>
-          </div>
-
-          {topic.note.commonMistakes && (
+          {!topic.subtopics && (
             <>
-              <h2>Common mistakes</h2>
+              <h2>Worked example</h2>
+              <div className="worked">
+                <div><strong>Problem:</strong> {topic.note.worked.problem}</div>
+                {topic.note.worked.steps.map((s, i) => {
+                  const dot = s.indexOf(".");
+                  const head = dot > -1 ? s.slice(0, dot + 1) : s;
+                  const rest = dot > -1 ? s.slice(dot + 1) : "";
+                  return <div key={i} className="step"><strong>{head}</strong>{rest}</div>;
+                })}
+                <div className="answer">{topic.note.worked.answer}</div>
+              </div>
+
+              {topic.note.commonMistakes && (
+                <>
+                  <h2>Common mistakes</h2>
+                  <ul>
+                    {topic.note.commonMistakes.map((m, i) => <li key={i}>{m}</li>)}
+                  </ul>
+                </>
+              )}
+
+              {topic.note.tryThis && (
+                <div className="try-this">
+                  <h2>Try this</h2>
+                  <p>{topic.note.tryThis.question}</p>
+                  <div className="quiz-choices">
+                    {topic.note.tryThis.choices.map((choice, i) => (
+                      <button key={i} className="choice" disabled>
+                        <span className="choice-letter">{String.fromCharCode(65 + i)}</span>
+                        {choice}
+                      </button>
+                    ))}
+                  </div>
+                  <p className="try-this-hint"><strong>Answer:</strong> {topic.note.tryThis.explanation}</p>
+                </div>
+              )}
+
+              {topic.note.writingTasks && topic.note.writingTasks.length > 0 && (
+                <div className="writing-practice-pack">
+                  <h2>Guided practice</h2>
+                  {topic.note.writingTasks.map((task, i) => (
+                    <section key={i} className="writing-task-card">
+                      <h3>{task.title}</h3>
+                      <p className="writing-prompt"><strong>Task:</strong> {task.prompt}</p>
+                      <div className="writing-task-grid">
+                        <div>
+                          <h4>Plan before writing</h4>
+                          <ol>
+                            {task.planningSteps.map((step, j) => <li key={j}>{step}</li>)}
+                          </ol>
+                        </div>
+                        <div>
+                          <h4>Marking checklist</h4>
+                          <ul>
+                            {task.checklist.map((item, j) => <li key={j}>{item}</li>)}
+                          </ul>
+                        </div>
+                      </div>
+                      {task.modelOpening && <p className="model-opening"><strong>Model opening:</strong> {task.modelOpening}</p>}
+                    </section>
+                  ))}
+                </div>
+              )}
+
+              <h2>Quick recap</h2>
               <ul>
-                {topic.note.commonMistakes.map((m, i) => <li key={i}>{m}</li>)}
+                {topic.note.recap.map((r, i) => <li key={i}>{r}</li>)}
               </ul>
             </>
           )}
-
-          {topic.note.tryThis && (
-            <div className="try-this">
-              <h2>Try this</h2>
-              <p>{topic.note.tryThis.question}</p>
-              <div className="quiz-choices">
-                {topic.note.tryThis.choices.map((choice, i) => (
-                  <button key={i} className="choice" disabled>
-                    <span className="choice-letter">{String.fromCharCode(65 + i)}</span>
-                    {choice}
-                  </button>
-                ))}
-              </div>
-              <p className="try-this-hint"><strong>Answer:</strong> {topic.note.tryThis.explanation}</p>
-            </div>
-          )}
-
-          {topic.note.writingTasks && topic.note.writingTasks.length > 0 && (
-            <div className="writing-practice-pack">
-              <h2>Guided practice</h2>
-              {topic.note.writingTasks.map((task, i) => (
-                <section key={i} className="writing-task-card">
-                  <h3>{task.title}</h3>
-                  <p className="writing-prompt"><strong>Task:</strong> {task.prompt}</p>
-                  <div className="writing-task-grid">
-                    <div>
-                      <h4>Plan before writing</h4>
-                      <ol>
-                        {task.planningSteps.map((step, j) => <li key={j}>{step}</li>)}
-                      </ol>
-                    </div>
-                    <div>
-                      <h4>Marking checklist</h4>
-                      <ul>
-                        {task.checklist.map((item, j) => <li key={j}>{item}</li>)}
-                      </ul>
-                    </div>
-                  </div>
-                  {task.modelOpening && <p className="model-opening"><strong>Model opening:</strong> {task.modelOpening}</p>}
-                </section>
-              ))}
-            </div>
-          )}
-
-          <h2>Quick recap</h2>
-          <ul>
-            {topic.note.recap.map((r, i) => <li key={i}>{r}</li>)}
-          </ul>
         </div>
       )}
     </>
@@ -285,15 +326,15 @@ export default function TopicTabs({ topic }: { topic: Topic }) {
 function ModularTopicView({
   topic,
   selectedSubtopicId,
-  setSelectedSubtopicId,
   activeModuleIndex,
-  setActiveModuleIndex,
+  onSelectSubtopic,
+  onExitSubtopic,
 }: {
   topic: Topic;
   selectedSubtopicId: string | null;
-  setSelectedSubtopicId: (id: string | null) => void;
   activeModuleIndex: number;
-  setActiveModuleIndex: (index: number) => void;
+  onSelectSubtopic: (id: string, moduleIndex?: number) => void;
+  onExitSubtopic: () => void;
 }) {
   const subtopics = topic.subtopics!;
 
@@ -307,10 +348,7 @@ function ModularTopicView({
             <button
               key={subtopic.subtopicId}
               className="subtopic-card"
-              onClick={() => {
-                setSelectedSubtopicId(subtopic.subtopicId);
-                setActiveModuleIndex(0);
-              }}
+              onClick={() => onSelectSubtopic(subtopic.subtopicId, 0)}
             >
               <div className="subtopic-number">{subtopics.indexOf(subtopic) + 1}</div>
               <div className="subtopic-card-body">
@@ -336,10 +374,7 @@ function ModularTopicView({
       <button
         type="button"
         className="modular-back"
-        onClick={() => {
-          setSelectedSubtopicId(null);
-          setActiveModuleIndex(0);
-        }}
+        onClick={onExitSubtopic}
       >
         ← Back to all parts
       </button>
@@ -349,72 +384,71 @@ function ModularTopicView({
         <div className="modular-module-counter">Module {activeModuleIndex + 1} of {totalModules}</div>
       </div>
 
-      <div className="modular-module">
+      <article className="modular-module">
         <h3 className="modular-module-title">{module.title}</h3>
+        <p className="modular-big-idea">{module.bigIdea}</p>
 
-        <div className="study-big-idea modular-big-idea">
-          <div className="study-label">Big idea</div>
-          <p>{module.bigIdea}</p>
-        </div>
-
-        <div className="modular-learn-it">
-          <h4>Learn it</h4>
-          <ul>
-            {module.learnIt.map((point, i) => (
-              <li key={i}>{point}</li>
-            ))}
-          </ul>
-        </div>
+        <ul className="modular-learn-it">
+          {module.learnIt.map((point, i) => (
+            <li key={i}>{point}</li>
+          ))}
+        </ul>
 
         {module.visual && <StudyVisualBrief visual={module.visual} />}
 
         {module.workedExample && (
           <div className="modular-worked">
             <h4>Worked example</h4>
-            <p><strong>Question:</strong> {module.workedExample.question}</p>
+            <p className="modular-worked-q"><strong>Question:</strong> {module.workedExample.question}</p>
             {module.workedExample.steps.map((step, i) => (
-              <div key={i} className="step">{step}</div>
+              <p key={i} className="modular-worked-step">{step}</p>
             ))}
-            <div className="answer">{module.workedExample.answer}</div>
+            <p className="modular-worked-answer"><strong>Answer:</strong> {module.workedExample.answer.replace(/^Answer:\s*/, "")}</p>
           </div>
         )}
 
         {module.tryThis && (
-          <div className="try-this">
-            <h4>Try this</h4>
+          <div className="modular-try-this">
+            <h4>Quick check</h4>
             <p>{module.tryThis.question}</p>
-            <div className="quiz-choices">
+            <div className="modular-try-choices">
               {module.tryThis.choices.map((choice, i) => (
-                <button key={i} className="choice" disabled>
-                  <span className="choice-letter">{String.fromCharCode(65 + i)}</span>
+                <div key={i} className="modular-try-choice">
+                  <span className="modular-try-letter">{String.fromCharCode(65 + i)}</span>
                   {choice}
-                </button>
+                </div>
               ))}
             </div>
-            <p className="try-this-hint"><strong>Answer:</strong> {module.tryThis.explanation}</p>
+            <p className="modular-try-answer"><strong>Answer:</strong> {module.tryThis.explanation}</p>
           </div>
         )}
 
         {module.examTip && (
-          <section className="exam-tip">
+          <p className="modular-exam-tip">
             <strong>PLE tip:</strong> {module.examTip}
-          </section>
+          </p>
         )}
-      </div>
+      </article>
 
       <div className="modular-pagination">
         <button
           type="button"
           className="btn btn-secondary"
           disabled={activeModuleIndex === 0}
-          onClick={() => setActiveModuleIndex(activeModuleIndex - 1)}
+          onClick={() => onSelectSubtopic(selectedSubtopicId, activeModuleIndex - 1)}
         >
           ← Previous
         </button>
 
         <div className="modular-progress" aria-hidden="true">
           {subtopic.modules.map((_, i) => (
-            <span key={i} className={"modular-progress-dot" + (i === activeModuleIndex ? " active" : "")} />
+            <button
+              key={i}
+              type="button"
+              className={"modular-progress-dot" + (i === activeModuleIndex ? " active" : "")}
+              onClick={() => onSelectSubtopic(selectedSubtopicId, i)}
+              aria-label={`Go to module ${i + 1}`}
+            />
           ))}
         </div>
 
@@ -422,7 +456,7 @@ function ModularTopicView({
           <button
             type="button"
             className="btn btn-primary"
-            onClick={() => setActiveModuleIndex(activeModuleIndex + 1)}
+            onClick={() => onSelectSubtopic(selectedSubtopicId, activeModuleIndex + 1)}
           >
             Next →
           </button>
@@ -430,10 +464,7 @@ function ModularTopicView({
           <button
             type="button"
             className="btn btn-primary"
-            onClick={() => {
-              setSelectedSubtopicId(null);
-              setActiveModuleIndex(0);
-            }}
+            onClick={onExitSubtopic}
           >
             Finish part
           </button>

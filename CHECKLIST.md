@@ -179,8 +179,12 @@
 - [x] Subtopics mapped directly to NCDC `subTopics` in `content/curriculum/p7-social-studies.json`
 - [x] Module content sourced from NCDC P7 Set One PDF pages 294–296
 - [x] Build passed after modular spike
+- [x] Founder review of modular spike completed
+- [x] Fixed: rigid topic-level sections no longer repeat under every module
+- [x] Fixed: browser back now returns to subtopic list, not main topic page
+- [x] Fixed: modular UI simplified — fewer boxes, more content space
+- [x] Content deepened: 16 modules with fuller teacher-voice explanations
 - [ ] Convert remaining 9 Social Studies topics to v3
-- [ ] Founder review of modular spike on `/social-studies/p7/location-of-africa`
 - [ ] Decide whether to roll v3 to other subjects or stay on Social Studies until pilot feedback
 
 ---
